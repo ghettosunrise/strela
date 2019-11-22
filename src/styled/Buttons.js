@@ -1,9 +1,9 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import Button from "../images/button.svg"
 import arrR from "../images/arrw.svg"
 
 export const BlackButton = styled.div`
-  width: 205.59px;
+  min-width: 205.59px;
   height: 54.5px;
   display: flex;
   justify-content: center;
@@ -18,6 +18,7 @@ export const BlackButton = styled.div`
   letter-spacing: -0.07em;
   background-image: url(${Button});
   cursor: pointer;
+  background-size: 100%;
 
   span {
     width: 38px;

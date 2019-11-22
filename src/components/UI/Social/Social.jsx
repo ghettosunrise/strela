@@ -4,7 +4,7 @@ import * as S from "./styles"
 
 const Social = () => {
   return (
-    <S.SocialTop>
+    <S.SocialTop marginRight="21px">
       <Link to="tg.com">FB</Link>
       <Link to="tg.com">IG</Link>
       <Link to="tg.com">TG</Link>

@@ -5,6 +5,7 @@ export const SocialTop = styled(Flex)`
   max-width: 97px;
   width: 100%;
   justify-content: space-between;
+  flex-direction: row;
 
   a {
     font-family: Neue Machina;
@@ -13,7 +14,7 @@ export const SocialTop = styled(Flex)`
     letter-spacing: 0.06em;
     text-decoration-line: underline;
     text-transform: uppercase;
-
+    font-weight: 900;
     color: #000000;
   }
 `
