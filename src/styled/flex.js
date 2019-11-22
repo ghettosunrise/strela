@@ -1,6 +1,10 @@
-import styled, { css } from "styled-components";
+import styled, { css } from "styled-components"
 
-import { getProp, fromProp } from "./utils";
+import { getProp, fromProp } from "./utils"
+
+import mainBg from "../images/mainbg1440.png"
+import arrL from "../images/arrowl.svg"
+import arrR from "../images/arrowr.svg"
 
 const flex = css`
   display: flex;
@@ -34,11 +38,44 @@ const flex = css`
   ${fromProp("overflowY", { make: "overflow-Y" })};
   ${fromProp("textTransform", { make: "text-transform" })};
   ${fromProp("z", { make: "z-index" })};
-`;
+  ${fromProp("maxWidth", { make: "max-width" })};
+  ${fromProp("fontSize", { make: "font-size" })};
+`
 
 const Flex = styled.div`
   ${flex}
-`;
+`
+
+export const MainPageWrap = styled(Flex)`
+  background-image: url(${mainBg});
+  background-position: 50% 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: Neue Machina;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 48px;
+
+  img {
+    max-width: 940px;
+    margin-bottom: 124px;
+  }
+
+  .arrow_left {
+    width: 48px;
+    height: 23px;
+    margin-right: 24px;
+    background-image: url(${arrL});
+  }
+
+  .arrow_right {
+    width: 48px;
+    height: 23px;
+    margin-left: 24px;
+    background-image: url(${arrR});
+  }
+`
 
 Flex.Absolute = styled(Flex)`
   position: absolute;
@@ -46,6 +83,6 @@ Flex.Absolute = styled(Flex)`
   ${fromProp("left", { make: "left" })};
   ${fromProp("bottom", { make: "bottom" })};
   ${fromProp("right", { make: "right" })};
-`;
+`
 
-export default Flex;
+export default Flex
