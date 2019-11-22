@@ -8,21 +8,19 @@ import Social from "../components/UI/Social"
 import * as H from "../styled/header"
 
 const Header = ({ siteTitle }) => (
-  <header>
-    <Flex row justify="space-between" align="center" width="100%">
-      <H.HeaderLogoWrap>
-        <Link to="/"></Link>
-        <span></span>
-      </H.HeaderLogoWrap>
-      <Nav></Nav>
-      <Flex row align="center" maxWidth="323px" width="100%">
-        <Social />
-        <S.BlackButton>
-          Связаться <span></span>
-        </S.BlackButton>
-      </Flex>
+  <H.StyledHeader>
+    <H.HeaderLogoWrap>
+      <Link to="/"></Link>
+      <span></span>
+    </H.HeaderLogoWrap>
+    <Nav row="true"></Nav>
+    <Flex row align="center" maxWidth="323px" width="100%">
+      <Social />
+      <S.BlackButton>
+        Связаться <span></span>
+      </S.BlackButton>
     </Flex>
-  </header>
+  </H.StyledHeader>
 )
 
 Header.propTypes = {

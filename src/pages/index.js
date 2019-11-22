@@ -13,12 +13,12 @@ const IndexPage = () => (
     <img src={logo}></img>
     <Flex row maxWidth="940px" justify="space-between" width="100%">
       <Flex row align="center">
-        <span class="arrow_left"></span>
+        <span className="arrow_left"></span>
         <Link to="/agency">Agency</Link>
       </Flex>
       <Flex row align="center">
         <Link to="/booking">Booking</Link>
-        <span class="arrow_right"></span>
+        <span className="arrow_right"></span>
       </Flex>
     </Flex>
   </MainPageWrap>
