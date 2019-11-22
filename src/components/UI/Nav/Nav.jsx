@@ -10,6 +10,7 @@ const Nav = props => {
       maxWidth="507px"
       width="100%"
       justify="space-between"
+      className={props.className}
     >
       <Link to="/agency/whatwedo">Что мы делаем </Link>
       <Link to="/agency/cases">С кем работаем </Link>
