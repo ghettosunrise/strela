@@ -3,14 +3,15 @@ import { Link } from "gatsby"
 
 import * as S from "./styles"
 
-const Nav = props => {
+const Nav = ({ row, column, space }) => {
   return (
     <S.TopNav
-      row={props.row}
+      row={row && true}
+      column={column && true}
       maxWidth="507px"
       width="100%"
       justify="space-between"
-      className={props.className}
+      space={space}
     >
       <Link to="/agency/whatwedo">Что мы делаем </Link>
       <Link to="/agency/cases">С кем работаем </Link>

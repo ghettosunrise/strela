@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
-import "../components/layout.css"
+import "../assets/layout.css"
 import Flex, { MainPageWrap } from "../styled/flex"
 import logo from "../images/logo.png"
+
+// import { Icon } from "components"
 
 // import Image from "../components/image"
 import SEO from "../components/seo"
@@ -14,6 +16,7 @@ const IndexPage = () => (
     <Flex row maxWidth="940px" justify="space-between" width="100%">
       <Flex row align="center">
         <span className="arrow_left"></span>
+        {/* <Icon.ArrowLeft /> */}
         <Link to="/agency">Agency</Link>
       </Flex>
       <Flex row align="center">

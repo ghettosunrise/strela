@@ -11,5 +11,10 @@ export const TopNav = styled(Flex)`
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #000000;
+    margin-bottom: ${props => props.space + "px"};
+
+    :last-child {
+      margin-bottom: ${props => (props.column ? +props.space + 30 + "px" : 0)};
+    }
   }
 `

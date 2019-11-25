@@ -21,14 +21,4 @@ export const MainScreen1 = styled(Flex)`
 
     color: #000000;
   }
-
-  .second-nav {
-    a {
-      margin-bottom: 20px;
-
-      &:last-child {
-        margin-bottom: 50px;
-      }
-    }
-  }
 `

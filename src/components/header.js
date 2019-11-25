@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => (
       <Link to="/"></Link>
       <span></span>
     </H.HeaderLogoWrap>
-    <Nav row="true"></Nav>
+    <Nav row></Nav>
     <Flex row align="center" maxWidth="323px" width="100%">
       <Social />
       <S.BlackButton>

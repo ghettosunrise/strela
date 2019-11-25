@@ -8,7 +8,7 @@ export const MainSc1 = () => {
   return (
     <MainScreen1 maxWidth="1058px" width="100%" justify="space-between">
       <Flex>
-        <Nav className="second-nav"></Nav>
+        <Nav column space="20"></Nav>
         <Social></Social>
       </Flex>
       <h1>Мы PR агенство, которое поможет узнать тебя во всем мире! </h1>
