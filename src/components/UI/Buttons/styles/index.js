@@ -1,13 +1,11 @@
 import styled from "styled-components"
-import Button from "../images/button.svg"
-import arrR from "../images/arrw.svg"
+import Button from "../../../../images/button.svg"
+import arrR from "../../../../images/arrw.svg"
 
 export const BlackButton = styled.div`
   min-width: 205.59px;
   height: 54.5px;
-  display: flex;
   justify-content: center;
-  align-items: center;
   font-family: "Neue Machina";
   font-size: 18px;
   line-height: 86px;
@@ -30,3 +28,5 @@ export const BlackButton = styled.div`
     bottom: 2px;
   }
 `
+
+export default BlackButton
