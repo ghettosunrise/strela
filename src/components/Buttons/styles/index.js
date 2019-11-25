@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import Button from "../../../../images/button.svg"
-import arrR from "../../../../images/arrw.svg"
+import Button from "../../../images/button.svg"
+import arrR from "../../../images/arrw.svg"
 
 export const BlackButton = styled.div`
   min-width: 205.59px;

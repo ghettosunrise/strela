@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Flex from "../../../../styled/flex"
+import Flex from "../../../styled/flex"
 
 export const SocialTop = styled(Flex)`
   max-width: 97px;

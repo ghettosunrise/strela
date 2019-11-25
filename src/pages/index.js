@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import "../assets/layout.css"
 import Flex, { MainPageWrap } from "../styled/flex"
 import logo from "../images/logo.png"
+import Arrow from "../components/Icons"
 
 // import { Icon } from "components"
 
@@ -15,13 +16,14 @@ const IndexPage = () => (
     <img src={logo}></img>
     <Flex row maxWidth="940px" justify="space-between" width="100%">
       <Flex row align="center">
-        <span className="arrow_left"></span>
+        <Arrow margin="24px" direction="L" />
         {/* <Icon.ArrowLeft /> */}
         <Link to="/agency">Agency</Link>
       </Flex>
       <Flex row align="center">
         <Link to="/booking">Booking</Link>
-        <span className="arrow_right"></span>
+        {/* <span className="arrow_right"></span> */}
+        <Arrow margin="24px" direction="R" />
       </Flex>
     </Flex>
   </MainPageWrap>

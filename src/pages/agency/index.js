@@ -1,8 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import AgencyHeader from "../../containers/AgencyHeader"
 import Flex from "../../styled/flex"
-import Layout from "../../components/layout"
+
 // import MainSc1 from "../../components/UI/containers/mainsc1"
 import SEO from "../../components/seo"
 

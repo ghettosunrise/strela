@@ -8,6 +8,6 @@ export const MyMainTitle = styled.h1`
   line-height: 96px;
   max-width: 836px;
   letter-spacing: -0.07em;
-
+  margin-bottom: 113px;
   color: #000000;
 `

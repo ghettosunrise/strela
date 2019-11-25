@@ -1,8 +1,8 @@
 import React from "react"
-import Flex from "../styled/flex"
-import Header from "./header"
-import Nav from "../components/UI/Nav"
-import Social from "../components/UI/Social"
+import Flex from "../../styled/flex"
+import Header from "../Header"
+import Nav from "../Nav"
+import Social from "../../components/Social"
 import * as S from "./styles"
 
 const MainTitle = ({ txt }) => {
