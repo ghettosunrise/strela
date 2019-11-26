@@ -17,6 +17,7 @@ const flex = css`
   justify-content: ${getProp("justify", "flex-start")};
   flex-grow: ${getProp("grow", 0)};
   flex-shrink: ${getProp("shrink", 0)};
+  flex-wrap: ${getProp("wrap", "no-wrap")};
   ${fromProp("marginLeft", { make: "margin-left" })};
   ${fromProp("marginRight", { make: "margin-right" })};
   ${fromProp("marginTop", { make: "margin-top" })};
@@ -40,6 +41,7 @@ const flex = css`
   ${fromProp("z", { make: "z-index" })};
   ${fromProp("maxWidth", { make: "max-width" })};
   ${fromProp("fontSize", { make: "font-size" })};
+  ${fromProp("content", { make: "align-content" })};
 `
 
 const Flex = styled.div`

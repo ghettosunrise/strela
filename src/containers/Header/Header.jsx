@@ -6,7 +6,7 @@ import Flex from "../../styled/flex"
 import Social from "../../components/Social"
 import * as H from "../../styled/header"
 import Arrow from "../../components/Icons"
-import ButtonBlack from "../../components/Buttons"
+import ButtonBlack from "../../components/Buttons/ButtonBlack"
 
 const Header = ({ siteTitle }) => (
   <Flex

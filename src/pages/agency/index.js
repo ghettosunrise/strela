@@ -3,6 +3,7 @@ import React from "react"
 import AgencyHeader from "../../containers/AgencyHeader"
 import Flex from "../../styled/flex"
 import Divider from "../../components/Divider"
+import Cases from "../../containers/Cases"
 
 // import MainSc1 from "../../components/UI/containers/mainsc1"
 import SEO from "../../components/seo"
@@ -12,6 +13,7 @@ const AgencyHome = () => (
     <SEO title="Home" />
     <AgencyHeader />
     <Divider text="С кем мы работаем • кейсы" />
+    <Cases></Cases>
   </Flex>
 )
 
