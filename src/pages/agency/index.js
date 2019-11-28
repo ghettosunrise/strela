@@ -5,6 +5,7 @@ import Flex from "../../styled/flex"
 import Divider from "../../components/Divider"
 import Cases from "../../containers/Cases"
 import WhatWeDo from "../../containers/WhatWeDo"
+import Banner from "../../components/Banner"
 
 // import MainSc1 from "../../components/UI/containers/mainsc1"
 import SEO from "../../components/seo"
@@ -16,6 +17,11 @@ const AgencyHome = () => (
     <Divider text="С кем мы работаем • кейсы" />
     <Cases></Cases>
     <WhatWeDo></WhatWeDo>
+    <Banner
+      title="I’m Jazz"
+      subtitle="23-Окт, Closer"
+      description="Пояснение основных моментов в пиаре собственного имени и проектов..."
+    ></Banner>
   </Flex>
 )
 
