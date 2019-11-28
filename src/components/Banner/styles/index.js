@@ -11,6 +11,7 @@ export const Banner = styled(Flex)`
   align-items: center;
   position: relative;
   overflow: hidden;
+  margin-bottom: 114px;
 
   &::before {
     content: "";

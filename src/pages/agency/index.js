@@ -22,6 +22,7 @@ const AgencyHome = () => (
       subtitle="23-Окт, Closer"
       description="Пояснение основных моментов в пиаре собственного имени и проектов..."
     ></Banner>
+    <Divider text="Написано нами" />
   </Flex>
 )
 
