@@ -1,23 +1,27 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import ButtonTr from "../../../../images/buttontr.svg"
 import { Link } from "gatsby"
 
+const noEvent = css`
+  pointer-events: none;
+`
+
 export const ButtonTransparent = styled(Link)`
   width: 100%;
-  height: 84px;
+  height: ${props => (props.small ? "54px" : "84px")};
   border: 2px solid black;
   background-size: 100% 84px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: Neue Machina;
-  font-size: 36px;
-  line-height: 86px;
-  /* or 239% */
+  font-size: ${props => (props.small ? "24px" : "36px")};
+  line-height: ${props => (props.small ? "28px" : "86px")};
   position: relative;
   display: flex;
   align-items: center;
   letter-spacing: -0.07em;
+  ${props => (props.small ? noEvent : null)}
 `
 export const StyloOne = styled.div`
   background: #f3f2f1;
@@ -27,7 +31,7 @@ export const StyloOne = styled.div`
   border: 2px solid #000;
   position: absolute;
   left: -20px;
-  bottom: -30px;
+  bottom: ${props => (props.small ? "-36px" : "-30px")};
 `
 
 export const StyloTwo = styled.div`
@@ -38,7 +42,7 @@ export const StyloTwo = styled.div`
   border: 2px solid #000;
   position: absolute;
   right: -20px;
-  bottom: -30px;
+  bottom: ${props => (props.small ? "-36px" : "-30px")};
 `
 
 export const StyloThree = styled.div`
@@ -49,7 +53,7 @@ export const StyloThree = styled.div`
   border: 2px solid #000;
   position: absolute;
   left: -20px;
-  top: -30px;
+  top: ${props => (props.small ? "-36px" : "-30px")};
 `
 
 export const StyloFour = styled.div`
@@ -60,5 +64,5 @@ export const StyloFour = styled.div`
   border: 2px solid #000;
   position: absolute;
   right: -20px;
-  top: -30px;
+  top: ${props => (props.small ? "-36px" : "-30px")};
 `
