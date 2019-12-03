@@ -15,7 +15,7 @@ const WWBlock = ({ number, title, sub }) => {
 
 const WhatWeDo = () => {
   return (
-    <Flex width="100%" paddingAll="60px 0 72px" row justify="space-between">
+    <Flex width="100%" paddingAll="60px 49px 72px" row justify="space-between">
       <Flex shrink="1">
         <S.Title>Что мы делаем</S.Title>
         <S.SubTitle>

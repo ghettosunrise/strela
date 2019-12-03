@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import arrR from "../images/arrowr.svg"
 import logo from "../images/logo.png"
+import Flex from "./flex"
 // import Flex from "./flex"
 
 export const StyledHeader = styled.header`
@@ -12,12 +13,10 @@ export const StyledHeader = styled.header`
   margin-bottom: 65px;
 `
 
-export const HeaderLogoWrap = styled.div`
-  max-width: 219px;
-  width: 100%;
-  display: flex;
-  align-items: center;
+export const HeaderLogoWrap = styled(Flex)`
+  /* align-items: center;
   justify-content: space-between;
+  flex-direction: row; */
 
   a {
     width: 93px;

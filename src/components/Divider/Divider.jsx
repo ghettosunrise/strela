@@ -4,7 +4,7 @@ import { DividerText, DividerArrow } from "./styles"
 
 const Divider = props => {
   return (
-    <Flex width="100%" row>
+    <Flex width="100%" row paddingAll="0px 49px">
       <DividerText>{props.text}</DividerText>
       <DividerArrow />
     </Flex>

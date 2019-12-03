@@ -8,7 +8,7 @@ import caseimgbig from "../../images/caseimgbig.png"
 
 const Cases = () => {
   return (
-    <Flex width="100%">
+    <Flex width="100%" paddingAll="0px 49px">
       <Flex
         row
         width="100%"
