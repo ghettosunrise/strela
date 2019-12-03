@@ -53,6 +53,24 @@ const NewsContainer = () => {
           link="#"
           src={news2}
         ></News>
+        <News
+          size="mediumSmall"
+          title="Мы просто умеем развлекаться: Closer 6 лет"
+          link="#"
+          src={news2}
+        ></News>
+        <News
+          size="mediumSmall"
+          title="Мы просто умеем развлекаться: Closer 6 лет"
+          link="#"
+          src={news2}
+        ></News>
+        <News
+          size="mediumSmall"
+          title="Мы просто умеем развлекаться: Closer 6 лет"
+          link="#"
+          src={news2}
+        ></News>
       </Flex>
       <ButtonBig txt="Все новости"></ButtonBig>
     </Flex>

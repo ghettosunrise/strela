@@ -23,6 +23,7 @@ const AgencyHome = () => (
       title="I’m Jazz"
       subtitle="23-Окт, Closer"
       description="Пояснение основных моментов в пиаре собственного имени и проектов..."
+      link
     ></Banner>
     <Divider text="Написано нами" />
     <News></News>

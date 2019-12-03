@@ -5,6 +5,10 @@ const small = css`
   width: 23.6%;
 `
 
+const mediumSmall = css`
+  width: 32.3%;
+`
+
 const medium = css`
   width: 48.8%;
 `
@@ -21,6 +25,8 @@ export const MyNews = styled(Flex)`
       ? small
       : props.size === "medium"
       ? medium
+      : props.size === "mediumSmall"
+      ? mediumSmall
       : props.size === "big"
       ? big
       : null}

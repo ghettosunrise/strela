@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Flex paddingAll="46px 49px">
+      <Flex width="100%">
         <Header siteTitle={data.site.siteMetadata.title} />
 
         <main>{children}</main>
