@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 import Flex from "../../../styled/flex"
 import arrowdown from "../../../images/arrowdown.svg"
 
-const LinkDecor = css`
+export const LinkDecor = css`
   &::before {
     content: "";
     width: 170px;

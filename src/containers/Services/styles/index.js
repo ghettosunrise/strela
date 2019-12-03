@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import Button from "../../../components/Buttons/ButtonBig"
+import Flex from "../../../styled/flex"
+import { LinkDecor } from "../../../components/Banner/styles"
 
 export const NewButton = styled(Button)`
   a {
@@ -34,8 +36,42 @@ export const Txt = styled.p`
   text-transform: uppercase;
   color: #000000;
   margin-bottom: 40px;
+  cursor: pointer;
 
   &:last-child {
     margin-bottom: 0;
+  }
+`
+
+export const ServiceContent = styled(Flex)`
+  width: 79%;
+  padding: 56px 199px 195px 56px;
+  position: relative;
+  background: #fff;
+  ${LinkDecor};
+  overflow: hidden;
+`
+
+export const Title = styled.h2`
+  font-family: Neue Machina;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -0.07em;
+  margin-bottom: 61px;
+  color: #000000;
+`
+export const List = styled.ul`
+  font-family: Formular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.03em;
+  color: #000000;
+
+  li {
+    margin-bottom: 20px;
   }
 `
