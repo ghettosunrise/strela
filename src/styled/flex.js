@@ -42,6 +42,7 @@ const flex = css`
   ${fromProp("maxWidth", { make: "max-width" })};
   ${fromProp("fontSize", { make: "font-size" })};
   ${fromProp("content", { make: "align-content" })};
+  ${fromProp("alignSelf", { make: "align-self" })};
 `
 
 const Flex = styled.div`
