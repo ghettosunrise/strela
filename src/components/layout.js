@@ -12,6 +12,7 @@ import "../assets/layout.css"
 import Flex from "../styled/flex"
 import Header from "../containers/Header"
 import Footer from "../containers/Footer"
+import Contact from "../containers/ContactUs"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,7 +29,7 @@ const Layout = ({ children }) => {
     <>
       <Flex width="100%">
         <Header siteTitle={data.site.siteMetadata.title} />
-
+        <Contact />
         <main>{children}</main>
 
         <Footer></Footer>
