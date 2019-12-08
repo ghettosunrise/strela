@@ -9,7 +9,7 @@ import arrow from "../../../images/arrowdiv.svg"
 export const Contact = styled(Flex)`
   width: 52%;
   position: fixed;
-  right: 0;
+  right: ${({ isClosed }) => (isClosed ? "-52%" : 0)};
   top: 0;
   z-index: 5;
   height: 100vh;
@@ -17,6 +17,7 @@ export const Contact = styled(Flex)`
   padding-top: 5.4vh;
   padding-right: 51px;
   padding-left: 112px;
+  transition: right 0.4s ease;
 `
 export const Title = styled.p`
   font-family: Neue Machina;

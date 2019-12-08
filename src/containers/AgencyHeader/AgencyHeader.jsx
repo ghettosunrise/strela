@@ -13,7 +13,7 @@ const MainTitle = ({ txt }) => {
   return <S.MyMainTitle>{txt}</S.MyMainTitle>
 }
 
-const AgencyHeader = () => {
+const AgencyHeader = ({ isClosed, setIsClosed }) => {
   return (
     <Flex width="100%" paddingAll="46px 49px 0">
       <Flex
@@ -36,7 +36,7 @@ const AgencyHeader = () => {
         <Nav row></Nav>
         <Flex row align="center" maxWidth="323px" width="100%">
           <Social />
-          <ButtonBlack txt="Связаться" />
+          <ButtonBlack txt="Связаться" onClick={() => setIsClosed(false)} />
         </Flex>
       </Flex>
       <Flex maxWidth="1058px" width="100%" justify="space-between" row>

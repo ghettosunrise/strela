@@ -30,6 +30,13 @@ const NewsContainer = () => {
           src={news1}
         ></News>
         <News
+          size="medium"
+          title="There was a time when I had to prove to journalists that it’s not just another rave"
+          link="#"
+          src={news1}
+          extraLarge
+        ></News>
+        <News
           size="small"
           title="Мы просто умеем развлекаться: Closer 6 лет"
           link="#"

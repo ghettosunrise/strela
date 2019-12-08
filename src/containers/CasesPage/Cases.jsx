@@ -63,7 +63,6 @@ const Cases = () => {
           Timur Cleymoore
         </Case>
       </Flex>
-      <ButtonBig txt="Все кейсы"></ButtonBig>
     </Flex>
   )
 }

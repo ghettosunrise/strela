@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import * as S from "./styles"
 import Flex from "../../styled/flex"
 
-const ContactUs = () => {
+const ContactUs = ({ isClosed, setIsClosed }) => {
+  // const [isClosed, setIsClosed] = useState(false)
+
   return (
-    <S.Contact>
+    <S.Contact isClosed={isClosed}>
       <Flex width="100%" align="flex-end" marginBottom="16.7vh">
-        <S.Close></S.Close>
+        <S.Close onClick={() => setIsClosed(true)}></S.Close>
       </Flex>
       <S.Title>Контакты</S.Title>
       <S.SubTitle>Быстрый способ с нами связаться через :</S.SubTitle>

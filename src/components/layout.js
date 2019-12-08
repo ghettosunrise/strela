@@ -14,7 +14,7 @@ import Header from "../containers/Header"
 import Footer from "../containers/Footer"
 import Contact from "../containers/ContactUs"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, setIsClosed, isClosed }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,8 +28,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <Flex width="100%">
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Contact />
+        <Header
+          setIsClosed={setIsClosed}
+          siteTitle={data.site.siteMetadata.title}
+        />
+        <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
         <main>{children}</main>
 
         <Footer></Footer>

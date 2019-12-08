@@ -18,6 +18,11 @@ const big = css`
   flex-grow: 1;
 `
 
+const extraLargeTitle = css`
+  font-size: 48px;
+  line-height: 48px;
+`
+
 export const MyNews = styled(Flex)`
   margin-bottom: 60px;
   ${props =>
@@ -34,8 +39,8 @@ export const MyNews = styled(Flex)`
 
 export const Title = styled.h4`
   font-family: Neue Machina;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: ${props => (props.extraLarge ? "48px" : "24px")};
+  line-height: ${props => (props.extraLarge ? "48px" : "28px")};
   letter-spacing: -0.07em;
   margin-bottom: 10px;
   color: #000000;

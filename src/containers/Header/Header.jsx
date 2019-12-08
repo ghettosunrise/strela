@@ -9,7 +9,7 @@ import * as S from "./styles"
 import Arrow from "../../components/Icons"
 import ButtonBlack from "../../components/Buttons/ButtonBlack"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, setIsClosed }) => (
   <S.Header>
     <Flex
       row
@@ -31,7 +31,7 @@ const Header = ({ siteTitle }) => (
       <Nav row></Nav>
       <Flex row align="center" maxWidth="323px" width="100%">
         <Social />
-        <ButtonBlack txt="Связаться" />
+        <ButtonBlack txt="Связаться" onClick={() => setIsClosed(false)} />
       </Flex>
     </Flex>
   </S.Header>

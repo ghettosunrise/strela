@@ -9,7 +9,7 @@ const Case = props => {
       <Flex row>
         <Flex>
           <Link to="#">
-            <S.CaseLabel>{props.label}</S.CaseLabel>
+            <S.CaseLabel>{props.children}</S.CaseLabel>
             <S.CaseSublabel>{props.sublabel}</S.CaseSublabel>
           </Link>
         </Flex>
