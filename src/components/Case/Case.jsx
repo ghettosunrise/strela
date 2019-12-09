@@ -3,22 +3,22 @@ import Flex from "../../styled/flex"
 import * as S from "./styles"
 import { Link } from "gatsby"
 
-const Case = props => {
+const Case = ({ justify, size, children, sublabel, description, img }) => {
   return (
-    <S.StyledCase justify={props.justify} size={props.size}>
+    <S.StyledCase justify={justify} size={size}>
       <Flex row>
         <Flex>
-          <Link to="#">
-            <S.CaseLabel>{props.children}</S.CaseLabel>
-            <S.CaseSublabel>{props.sublabel}</S.CaseSublabel>
+          <Link to="/case">
+            <S.CaseLabel>{children}</S.CaseLabel>
+            <S.CaseSublabel>{sublabel}</S.CaseSublabel>
           </Link>
         </Flex>
-        {props.description ? (
-          <S.CaseDescription>{props.description}</S.CaseDescription>
+        {description ? (
+          <S.CaseDescription>{description}</S.CaseDescription>
         ) : null}
       </Flex>
-      <Link to="#">
-        <img src={props.img}></img>
+      <Link to="/case">
+        <img src={img}></img>
       </Link>
     </S.StyledCase>
   )

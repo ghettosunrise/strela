@@ -6,6 +6,8 @@ import mail from "../../../images/mail.svg"
 import close from "../../../images/close.svg"
 import arrow from "../../../images/arrowdiv.svg"
 
+export const 
+
 export const Contact = styled(Flex)`
   width: 52%;
   position: fixed;
@@ -19,6 +21,11 @@ export const Contact = styled(Flex)`
   padding-left: 112px;
   transition: right 0.4s ease;
 `
+
+export const Shadow = styled.div`
+  width: 48%;
+`
+
 export const Title = styled.p`
   font-family: Neue Machina;
   font-style: normal;
