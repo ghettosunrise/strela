@@ -8,7 +8,8 @@ export const DividerText = styled.h2`
   font-size: 48px;
   line-height: 48px;
   letter-spacing: -0.07em;
-  margin-bottom: 50px;
+  margin-bottom: 0;
+  max-width: 46%;
 `
 
 export const DividerArrow = styled.div`
@@ -19,5 +20,5 @@ export const DividerArrow = styled.div`
   background-position-x: 100%;
   margin-left: 34px;
   position: relative;
-  top: 17px;
+  bottom: 10px;
 `

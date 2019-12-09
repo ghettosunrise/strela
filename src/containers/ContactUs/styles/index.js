@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 import Flex from "../../../styled/flex"
 import tg from "../../../images/tg.svg"
 import fb from "../../../images/fb.svg"
@@ -6,24 +6,74 @@ import mail from "../../../images/mail.svg"
 import close from "../../../images/close.svg"
 import arrow from "../../../images/arrowdiv.svg"
 
-export const 
+const shadowOn = css`
+  background: #000;
+`
 
-export const Contact = styled(Flex)`
-  width: 52%;
+const shadowOff = css`
+  background: transparent;
+`
+
+export const ContactWrap = styled(Flex)`
   position: fixed;
-  right: ${({ isClosed }) => (isClosed ? "-52%" : 0)};
+  right: ${({ isClosed }) => (isClosed ? "-100%" : 0)};
   top: 0;
   z-index: 5;
   height: 100vh;
+  width: 100%;
+  transition: right 0.4s ease;
+  flex-direction: row;
+`
+
+export const Contact = styled(Flex)`
+  width: 52%;
+  /* position: fixed;
+  right: ${({ isClosed }) => (isClosed ? "-52%" : 0)};
+  top: 0;
+  z-index: 5;
+  height: 100vh; */
   background: #fff;
+  height: 100%;
   padding-top: 5.4vh;
   padding-right: 51px;
   padding-left: 112px;
-  transition: right 0.4s ease;
+  /* transition: right 0.4s ease; */
+`
+
+const fadeIn = keyframes`
+  0% {
+    background: transparent;
+  }
+  100% {
+    background: black;
+  }
+`
+
+const fadeOut = keyframes`
+  0% {
+   
+    background: black;
+  }
+  100% {
+    background: transparent;
+  }
+`
+
+const fadeInAnim = css`
+  animation: ${fadeIn} 0.4s 0.3s forwards;
+`
+
+const fadeOutAnim = css`
+  animation: ${fadeOut} 0s 0.3s forwards;
 `
 
 export const Shadow = styled.div`
   width: 48%;
+  height: 100%;
+  opacity: 0.3;
+  background: transparent;
+  ${({ isClosed }) => (isClosed ? fadeOutAnim : fadeInAnim)};
+  transition: all 0.4s ease;
 `
 
 export const Title = styled.p`
@@ -92,6 +142,7 @@ export const Close = styled.div`
   width: 17px;
   height: 17px;
   background-image: url(${close});
+  cursor: pointer;
 `
 
 export const Arrow = styled.div`
