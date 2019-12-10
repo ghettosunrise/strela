@@ -37,6 +37,37 @@ export const MyNews = styled(Flex)`
       : null}
 `
 
+export const Special = styled(Flex)`
+  width: 100%;
+
+  background-color: #000;
+  position: relative;
+  padding: 18px 18px 40px 14px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 110px;
+    background: #f3f2f1;
+    position: absolute;
+    left: -120px;
+    bottom: -60px;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 110px;
+    background: #f3f2f1;
+    position: absolute;
+    right: -120px;
+    top: -60px;
+    transform: rotate(45deg);
+  }
+`
+
 export const Title = styled.h4`
   font-family: Neue Machina;
   font-size: ${props => (props.extraLarge ? "48px" : "24px")};
@@ -64,4 +95,26 @@ export const Date = styled.p`
   text-transform: uppercase;
   color: #000000;
   opacity: 0.5;
+`
+
+export const SpecialTitle = styled.p`
+  font-family: Neue Machina;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.07em;
+  color: #ffffff;
+  padding-left: 40px;
+`
+
+export const SpecialDate = styled.p`
+  font-family: Neue Machina;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.07em;
+  color: #ffffff;
+  padding-left: 40%;
 `

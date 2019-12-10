@@ -54,12 +54,7 @@ const NewsContainer = () => {
           link="#"
           src={news2}
         ></News>
-        <News
-          size="small"
-          title="Мы просто умеем развлекаться: Closer 6 лет"
-          link="#"
-          src={news2}
-        ></News>
+        <News special size="small" title="MyTitle" link="#" src={news2}></News>
         <News
           size="mediumSmall"
           title="Мы просто умеем развлекаться: Closer 6 лет"
