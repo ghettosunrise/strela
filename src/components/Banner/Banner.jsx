@@ -1,11 +1,30 @@
 import React from "react"
 import Flex from "../../styled/flex"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import * as S from "./styles"
 import pic from "../../images/bannerpic.png"
 import casepic from "../../images/opencaseimg.png"
 
 const Banner = ({ title, subtitle, description, link, news, cases }) => {
+  const bannerData = useStaticQuery(graphql`
+    query Banner {
+      allContentfulBanner {
+        nodes {
+          image {
+            file {
+              url
+            }
+            description
+          }
+          title
+          subtitle
+        }
+      }
+    }
+  `)
+
+  // const x
+
   return (
     <Flex width="100%" paddingAll="0px 49px">
       {link ? (

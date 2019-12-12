@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-// import { Link } from "gatsby"
+import { graphql } from "gatsby"
 import AgencyHeader from "../../containers/AgencyHeader"
 import Flex from "../../styled/flex"
 import Divider from "../../components/Divider"
@@ -33,7 +33,7 @@ const AgencyHome = () => {
         link
       ></Banner>
       <Divider text="Написано нами" />
-      <News></News>
+      <News />
       <Footer></Footer>
     </Flex>
   )

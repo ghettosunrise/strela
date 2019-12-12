@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Case from "../../components/Case"
 import Flex from "../../styled/flex"
 import ButtonBig from "../../components/Buttons/ButtonBig"
@@ -7,6 +8,23 @@ import caseimgmedium from "../../images/caseimgmedium.png"
 import caseimgbig from "../../images/caseimgbig.png"
 
 const Cases = () => {
+  const caseData = useStaticQuery(graphql`
+    query Case {
+      allContentfulCase {
+        nodes {
+          id
+          size
+          title
+          subtitle
+          image {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <Flex width="100%" paddingAll="0px 49px">
       <Flex
@@ -16,7 +34,35 @@ const Cases = () => {
         align="stretch"
         wrap="wrap"
       >
-        <Case
+        {caseData.allContentfulCase.nodes.map(
+          ({
+            id,
+            size,
+            title,
+            subtitle,
+            image: {
+              file: { url },
+            },
+          }) => (
+            <Case
+              id={id}
+              img={url}
+              size={size}
+              label={title}
+              sublabel={subtitle}
+              content="stretch"
+            />
+          )
+        )}
+      </Flex>
+      <ButtonBig txt="Все кейсы"></ButtonBig>
+    </Flex>
+  )
+}
+
+export default Cases
+
+/* /* <Case
           size="small"
           sublabel="Артисты"
           img={caseimgsmall}
@@ -61,11 +107,4 @@ const Cases = () => {
         </Case>
         <Case size="small" img={caseimgsmall}>
           Timur Cleymoore
-        </Case>
-      </Flex>
-      <ButtonBig txt="Все кейсы"></ButtonBig>
-    </Flex>
-  )
-}
-
-export default Cases
+        </Case> */

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import Contact from "../../containers/ContactUs"
 import Layout from "../../components/layout"
-
+import NewsPage from "../../containers/NewsPageContainer"
 import SEO from "../../components/seo"
 
 const News = () => {
@@ -12,8 +12,7 @@ const News = () => {
     <Layout isClosed={isClosed} setIsClosed={setIsClosed}>
       <SEO title="News" />
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
-      <h1>News</h1>
-      <Link to="/..">Prev</Link>
+      <NewsPage></NewsPage>
     </Layout>
   )
 }

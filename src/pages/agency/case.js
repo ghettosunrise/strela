@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import qs from "query-string"
 
 import Layout from "../../components/layout"
 import Contact from "../../containers/ContactUs"
@@ -9,7 +10,29 @@ import CaseInfo from "../../containers/CaseInfo"
 import Divider from "../../components/Divider"
 import News from "../../containers/CasesNews"
 
-const Case = () => {
+const Case = ({ location }) => {
+  console.log(location.search)
+
+  const { caseId } = qs.parse(location.search)
+
+  const data = useStaticQuery(
+    graphql`
+      query FullCase($id: StringQueryOperatorInput) {
+        contentfulCase(id: $id) {
+          title
+          subtitle
+        }
+      }
+    `,
+    {
+      variables: {
+        id: caseId,
+      },
+    }
+  )
+
+  console.log(data)
+
   const [isClosed, setIsClosed] = useState(true)
   return (
     <Layout isClosed={isClosed} setIsClosed={setIsClosed}>
