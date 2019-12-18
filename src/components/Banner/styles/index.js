@@ -90,6 +90,7 @@ export const NewsBanner = styled(Flex)`
   flex-direction: row;
   margin-bottom: 100px;
   ${OtherDecor}
+  overflow: hidden;
 `
 
 export const CaseBanner = styled(Flex)`
@@ -100,6 +101,7 @@ export const CaseBanner = styled(Flex)`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 87px;
+  overflow: hidden;
 
   img {
     max-width: 476px;

@@ -1,16 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import Flex from "../../styled/flex"
 import Layout from "../../components/layout"
-
+import Artists from "../../containers/Artists"
 import SEO from "../../components/seo"
 
 const BookingHome = () => (
-  <div>
+  <Flex width="100%">
     <SEO title="Home" />
-    <h1>Booking</h1>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
+    <Artists />
+  </Flex>
 )
 
 export default BookingHome

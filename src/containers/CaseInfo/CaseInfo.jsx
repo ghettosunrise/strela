@@ -11,6 +11,8 @@ const CaseInfo = ({
   textSecond,
   imgDesc1,
   imgDesc2,
+  imgSrc1,
+  imgSrc2,
 }) => {
   return (
     <Flex width="100%" paddingAll="0 49px">
@@ -19,14 +21,14 @@ const CaseInfo = ({
         <S.Title>{titleFirst}</S.Title>
       </S.TxtContainer>
       <Flex width="100%" justify="space-between" row>
-        <Flex shrink="1" marginRight="1%">
-          <img src={src1} alt={imgDesc1}></img>
+        <S.ImgWrap shrink="1" marginRight="1%">
+          <img src={imgSrc1} alt={imgDesc1}></img>
           <S.ImgDesc>{imgDesc1}</S.ImgDesc>
-        </Flex>
-        <Flex shrink="1">
-          <img src={src2} alt={imgDesc2}></img>
+        </S.ImgWrap>
+        <S.ImgWrap shrink="1">
+          <img src={imgSrc2} alt={imgDesc2}></img>
           <S.ImgDesc>{imgDesc2}</S.ImgDesc>
-        </Flex>
+        </S.ImgWrap>
       </Flex>
       <S.TxtContainer>
         <S.Title>{titleSecond}</S.Title>

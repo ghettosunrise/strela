@@ -21,6 +21,23 @@ const Case = ({ location }) => {
         contentfulCase(id: $id) {
           title
           subtitle
+          selectedText
+          secondImageDescription
+          firstImageDescription
+          caseAdditionalImages {
+            fluid {
+              src
+            }
+          }
+          caseDescription {
+            caseDescription
+          }
+          bannerDescription {
+            bannerDescription
+          }
+          whatWeDoText {
+            whatWeDoText
+          }
         }
       }
     `,
@@ -39,14 +56,18 @@ const Case = ({ location }) => {
       <SEO title="Case" />
       <Banner
         cases
-        title="Сloser"
-        description="Как организатор Closer является одним из самых известных среди мировых электронных букингов"
+        title={data.contentfulCase.title}
+        description={data.contentfulCase.bannerDescription.bannerDescription}
       />
       <CaseInfo
-        titleFirst="Closer является одним из самых известных среди мировых электронных букингов."
-        textFirst="Как организатор Closer является одним из самых известных среди мировых электронных букингов. На вечеринках и фестивалях Closer играют и легендарные артисты как Moodymann, Lil Louis, Laurent Garnier, Ricardo Villalobos, и самые успешные продюсеры, диджеи и музыкальные лейблы новой волны, например, Jane Fitz, Dj Masda, Apollonia, Giegling и другие."
-        textSecond="Как организатор Closer является одним из самых известных среди мировых электронных букингов. На вечеринках и фестивалях Closer играют и легендарные артисты как Moodymann, Lil Louis, Laurent Garnier, Ricardo Villalobos, и самые успешные продюсеры, диджеи и музыкальные лейблы новой волны, например, Jane Fitz, Dj Masda, Apollonia, Giegling и другие."
+        titleFirst={data.contentfulCase.selectedText}
+        textFirst={data.contentfulCase.caseDescription.caseDescription}
+        textSecond={data.contentfulCase.whatWeDoText.whatWeDoText}
         titleSecond="Что мы сделали"
+        imgDesc1={data.contentfulCase.firstImageDescription}
+        imgDesc2={data.contentfulCase.secondImageDescription}
+        imgSrc1={data.contentfulCase.caseAdditionalImages[0].fluid.src}
+        imgSrc2={data.contentfulCase.caseAdditionalImages[1].fluid.src}
       />
       <Divider text="Актуальные материалы о вечеринках Closer, к которым мы приложили руку"></Divider>
       <News />

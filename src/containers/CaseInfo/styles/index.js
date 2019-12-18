@@ -39,3 +39,8 @@ export const ImgDesc = styled.p`
   color: #000000;
   opacity: 0.5;
 `
+export const ImgWrap = styled(Flex)`
+  img {
+    margin-bottom: 10px;
+  }
+`
