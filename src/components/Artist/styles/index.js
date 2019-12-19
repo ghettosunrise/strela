@@ -1,8 +1,48 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import Flex from "../../../styled/flex"
 import arrow from "../../../images/arrowblue.svg"
 import copy from "../../../images/copylink.svg"
 import fb from "../../../images/exportfb.svg"
+
+const hoverStyle = css`
+  img {
+    opacity: 0;
+    transition: 0.3s ease all;
+  }
+
+  ${ArrowWrap} {
+    opacity: 0;
+  }
+
+  &:hover {
+    img {
+      opacity: 1;
+      transition: 0.3s ease all;
+    }
+
+    ${ArrowWrap} {
+      opacity: 1;
+    }
+  }
+`
+
+export const ArrowWrap = styled(Flex)`
+  transition: 0.3s ease all;
+  opacity: 1;
+`
+
+export const ArtistWrapper = styled(Flex)`
+  transition: 0.3s ease all;
+
+  ${props => (props.isHidden === 1 ? hoverStyle : null)}
+`
+
+export const ArtistContent = styled(Flex)`
+  width: 100%;
+  flex-shrink: 1;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 60px;
+`
 
 export const ArtistWrap = styled(Flex)`
   width: 100%;
@@ -30,7 +70,7 @@ export const DecriptionFirts = styled.p`
   letter-spacing: -0.03em;
 
   color: #000000;
-
+  margin-bottom: 30px;
   opacity: 0.7;
 `
 
@@ -98,6 +138,9 @@ export const Arrow = styled.div`
   height: 24px;
   background-image: url(${arrow});
   margin-right: 12px;
+
+  transform: ${props =>
+    props.isHidden === 1 ? "rotate(180deg)" : "rotate(0deg)"};
 `
 
 export const CloseTxt = styled.p`
@@ -159,4 +202,14 @@ export const Fb = styled.div`
   height: 34px;
   background-image: url(${fb});
   cursor: pointer;
+`
+
+export const Title = styled.h2`
+  font-family: Neue Machina;
+  font-size: 48px;
+  line-height: 48px;
+  margin-bottom: 50px;
+  letter-spacing: -0.07em;
+  font-weight: normal;
+  color: #000000;
 `

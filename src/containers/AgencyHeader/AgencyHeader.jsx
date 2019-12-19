@@ -33,7 +33,7 @@ const AgencyHeader = ({ isClosed, setIsClosed }) => {
           <Link to="/"></Link>
           <Arrow direction="R" />
         </H.HeaderLogoWrap>
-        <Nav row></Nav>
+        <Nav agency row></Nav>
         <Flex row align="center" maxWidth="323px" width="100%">
           <Social />
           <ButtonBlack txt="Связаться" onClick={() => setIsClosed(false)} />
@@ -41,7 +41,7 @@ const AgencyHeader = ({ isClosed, setIsClosed }) => {
       </Flex>
       <Flex maxWidth="1058px" width="100%" justify="space-between" row>
         <Flex>
-          <Nav column space="20"></Nav>
+          <Nav agency column space="20"></Nav>
           <Social></Social>
         </Flex>
         <MainTitle txt="Мы PR агенство, которое поможет узнать тебя во всем мире!" />

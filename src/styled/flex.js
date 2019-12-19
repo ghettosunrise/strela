@@ -47,6 +47,10 @@ const flex = css`
 
 const Flex = styled.div`
   ${flex}
+
+  .ticker {
+    width: 100%;
+  }
 `
 
 export const MainPageWrap = styled(Flex)`

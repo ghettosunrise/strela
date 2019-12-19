@@ -18,3 +18,7 @@ export const TopNav = styled(Flex)`
     }
   }
 `
+export const NavWrap = styled(Flex)`
+  max-width: ${props => (props.agency ? "507px" : "270px")};
+  width: 100%;
+`

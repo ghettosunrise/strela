@@ -28,7 +28,7 @@ const Header = ({ siteTitle, setIsClosed }) => (
         <Link to="/"></Link>
         <Arrow direction="R" />
       </H.HeaderLogoWrap>
-      <Nav row></Nav>
+      <Nav agency row></Nav>
       <Flex row align="center" maxWidth="323px" width="100%">
         <Social />
         <ButtonBlack txt="Связаться" onClick={() => setIsClosed(false)} />
