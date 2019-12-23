@@ -1,10 +1,10 @@
 import React from "react"
 import * as S from "./styles"
 
-const ButtonTransparent = () => {
+const ButtonTransparent = ({ size, disabled, onClick, txt }) => {
   return (
-    <S.Button>
-      Booking form <span></span>
+    <S.Button size={size} disabled={disabled} onClick={onClick}>
+      {txt} <span></span>
     </S.Button>
   )
 }

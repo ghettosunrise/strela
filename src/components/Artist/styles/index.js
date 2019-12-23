@@ -4,6 +4,17 @@ import arrow from "../../../images/arrowblue.svg"
 import copy from "../../../images/copylink.svg"
 import fb from "../../../images/exportfb.svg"
 
+export const ArtistWrapper = styled(Flex)`
+  transition: 0.3s ease all;
+
+  ${props => (props.isHidden === 1 ? hoverStyle : null)}
+`
+
+export const ArrowWrap = styled(Flex)`
+  transition: 0.3s ease all;
+  opacity: 1;
+`
+
 const hoverStyle = css`
   img {
     opacity: 0;
@@ -24,17 +35,6 @@ const hoverStyle = css`
       opacity: 1;
     }
   }
-`
-
-export const ArrowWrap = styled(Flex)`
-  transition: 0.3s ease all;
-  opacity: 1;
-`
-
-export const ArtistWrapper = styled(Flex)`
-  transition: 0.3s ease all;
-
-  ${props => (props.isHidden === 1 ? hoverStyle : null)}
 `
 
 export const ArtistContent = styled(Flex)`

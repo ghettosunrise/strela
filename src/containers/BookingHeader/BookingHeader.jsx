@@ -10,7 +10,7 @@ import Ticker from "../../components/Ticker"
 
 import logo from "../../images/bookinglogo.svg"
 
-const BookingHeader = () => {
+const BookingHeader = ({ isClosed, setIsClosed }) => {
   return (
     <Flex width="100%">
       <S.HeaderWrap>
@@ -32,7 +32,7 @@ const BookingHeader = () => {
           </H.HeaderLogoWrap>
           <Nav row />
         </Flex>
-        <Button />
+        <Button txt="Booking Form" onClick={() => setIsClosed(false)} />
       </S.HeaderWrap>
       <Ticker />
       <Flex width="100%" paddingAll="90px 49px 0" row>

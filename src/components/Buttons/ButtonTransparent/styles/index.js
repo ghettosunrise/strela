@@ -1,9 +1,10 @@
 import styled from "styled-components"
 import btn from "../../../../images/buttonwhite.svg"
+import btnsmol from "../../../../images/buttontrsmol.svg"
 import arr from "../../../../images/arrowrbl.svg"
 
 export const Button = styled.button`
-  width: 235.59px;
+  width: ${props => (props.size === "small" ? "166.59px" : "235.59px")};
   height: 56.5px;
   display: flex;
   justify-content: center;
@@ -13,7 +14,7 @@ export const Button = styled.button`
   line-height: 100%;
   background: transparent;
   border: none;
-  background-image: url(${btn});
+  background-image: url(${props => (props.size === "small" ? btnsmol : btn)});
   background-repeat: no-repeat;
   background-size: 100%;
   outline: none;
@@ -26,5 +27,6 @@ export const Button = styled.button`
     height: 19px;
     background-image: url(${arr});
     margin-left: 11px;
+    bottom: 0px !important;
   }
 `

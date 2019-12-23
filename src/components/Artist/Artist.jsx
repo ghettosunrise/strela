@@ -32,7 +32,7 @@ const Artist = ({
         </Flex>
         <S.ArtistContent>
           <Flex width="100%" isHidden={isHidden}>
-            <S.ArtistTitle>{title}</S.ArtistTitle>
+            <S.ArtistTitle>{title || "Artist name"}</S.ArtistTitle>
             <S.DecriptionFirts>{desc1}</S.DecriptionFirts>
 
             {isHidden === 0 ? (
