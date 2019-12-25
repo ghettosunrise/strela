@@ -20,7 +20,7 @@ const Footer = () => (
       <F.HeaderLogoWrap maxWidth="94px">
         <Link to="/"></Link>
       </F.HeaderLogoWrap>
-      <Nav row></Nav>
+      <Nav agency row></Nav>
       <Social />
       <Flex top="7px">
         <S.FooLink href="tel:+32323232323">+46 8 791 40 10</S.FooLink>

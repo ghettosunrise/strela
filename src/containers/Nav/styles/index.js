@@ -2,7 +2,8 @@ import styled from "styled-components"
 import Flex from "../../../styled/flex"
 
 export const TopNav = styled(Flex)`
-  a {
+  a,
+  span {
     font-family: Formular;
     font-style: normal;
     font-weight: bold;
@@ -10,6 +11,7 @@ export const TopNav = styled(Flex)`
     line-height: 16px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    cursor: pointer;
     color: #000000;
     margin-bottom: ${props => props.space + "px"};
 

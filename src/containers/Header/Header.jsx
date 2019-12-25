@@ -11,13 +11,7 @@ import ButtonBlack from "../../components/Buttons/ButtonBlack"
 
 const Header = ({ siteTitle, setIsClosed }) => (
   <S.Header>
-    <Flex
-      row
-      justify="space-between"
-      align="center"
-      width="100%"
-      marginBottom="65px"
-    >
+    <Flex row justify="space-between" align="center" width="100%">
       <H.HeaderLogoWrap
         maxWidth="219px"
         row

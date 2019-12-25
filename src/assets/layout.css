@@ -62,6 +62,10 @@ main {
   width: 100%;
 }
 
+main {
+  padding-top: 158px;
+}
+
 article,
 aside,
 details,

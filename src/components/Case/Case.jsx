@@ -17,7 +17,7 @@ const Case = ({ id, justify, size, label, sublabel, description, img }) => {
           <S.CaseDescription>{description}</S.CaseDescription>
         ) : null}
       </Flex>
-      <Link to={`agency/case?caseId=${id}`}>
+      <Link to={`/case/${id}`}>
         <img src={img}></img>
       </Link>
     </S.StyledCase>

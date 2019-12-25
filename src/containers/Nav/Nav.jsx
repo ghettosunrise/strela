@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import scrollTo from "gatsby-plugin-smoothscroll"
 import * as S from "./styles"
 
 const Nav = ({ row, column, space, agency }) => {
@@ -29,9 +29,13 @@ const Nav = ({ row, column, space, agency }) => {
           justify="space-between"
           space={space}
         >
-          <Link to="/booking/#artists">Artists</Link>
-          <Link to="/booking/#news">News</Link>
-          <Link to="/booking/#about">About Us</Link>
+          <span onClick={() => scrollTo("#artists")}>Artists</span>
+          <span onClick={() => scrollTo("#news")} to="/booking/#news">
+            News
+          </span>
+          <span onClick={() => scrollTo("#about")} to="/booking/#about">
+            About Us
+          </span>
         </S.TopNav>
       )}
     </S.NavWrap>

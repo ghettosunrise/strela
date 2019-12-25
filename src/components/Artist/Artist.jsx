@@ -9,116 +9,124 @@ const Artist = ({
   desc1,
   desc2,
   desc3,
+  desc1Ru,
+  desc2Ru,
+  desc3Ru,
   title,
-  eventCity,
-  eventClub,
-  eventDate,
-  eventName,
+  imgMain,
+  imgLogo,
+  fbLink,
+  igLink,
+  raLink,
+  scLink,
+  scTrack,
 }) => {
   const [isHidden, setIsHidden] = useState(1)
-  const [isEnglish, setIsEnglish] = useState(0)
+  const [isEnglish, setIsEnglish] = useState(true)
 
   return (
-    <Flex width="100%" paddingBottom="140px" background="#FFF">
-      <S.Title id="artists">Artists</S.Title>
-      <S.ArtistWrapper
-        row
-        width="100%"
-        justify="space-between"
-        isHidden={isHidden}
-      >
-        <Flex marginRight="2.6%">
-          <img src={img1sm}></img>
+    <S.ArtistWrapper
+      row
+      width="100%"
+      justify="space-between"
+      isHidden={isHidden}
+      marginTop="60px"
+    >
+      <Flex marginRight="2.6%">
+        <img src={imgLogo}></img>
+      </Flex>
+      <S.ArtistContent>
+        <Flex width="100%" isHidden={isHidden}>
+          <S.ArtistTitle>{title || "Artist name"}</S.ArtistTitle>
+          <S.DecriptionFirts>{isEnglish ? desc1 : desc1Ru}</S.DecriptionFirts>
+
+          {isHidden === 0 ? (
+            <>
+              <img src={imgMain}></img>
+            </>
+          ) : null}
         </Flex>
-        <S.ArtistContent>
-          <Flex width="100%" isHidden={isHidden}>
-            <S.ArtistTitle>{title || "Artist name"}</S.ArtistTitle>
-            <S.DecriptionFirts>{desc1}</S.DecriptionFirts>
+        <Flex width="100%" row justify="space-between" isHidden={isHidden}>
+          {isHidden === 0 ? (
+            <>
+              <Flex width="64%">
+                <S.DescriptionSecond>
+                  {isEnglish ? desc2 : desc2Ru}
+                </S.DescriptionSecond>
+                <S.DescriptionThird>
+                  {isEnglish ? desc3 : desc3Ru}
+                </S.DescriptionThird>
+              </Flex>
+              <Sidebar></Sidebar>
+            </>
+          ) : null}
+        </Flex>
+        <>
+          {isHidden === 0 ? (
+            <>
+              <iframe
+                width="100%"
+                height="166"
+                scrolling="no"
+                isHidden={isHidden}
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/728599840&color=%232403a6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+              ></iframe>
+            </>
+          ) : null}
+        </>
 
-            {isHidden === 0 ? (
-              <>
-                <img src={img1}></img>
-              </>
-            ) : null}
-          </Flex>
-          <Flex width="100%" row justify="space-between" isHidden={isHidden}>
-            {isHidden === 0 ? (
-              <>
-                <Flex width="64%">
-                  <S.DescriptionSecond>{desc2}</S.DescriptionSecond>
-                  <S.DescriptionThird>{desc3}</S.DescriptionThird>
-                </Flex>
-                <Sidebar></Sidebar>
-              </>
-            ) : null}
-          </Flex>
-          <>
-            {isHidden === 0 ? (
-              <>
-                <iframe
-                  width="100%"
-                  height="166"
-                  scrolling="no"
-                  isHidden={isHidden}
-                  frameborder="no"
-                  allow="autoplay"
-                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/728599840&color=%232403a6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-                ></iframe>
-              </>
-            ) : null}
-          </>
-
-          <Flex width="100%" isHidden={isHidden}>
-            {isHidden === 0 ? (
-              <>
-                {" "}
-                <S.Upcoming>Upcoming events</S.Upcoming>
-                <Flex width="100%" row justify="space-between">
-                  <Event
-                    date={eventDate}
-                    city={eventCity}
-                    name={eventName}
-                    club={eventClub}
-                  />
-                  <Event
-                    date="Thu, 31 Oct 2019"
-                    city="Vienna(AU)"
-                    name="Criminal Practice - Halloween"
-                    club="Grelle Forelle"
-                  />
-                  <Event
-                    date="Thu, 31 Oct 2019"
-                    city="Vienna(AU)"
-                    name="Criminal Practice - Halloween"
-                    club="Grelle Forelle"
-                  />
-                  <Event
-                    date="Thu, 31 Oct 2019"
-                    city="Vienna(AU)"
-                    name="Criminal Practice - Halloween"
-                    club="Grelle Forelle"
-                  />
-                </Flex>
-              </>
-            ) : null}
-          </Flex>
-          <S.ArrowWrap
-            row
-            align="center"
-            justify="center"
-            width="auto"
-            isHidden={isHidden}
-          >
-            <S.Arrow isHidden={isHidden} />
-            {isHidden === 1 ? (
-              <S.CloseTxt onClick={() => setIsHidden(0)}>Read More</S.CloseTxt>
-            ) : (
-              <S.CloseTxt onClick={() => setIsHidden(1)}>Close</S.CloseTxt>
-            )}
-          </S.ArrowWrap>
-        </S.ArtistContent>
-      </S.ArtistWrapper>
-    </Flex>
+        {/* <Flex width="100%" isHidden={isHidden}>
+          {isHidden === 0 ? (
+            <>
+              {" "}
+              <S.Upcoming>Upcoming events</S.Upcoming>
+              <Flex width="100%" row justify="space-between">
+                <Event
+                  date={eventDate}
+                  city={eventCity}
+                  name={eventName}
+                  club={eventClub}
+                />
+                <Event
+                  date="Thu, 31 Oct 2019"
+                  city="Vienna(AU)"
+                  name="Criminal Practice - Halloween"
+                  club="Grelle Forelle"
+                />
+                <Event
+                  date="Thu, 31 Oct 2019"
+                  city="Vienna(AU)"
+                  name="Criminal Practice - Halloween"
+                  club="Grelle Forelle"
+                />
+                <Event
+                  date="Thu, 31 Oct 2019"
+                  city="Vienna(AU)"
+                  name="Criminal Practice - Halloween"
+                  club="Grelle Forelle"
+                />
+              </Flex>
+            </>
+          ) : null}
+        </Flex> */}
+        <S.ArrowWrap
+          row
+          align="center"
+          justify="center"
+          width="auto"
+          isHidden={isHidden}
+        >
+          <S.Arrow isHidden={isHidden} />
+          {isHidden === 1 ? (
+            <S.CloseTxt onClick={() => setIsHidden(0)}>Read More</S.CloseTxt>
+          ) : (
+            <S.CloseTxt onClick={() => setIsHidden(1)}>Close</S.CloseTxt>
+          )}
+        </S.ArrowWrap>
+      </S.ArtistContent>
+    </S.ArtistWrapper>
   )
 }
 
@@ -150,21 +158,29 @@ const Iframe = ({ isHidden }) => {
   )
 }
 
-const Sidebar = ({ isHidden, isEnglish, setIsEnglish }) => {
+const Sidebar = ({
+  isHidden,
+  isEnglish,
+  setIsEnglish,
+  igLink,
+  fbLink,
+  raLink,
+  scLink,
+}) => {
   return (
     <S.Sidebar isHidden={isHidden}>
       <p>Translate to</p>
       <Flex row width="72px" marginBottom="30px" justify="space-between">
         <S.Translate
           onClick={() => {
-            setIsEnglish(0)
+            setIsEnglish(true)
           }}
         >
           eng
         </S.Translate>
         <S.Translate
           onClick={() => {
-            setIsEnglish(1)
+            setIsEnglish(false)
           }}
         >
           ru
@@ -172,10 +188,10 @@ const Sidebar = ({ isHidden, isEnglish, setIsEnglish }) => {
       </Flex>
       <p>In social media</p>
       <Flex width="100%" marginBottom="30px" row justify="space-between">
-        <S.Link href="#">FB</S.Link>
-        <S.Link href="#">IG</S.Link>
-        <S.Link href="#">RA</S.Link>
-        <S.Link href="#">SOUNDCLOUD</S.Link>
+        <S.Link href={fbLink}>FB</S.Link>
+        <S.Link href={igLink}>IG</S.Link>
+        <S.Link href={raLink}>RA</S.Link>
+        <S.Link href={scLink}>SOUNDCLOUD</S.Link>
       </Flex>
       <p>share with</p>
       <Flex width="93px" marginBottom="30px" row justify="space-between">

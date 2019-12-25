@@ -2,55 +2,17 @@ import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import qs from "query-string"
 
-import Layout from "../../components/layout"
-import Contact from "../../containers/ContactUs"
-import SEO from "../../components/seo"
-import Banner from "../../components/Banner"
-import CaseInfo from "../../containers/CaseInfo"
-import Divider from "../../components/Divider"
-import News from "../../containers/CasesNews"
+import Layout from "../components/layout"
+import Contact from "../containers/ContactUs"
+import SEO from "../components/seo"
+import Banner from "../components/Banner"
+import CaseInfo from "../containers/CaseInfo"
+import Divider from "../components/Divider"
+import News from "../containers/CasesNews"
 
-const Case = ({ location }) => {
-  console.log(location.search)
-
-  const { caseId } = qs.parse(location.search)
-
-  const data = useStaticQuery(
-    graphql`
-      query FullCase($id: StringQueryOperatorInput) {
-        contentfulCase(id: $id) {
-          title
-          subtitle
-          selectedText
-          secondImageDescription
-          firstImageDescription
-          caseAdditionalImages {
-            fluid {
-              src
-            }
-          }
-          caseDescription {
-            caseDescription
-          }
-          bannerDescription {
-            bannerDescription
-          }
-          whatWeDoText {
-            whatWeDoText
-          }
-        }
-      }
-    `,
-    {
-      variables: {
-        id: caseId,
-      },
-    }
-  )
-
-  console.log(data)
-
+const Case = ({ data }) => {
   const [isClosed, setIsClosed] = useState(true)
+
   return (
     <Layout isClosed={isClosed} setIsClosed={setIsClosed}>
       <SEO title="Case" />
@@ -74,5 +36,32 @@ const Case = ({ location }) => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query FullCase($id: String) {
+    contentfulCase(id: { eq: $id }) {
+      id
+      title
+      subtitle
+      selectedText
+      secondImageDescription
+      firstImageDescription
+      caseAdditionalImages {
+        fluid {
+          src
+        }
+      }
+      caseDescription {
+        caseDescription
+      }
+      bannerDescription {
+        bannerDescription
+      }
+      whatWeDoText {
+        whatWeDoText
+      }
+    }
+  }
+`
 
 export default Case
