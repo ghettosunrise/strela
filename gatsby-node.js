@@ -28,6 +28,7 @@ exports.createPages = async function({ actions, graphql }) {
       path: `/agency/case/${id}`,
       component: require.resolve(`./src/templates/case.js`),
       context: { id },
+      key: { id },
     })
   })
 }

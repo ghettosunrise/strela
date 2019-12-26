@@ -13,6 +13,7 @@ const NewsContainer = () => {
     query News {
       allContentfulNews {
         nodes {
+          id
           size
           date
           title
@@ -40,6 +41,7 @@ const NewsContainer = () => {
       >
         {data.allContentfulNews.nodes.map(
           ({
+            id,
             size,
             title,
             date,
@@ -51,6 +53,7 @@ const NewsContainer = () => {
             },
           }) => (
             <News
+              key={id}
               size={size}
               title={title}
               link={link}

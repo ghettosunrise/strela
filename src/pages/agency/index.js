@@ -34,7 +34,7 @@ const AgencyHome = () => {
       ></Banner>
       <Divider text="Написано нами" />
       <News />
-      <Footer></Footer>
+      <Footer agency="true"></Footer>
     </Flex>
   )
 }

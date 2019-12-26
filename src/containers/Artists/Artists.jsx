@@ -3,6 +3,7 @@ import Artist from "../../components/Artist"
 import Flex from "../../styled/flex"
 import * as S from "./styles"
 import { useStaticQuery, graphql } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const Artists = () => {
   const artistData = useStaticQuery(graphql`
@@ -14,6 +15,11 @@ const Artists = () => {
           artistPicture {
             fluid {
               src
+            }
+          }
+          pressKit {
+            file {
+              url
             }
           }
           artistText1 {
@@ -36,6 +42,9 @@ const Artists = () => {
           }
           facebookLink
           igLink
+          soundCloudTrackLinks {
+            soundCloudTrackLinks
+          }
           raLink
           scLink
           artistLogo {
@@ -73,6 +82,8 @@ const Artists = () => {
             facebookLink,
             igLink,
             raLink,
+            pressKit,
+            soundCloudTrackLinks: { soundCloudTrackLinks },
             scLink,
             artistText1: { artistText1 },
             artistText2: { artistText2 },
@@ -82,18 +93,22 @@ const Artists = () => {
             artistText3Ru: { artistText3Ru },
           }) => (
             <Artist
-              desc1={artistText1.artistText1}
-              desc2={artistText2.artistText2}
-              desc3={artistText3.artistText3}
-              desc1Ru={artistText1Ru.artistText1Ru}
-              desc2Ru={artistText2Ru.artistText2Ru}
-              desc3Ru={artistText3Ru.artistText3Ru}
+              key={id}
+              desc1={artistText1}
+              desc2={artistText2}
+              desc3={artistText3}
+              desc1Ru={artistText1Ru}
+              desc2Ru={artistText2Ru}
+              desc3Ru={artistText3Ru}
               fbLink={facebookLink}
               igLink={igLink}
               raLink={raLink}
               scLink={scLink}
               title={artistName}
               imgMain={artistPicture?.fluid?.src}
+              imgLogo={artistLogo?.fluid?.src}
+              pressKit={pressKit?.file?.url}
+              scTrack={soundCloudTrackLinks}
             />
           )
         )}

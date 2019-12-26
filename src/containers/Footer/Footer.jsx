@@ -8,7 +8,7 @@ import Nav from "../Nav"
 import { Link } from "gatsby"
 import * as S from "./styles"
 
-const Footer = () => (
+const Footer = ({ agency, booking }) => (
   <S.Footer>
     <Flex
       row
@@ -20,7 +20,7 @@ const Footer = () => (
       <F.HeaderLogoWrap maxWidth="94px">
         <Link to="/"></Link>
       </F.HeaderLogoWrap>
-      <Nav agency row></Nav>
+      <Nav agency={agency} booking={booking} row></Nav>
       <Social />
       <Flex top="7px">
         <S.FooLink href="tel:+32323232323">+46 8 791 40 10</S.FooLink>

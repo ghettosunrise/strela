@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react"
 import Flex from "../../styled/flex"
 import * as S from "./styles"
 import arrw from "../../images/arrw.svg"
+import { useStaticQuery, graphql } from "gatsby"
 
 const TickerText = styled.a`
   font-family: Neue Machina;
@@ -49,6 +50,17 @@ const MovingContainer = styled(Flex).attrs({
 `
 
 const Ticker = () => {
+  const tickerData = useStaticQuery(graphql`
+    query MyQuery {
+      contentfulRunningLine {
+        link
+        text
+      }
+    }
+  `)
+
+  console.log(tickerData)
+
   const text = useRef()
   const container = useRef()
   const [textWidth, setTextWidth] = useState(0)
@@ -84,14 +96,22 @@ const Ticker = () => {
       overflow="hidden"
     >
       <MovingContainer>
-        <TickerText href="#" ref={text}>
-          New mix from Criminal Practice – <span>Play now</span>
+        <TickerText
+          target="blank"
+          href={tickerData.contentfulRunningLine.link}
+          ref={text}
+        >
+          {tickerData.contentfulRunningLine.text} – <span>Play now</span>
         </TickerText>
         {Array(copiesLength)
           .fill(0)
           .map((_, idx) => (
-            <TickerText href="#" key={idx}>
-              New mix from Criminal Practice – <span>Play now</span>
+            <TickerText
+              target="blank"
+              href={tickerData.contentfulRunningLine.link}
+              key={idx}
+            >
+              {tickerData.contentfulRunningLine.text} – <span>Play now</span>
             </TickerText>
           ))}
       </MovingContainer>

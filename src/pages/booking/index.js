@@ -18,7 +18,7 @@ const BookingHome = () => {
       <Form isClosed={isClosed} setIsClosed={setIsClosed} />
       <Artists />
       <About />
-      <Footer></Footer>
+      <Footer booking></Footer>
     </Flex>
   )
 }
