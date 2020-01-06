@@ -1,6 +1,7 @@
 import React from "react"
 import * as S from "./styles"
 import Flex from "../../styled/flex"
+import Hashtag from "../Hashtag"
 
 const News = ({
   special,
@@ -11,7 +12,9 @@ const News = ({
   title,
   src,
   size,
+  key,
   extraLarge,
+  hashtags,
 }) => {
   // return (
   //   <S.MyNews size={size}>
@@ -23,6 +26,8 @@ const News = ({
   //     <S.Date>22 окт – 2019</S.Date>
   //   </S.MyNews>
   // )
+
+  console.log("hstd", hashtags)
 
   return extraLarge ? (
     <Flex width="100%" align="flex-end">
@@ -55,6 +60,12 @@ const News = ({
       <a href={link}>
         <S.Title>{title}</S.Title>
       </a>
+      <Flex width="100%" row marginBottom="25px">
+        {" "}
+        {hashtags.map(({ name, key, value }) => (
+          <Hashtag value={value} key={key} text={name} />
+        ))}
+      </Flex>
       {description ? <S.Description>{description}</S.Description> : null}
       <S.Date>{date}</S.Date>
     </S.MyNews>

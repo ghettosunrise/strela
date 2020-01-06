@@ -3,9 +3,7 @@ import { Link } from "gatsby"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import * as S from "./styles"
 
-const Nav = ({ row, column, space, agency }) => {
-  console.log(agency)
-
+const Nav = ({ row, align, column, space, agency, scrollY }) => {
   return (
     <S.NavWrap agency={agency}>
       {agency ? (
@@ -15,11 +13,20 @@ const Nav = ({ row, column, space, agency }) => {
           width="100%"
           justify="space-between"
           space={space}
+          align={align}
         >
-          <Link to="/agency/whatwedo">Что мы делаем </Link>
-          <Link to="/agency/cases">С кем работаем </Link>
-          <Link to="/agency/aboutus">О нас </Link>
-          <Link to="/agency/news">Новости </Link>
+          <Link to="/agency/whatwedo" activeClassName="active">
+            Что мы делаем{" "}
+          </Link>
+          <Link to="/agency/cases" activeClassName="active">
+            С кем работаем{" "}
+          </Link>
+          <Link to="/agency/aboutus" activeClassName="active">
+            О нас{" "}
+          </Link>
+          <Link to="/agency/news" activeClassName="active">
+            Новости{" "}
+          </Link>
         </S.TopNav>
       ) : (
         <S.TopNav
@@ -38,6 +45,7 @@ const Nav = ({ row, column, space, agency }) => {
           </span>
         </S.TopNav>
       )}
+      {}
     </S.NavWrap>
   )
 }

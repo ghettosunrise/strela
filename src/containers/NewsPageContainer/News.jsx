@@ -1,33 +1,29 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 import Flex from "../../styled/flex"
 import News from "../../components/News"
 import ButtonBig from "../../components/Buttons/ButtonBig"
-import news1 from "../../images/news1.png"
-import news2 from "../../images/news2.png"
-import news3 from "../../images/news3.png"
-import news4 from "../../images/news4.png"
 
-const NewsContainer = () => {
-  const data = useStaticQuery(graphql`
-    query NewsPage {
-      allContentfulNews {
-        nodes {
-          size
-          date
-          title
-          link
-          special
-          extralarge
-          image {
-            file {
-              url
-            }
-          }
-        }
-      }
-    }
-  `)
+const NewsContainer = ({ data }) => {
+  // const data = useStaticQuery(graphql`
+  //   query NewsPage {
+  //     allContentfulNews {
+  //       nodes {
+  //         size
+  //         date
+  //         title
+  //         link
+  //         special
+  //         extralarge
+  //         image {
+  //           file {
+  //             url
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
   console.log(data)
   return (
     <Flex width="100%" paddingAll="46px 49px">
@@ -38,7 +34,7 @@ const NewsContainer = () => {
         align="stretch"
         wrap="wrap"
       >
-        {data.allContentfulNews.nodes.map(
+        {data.map(
           ({
             size,
             title,
@@ -46,6 +42,7 @@ const NewsContainer = () => {
             link,
             special,
             extralarge,
+            hashtags,
             image: {
               file: { url },
             },
@@ -58,6 +55,7 @@ const NewsContainer = () => {
               date={date}
               special={special}
               extraLarge={extralarge}
+              hashtags={hashtags}
             />
           )
         )}

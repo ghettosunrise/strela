@@ -3,9 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Case from "../../components/Case"
 import Flex from "../../styled/flex"
 import ButtonBig from "../../components/Buttons/ButtonBig"
-import caseimgsmall from "../../images/caseimg1.png"
-import caseimgmedium from "../../images/caseimgmedium.png"
-import caseimgbig from "../../images/caseimgbig.png"
 
 const Cases = () => {
   const caseData = useStaticQuery(graphql`
@@ -55,7 +52,7 @@ const Cases = () => {
           )
         )}
       </Flex>
-      <ButtonBig txt="Все кейсы"></ButtonBig>
+      <ButtonBig link="/agency/cases" txt="Все кейсы"></ButtonBig>
     </Flex>
   )
 }

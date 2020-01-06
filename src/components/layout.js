@@ -13,8 +13,15 @@ import Flex from "../styled/flex"
 import Header from "../containers/Header"
 import Footer from "../containers/Footer"
 import Contact from "../containers/ContactUs"
+import MobileMenu from "../containers/MobileMenu"
 
-const Layout = ({ children, setIsClosed, isClosed }) => {
+const Layout = ({
+  children,
+  setIsClosed,
+  isClosed,
+  setIsClosedMobile,
+  isClosedMobile,
+}) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,12 +37,19 @@ const Layout = ({ children, setIsClosed, isClosed }) => {
       <Flex width="100%">
         <Header
           setIsClosed={setIsClosed}
+          setIsClosedMobile={setIsClosedMobile}
+          isClosedMobile={isClosedMobile}
           siteTitle={data.site.siteMetadata.title}
         />
         <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
+        {/* <MobileMenu
+          isClosedMobile={isClosedMobile}
+          setIsClosedMobile={setIsClosedMobile}
+        /> */}
+
         <main>{children}</main>
 
-        <Footer></Footer>
+        <Footer agency="true"></Footer>
       </Flex>
     </>
   )

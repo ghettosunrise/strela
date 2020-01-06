@@ -55,60 +55,6 @@ const Cases = () => {
             />
           )
         )}
-        {/* <Flex
-        row
-        width="100%"
-        justify="space-between"
-        align="stretch"
-        wrap="wrap"
-      >
-        <Case
-          size="small"
-          sublabel="Артисты"
-          img={caseimgsmall}
-          content="stretch"
-        >
-          Criminal Practice
-        </Case>
-        <Case
-          description="Brave! Factory Festival is a festival of independent music and culture that was created by enthusiasts on the premises of a working manufactory."
-          size="big"
-          img={caseimgbig}
-          sublabel="фестиваль"
-        >
-          Brave! Factory
-        </Case>
-        <Case size="medium" img={caseimgmedium}>
-          Black Is Back!
-        </Case>
-        <Case size="small" img={caseimgsmall}>
-          Black Is Back!
-        </Case>
-        <Case size="small" justify="flex-end" img={caseimgsmall}>
-          Black Is Back!
-        </Case>
-        <Case size="small" img={caseimgsmall}>
-          Pakabakam
-        </Case>
-        <Case size="small" img={caseimgsmall}>
-          Zip
-        </Case>
-        <Case size="medium" img={caseimgmedium}>
-          Sergey Yatsenko
-        </Case>
-        <Case size="small" img={caseimgsmall}>
-          Oleg Vinnik
-        </Case>
-        <Case size="small" img={caseimgsmall}>
-          Vova Klk
-        </Case>
-        <Case size="small" img={caseimgsmall}>
-          Koka Vlv
-        </Case>
-        <Case size="small" img={caseimgsmall}>
-          Timur Cleymoore
-        </Case>
-      </Flex> */}
       </Flex>
     </Flex>
   )

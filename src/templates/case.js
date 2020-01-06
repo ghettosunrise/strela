@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import qs from "query-string"
 
 import Layout from "../components/layout"
 import Contact from "../containers/ContactUs"

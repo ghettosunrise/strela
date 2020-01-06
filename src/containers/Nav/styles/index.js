@@ -13,7 +13,20 @@ export const TopNav = styled(Flex)`
     text-transform: uppercase;
     cursor: pointer;
     color: #000000;
-    margin-bottom: ${props => props.space + "px"};
+    margin-bottom: ${props => props.space};
+    position: relative;
+
+    &.active {
+      &::after {
+        width: 100%;
+        content: "";
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        bottom: -11px;
+        left: 0;
+      }
+    }
 
     :last-child {
       margin-bottom: ${props => (props.column ? +props.space + 30 + "px" : 0)};

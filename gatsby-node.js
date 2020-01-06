@@ -32,3 +32,62 @@ exports.createPages = async function({ actions, graphql }) {
     })
   })
 }
+
+exports.createPages = async function({ actions, graphql }) {
+  // const {
+  //   _data: {
+  //     allContentfulNews: { edges: news },
+  //   },
+  // } = await graphql(`
+  //   query allNews {
+  //     allContentfulNews {
+  //       edges {
+  //         node {
+  //           id
+  //           hashtags {
+  //             name
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `),
+
+  const {
+    data: {
+      allContentfulHashtag: { edges: hashtag },
+    },
+  } = await graphql(`
+    query hashtags {
+      allContentfulHashtag {
+        edges {
+          node {
+            id
+            name
+            value
+          }
+        }
+      }
+    }
+  `)
+
+  hashtag.forEach(({ node: { value } }) => {
+    const regex = `/${value}/gi`
+    actions.createPage({
+      path: `/agency/news/${value}`,
+      component: require.resolve(`./src/templates/news.js`),
+      context: { hashtag: regex },
+      key: { hashtag: regex },
+    })
+  })
+}
+
+//   news.forEach(({ node: { id, hashtags } }) => {
+//     actions.createPage({
+//       path: `/agency/news/${hashtags.name}/${id}`,
+//       component: require.resolve(`./src/templates/news.js`),
+//       context: { id },
+//       key: { id },
+//     })
+//   })
+// }

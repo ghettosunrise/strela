@@ -1,8 +1,8 @@
 import React from "react"
-import MyHashtag from "./styles"
+import * as S from "./styles"
 
-const Hashtag = (text, link) => {
-  return <MyHashtag to={link}>{text}</MyHashtag>
+const Hashtag = ({ text, link, value }) => {
+  return <S.MyHashtag to={`/agency/news/${text}`}>{`#` + text}</S.MyHashtag>
 }
 
 export default Hashtag

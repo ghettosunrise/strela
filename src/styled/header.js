@@ -31,4 +31,8 @@ export const HeaderLogoWrap = styled(Flex)`
     background-image: url(${arrR});
     background-size: 100%;
   }
+
+  @media (max-width: 1200px) {
+    max-width: 170px;
+  }
 `

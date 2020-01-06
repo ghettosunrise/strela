@@ -8,7 +8,7 @@ const Case = ({ id, justify, size, label, sublabel, description, img }) => {
     <S.StyledCase justify={justify} size={size}>
       <Flex row>
         <Flex>
-          <Link to="/case">
+          <Link to={`/agency/case/${id}`}>
             <S.CaseLabel>{label}</S.CaseLabel>
             <S.CaseSublabel>{sublabel}</S.CaseSublabel>
           </Link>

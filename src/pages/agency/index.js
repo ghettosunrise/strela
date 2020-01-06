@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import AgencyHeader from "../../containers/AgencyHeader"
 import Flex from "../../styled/flex"
 import Divider from "../../components/Divider"
@@ -9,20 +9,58 @@ import Banner from "../../components/Banner"
 import News from "../../containers/NewsContainer"
 import Footer from "../../containers/Footer"
 import Contact from "../../containers/ContactUs"
+import MobileMenu from "../../containers/MobileMenu"
 
 // import MainSc1 from "../../components/UI/containers/mainsc1"
 import SEO from "../../components/seo"
 
 const AgencyHome = () => {
   const [isClosed, setIsClosed] = useState(true)
+  const [isClosedMobile, setIsClosedMobile] = useState(true)
 
-  console.log("isClosed", isClosed)
+  const data = useStaticQuery(graphql`
+    query News {
+      allContentfulNews {
+        nodes {
+          id
+          size
+          date
+          title
+          link
+          special
+          extralarge
+          hashtags {
+            id
+            name
+            value
+          }
+          image {
+            file {
+              url
+            }
+          }
+        }
+      }
+    }
+  `)
+  // console.log(" mdd", data.allContentfulNews.nodes)
+
+  // console.log("isClosed", isClosed)
 
   return (
     <Flex width="100%">
       <SEO title="Home" />
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
-      <AgencyHeader isClosed={isClosed} setIsClosed={setIsClosed} />
+      <AgencyHeader
+        isClosed={isClosed}
+        setIsClosed={setIsClosed}
+        isClosedMobile={isClosedMobile}
+        setIsClosedMobile={setIsClosedMobile}
+      />
+      <MobileMenu
+        isClosedMobile={isClosedMobile}
+        setIsClosedMobile={setIsClosedMobile}
+      />
       <Divider text="С кем мы работаем • кейсы" />
       <Cases></Cases>
       <WhatWeDo></WhatWeDo>
@@ -33,7 +71,7 @@ const AgencyHome = () => {
         link
       ></Banner>
       <Divider text="Написано нами" />
-      <News />
+      <News data={data.allContentfulNews.nodes} />
       <Footer agency="true"></Footer>
     </Flex>
   )
