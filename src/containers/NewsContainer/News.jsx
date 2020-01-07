@@ -31,7 +31,7 @@ const NewsContainer = ({ data }) => {
   // `)
   // console.log(data)
   return (
-    <Flex width="100%" paddingAll="46px 49px">
+    <Flex width="100%" paddingAll="46px 49px" tabletPadding="46px 30px">
       <Flex
         row
         width="100%"

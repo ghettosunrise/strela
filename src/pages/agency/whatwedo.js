@@ -20,7 +20,6 @@ const WhatWeDo = () => {
       setIsClosedMobile={setIsClosedMobile}
     >
       <SEO title="WhatWeDo" />
-      <Header></Header>
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
       <MobileMenu
         isClosedMobile={isClosedMobile}

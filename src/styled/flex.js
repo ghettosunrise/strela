@@ -43,6 +43,12 @@ const flex = css`
   ${fromProp("fontSize", { make: "font-size" })};
   ${fromProp("content", { make: "align-content" })};
   ${fromProp("alignSelf", { make: "align-self" })};
+
+  @media (max-width: 1150px) {
+    padding: ${getProp("tabletPadding", "")};
+    flex-direction: ${getProp("tabletDirection", "")};
+    width: ${getProp("tabletWidth", "")};
+  }
 `
 
 const Flex = styled.div`

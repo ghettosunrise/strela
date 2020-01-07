@@ -34,8 +34,29 @@ const News = () => {
           }
         }
       }
+
+      allContentfulHashtag {
+        nodes {
+          name
+          value
+          id
+        }
+      }
     }
   `)
+
+  // const myHashtags = useStaticQuery(graphql`
+  //   query Hashtags {
+  //     allContentfulHashtag {
+  //       nodes {
+  //         name
+  //         value
+  //         id
+  //       }
+  //     }
+  //   }
+  // `)
+  console.log("TCL: News -> myHashtags", _data.allContentfulHashtag)
 
   return (
     <Layout
@@ -50,7 +71,11 @@ const News = () => {
         isClosedMobile={isClosedMobile}
         setIsClosedMobile={setIsClosedMobile}
       />
-      <NewsPage data={_data.allContentfulNews.nodes}></NewsPage>
+
+      <NewsPage
+        hashtags={_data.allContentfulHashtag.nodes}
+        data={_data.allContentfulNews.nodes}
+      ></NewsPage>
     </Layout>
   )
 }

@@ -1,8 +1,9 @@
 import styled from "styled-components"
 import Button from "../../../../images/button.svg"
 import arrR from "../../../../images/arrw.svg"
+import { Link } from "gatsby"
 
-export const BlackButton = styled.div`
+export const BlackButton = styled(Link)`
   min-width: 205.59px;
   height: 54.5px;
   justify-content: center;

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Flex from "../styled/flex"
 import News from "../components/News"
 import Layout from "../components/layout"

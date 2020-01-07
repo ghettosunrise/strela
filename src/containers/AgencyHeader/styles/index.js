@@ -10,6 +10,12 @@ export const MyMainTitle = styled.h1`
   letter-spacing: -0.07em;
   margin-bottom: 113px;
   color: #000000;
+
+  @media (max-width: 1150px) {
+    font-size: 80px;
+    line-height: 80px;
+    margin-bottom: 90px;
+  }
 `
 export const Header = styled.header`
   padding: 46px 49px;

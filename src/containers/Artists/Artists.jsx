@@ -73,45 +73,9 @@ const Artists = () => {
         desc2="As well as playing themselves in their unique b2b2b2 style, Criminal Practice give way to their gifted local colleagues and often invite international artists. Among their guests is the resident of the famous Frankfurt club Robert Johnson, Markus Sommer, as well as Phil Evans, Manuel Schatz, Rudolf C, Sweely and Leo Pol."
         desc3="Criminal Practice play vinyl sets that differ in their own sound, already labeled as the Kyiv sound. This is house and techno in various forms. The trio has already shared the stage with such musicians as Markus Sommer, DJ Haus, Sweely, Leo Pol, Manuel Shatz, Kashavar and others. In addition to organizing parties and DJing, they also actively write and release their own music. The list of their releases includes a record on the British label Three Point Oh, a cassette release on the Canadian Philthtrax and Of Paradise VA release. July 22 has marked a special occasion for the musicians, as this was when their newly-established label Criminal Practice Records released the very first vinyl. Circle Movement EP features tracks by the founders themselves as well as their allies, local DJs and producers Grec and Sasha Zlykh."
       /> */}
-        {artistData.allContentfulArtist.nodes.map(
-          ({
-            id,
-            artistName,
-            artistPicture,
-            artistLogo,
-            facebookLink,
-            igLink,
-            raLink,
-            pressKit,
-            soundCloudTrackLinks: { soundCloudTrackLinks },
-            scLink,
-            artistText1: { artistText1 },
-            artistText2: { artistText2 },
-            artistText3: { artistText3 },
-            artistText1Ru: { artistText1Ru },
-            artistText2Ru: { artistText2Ru },
-            artistText3Ru: { artistText3Ru },
-          }) => (
-            <Artist
-              key={id}
-              desc1={artistText1}
-              desc2={artistText2}
-              desc3={artistText3}
-              desc1Ru={artistText1Ru}
-              desc2Ru={artistText2Ru}
-              desc3Ru={artistText3Ru}
-              fbLink={facebookLink}
-              igLink={igLink}
-              raLink={raLink}
-              scLink={scLink}
-              title={artistName}
-              imgMain={artistPicture?.fluid?.src}
-              imgLogo={artistLogo?.fluid?.src}
-              pressKit={pressKit?.file?.url}
-              scTrack={soundCloudTrackLinks}
-            />
-          )
-        )}
+        {artistData.allContentfulArtist.nodes.map(artist => (
+          <Artist key={artist.id} artist={artist} />
+        ))}
       </Flex>
     </Flex>
   )

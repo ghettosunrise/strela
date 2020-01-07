@@ -1,4 +1,7 @@
 import styled from "styled-components"
+import Flex from "../../../styled/flex"
+
+export const Warp = styled(Flex)``
 
 export const Title = styled.h2`
   font-family: Neue Machina;
@@ -7,6 +10,10 @@ export const Title = styled.h2`
   letter-spacing: -0.07em;
   margin-bottom: 338px;
   font-weight: 400;
+
+  @media (max-width: 1150px) {
+    margin-bottom: 38px;
+  }
 `
 
 export const SubTitle = styled.h3`
@@ -17,6 +24,10 @@ export const SubTitle = styled.h3`
   max-width: 366px;
   margin-bottom: 63px;
   font-weight: 400;
+
+  @media (max-width: 1150px) {
+    max-width: 100%;
+  }
 `
 
 export const Number = styled.p`

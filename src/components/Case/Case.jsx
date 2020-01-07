@@ -3,12 +3,21 @@ import Flex from "../../styled/flex"
 import * as S from "./styles"
 import { Link } from "gatsby"
 
-const Case = ({ id, justify, size, label, sublabel, description, img }) => {
+const Case = ({
+  customId,
+  id,
+  justify,
+  size,
+  label,
+  sublabel,
+  description,
+  img,
+}) => {
   return (
     <S.StyledCase justify={justify} size={size}>
       <Flex row>
         <Flex>
-          <Link to={`/agency/case/${id}`}>
+          <Link to={`/agency/case/${customId}`}>
             <S.CaseLabel>{label}</S.CaseLabel>
             <S.CaseSublabel>{sublabel}</S.CaseSublabel>
           </Link>
@@ -17,7 +26,7 @@ const Case = ({ id, justify, size, label, sublabel, description, img }) => {
           <S.CaseDescription>{description}</S.CaseDescription>
         ) : null}
       </Flex>
-      <Link to={`/agency/case/${id}`}>
+      <Link to={`/agency/case/${customId}`}>
         <img src={img}></img>
       </Link>
     </S.StyledCase>

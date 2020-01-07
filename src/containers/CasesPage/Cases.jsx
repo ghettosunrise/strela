@@ -15,6 +15,7 @@ const Cases = () => {
           id
           size
           title
+          customId
           subtitle
           image {
             file {
@@ -27,7 +28,7 @@ const Cases = () => {
   `)
 
   return (
-    <Flex width="100%" paddingAll="0px 49px">
+    <Flex width="100%" paddingAll="0px 49px" tabletPadding="0 30px">
       <Flex
         row
         width="100%"
@@ -41,6 +42,7 @@ const Cases = () => {
             size,
             title,
             subtitle,
+            customId,
             image: {
               file: { url },
             },
@@ -52,6 +54,7 @@ const Cases = () => {
               label={title}
               sublabel={subtitle}
               content="stretch"
+              customId={customId}
             />
           )
         )}

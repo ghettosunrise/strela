@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components"
 import Flex from "../../../styled/flex"
 import arrowdown from "../../../images/arrowdown.svg"
+import ukazateli from "../../../images/ukazateli.svg"
 
 export const LinkDecor = css`
   &::before {
@@ -85,12 +86,13 @@ export const Banner = styled(Flex)`
 
 export const NewsBanner = styled(Flex)`
   width: 100%;
-  padding: 70px 56px 71px 47px;
+  padding: 70px 56px 50px;
   background: #000;
-  flex-direction: row;
+  flex-direction: column;
   margin-bottom: 100px;
   ${OtherDecor}
   overflow: hidden;
+  position: relative;
 `
 
 export const CaseBanner = styled(Flex)`
@@ -161,7 +163,9 @@ export const NewsTitle = styled.h1`
   line-height: 96px;
   letter-spacing: -0.07em;
   color: #ffffff;
-  max-width: 62%;
+  /* max-width: 62%; */
+  max-width: 1067px;
+  margin-bottom: 104px;
   width: 100%;
 `
 
@@ -174,7 +178,8 @@ export const NewsDescription = styled.p`
   letter-spacing: -0.07em;
   color: #ffffff;
   opacity: 0.5;
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  max-width: 759px;
 `
 export const CaseTitle = styled.h1`
   font-family: Neue Machina;
@@ -199,4 +204,20 @@ export const CaseDescription = styled.p`
   opacity: 0.5;
 
   width: 100%;
+`
+
+export const Ukazateli = styled.div`
+  width: 439px;
+  height: 432px;
+  background-image: url(${ukazateli});
+  position: absolute;
+  right: 18px;
+  bottom: 0;
+  z-index: 2;
+`
+
+export const Line = styled.div`
+  width: 100%;
+  border-top: 1px solid #ffffff;
+  margin-bottom: 23px;
 `

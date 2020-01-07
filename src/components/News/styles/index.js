@@ -3,10 +3,18 @@ import Flex from "../../../styled/flex"
 
 const small = css`
   width: 23.6%;
+
+  @media (max-width: 1150px) {
+    width: 48.8%;
+  }
 `
 
 const mediumSmall = css`
   width: 32.3%;
+
+  @media (max-width: 1150px) {
+    width: 48.8%;
+  }
 `
 
 const medium = css`

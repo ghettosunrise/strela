@@ -44,7 +44,9 @@ const Banner = ({ title, subtitle, description, link, news, cases }) => {
       ) : news ? (
         <S.NewsBanner>
           <S.NewsTitle>{title}</S.NewsTitle>
+          <S.Line />
           <S.NewsDescription>{description}</S.NewsDescription>
+          <S.Ukazateli></S.Ukazateli>
         </S.NewsBanner>
       ) : cases ? (
         <S.CaseBanner>

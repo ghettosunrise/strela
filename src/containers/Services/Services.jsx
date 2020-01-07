@@ -29,75 +29,81 @@ const Services = () => {
 
       <Flex width="100%">
         {activeService === 0 ? (
-          <Flex width="100%" row justify="space-between">
-            <Flex width="19.6%">
-              <S.Txt onClick={() => setSwitchService(0)}>Консультация</S.Txt>
-              <S.Txt onClick={() => setSwitchService(1)}>
-                Промо релизов/ <br /> проектов/мероприятий
-              </S.Txt>
-              <S.Txt onClick={() => setSwitchService(2)}>
-                Повышение узнаваемости
-              </S.Txt>
+          <>
+            <p>организаторам</p>
+            <Flex width="100%" row justify="space-between">
+              <Flex width="19.6%">
+                <S.Txt onClick={() => setSwitchService(0)}>Консультация</S.Txt>
+                <S.Txt onClick={() => setSwitchService(1)}>
+                  Промо релизов/ <br /> проектов/мероприятий
+                </S.Txt>
+                <S.Txt onClick={() => setSwitchService(2)}>
+                  Повышение узнаваемости
+                </S.Txt>
+              </Flex>
+              {switchService === 0 ? (
+                <S.ServiceContent>
+                  <S.Title>Консультация</S.Title>
+                  <S.List>
+                    <li>
+                      Пояснение основных моментов в пиаре собственного имени и
+                      проектов;
+                    </li>
+                    <li>Обсуждение позиционирования и концепции;</li>
+                    <li>Объяснение принципов продвижения в целом;</li>
+                  </S.List>
+                </S.ServiceContent>
+              ) : switchService === 1 ? (
+                <S.ServiceContent>
+                  <S.Title>Other</S.Title>
+                  <S.List>
+                    <li>
+                      Пояснение основных моментов в пиаре собственного имени и
+                      проектов;
+                    </li>
+                    <li>Обсуждение позиционирования и концепции;</li>
+                    <li>Объяснение принципов продвижения в целом;</li>
+                  </S.List>
+                </S.ServiceContent>
+              ) : (
+                <S.ServiceContent>
+                  <S.Title>Other 2</S.Title>
+                  <S.List>
+                    <li>
+                      Пояснение основных моментов в пиаре собственного имени и
+                      проектов;
+                    </li>
+                    <li>Обсуждение позиционирования и концепции;</li>
+                    <li>Объяснение принципов продвижения в целом;</li>
+                  </S.List>
+                </S.ServiceContent>
+              )}
             </Flex>
-            {switchService === 0 ? (
-              <S.ServiceContent>
-                <S.Title>Консультация</S.Title>
-                <S.List>
-                  <li>
-                    Пояснение основных моментов в пиаре собственного имени и
-                    проектов;
-                  </li>
-                  <li>Обсуждение позиционирования и концепции;</li>
-                  <li>Объяснение принципов продвижения в целом;</li>
-                </S.List>
-              </S.ServiceContent>
-            ) : switchService === 1 ? (
-              <S.ServiceContent>
-                <S.Title>Other</S.Title>
-                <S.List>
-                  <li>
-                    Пояснение основных моментов в пиаре собственного имени и
-                    проектов;
-                  </li>
-                  <li>Обсуждение позиционирования и концепции;</li>
-                  <li>Объяснение принципов продвижения в целом;</li>
-                </S.List>
-              </S.ServiceContent>
-            ) : (
-              <S.ServiceContent>
-                <S.Title>Other 2</S.Title>
-                <S.List>
-                  <li>
-                    Пояснение основных моментов в пиаре собственного имени и
-                    проектов;
-                  </li>
-                  <li>Обсуждение позиционирования и концепции;</li>
-                  <li>Объяснение принципов продвижения в целом;</li>
-                </S.List>
-              </S.ServiceContent>
-            )}
-          </Flex>
+          </>
         ) : (
-          <Flex width="100%" row justify="space-between">
-            <Flex width="19.6%">
-              <S.Txt>Lorem</S.Txt>
-              <S.Txt>
-                ipsun/ <br /> проектов/мероприятий
-              </S.Txt>
-              <S.Txt>Повышение узнаваемости</S.Txt>
+          <>
+            <p>Артистам</p>
+            <Flex width="100%" row justify="space-between">
+              <Flex width="19.6%">
+                <S.Txt>Lorem</S.Txt>
+                <S.Txt>
+                  ipsun/ <br /> проектов/мероприятий
+                </S.Txt>
+                <S.Txt>Повышение узнаваемости</S.Txt>
+              </Flex>
+              <S.ServiceContent>
+                <S.Title>Lorem</S.Title>
+                <S.List>
+                  <li>
+                    Пояснение основных моментов в пиаре собственного имени и
+                    проектов;
+                  </li>
+                  <li>Обсуждение позиционирования и концепции;</li>
+                  <li>Объяснение принципов продвижения в целом;</li>
+                </S.List>
+              </S.ServiceContent>
             </Flex>
-            <S.ServiceContent>
-              <S.Title>Lorem</S.Title>
-              <S.List>
-                <li>
-                  Пояснение основных моментов в пиаре собственного имени и
-                  проектов;
-                </li>
-                <li>Обсуждение позиционирования и концепции;</li>
-                <li>Объяснение принципов продвижения в целом;</li>
-              </S.List>
-            </S.ServiceContent>
-          </Flex>
+          </>
         )}
         ;
       </Flex>

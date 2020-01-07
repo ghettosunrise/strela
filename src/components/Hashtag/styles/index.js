@@ -9,6 +9,7 @@ export const MyHashtag = styled(Link)`
   text-transform: uppercase;
   color: #000000;
   margin-right: 5px;
+  margin-bottom: ${props => props.bottom};
 
   &:last-child {
     margin-right: 0;

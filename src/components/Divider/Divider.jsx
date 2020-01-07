@@ -10,6 +10,7 @@ const Divider = props => {
       row
       paddingAll="0px 49px"
       marginBottom="50px"
+      tabletPadding="0 30px"
     >
       <DividerText>{props.text}</DividerText>
       <DividerArrow />

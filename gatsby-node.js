@@ -7,51 +7,7 @@
 // You can delete this file if you're not using it
 
 exports.createPages = async function({ actions, graphql }) {
-  const {
-    data: {
-      allContentfulCase: { edges: cases },
-    },
-  } = await graphql(`
-    query allCases {
-      allContentfulCase {
-        edges {
-          node {
-            id
-          }
-        }
-      }
-    }
-  `)
 
-  cases.forEach(({ node: { id } }) => {
-    actions.createPage({
-      path: `/agency/case/${id}`,
-      component: require.resolve(`./src/templates/case.js`),
-      context: { id },
-      key: { id },
-    })
-  })
-}
-
-exports.createPages = async function({ actions, graphql }) {
-  // const {
-  //   _data: {
-  //     allContentfulNews: { edges: news },
-  //   },
-  // } = await graphql(`
-  //   query allNews {
-  //     allContentfulNews {
-  //       edges {
-  //         node {
-  //           id
-  //           hashtags {
-  //             name
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `),
 
   const {
     data: {
@@ -78,6 +34,31 @@ exports.createPages = async function({ actions, graphql }) {
       component: require.resolve(`./src/templates/news.js`),
       context: { hashtag: regex },
       key: { hashtag: regex },
+    })
+  })
+
+  const {
+    data: {
+      allContentfulCase: { edges: cases },
+    },
+  } = await graphql(`
+    query allCases {
+      allContentfulCase {
+        edges {
+          node {
+            customId
+          }
+        }
+      }
+    }
+  `)
+
+  cases.forEach(({ node: { customId } }) => {
+    actions.createPage({
+      path: `/agency/case/${customId}`,
+      component: require.resolve(`./src/templates/case.js`),
+      context: { customId },
+      key: { customId },
     })
   })
 }

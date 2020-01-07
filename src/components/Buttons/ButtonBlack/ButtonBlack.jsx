@@ -1,9 +1,9 @@
 import React from "react"
 import { BlackButton } from "./styles"
 
-export const ButtonBlack = ({ txt, onClick }) => {
+export const ButtonBlack = ({ txt, onClick, link }) => {
   return (
-    <BlackButton onClick={onClick}>
+    <BlackButton to={link} onClick={onClick}>
       {txt}
       <span></span>
     </BlackButton>

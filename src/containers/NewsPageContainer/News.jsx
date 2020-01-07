@@ -3,37 +3,55 @@ import React from "react"
 import Flex from "../../styled/flex"
 import News from "../../components/News"
 import ButtonBig from "../../components/Buttons/ButtonBig"
+import Banner from "../../components/Banner"
+import Hashtags from "../../components/Hashtag"
+import * as S from "./styles"
+import Divider from "../../components/Divider"
 
-const NewsContainer = ({ data }) => {
-  // const data = useStaticQuery(graphql`
-  //   query NewsPage {
-  //     allContentfulNews {
-  //       nodes {
-  //         size
-  //         date
-  //         title
-  //         link
-  //         special
-  //         extralarge
-  //         image {
-  //           file {
-  //             url
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+const NewsContainer = ({ data, hashtags }) => {
   console.log(data)
+  // console.log("test", data.find({ extralarge: "true" }))
+
+  const filtered = data.filter(item => item.extralarge)
+  // console.log("TCL: NewsContainer -> filtered", filtered)
+
   return (
-    <Flex width="100%" paddingAll="46px 49px">
+    <Flex width="100%">
+      <Banner
+        column
+        news
+        title="Статьи, как часть нашей экспертизы"
+        description="Написание и актуализация текстов, связанных с артистом и его проектами, создание или изменение контента в соответствии с актуальным позиционированием"
+      />
       <Flex
         row
         width="100%"
         justify="space-between"
         align="stretch"
         wrap="wrap"
+        paddingAll="46px 49px"
       >
+        <Flex width="100%" row>
+          <Flex width="66%">
+            <News
+              extraLarge
+              size={filtered[0].size}
+              title={filtered[0].title}
+              date={filtered[0].date}
+              link={filtered[0].link}
+              hashtags={filtered[0].hashtags}
+              src={filtered[0].image.file.url}
+            />
+          </Flex>
+          <Flex shrink="1" marginLeft="20px">
+            <S.Title>Теги: </S.Title>
+            <Flex width="100%" row wrap="wrap">
+              {hashtags.map(({ name, key, value }) => (
+                <Hashtags bottom="15px" value={value} key={key} text={name} />
+              ))}
+            </Flex>
+          </Flex>
+        </Flex>
         {data.map(
           ({
             size,

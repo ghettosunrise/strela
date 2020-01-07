@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import Flex from "../../styled/flex"
@@ -6,21 +6,24 @@ import * as S from "./styles"
 import Btn from "../../components/Buttons/ButtonBlue"
 
 const Artist = ({
-  desc1,
-  desc2,
-  desc3,
-  desc1Ru,
-  desc2Ru,
-  desc3Ru,
-  title,
-  imgMain,
-  imgLogo,
-  fbLink,
-  igLink,
-  raLink,
-  scLink,
-  scTrack,
-  pressKit,
+  artist: {
+    id,
+    artistNameL: title,
+    artistPicture,
+    artistLogo,
+    facebookLink: fbLink,
+    igLink: igLink,
+    raLink: raLink,
+    pressKit,
+    soundCloudTrackLinks: { soundCloudTrackLinks },
+    scLink,
+    artistText1: { artistText1: desc1 },
+    artistText2: { artistText2: desc2 },
+    artistText3: { artistText3: desc3 },
+    artistText1Ru: { artistText1Ru: desc1Ru },
+    artistText2Ru: { artistText2Ru: desc2Ru },
+    artistText3Ru: { artistText3Ru: desc3Ru },
+  },
 }) => {
   const [isHidden, setIsHidden] = useState(1)
   const [isEnglish, setIsEnglish] = useState(1)
@@ -31,7 +34,7 @@ const Artist = ({
   const parsed2Ru = JSON.parse(desc2Ru)
   const parsed3 = JSON.parse(desc3)
   const parsed3Ru = JSON.parse(desc3Ru)
-  const parsed4 = JSON.parse(scTrack)
+  const parsed4 = JSON.parse(soundCloudTrackLinks)
   console.log(pressKit)
 
   return (
@@ -43,7 +46,7 @@ const Artist = ({
       marginTop="60px"
     >
       <Flex marginRight="2.6%">
-        <img src={imgLogo}></img>
+        <img src={artistLogo?.fluid?.src}></img>
       </Flex>
       <S.ArtistContent>
         <Flex width="100%" isHidden={isHidden}>
@@ -56,7 +59,7 @@ const Artist = ({
 
           {isHidden === 0 ? (
             <>
-              <img src={imgMain}></img>
+              <img src={artistPicture?.fluid?.src}></img>
             </>
           ) : null}
         </Flex>
@@ -197,16 +200,15 @@ const Sidebar = ({
   scLink,
   pressKit,
 }) => {
-  const Copy = () => {
-    const Url = document.createElement("textarea")
-    Url.innerHTML = window.location.href
-    const Copied = Url.select()
-    Copied.execCommand("Copy")
-    alert("done")
-  }
+  const textarea = useRef()
 
   return (
     <S.Sidebar isHidden={isHidden}>
+      <textarea
+        ref={textarea}
+        style={{ position: "absolute", left: -9999 }}
+        value={window.location.href}
+      />
       <p>Translate to</p>
       <Flex row width="72px" marginBottom="30px" justify="space-between">
         <S.Translate
@@ -233,11 +235,16 @@ const Sidebar = ({
       </Flex>
       <p>share with</p>
       <Flex width="93px" marginBottom="30px" row justify="space-between">
-        <S.Copy onClick={() => Copy()}></S.Copy>
+        <S.Copy
+          onClick={() => {
+            textarea.current.select()
+            document.execCommand("copy")
+          }}
+        />
         <S.Fb></S.Fb>
       </Flex>
       <p>download</p>
-      <Btn download pressKit={pressKit} />
+      <Btn download pressKit={pressKit.file.url} />
     </S.Sidebar>
   )
 }

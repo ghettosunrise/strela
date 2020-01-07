@@ -17,7 +17,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
   const window = document.documentElement.clientWidth
 
   return (
-    <Flex width="100%" paddingAll="46px 49px 0">
+    <Flex width="100%" paddingAll="46px 49px 0" tabletPadding="46px 30px 0">
       <S.Header>
         <H.HeaderLogoWrap
           maxWidth="219px"
@@ -56,6 +56,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
         justify="space-between"
         row
         paddingTop="146.5px"
+        tabletPadding="96px 0 0"
       >
         {window >= 1130 ? (
           <Flex>
