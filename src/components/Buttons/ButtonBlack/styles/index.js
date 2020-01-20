@@ -1,16 +1,17 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import Button from "../../../../images/button.svg"
+import Button1 from "../../../../images/button1.svg"
 import arrR from "../../../../images/arrw.svg"
 import { Link } from "gatsby"
 
-export const BlackButton = styled(Link)`
+const BlackBtn = css`
   min-width: 205.59px;
   height: 54.5px;
   justify-content: center;
   font-family: "Neue Machina";
   font-size: 18px;
   line-height: 86px;
-  /* or 478% */
+  transition: all 0.3s ease;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -28,4 +29,16 @@ export const BlackButton = styled(Link)`
     position: relative;
     bottom: 2px;
   }
+
+  &:hover {
+    background-image: url(${Button1});
+  }
+`
+
+export const BlackButtonLink = styled(Link)`
+  ${BlackBtn}
+`
+
+export const BlackButton = styled.div`
+  ${BlackBtn}
 `

@@ -7,18 +7,49 @@ const small = css`
   @media (max-width: 1150px) {
     width: 48.8%;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const medium = css`
   width: 48.8%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const big = css`
   width: 74%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const StyledCase = styled(Flex)`
   margin-bottom: 80px;
+
+  .case__link {
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  &:hover {
+    .case__link {
+      &::before {
+        bottom: 0;
+      }
+    }
+  }
+
+  @media (max-width: 1150px) {
+    margin-bottom: 60px;
+  }
+
   ${props =>
     props.size === "small"
       ? small
@@ -26,11 +57,7 @@ export const StyledCase = styled(Flex)`
       ? medium
       : props.size === "big"
       ? big
-      : null}
-
-  @media (max-width: 1150px) {
-    margin-bottom: 40px;
-  }
+      : null};
 `
 
 export const CaseLabel = styled.p`

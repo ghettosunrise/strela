@@ -6,6 +6,14 @@ export const SocialTop = styled(Flex)`
   width: 100%;
   justify-content: space-between;
   flex-direction: row;
+  transition: opacity 0.3s ease;
+  opacity: ${props => {
+    return props.isMoved === false && props.isTop === true
+      ? 0
+      : props.isMoved === true && props.isBottom === true
+      ? 0
+      : 1
+  }};
 
   a {
     font-family: Neue Machina;

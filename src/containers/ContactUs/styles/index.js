@@ -18,7 +18,7 @@ export const ContactWrap = styled(Flex)`
   position: fixed;
   right: ${({ isClosed }) => (isClosed ? "-100%" : 0)};
   top: 0;
-  z-index: 105;
+  z-index: 10001;
   height: 100vh;
   width: 100%;
   transition: right 0.4s ease;

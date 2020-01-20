@@ -1,25 +1,30 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/Banner"
 import CaseInfo from "../containers/CaseInfo"
 import Divider from "../components/Divider"
-import News from "../containers/NewsContainer"
 
 const Case = ({ data }) => {
   const [isClosed, setIsClosed] = useState(true)
-
-  console.log(data)
+  const [isClosedMobile, setIsClosedMobile] = useState(true)
 
   return (
-    <Layout isClosed={isClosed} setIsClosed={setIsClosed}>
+    <Layout
+      isClosed={isClosed}
+      setIsClosed={setIsClosed}
+      isClosedMobile={isClosedMobile}
+      setIsClosedMobile={setIsClosedMobile}
+    >
       <SEO title="Case" />
+      {/* <Mobile /> */}
       <Banner
         cases
         title={data.contentfulCase.title}
         description={data.contentfulCase.bannerDescription.bannerDescription}
+        image={data.contentfulCase.bannerImage.file.url}
+        hashtags={data.contentfulCase.hashtags}
       />
       <CaseInfo
         titleFirst={data.contentfulCase.selectedText}
@@ -31,7 +36,7 @@ const Case = ({ data }) => {
         imgSrc1={data.contentfulCase.caseAdditionalImages[0].fluid.src}
         imgSrc2={data.contentfulCase.caseAdditionalImages[1].fluid.src}
       />
-      <Divider text="Актуальные материалы о вечеринках Closer, к которым мы приложили руку"></Divider>
+      <Divider text={data.contentfulCase.dividerText}></Divider>
       {/* <News /> */}
     </Layout>
   )
@@ -45,8 +50,19 @@ export const query = graphql`
       customId
       subtitle
       selectedText
+      dividerText
       secondImageDescription
       firstImageDescription
+      bannerImage {
+        file {
+          url
+        }
+      }
+      hashtags {
+        id
+        name
+        value
+      }
       caseAdditionalImages {
         fluid {
           src

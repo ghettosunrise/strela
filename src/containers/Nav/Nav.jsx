@@ -3,7 +3,17 @@ import { Link } from "gatsby"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import * as S from "./styles"
 
-const Nav = ({ row, align, column, space, agency, scrollY }) => {
+const Nav = ({
+  row,
+  align,
+  column,
+  space,
+  agency,
+  scrollY,
+  isBottom,
+  isTop,
+  isMoved,
+}) => {
   return (
     <S.NavWrap agency={agency}>
       {agency ? (
@@ -14,6 +24,9 @@ const Nav = ({ row, align, column, space, agency, scrollY }) => {
           justify="space-between"
           space={space}
           align={align}
+          isBottom={isBottom}
+          isTop={isTop}
+          isMoved={isMoved}
         >
           <Link to="/agency/whatwedo" activeClassName="active">
             Что мы делаем{" "}

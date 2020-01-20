@@ -2,6 +2,20 @@ import styled from "styled-components"
 import Flex from "../../../styled/flex"
 
 export const TopNav = styled(Flex)`
+  transition: opacity 0.3s ease;
+  opacity: ${props => {
+    return props.isMoved === false && props.isTop === true
+      ? 0
+      : props.isMoved === true && props.isBottom === true
+      ? 0
+      : 1
+  }};
+
+  @media only screen and (max-width: 768px) {
+    align-items: ${props =>
+      props.mobileAlign ? props.mobileAlign : "inherit"};
+  }
+
   a,
   span {
     font-family: Formular;

@@ -4,8 +4,12 @@ import Flex from "../../../styled/flex"
 const small = css`
   width: 23.6%;
 
-  @media (max-width: 1150px) {
+  @media only screen and (max-width: 1150px) {
     width: 48.8%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
   }
 `
 
@@ -15,20 +19,23 @@ const mediumSmall = css`
   @media (max-width: 1150px) {
     width: 48.8%;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const medium = css`
   width: 48.8%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const big = css`
   width: 100%;
   flex-grow: 1;
-`
-
-const extraLargeTitle = css`
-  font-size: 48px;
-  line-height: 48px;
 `
 
 export const MyNews = styled(Flex)`
@@ -53,6 +60,14 @@ export const Special = styled(Flex)`
   padding: 18px 18px 40px 14px;
   overflow: hidden;
 
+  @media only screen and (max-width: 768px) {
+    padding: 15px 15px 30px;
+
+    img {
+      margin-bottom: 20px;
+    }
+  }
+
   &::before {
     content: "";
     width: 100%;
@@ -62,6 +77,10 @@ export const Special = styled(Flex)`
     left: -120px;
     bottom: -60px;
     transform: rotate(45deg);
+
+    @media only screen and (max-width: 1150px) {
+      bottom: -150px;
+    }
   }
 
   &::after {
@@ -73,6 +92,10 @@ export const Special = styled(Flex)`
     right: -120px;
     top: -60px;
     transform: rotate(45deg);
+
+    @media only screen and (max-width: 1150px) {
+      top: -150px;
+    }
   }
 `
 

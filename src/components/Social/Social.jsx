@@ -2,9 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 import * as S from "./styles"
 
-const Social = () => {
+const Social = ({ isMoved, isTop, isBottom }) => {
   return (
-    <S.SocialTop marginRight="21px">
+    <S.SocialTop
+      marginRight="21px"
+      isMoved={isMoved}
+      isTop={isTop}
+      isBottom={isBottom}
+    >
       <Link to="tg.com">FB</Link>
       <Link to="tg.com">IG</Link>
       <Link to="tg.com">TG</Link>

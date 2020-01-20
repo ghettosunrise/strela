@@ -5,11 +5,11 @@ import * as S from "./styles"
 
 const WWBlock = ({ number, title, sub }) => {
   return (
-    <Flex maxWidth="49%" width="100%">
+    <S.WWFlex>
       <S.Number>{number}</S.Number>
       <S.BlockTitle>{title}</S.BlockTitle>
       <S.BlockSubtitle>{sub}</S.BlockSubtitle>
-    </Flex>
+    </S.WWFlex>
   )
 }
 
@@ -19,11 +19,15 @@ const WhatWeDo = () => {
   return (
     <Flex
       width="100%"
+      marginBottom="140px"
+      tabletMargin="0 0 80px"
       paddingAll="60px 49px 72px"
       tabletPadding="40px 30px 53px"
+      mobilePadding="40px 20px 53px"
       row
       justify="space-between"
       tabletDirection="column"
+      background="#FFF"
     >
       <Flex shrink="1" tabletWidth="100%">
         <S.Title>Что мы делаем</S.Title>
@@ -41,6 +45,7 @@ const WhatWeDo = () => {
         row
         justify="space-between"
         tabletWidth="100%"
+        mobileJustify="center"
       >
         <WWBlock
           number="01"

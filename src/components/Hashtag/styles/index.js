@@ -7,7 +7,7 @@ export const MyHashtag = styled(Link)`
   line-height: 14px;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: #000000;
+  color: ${props => (props.color ? props.color : "#000000")};
   margin-right: 5px;
   margin-bottom: ${props => props.bottom};
 

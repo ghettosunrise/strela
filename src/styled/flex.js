@@ -9,6 +9,7 @@ import arrR from "../images/arrowr.svg"
 const flex = css`
   display: flex;
   position: relative;
+  /* z-index: 1; */
   background: ${getProp("background", "transparent")};
   flex-direction: ${props => (props.row ? "row" : "column")};
   align-items: ${getProp("align", "flex-start")};
@@ -48,6 +49,16 @@ const flex = css`
     padding: ${getProp("tabletPadding", "")};
     flex-direction: ${getProp("tabletDirection", "")};
     width: ${getProp("tabletWidth", "")};
+    margin: ${getProp("tabletMargin", "")};
+  }
+
+  @media (max-width: 768px) {
+    padding: ${getProp("mobilePadding", "")};
+    flex-direction: ${getProp("mobileDirection", "")};
+    width: ${getProp("mobileWidth", "")};
+    justify-content: ${getProp("mobileJustify", "")};
+    align-items: ${getProp("mobileAlign", "")};
+    margin: ${getProp("mobileMargin", "")};
   }
 `
 

@@ -40,14 +40,25 @@ const hoverStyle = css`
 export const ArtistContent = styled(Flex)`
   width: 100%;
   flex-shrink: 1;
-  border-bottom: 1px solid #000000;
-  padding-bottom: 60px;
 `
 
 export const ArtistWrap = styled(Flex)`
   width: 100%;
   border-bottom: 1px solid #000000;
   padding-bottom: 20px;
+`
+
+export const ArtistName = styled.h1`
+  font-family: Neue Machina;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 96px;
+  letter-spacing: -0.07em;
+  text-align: center;
+  color: #000000;
+  width: 100%;
+  margin: 0 0 60px;
 `
 
 export const ArtistTitle = styled.p`
@@ -139,19 +150,22 @@ export const Arrow = styled.div`
   background-image: url(${arrow});
   margin-right: 12px;
 
-  transform: ${props =>
-    props.isHidden === 1 ? "rotate(180deg)" : "rotate(0deg)"};
+  transform: rotate(90deg);
 `
 
 export const CloseTxt = styled.p`
-  font-family: Neue Machina;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.07em;
-  cursor: pointer;
-  color: #2403a6;
   margin-bottom: 0;
+
+  a {
+    font-family: Neue Machina;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.07em;
+    cursor: pointer;
+    color: #2403a6;
+    margin-bottom: 0;
+  }
 `
 
 export const Sidebar = styled(Flex)`

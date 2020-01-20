@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import Flex from "../../../styled/flex"
 
 export const HeaderWrap = styled.header`
   background: #fff;

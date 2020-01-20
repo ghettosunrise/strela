@@ -1,30 +1,19 @@
 import React from "react"
 import Flex from "../../styled/flex"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import * as S from "./styles"
-import pic from "../../images/bannerpic.png"
-import casepic from "../../images/opencaseimg.png"
+import Hashtag from "../Hashtag"
 
-const Banner = ({ title, subtitle, description, link, news, cases }) => {
-  const bannerData = useStaticQuery(graphql`
-    query Banner {
-      allContentfulBanner {
-        nodes {
-          image {
-            file {
-              url
-            }
-            description
-          }
-          title
-          subtitle
-        }
-      }
-    }
-  `)
-
-  // const x
-
+const Banner = ({
+  title,
+  subtitle,
+  description,
+  link,
+  news,
+  cases,
+  image,
+  hashtags,
+}) => {
   return (
     <Flex width="100%" paddingAll="0px 49px">
       {link ? (
@@ -37,7 +26,7 @@ const Banner = ({ title, subtitle, description, link, news, cases }) => {
             </Flex>
             <S.Arrow></S.Arrow>
             <Flex shrink="1">
-              <img src={pic}></img>
+              <img src={image}></img>
             </Flex>
           </S.Banner>
         </Link>
@@ -50,11 +39,21 @@ const Banner = ({ title, subtitle, description, link, news, cases }) => {
         </S.NewsBanner>
       ) : cases ? (
         <S.CaseBanner>
-          <Flex maxWidth="32.5%" width="100%">
+          <Flex shrink="1" marginRight="10px" justify="space-between">
             <S.CaseTitle>{title}</S.CaseTitle>
-            <S.CaseDescription>{description}</S.CaseDescription>
+            <Flex>
+              <S.Line />
+              <Flex width="100%" row justify="space-between" align="flex-end">
+                <S.CaseDescription>{description}</S.CaseDescription>
+                <Flex row>
+                  {hashtags.map(({ name, key, value }) => (
+                    <Hashtag color="#FFF" value={value} key={key} text={name} />
+                  ))}
+                </Flex>
+              </Flex>
+            </Flex>
           </Flex>
-          <img src={casepic}></img>
+          <img src={image}></img>
         </S.CaseBanner>
       ) : null}
     </Flex>

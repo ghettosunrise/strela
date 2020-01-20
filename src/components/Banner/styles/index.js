@@ -52,7 +52,6 @@ export const Banner = styled(Flex)`
   position: relative;
   overflow: hidden;
   margin-bottom: 114px;
-
   /* ${props =>
     props.link ? LinkDecor : props.cases || props.news ? OtherDecor : null} */
 
@@ -77,11 +76,12 @@ export const Banner = styled(Flex)`
     top: -60px;
     transform: rotate(45deg);
   }
-
+  
   img {
     flex-grow: 1;
     margin-bottom: 0;
   }
+
 `
 
 export const NewsBanner = styled(Flex)`
@@ -93,20 +93,26 @@ export const NewsBanner = styled(Flex)`
   ${OtherDecor}
   overflow: hidden;
   position: relative;
+
+  @media only screen and (max-width: 900px) {
+    padding: 40px 25px 25px;
+  }
 `
 
 export const CaseBanner = styled(Flex)`
   width: 100%;
-  padding: 25px 25px 25px 8.4%;
+  padding: 25px 25px 25px 52px;
   background: #000;
   ${OtherDecor};
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 87px;
   overflow: hidden;
+  align-items: stretch;
 
   img {
-    max-width: 476px;
+    max-width: 510px;
+    margin-bottom: 0;
   }
 `
 
@@ -119,6 +125,11 @@ export const Title = styled.h3`
   margin-bottom: 25px;
   padding-left: 10px;
   letter-spacing: -0.07em;
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 24px;
+    line-height: 24px;
+  }
 `
 
 export const SubTitle = styled.p`
@@ -130,6 +141,12 @@ export const SubTitle = styled.p`
   margin-bottom: 52px;
   padding-left: 10px;
   letter-spacing: -0.07em;
+
+  @media only screen and (max-width: 1150px) {
+    margin-bottom: 22px;
+    font-size: 21px;
+    line-height: 24px;
+  }
 `
 export const Description = styled.p`
   font-family: Formular;
@@ -141,6 +158,11 @@ export const Description = styled.p`
   color: #000000;
   opacity: 0.5;
   padding-left: 12%;
+
+  @media only screen and (max-width: 1150px) {
+    line-height: 21px;
+    font-size: 16px;
+  }
 `
 export const Arrow = styled.span`
   height: 201px;
@@ -150,11 +172,12 @@ export const Arrow = styled.span`
   background-repeat: no-repeat;
   margin-left: 12px;
   margin-right: 62px;
+
+  @media only screen and (max-width: 1150px) {
+    margin-right: 20px;
+  }
 `
-const BannerPic = styled.div`
-  height: 100%;
-  flex-shrink: 1;
-`
+
 export const NewsTitle = styled.h1`
   font-family: Neue Machina;
   font-style: normal;
@@ -167,6 +190,12 @@ export const NewsTitle = styled.h1`
   max-width: 1067px;
   margin-bottom: 104px;
   width: 100%;
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 44px;
+  }
 `
 
 export const NewsDescription = styled.p`
@@ -180,6 +209,10 @@ export const NewsDescription = styled.p`
   opacity: 0.5;
   /* flex-grow: 1; */
   max-width: 759px;
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 22px;
+  }
 `
 export const CaseTitle = styled.h1`
   font-family: Neue Machina;
@@ -200,10 +233,9 @@ export const CaseDescription = styled.p`
   line-height: 24px;
   letter-spacing: -0.02em;
   color: #ffffff;
-  margin-bottom: 76px;
   opacity: 0.5;
-
-  width: 100%;
+  max-width: 56%;
+  margin-bottom: 0;
 `
 
 export const Ukazateli = styled.div`
@@ -214,6 +246,10 @@ export const Ukazateli = styled.div`
   right: 18px;
   bottom: 0;
   z-index: 2;
+
+  @media only screen and (max-width: 1150px) {
+    display: none;
+  }
 `
 
 export const Line = styled.div`

@@ -24,7 +24,12 @@ const Cases = () => {
     }
   `)
   return (
-    <Flex width="100%" paddingAll="0px 49px">
+    <Flex
+      width="100%"
+      paddingAll="0px 49px 140px"
+      tabletPadding="0 30px 140px"
+      mobilePadding="0 20px 99px"
+    >
       <Flex
         row
         width="100%"

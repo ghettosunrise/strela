@@ -1,12 +1,17 @@
 import React from "react"
-import Flex from "../../styled/flex"
 import Nav from "../../containers/Nav"
 import * as S from "./styles"
 
 const MobileMenu = ({ isClosedMobile }) => {
   return (
     <S.MobileWrap isClosedMobile={isClosedMobile}>
-      <Nav agency column space="4.8vh" align="center"></Nav>
+      <Nav
+        agency
+        column
+        space="4.8vh"
+        align="center"
+        mobileAlign="flex-start"
+      ></Nav>
       <S.SubTitle>Быстрый способ с нами связаться через :</S.SubTitle>
       <S.SocialWrap>
         <S.LinkWrap>

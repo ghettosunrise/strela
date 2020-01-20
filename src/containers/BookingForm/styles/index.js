@@ -3,14 +3,6 @@ import Flex from "../../../styled/flex"
 import close from "../../../images/close.svg"
 import { Form } from "formik"
 
-const shadowOn = css`
-  background: #000;
-`
-
-const shadowOff = css`
-  background: transparent;
-`
-
 export const CustomForm = styled(Form)`
   width: 100%;
   max-width: 718px;
@@ -126,8 +118,6 @@ export const Title = styled.p`
   font-weight: normal;
   font-size: 48px;
   line-height: 48px;
-  /* or 100% */
-
   letter-spacing: -0.07em;
   margin-bottom: 3.5vh;
   color: #000000;
@@ -149,7 +139,6 @@ export const FormInfo = styled.p`
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
-  /* identical to box height */
   margin-bottom: 1.4vh;
   letter-spacing: 0.06em;
   text-transform: uppercase;

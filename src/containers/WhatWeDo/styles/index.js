@@ -1,8 +1,6 @@
 import styled from "styled-components"
 import Flex from "../../../styled/flex"
 
-export const Warp = styled(Flex)``
-
 export const Title = styled.h2`
   font-family: Neue Machina;
   font-size: 48px;
@@ -13,6 +11,15 @@ export const Title = styled.h2`
 
   @media (max-width: 1150px) {
     margin-bottom: 38px;
+  }
+`
+
+export const WWFlex = styled(Flex)`
+  width: 100%;
+  max-width: 49%;
+
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
   }
 `
 
@@ -54,4 +61,8 @@ export const BlockSubtitle = styled.p`
   color: #000000;
   font-weight: 300;
   opacity: 0.5;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 40px;
+  }
 `

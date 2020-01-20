@@ -1,35 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Flex from "../../styled/flex"
 import News from "../../components/News"
 import ButtonBig from "../../components/Buttons/ButtonBig"
 
 const NewsContainer = ({ data }) => {
-  // const data = useStaticQuery(graphql`
-  //   query News {
-  //     allContentfulNews {
-  //       nodes {
-  //         id
-  //         size
-  //         date
-  //         title
-  //         link
-  //         special
-  //         extralarge
-  //         hashtags {
-  //           id
-  //           name
-  //         }
-  //         image {
-  //           file {
-  //             url
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-  // console.log(data)
   return (
     <Flex width="100%" paddingAll="46px 49px" tabletPadding="46px 30px">
       <Flex

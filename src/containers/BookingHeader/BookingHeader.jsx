@@ -10,9 +10,9 @@ import Ticker from "../../components/Ticker"
 
 import logo from "../../images/bookinglogo.svg"
 
-const BookingHeader = ({ isClosed, setIsClosed }) => {
+const BookingHeader = ({ isClosed, setIsClosed, main }) => {
   return (
-    <Flex width="100%">
+    <Flex width="100%" z="2">
       <S.HeaderWrap>
         <Flex
           row
@@ -35,12 +35,14 @@ const BookingHeader = ({ isClosed, setIsClosed }) => {
         <Button txt="Booking Form" onClick={() => setIsClosed(false)} />
       </S.HeaderWrap>
       <Ticker />
-      <Flex width="100%" paddingAll="90px 49px 0" row>
-        <img src={logo}></img>
-        <S.Title>
-          We represent a wide range of artists that produce electronic music
-        </S.Title>
-      </Flex>
+      {main ? (
+        <Flex width="100%" paddingAll="90px 49px 0" row>
+          <img src={logo}></img>
+          <S.Title>
+            We represent a wide range of artists that produce electronic music
+          </S.Title>
+        </Flex>
+      ) : null}
     </Flex>
   )
 }

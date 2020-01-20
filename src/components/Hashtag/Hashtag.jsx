@@ -1,9 +1,9 @@
 import React from "react"
 import * as S from "./styles"
 
-const Hashtag = ({ text, link, value, bottom }) => {
+const Hashtag = ({ text, link, value, bottom, color }) => {
   return (
-    <S.MyHashtag bottom={bottom} to={`/agency/news/${text}`}>
+    <S.MyHashtag color={color} bottom={bottom} to={`/agency/news/${value}`}>
       {`#` + text}
     </S.MyHashtag>
   )

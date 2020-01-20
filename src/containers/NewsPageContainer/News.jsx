@@ -1,19 +1,17 @@
 import React from "react"
-// import { useStaticQuery, graphql } from "gatsby"
 import Flex from "../../styled/flex"
 import News from "../../components/News"
 import ButtonBig from "../../components/Buttons/ButtonBig"
 import Banner from "../../components/Banner"
 import Hashtags from "../../components/Hashtag"
 import * as S from "./styles"
-import Divider from "../../components/Divider"
 
 const NewsContainer = ({ data, hashtags }) => {
-  console.log(data)
-  // console.log("test", data.find({ extralarge: "true" }))
-
   const filtered = data.filter(item => item.extralarge)
-  // console.log("TCL: NewsContainer -> filtered", filtered)
+
+  const filtered2 = data.filter(item =>
+    item.hashtags.filter(item => item.name === "gideon")
+  )
 
   return (
     <Flex width="100%">
@@ -77,8 +75,8 @@ const NewsContainer = ({ data, hashtags }) => {
             />
           )
         )}
+        <ButtonBig txt="Все новости"></ButtonBig>
       </Flex>
-      <ButtonBig txt="Все новости"></ButtonBig>
     </Flex>
   )
 }

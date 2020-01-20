@@ -9,14 +9,17 @@ export const MobileWrap = styled(Flex)`
   height: 100vh;
   background-color: #f3f2f1;
   position: fixed;
-  right: ${props => (props.isClosedMobile == true ? "-100%" : 0)};
-  /* right: ${({ isClosed }) => (isClosed ? "-100%" : 0)}; */
+  right: ${props => (props.isClosedMobile === true ? "-100%" : 0)};
   top: 0;
   z-index: 5;
   padding-top: 137px;
   padding: 137px 35px 6.2vh;
   align-items: center;
   transition: right 0.4s ease;
+
+  @media only screen and (max-width: 768px) {
+    align-items: flex-start;
+  }
 `
 
 export const Title = styled.p`
@@ -62,6 +65,11 @@ export const SocialWrap = styled(Flex)`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 12.1vh;
+
+  @media only screen and (max-width: 768px) {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
 `
 
 export const LinkWrap = styled(Flex)`
@@ -71,6 +79,10 @@ export const LinkWrap = styled(Flex)`
   align-items: center;
   &:last-child {
     margin-right: 0px;
+
+    @media only screen and (max-width: 477px) {
+      margin-top: 3vh;
+    }
   }
 
   div {
@@ -104,8 +116,6 @@ export const OneMoreSocial = styled(Flex)`
     line-height: 28px;
     letter-spacing: -0.04em;
     margin-bottom: 4.1vh;
-    /* b */
-
     color: #000000;
   }
 
@@ -115,8 +125,6 @@ export const OneMoreSocial = styled(Flex)`
     font-weight: 900;
     font-size: 18px;
     line-height: 24px;
-    /* identical to box height, or 133% */
-
     letter-spacing: 0.06em;
     text-decoration-line: underline;
 

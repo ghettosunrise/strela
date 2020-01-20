@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import Flex from "../../styled/flex"
-import Button from "../../components/Buttons/ButtonBig"
 import * as S from "./styles"
 
 const Services = () => {
@@ -9,7 +8,12 @@ const Services = () => {
   const [switchService, setSwitchService] = useState(0)
 
   return (
-    <Flex width="100%" paddingAll="0 49px 150px">
+    <Flex
+      width="100%"
+      paddingAll="0 49px 150px"
+      tabletPadding="0 30px 80px"
+      mobilePadding="0 20px 80px"
+    >
       <Flex row marginBottom="60px" width="500px" justify="space-between">
         <Flex width="245px" onClick={() => setActiveService(0)}>
           {activeService === 0 ? (
@@ -31,8 +35,13 @@ const Services = () => {
         {activeService === 0 ? (
           <>
             <p>организаторам</p>
-            <Flex width="100%" row justify="space-between">
-              <Flex width="19.6%">
+            <Flex
+              width="100%"
+              row
+              justify="space-between"
+              mobileDirection="column"
+            >
+              <Flex width="19.6%" mobileMargin="0 0 40px" mobileWidth="100%">
                 <S.Txt onClick={() => setSwitchService(0)}>Консультация</S.Txt>
                 <S.Txt onClick={() => setSwitchService(1)}>
                   Промо релизов/ <br /> проектов/мероприятий
@@ -84,7 +93,7 @@ const Services = () => {
           <>
             <p>Артистам</p>
             <Flex width="100%" row justify="space-between">
-              <Flex width="19.6%">
+              <Flex width="19.6%" mobileMargin="0 0 40px" mobileWidth="100%">
                 <S.Txt>Lorem</S.Txt>
                 <S.Txt>
                   ipsun/ <br /> проектов/мероприятий

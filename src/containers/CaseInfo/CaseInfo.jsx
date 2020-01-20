@@ -1,8 +1,6 @@
 import React from "react"
 import * as S from "./styles"
 import Flex from "../../styled/flex"
-import src1 from "../../images/closer1.png"
-import src2 from "../../images/closer2.png"
 
 const CaseInfo = ({
   titleFirst,

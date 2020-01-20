@@ -8,5 +8,9 @@ export const Header = styled.header`
   top: 0;
   z-index: 100;
   background: #f3f2f1;
+
+  @media only screen and (max-width: 1150px) {
+    padding: 23px 30px;
+  }
   /* border-bottom: 1px solid grey; */
 `

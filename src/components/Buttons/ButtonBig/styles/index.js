@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components"
-import ButtonTr from "../../../../images/buttontr.svg"
 import { Link } from "gatsby"
 
 const noEvent = css`
@@ -11,8 +10,6 @@ export const ButtonTransparent = styled(Link)`
   height: ${props => (props.small ? "54px" : "84px")};
   border: 2px solid black;
   background-size: 100% 84px;
-  display: flex;
-  align-items: center;
   justify-content: center;
   font-family: Neue Machina;
   font-size: ${props => (props.small ? "24px" : "36px")};
@@ -21,7 +18,25 @@ export const ButtonTransparent = styled(Link)`
   display: flex;
   align-items: center;
   letter-spacing: -0.07em;
+  background: linear-gradient(transparent);
   ${props => (props.small ? noEvent : null)}
+  transition: all .5s ease;
+
+  &:hover {
+    color: #fff;
+    background: linear-gradient(
+      196.61deg,
+      rgba(0, 0, 0, 0.48) -9.45%,
+      #000000 77.6%
+    );
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+    height: ${props => (props.small ? "54px" : "60px")};
+    border: 1px solid black;
+  }
 `
 export const StyloOne = styled.div`
   background: #f3f2f1;
@@ -32,6 +47,11 @@ export const StyloOne = styled.div`
   position: absolute;
   left: -20px;
   bottom: ${props => (props.small ? "-36px" : "-30px")};
+
+  @media only screen and (max-width: 768px) {
+    border: 1px solid black;
+    bottom: -39px;
+  }
 `
 
 export const StyloTwo = styled.div`
@@ -43,6 +63,11 @@ export const StyloTwo = styled.div`
   position: absolute;
   right: -20px;
   bottom: ${props => (props.small ? "-36px" : "-30px")};
+
+  @media only screen and (max-width: 768px) {
+    border: 1px solid black;
+    bottom: -39px;
+  }
 `
 
 export const StyloThree = styled.div`
@@ -54,6 +79,11 @@ export const StyloThree = styled.div`
   position: absolute;
   left: -20px;
   top: ${props => (props.small ? "-36px" : "-30px")};
+
+  @media only screen and (max-width: 768px) {
+    border: 1px solid black;
+    top: -39px;
+  }
 `
 
 export const StyloFour = styled.div`
@@ -65,4 +95,9 @@ export const StyloFour = styled.div`
   position: absolute;
   right: -20px;
   top: ${props => (props.small ? "-36px" : "-30px")};
+
+  @media only screen and (max-width: 768px) {
+    border: 1px solid black;
+    top: -39px;
+  }
 `

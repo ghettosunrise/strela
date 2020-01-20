@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const Footer = styled.footer`
   padding: 55px 49px 40px;
   background: #fff;
+  z-index: 1;
 `
 
 export const FooLink = styled.a`

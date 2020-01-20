@@ -7,8 +7,6 @@
 // You can delete this file if you're not using it
 
 exports.createPages = async function({ actions, graphql }) {
-
-
   const {
     data: {
       allContentfulHashtag: { edges: hashtag },
@@ -59,6 +57,34 @@ exports.createPages = async function({ actions, graphql }) {
       component: require.resolve(`./src/templates/case.js`),
       context: { customId },
       key: { customId },
+    })
+  })
+
+  const {
+    data: {
+      allContentfulArtist: { edges: artist },
+    },
+  } = await graphql(
+    `
+      query allArtists {
+        allContentfulArtist {
+          edges {
+            node {
+              id
+              linkId
+            }
+          }
+        }
+      }
+    `
+  )
+
+  artist.forEach(({ node: { linkId } }) => {
+    actions.createPage({
+      path: `/booking/${linkId}`,
+      component: require.resolve(`./src/templates/artist.js`),
+      context: { linkId },
+      key: { linkId },
     })
   })
 }

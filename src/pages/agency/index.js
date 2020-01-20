@@ -10,6 +10,7 @@ import News from "../../containers/NewsContainer"
 import Footer from "../../containers/Footer"
 import Contact from "../../containers/ContactUs"
 import MobileMenu from "../../containers/MobileMenu"
+import Arrow from "../../components/Arrow"
 
 // import MainSc1 from "../../components/UI/containers/mainsc1"
 import SEO from "../../components/seo"
@@ -41,8 +42,23 @@ const AgencyHome = () => {
           }
         }
       }
+      contentfulBanner(bannerType: { eq: "link" }) {
+        id
+        link
+        subtitle
+        description
+        image {
+          file {
+            url
+          }
+        }
+        title
+      }
     }
   `)
+
+  const bannerData = data.contentfulBanner
+  console.log("TCL: bannerData", bannerData)
   // console.log(" mdd", data.allContentfulNews.nodes)
 
   // console.log("isClosed", isClosed)
@@ -57,6 +73,7 @@ const AgencyHome = () => {
         isClosedMobile={isClosedMobile}
         setIsClosedMobile={setIsClosedMobile}
       />
+      <Arrow top="105px" left="-3%" z="-1" />
       <MobileMenu
         isClosedMobile={isClosedMobile}
         setIsClosedMobile={setIsClosedMobile}
@@ -65,10 +82,11 @@ const AgencyHome = () => {
       <Cases></Cases>
       <WhatWeDo></WhatWeDo>
       <Banner
-        title="I’m Jazz"
-        subtitle="23-Окт, Closer"
-        description="Пояснение основных моментов в пиаре собственного имени и проектов..."
-        link
+        title={bannerData.title}
+        subtitle={bannerData.subtitle}
+        description={bannerData.description}
+        link={bannerData.link}
+        image={bannerData.image.file.url}
       ></Banner>
       <Divider text="Написано нами" />
       <News data={data.allContentfulNews.nodes} />

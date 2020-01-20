@@ -1,7 +1,7 @@
 import React from "react"
 import * as S from "./styles"
 import Flex from "../../styled/flex"
-import { Formik, Form, Field, ErrorMessage } from "formik"
+import { Formik, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
 import Button from "../../components/Buttons/ButtonTransparent"
 

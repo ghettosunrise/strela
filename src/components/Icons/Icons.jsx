@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
 import arrR from "../../images/arrowr.svg"
-import arrRBl from "../../images/arrowrbl.svg"
-import arrRWh from "../../images/arrowrwh.svg"
+// import arrRBl from "../../images/arrowrbl.svg"
+// import arrRWh from "../../images/arrowrwh.svg"
 import arrL from "../../images/arrowl.svg"
 
 const left = css`
@@ -14,15 +14,15 @@ const right = css`
   margin-left: ${props => props.margin || 0};
 `
 
-const rightBlue = css`
-  background-image: url(${arrRBl});
-  margin-left: ${props => props.margin || 0};
-`
+// const rightBlue = css`
+//   background-image: url(${arrRBl});
+//   margin-left: ${props => props.margin || 0};
+// `
 
-const rightWhite = css`
-  background-image: url(${arrRBl});
-  margin-left: ${props => props.margin || 0};
-`
+// const rightWhite = css`
+//   background-image: url(${arrRWh});
+//   margin-left: ${props => props.margin || 0};
+// `
 
 const Arrow = styled.div`
   width: 48px;

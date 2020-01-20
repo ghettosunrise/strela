@@ -36,7 +36,7 @@ const Header = ({
           <Social />
           <ButtonBlack txt="Связаться" onClick={() => setIsClosed(false)} />
         </Flex> */}
-        {window >= 1130 ? (
+        {window >= 1150 ? (
           <>
             <Nav agency row></Nav>
             <Flex row align="center" maxWidth="323px" width="100%">

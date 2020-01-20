@@ -1,12 +1,10 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
-import Header from "../../containers/WhatWeDoHeader"
 
 import Layout from "../../components/layout"
 import Services from "../../containers/Services"
 import Contact from "../../containers/ContactUs"
 import SEO from "../../components/seo"
-import MobileMenu from "../../containers/MobileMenu"
+import Arrow from "../../components/Arrow"
 
 const WhatWeDo = () => {
   const [isClosed, setIsClosed] = useState(true)
@@ -21,10 +19,7 @@ const WhatWeDo = () => {
     >
       <SEO title="WhatWeDo" />
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
-      <MobileMenu
-        isClosedMobile={isClosedMobile}
-        setIsClosedMobile={setIsClosedMobile}
-      />
+      <Arrow top="105px" left="-3%" />
       <Services></Services>
     </Layout>
   )

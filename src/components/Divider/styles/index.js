@@ -10,6 +10,15 @@ export const DividerText = styled.h2`
   letter-spacing: -0.07em;
   margin-bottom: 0;
   max-width: 46%;
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 34px;
+    line-height: 34px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 66%;
+  }
 `
 
 export const DividerArrow = styled.div`

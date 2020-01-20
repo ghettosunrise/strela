@@ -4,32 +4,9 @@ import * as S from "./styles"
 import alisa from "../../images/alisa.png"
 import dima from "../../images/dima.png"
 
-const Hero = () => {
-  return (
-    <S.Hero>
-      <img src=""></img>
-      <Flex>
-        <S.HeroTitle></S.HeroTitle>
-        <S.HeroSubtitle></S.HeroSubtitle>
-        <S.HeroDescription></S.HeroDescription>
-        <Flex width="100%" row>
-          <S.LinkWrap>
-            <p>in social media</p>
-            <a href="#">fb</a>
-          </S.LinkWrap>
-          <S.LinkWrap>
-            <p>email</p>
-            <a href="#">fb</a>
-          </S.LinkWrap>
-        </Flex>
-      </Flex>
-    </S.Hero>
-  )
-}
-
 const AboutUs = () => {
   return (
-    <Flex width="100%" paddingAll="0 49px 150px">
+    <Flex width="100%" paddingAll="0 49px 150px" tabletPadding="0 35px 60px">
       <Flex width="100%">
         <S.Title>
           Команда агентства Strela уникальна тем, что каждый из основателей

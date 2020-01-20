@@ -1,12 +1,21 @@
 import React from "react"
-import { BlackButton } from "./styles"
+import { BlackButton, BlackButtonLink } from "./styles"
 
 export const ButtonBlack = ({ txt, onClick, link }) => {
   return (
-    <BlackButton to={link} onClick={onClick}>
-      {txt}
-      <span></span>
-    </BlackButton>
+    <>
+      {link ? (
+        <BlackButtonLink to={link}>
+          {txt}
+          <span></span>
+        </BlackButtonLink>
+      ) : (
+        <BlackButton onClick={onClick}>
+          {txt}
+          <span></span>
+        </BlackButton>
+      )}
+    </>
   )
 }
 

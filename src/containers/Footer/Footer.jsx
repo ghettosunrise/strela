@@ -23,7 +23,7 @@ const Footer = ({ agency, booking }) => {
         <F.HeaderLogoWrap maxWidth="94px">
           <Link to="/"></Link>
         </F.HeaderLogoWrap>
-        {window >= 1130 ? (
+        {window >= 1150 ? (
           <>
             <Nav agency={agency} booking={booking} row></Nav>
           </>

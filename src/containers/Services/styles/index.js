@@ -25,6 +25,13 @@ export const InvisButton = styled.button`
   background: transparent;
   cursor: pointer;
   letter-spacing: -0.07em;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+    height: 54px;
+    width: 100%;
+  }
 `
 export const Txt = styled.p`
   font-family: Neue Machina;
@@ -50,6 +57,15 @@ export const ServiceContent = styled(Flex)`
   background: #fff;
   ${LinkDecor};
   overflow: hidden;
+
+  @media only screen and (max-width: 768px) {
+    padding: 50px 16px 41px 40px;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 460px) {
+    padding: 50px 16px 41px 16px;
+  }
 `
 
 export const Title = styled.h2`
@@ -61,6 +77,11 @@ export const Title = styled.h2`
   letter-spacing: -0.07em;
   margin-bottom: 61px;
   color: #000000;
+
+  @media only screen and (max-width: 380px) {
+    font-size: 35px;
+    line-height: 35px;
+  }
 `
 export const List = styled.ul`
   font-family: Formular;
@@ -70,6 +91,11 @@ export const List = styled.ul`
   line-height: 30px;
   letter-spacing: -0.03em;
   color: #000000;
+
+  @media only screen and (max-width: 460px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 
   li {
     margin-bottom: 20px;

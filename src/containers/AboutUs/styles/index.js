@@ -13,6 +13,13 @@ export const Title = styled.h1`
   margin-bottom: 60px;
   width: 70%;
   font-weight: 300;
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 40px;
+    width: 60%;
+  }
 `
 
 export const Descritpion = styled.p`
@@ -36,6 +43,10 @@ export const DecorItem = styled.div`
   position: absolute;
   top: 80px;
   right: 0;
+
+  @media only screen and (max-width: 1150px) {
+    top: 0px;
+  }
 `
 export const Hero = styled(Flex)`
   max-width: 944px;
@@ -50,6 +61,11 @@ export const Hero = styled(Flex)`
   img {
     max-width: 320px;
     margin-right: 19px;
+  }
+
+  @media only screen and (max-width: 1150px) {
+    margin-right: 0;
+    margin-bottom: 60px;
   }
 `
 export const HeroTitle = styled.h2`
@@ -110,10 +126,46 @@ export const LinkWrap = styled.div`
     font-size: 13px;
     line-height: 13px;
     letter-spacing: 0.06em;
-    text-decoration-line: underline;
+    position: relative;
     text-transform: uppercase;
     color: #000000;
     margin-right: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    &::before {
+      content: "";
+      width: 100%;
+      position: absolute;
+      right: 0;
+      left: auto;
+      bottom: 0;
+      height: 1px;
+      background: #000;
+      transition: width 0.4s cubic-bezier(0.7, 0, 0.5, 1);
+    }
+
+    &::after {
+      content: "";
+      width: 0%;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      height: 1px;
+      background: #000;
+      transition: width 0.4s cubic-bezier(0.7, 0, 0.5, 1);
+    }
+
+    &:hover {
+      &::before {
+        width: 0;
+      }
+
+      &::after {
+        transition-delay: 0.3s;
+        width: 100%;
+      }
+    }
 
     &:last-child {
       margin-right: 0;

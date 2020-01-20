@@ -1,7 +1,6 @@
 import styled, { css, keyframes } from "styled-components"
 import React, { useEffect, useState, useRef } from "react"
 import Flex from "../../styled/flex"
-import * as S from "./styles"
 import arrw from "../../images/arrw.svg"
 import { useStaticQuery, graphql } from "gatsby"
 

@@ -13,6 +13,8 @@ const Case = ({
   description,
   img,
 }) => {
+  const window = document.documentElement.clientWidth
+
   return (
     <S.StyledCase justify={justify} size={size}>
       <Flex row>
@@ -26,7 +28,7 @@ const Case = ({
           <S.CaseDescription>{description}</S.CaseDescription>
         ) : null}
       </Flex>
-      <Link to={`/agency/case/${customId}`}>
+      <Link className="case__link" to={`/agency/case/${customId}`}>
         <img src={img}></img>
       </Link>
     </S.StyledCase>

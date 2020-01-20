@@ -4,6 +4,10 @@ import Flex from "../../../styled/flex"
 export const TxtContainer = styled(Flex)`
   width: 57.7%;
   padding-left: 16.6%;
+
+  @media only screen and (max-width: 1150px) {
+    width: 79.7%;
+  }
 `
 
 export const Text = styled.p`

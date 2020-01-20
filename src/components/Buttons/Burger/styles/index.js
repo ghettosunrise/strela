@@ -9,5 +9,5 @@ export const BurgerButton = styled.button`
   background-color: transparent;
   border: 0;
   background-image: url(${props =>
-    props.isClosedMobile == true ? Burger : BurgerClose});
+    props.isClosedMobile === true ? Burger : BurgerClose});
 `

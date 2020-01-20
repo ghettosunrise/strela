@@ -1,11 +1,10 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Link } from "gatsby"
 import Contact from "../../containers/ContactUs"
 import Layout from "../../components/layout"
 import NewsPage from "../../containers/NewsPageContainer"
 import SEO from "../../components/seo"
-import MobileMenu from "../../containers/MobileMenu"
+import Arrow from "../../components/Arrow"
 
 const News = () => {
   const [isClosed, setIsClosed] = useState(true)
@@ -45,19 +44,6 @@ const News = () => {
     }
   `)
 
-  // const myHashtags = useStaticQuery(graphql`
-  //   query Hashtags {
-  //     allContentfulHashtag {
-  //       nodes {
-  //         name
-  //         value
-  //         id
-  //       }
-  //     }
-  //   }
-  // `)
-  console.log("TCL: News -> myHashtags", _data.allContentfulHashtag)
-
   return (
     <Layout
       isClosed={isClosed}
@@ -67,11 +53,7 @@ const News = () => {
     >
       <SEO title="News" />
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
-      <MobileMenu
-        isClosedMobile={isClosedMobile}
-        setIsClosedMobile={setIsClosedMobile}
-      />
-
+      <Arrow top="105px" left="-3%" />
       <NewsPage
         hashtags={_data.allContentfulHashtag.nodes}
         data={_data.allContentfulNews.nodes}

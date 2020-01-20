@@ -42,10 +42,10 @@ const Layout = ({
           siteTitle={data.site.siteMetadata.title}
         />
         <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
-        {/* <MobileMenu
+        <MobileMenu
           isClosedMobile={isClosedMobile}
           setIsClosedMobile={setIsClosedMobile}
-        /> */}
+        />
 
         <main>{children}</main>
 
