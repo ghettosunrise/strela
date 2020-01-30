@@ -92,7 +92,12 @@ const Services = () => {
         ) : (
           <>
             <p>Артистам</p>
-            <Flex width="100%" row justify="space-between">
+            <Flex
+              width="100%"
+              row
+              justify="space-between"
+              mobileDirection="column"
+            >
               <Flex width="19.6%" mobileMargin="0 0 40px" mobileWidth="100%">
                 <S.Txt>Lorem</S.Txt>
                 <S.Txt>
@@ -114,7 +119,6 @@ const Services = () => {
             </Flex>
           </>
         )}
-        ;
       </Flex>
     </Flex>
   )

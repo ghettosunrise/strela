@@ -21,6 +21,7 @@ const Layout = ({
   isClosed,
   setIsClosedMobile,
   isClosedMobile,
+  booking,
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

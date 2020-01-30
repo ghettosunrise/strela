@@ -42,7 +42,7 @@ export const Sidebar = ({
         </S.Translate>
       </Flex>
       <p>In social media</p>
-      <Flex width="100%" marginBottom="30px" row justify="space-between">
+      <Flex width="100%" maxWidth="400px" marginBottom="30px" row justify="space-between">
         <S.Link href={fbLink}>FB</S.Link>
         <S.Link href={igLink}>IG</S.Link>
         <S.Link href={raLink}>RA</S.Link>

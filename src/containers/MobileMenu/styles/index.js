@@ -77,6 +77,13 @@ export const LinkWrap = styled(Flex)`
   flex-direction: row;
   margin-right: 40px;
   align-items: center;
+
+  &:nth-child(2) {
+    @media only screen and (max-width: 393px) {
+      margin-top: 3vh;
+    }
+  }
+
   &:last-child {
     margin-right: 0px;
 

@@ -68,6 +68,15 @@ main {
   padding-top: 158px;
 }
 
+
+
+@media only screen and (max-width: 768px) {
+  
+  .myImg {
+    order: 2;
+  }
+}
+
 @media only screen and (max-width: 1150px) {
   main {
     padding-top: 108px;

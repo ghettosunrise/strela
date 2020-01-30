@@ -9,4 +9,8 @@ export const Title = styled.h2`
   letter-spacing: -0.07em;
 
   color: #000000;
+
+  
+
+  
 `

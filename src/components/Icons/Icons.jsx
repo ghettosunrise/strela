@@ -7,11 +7,21 @@ import arrL from "../../images/arrowl.svg"
 const left = css`
   background-image: url(${arrL});
   margin-right: ${props => props.margin || 0};
+
+
+  @media only screen and (max-width: 768px) {
+    margin-right: 1px;
+  };
 `
 
 const right = css`
   background-image: url(${arrR});
   margin-left: ${props => props.margin || 0};
+
+
+  @media only screen and (max-width: 768px) {
+    margin-left:1px;
+  };
 `
 
 // const rightBlue = css`
@@ -27,6 +37,12 @@ const right = css`
 const Arrow = styled.div`
   width: 48px;
   height: 23px;
+
+  @media only screen and (max-width: 768px) {
+    width: 28px;
+    height: 13px;
+    background-size : 100%
+  };
 
   ${props => (props.direction === "R" ? right : left)};
 `

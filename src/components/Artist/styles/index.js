@@ -6,6 +6,9 @@ import fb from "../../../images/exportfb.svg"
 
 export const ArtistWrapper = styled(Flex)`
   transition: 0.3s ease all;
+  img {
+    width: 100%;
+  }
 
   ${props => (props.isHidden === 1 ? hoverStyle : null)}
 `
@@ -52,13 +55,21 @@ export const ArtistName = styled.h1`
   font-family: Neue Machina;
   font-style: normal;
   font-weight: normal;
-  font-size: 96px;
-  line-height: 96px;
   letter-spacing: -0.07em;
   text-align: center;
   color: #000000;
   width: 100%;
   margin: 0 0 60px;
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 76px;
+    line-height: 76px;
+    margin-bottom: 40px;
+  }
+
+ 
+
+  
 `
 
 export const ArtistTitle = styled.p`
@@ -83,7 +94,11 @@ export const DecriptionFirts = styled.p`
   color: #000000;
   margin-bottom: 30px;
   opacity: 0.7;
-`
+
+  @media only screen and (max-width: 1150px) {
+    
+  };
+`;
 
 export const DescriptionSecond = styled.p`
   font-family: Formular;
@@ -170,6 +185,10 @@ export const CloseTxt = styled.p`
 
 export const Sidebar = styled(Flex)`
   width: 23.5%;
+
+  @media only screen and (max-width: 810px) {
+    width: 26.5%;
+  };
 
   p {
     font-family: Formular;

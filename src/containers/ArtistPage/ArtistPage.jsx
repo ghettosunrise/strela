@@ -36,14 +36,12 @@ const ArtistPage = data => {
 
   return (
     <S.ArtistWrapper>
-      <Flex paddingAll=" 60px 49px 0" z="2">
-        <S.ArtistName artistName="Criminal Practice">
-          Criminal Practice
-        </S.ArtistName>
-        <img src={cpbig}></img>
+      <Flex paddingAll=" 60px 49px 0" tabletPadding="0px 30px" mobilePadding="0px 20px" z="2">
+        <S.ArtistName>{myData.artistName}</S.ArtistName>
+        <img src={myData.artistPicture.fluid.src}></img>
         <S.ArtistContent>
-          <Flex width="100%" row justify="flex-end" paddingTop="60px">
-            <Flex width="53%">
+          <Flex width="100%" row justify="flex-end" paddingTop="60px" mobileDirection="column">
+            <Flex width="53%" mobileWidth="100%">
               <S.DecriptionFirts>
                 {isEnglish
                   ? documentToReactComponents(parsedText1)

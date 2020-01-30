@@ -15,7 +15,12 @@ const Banner = ({
   hashtags,
 }) => {
   return (
-    <Flex width="100%" paddingAll="0px 49px">
+    <Flex
+      width="100%"
+      paddingAll="0px 49px"
+      tabletPadding="0 30px"
+      mobilePadding="0 20px"
+    >
       {link ? (
         <Link to="#">
           <S.Banner link={link} cases={cases} news={news}>
@@ -38,14 +43,26 @@ const Banner = ({
           <S.Ukazateli></S.Ukazateli>
         </S.NewsBanner>
       ) : cases ? (
-        <S.CaseBanner>
-          <Flex shrink="1" marginRight="10px" justify="space-between">
+        <S.CaseBanner mobileDirection="column">
+          <Flex
+            shrink="1"
+            marginRight="10px"
+            justify="space-between"
+            mobileDirection="column"
+          >
             <S.CaseTitle>{title}</S.CaseTitle>
             <Flex>
               <S.Line />
-              <Flex width="100%" row justify="space-between" align="flex-end">
+              <Flex
+                width="100%"
+                row
+                justify="space-between"
+                align="flex-end"
+                mobileDirection="column"
+                mobileAlign="flex-start"
+              >
                 <S.CaseDescription>{description}</S.CaseDescription>
-                <Flex row>
+                <Flex row mobileMargin="20px 0">
                   {hashtags.map(({ name, key, value }) => (
                     <Hashtag color="#FFF" value={value} key={key} text={name} />
                   ))}

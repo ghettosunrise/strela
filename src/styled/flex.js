@@ -33,6 +33,7 @@ const flex = css`
   ${fromProp("hPadding", { make: "padding-horizontal" })};
   ${fromProp("vPadding", { make: "padding-vertical" })};
   ${fromProp("border", { make: "border" })};
+  ${fromProp("order", { make: "order" })};
   ${fromProp("borderTop", { make: "border-top" })};
   ${fromProp("radius", { make: "border-radius" })};
   ${fromProp("overflow", { make: "overflow" })};
@@ -50,6 +51,7 @@ const flex = css`
     flex-direction: ${getProp("tabletDirection", "")};
     width: ${getProp("tabletWidth", "")};
     margin: ${getProp("tabletMargin", "")};
+    ${fromProp("tabletMaxWidth", { make: "max-width" })};
   }
 
   @media (max-width: 768px) {
@@ -59,6 +61,7 @@ const flex = css`
     justify-content: ${getProp("mobileJustify", "")};
     align-items: ${getProp("mobileAlign", "")};
     margin: ${getProp("mobileMargin", "")};
+    ${fromProp("mobileMaxWidth", { make: "max-width" })};
   }
 `
 
@@ -81,10 +84,33 @@ export const MainPageWrap = styled(Flex)`
   font-size: 48px;
   line-height: 48px;
 
+  @media only screen and (max-width: 1268px) {
+    background-size: cover;
+  }
+
   img {
     max-width: 940px;
     margin-bottom: 124px;
+
+    @media only screen and (max-width: 1150px) {
+      max-width: 620px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      max-width: 290px
+    }
   }
+
+  @media only screen and (max-width: 768px) {
+      a {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+
+  
+
+  
 
   .arrow_left {
     width: 48px;

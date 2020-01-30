@@ -30,4 +30,8 @@ export const DividerArrow = styled.div`
   margin-left: 34px;
   position: relative;
   bottom: 10px;
+
+  @media only screen and (max-width: 1150px) {
+    bottom: 5px;
+  }
 `

@@ -81,6 +81,10 @@ export const Special = styled(Flex)`
     @media only screen and (max-width: 1150px) {
       bottom: -150px;
     }
+
+    @media only screen and (max-width: 768px) {
+      left: -30%;
+    }
   }
 
   &::after {
@@ -96,6 +100,10 @@ export const Special = styled(Flex)`
     @media only screen and (max-width: 1150px) {
       top: -150px;
     }
+
+    @media only screen and (max-width: 768px) {
+      right: -30%;
+    }
   }
 `
 
@@ -104,7 +112,8 @@ export const Title = styled.h4`
   font-size: ${props => (props.extraLarge ? "48px" : "24px")};
   line-height: ${props => (props.extraLarge ? "48px" : "28px")};
   letter-spacing: -0.07em;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  margin-top: 24px;
   color: #000000;
   font-weight: normal;
 `

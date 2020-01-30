@@ -13,7 +13,12 @@ const CaseInfo = ({
   imgSrc2,
 }) => {
   return (
-    <Flex width="100%" paddingAll="0 49px">
+    <Flex
+      width="100%"
+      paddingAll="0 49px"
+      tabletPadding="0 30px"
+      mobilePadding="0 20px"
+    >
       <S.TxtContainer>
         <S.Text>{textFirst}</S.Text>
         <S.Title>{titleFirst}</S.Title>

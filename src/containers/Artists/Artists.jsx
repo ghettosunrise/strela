@@ -39,7 +39,7 @@ const Artists = () => {
   const data = artistData.allContentfulArtist.nodes
 
   return (
-    <Flex width="100%" paddingAll=" 0 49px">
+    <Flex width="100%" paddingAll=" 0 49px" tabletPadding="0 30px" mobilePadding="0 20px">
       <Flex width="100%" paddingBottom="140px" z="2">
         <S.Title id="artists">Artists</S.Title>
         {artistData.allContentfulArtist.nodes.map(artist => (

@@ -24,8 +24,8 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
       document?.scrollingElement?.scrollTop > 0
         ? setIsMoved(true)
         : document?.scrollingElement?.scrollTop === 0
-        ? setIsMoved(false)
-        : console.log("something wrong")
+          ? setIsMoved(false)
+          : console.log("something wrong")
     }
 
     document.addEventListener("scroll", handleScroll)
@@ -59,7 +59,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
             <Arrow direction="R" />
           </H.HeaderLogoWrap>
 
-          {window >= 1150 ? (
+          {window > 1150 ? (
             <>
               <Nav isMoved={isMoved} isTop={true} agency row></Nav>
               <Flex row align="center" maxWidth="323px" width="100%">
@@ -71,16 +71,16 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
               </Flex>
             </>
           ) : (
-            <Burger
-              onClick={() => {
-                isClosedMobile === true
-                  ? setIsClosedMobile(false)
-                  : setIsClosedMobile(true)
-              }}
-              isClosedMobile={isClosedMobile}
-              setIsClosedMobile={setIsClosedMobile}
-            />
-          )}
+              <Burger
+                onClick={() => {
+                  isClosedMobile === true
+                    ? setIsClosedMobile(false)
+                    : setIsClosedMobile(true)
+                }}
+                isClosedMobile={isClosedMobile}
+                setIsClosedMobile={setIsClosedMobile}
+              />
+            )}
         </S.Header>
       </Flex>
       <Flex
@@ -89,11 +89,11 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
         justify="space-between"
         row
         paddingAll="146px 49px 0"
-        tabletPadding="96px 0 0"
-        mobilePadding="65px 0 0"
+        tabletPadding="96px 30px 0"
+        mobilePadding="65px 20px 0"
       >
-        {window >= 1150 ? (
-          <Flex>
+        {window > 1150 ? (
+          <Flex >
             <Nav
               isMoved={isMoved}
               isBottom={true}

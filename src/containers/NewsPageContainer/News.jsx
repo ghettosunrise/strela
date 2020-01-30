@@ -4,6 +4,7 @@ import News from "../../components/News"
 import ButtonBig from "../../components/Buttons/ButtonBig"
 import Banner from "../../components/Banner"
 import Hashtags from "../../components/Hashtag"
+import Divider from "../../components/Divider"
 import * as S from "./styles"
 
 const NewsContainer = ({ data, hashtags }) => {
@@ -18,9 +19,11 @@ const NewsContainer = ({ data, hashtags }) => {
       <Banner
         column
         news
+        tabletMargin=""
         title="Статьи, как часть нашей экспертизы"
         description="Написание и актуализация текстов, связанных с артистом и его проектами, создание или изменение контента в соответствии с актуальным позиционированием"
       />
+      <Divider text="Мы написали:" />
       <Flex
         row
         width="100%"
@@ -28,9 +31,10 @@ const NewsContainer = ({ data, hashtags }) => {
         align="stretch"
         wrap="wrap"
         paddingAll="46px 49px"
+        tabletPadding="0px 30px 49px"
       >
-        <Flex width="100%" row>
-          <Flex width="66%">
+        <Flex width="100%" row tabletDirection="column-reverse">
+          <Flex width="66%" tabletWidth="100%">
             <News
               extraLarge
               size={filtered[0].size}
@@ -41,7 +45,7 @@ const NewsContainer = ({ data, hashtags }) => {
               src={filtered[0].image.file.url}
             />
           </Flex>
-          <Flex shrink="1" marginLeft="20px">
+          <Flex shrink="1" marginLeft="20px" tabletMargin="0 0 60px">
             <S.Title>Теги: </S.Title>
             <Flex width="100%" row wrap="wrap">
               {hashtags.map(({ name, key, value }) => (

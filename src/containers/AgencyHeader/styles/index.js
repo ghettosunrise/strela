@@ -23,6 +23,7 @@ export const MyMainTitle = styled.h1`
     font-size: 60px;
     line-height: 58px;
     margin-bottom: 80px;
+    margin-left: 0;
   }
 `
 

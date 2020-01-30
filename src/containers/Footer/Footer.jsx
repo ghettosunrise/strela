@@ -19,17 +19,20 @@ const Footer = ({ agency, booking }) => {
         align="center"
         width="100%"
         marginBottom="97px"
+        mobileDirection="column"
+        mobileAlign="flex-start"
+
       >
         <F.HeaderLogoWrap maxWidth="94px">
           <Link to="/"></Link>
         </F.HeaderLogoWrap>
-        {window >= 1150 ? (
+        {window > 1150 ? (
           <>
             <Nav agency={agency} booking={booking} row></Nav>
           </>
         ) : null}
 
-        <Social />
+        <Social footer />
         <Flex top="7px">
           <S.FooLink href="tel:+32323232323">+46 8 791 40 10</S.FooLink>
           <S.FooLink href="mailto:info@strela.com">info@strela.com</S.FooLink>

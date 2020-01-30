@@ -14,7 +14,7 @@ const IndexPage = () => (
   <MainPageWrap justify="center" align="center" width="100%" height="100vh">
     <SEO title="Home" />
     <img src={logo}></img>
-    <Flex row maxWidth="940px" justify="space-between" width="100%">
+    <Flex row maxWidth="940px" justify="space-between" width="100%" tabletMaxWidth="620px" mobileMaxWidth="290px">
       <Flex row align="center">
         <Arrow margin="24px" direction="L" />
         {/* <Icon.ArrowLeft /> */}

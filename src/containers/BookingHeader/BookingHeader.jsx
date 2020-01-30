@@ -36,8 +36,16 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
       </S.HeaderWrap>
       <Ticker />
       {main ? (
-        <Flex width="100%" paddingAll="90px 49px 0" row>
-          <img src={logo}></img>
+        <Flex
+          width="100%"
+          paddingAll="90px 49px 0"
+          tabletPadding="90px 30px 0"
+          mobilePadding="70px 20px 0"
+          mobileDirection="column"
+          mobileAlign="center"
+          row
+        >
+          <img className="myImg" src={logo}></img>
           <S.Title>
             We represent a wide range of artists that produce electronic music
           </S.Title>

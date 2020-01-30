@@ -19,7 +19,7 @@ const Artist = ({
   // console.log(pressKit)
 
   return (
-    <S.ArtistWrapper row width="100%" justify="space-between" marginTop="60px">
+    <S.ArtistWrapper row width="100%" justify="space-between" marginTop="60px" mobileMargin="10px 0 0">
       <Flex marginRight="2.6%">
         <img src={artistLogo?.fluid?.src}></img>
       </Flex>

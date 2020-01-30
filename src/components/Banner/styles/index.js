@@ -94,6 +94,10 @@ export const NewsBanner = styled(Flex)`
   overflow: hidden;
   position: relative;
 
+  @media only screen and (max-width: 1050px) {
+    margin-bottom: 60px;
+  }
+
   @media only screen and (max-width: 900px) {
     padding: 40px 25px 25px;
   }
@@ -110,9 +114,21 @@ export const CaseBanner = styled(Flex)`
   overflow: hidden;
   align-items: stretch;
 
+  @media only screen and (max-width: 1150px) {
+    padding: 25px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 60px;
+  }
+
   img {
     max-width: 510px;
     margin-bottom: 0;
+
+    @media only screen and (max-width: 1150px) {
+      width: 45.7%;
+    }
   }
 `
 
@@ -224,6 +240,18 @@ export const CaseTitle = styled.h1`
   margin-bottom: 40px;
   color: #ffffff;
   padding-top: 35px;
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 78px;
+    line-height: 78px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 0;
+    font-size: 56px;
+    line-height: 48px;
+    margin-bottom: 24px;
+  }
 `
 export const CaseDescription = styled.p`
   font-family: Formular;
@@ -236,6 +264,15 @@ export const CaseDescription = styled.p`
   opacity: 0.5;
   max-width: 56%;
   margin-bottom: 0;
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+    margin-bottom: 63px;
+  }
 `
 
 export const Ukazateli = styled.div`
@@ -256,4 +293,8 @@ export const Line = styled.div`
   width: 100%;
   border-top: 1px solid #ffffff;
   margin-bottom: 23px;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `

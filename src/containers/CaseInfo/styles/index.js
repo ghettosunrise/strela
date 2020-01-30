@@ -8,6 +8,11 @@ export const TxtContainer = styled(Flex)`
   @media only screen and (max-width: 1150px) {
     width: 79.7%;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding: 0;
+  }
 `
 
 export const Text = styled.p`
@@ -19,6 +24,11 @@ export const Text = styled.p`
   letter-spacing: -0.03em;
   margin-bottom: 60px;
   color: #000000;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 40px;
+    font-size: 22px;
+  }
 `
 export const Title = styled.h2`
   font-family: Neue Machina;
@@ -29,6 +39,12 @@ export const Title = styled.h2`
   letter-spacing: -0.07em;
   color: #000000;
   margin-bottom: 70px;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 40px;
+    font-size: 36px;
+    line-height: 38px;
+  }
 `
 
 export const ImgDesc = styled.p`

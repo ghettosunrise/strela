@@ -20,6 +20,15 @@ export const Title = styled.h1`
     margin-bottom: 40px;
     width: 60%;
   }
+
+  @media only screen and (max-width: 866px) {
+    width: 53%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    order: 2;
+    width: 96%;
+  }
 `
 
 export const Descritpion = styled.p`
@@ -33,6 +42,12 @@ export const Descritpion = styled.p`
   letter-spacing: -0.07em;
   margin-bottom: 110px;
   color: #000000;
+
+  @media only screen and (max-width: 768px) {
+    order: 3;
+    width: 90%;
+    margin-bottom: 50px;
+  }
 `
 
 export const DecorItem = styled.div`
@@ -46,6 +61,13 @@ export const DecorItem = styled.div`
 
   @media only screen and (max-width: 1150px) {
     top: 0px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    position: relative;
+    order: 1;
+    align-self: center;
+    margin-bottom: 60px;
   }
 `
 export const Hero = styled(Flex)`
@@ -66,6 +88,16 @@ export const Hero = styled(Flex)`
   @media only screen and (max-width: 1150px) {
     margin-right: 0;
     margin-bottom: 60px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 90px;
+
+    img {
+      margin: 0 0px 40px 0;
+    }
   }
 `
 export const HeroTitle = styled.h2`

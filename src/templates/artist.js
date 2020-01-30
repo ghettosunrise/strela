@@ -18,6 +18,7 @@ const Artist = ({ data }) => {
       setIsClosed={setIsClosed}
       isClosedMobile={isClosedMobile}
       setIsClosedMobile={setIsClosedMobile}
+      booking
     >
       <SEO title="Case" />
       <ArtistPage data={data} />

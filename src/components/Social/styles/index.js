@@ -11,9 +11,13 @@ export const SocialTop = styled(Flex)`
     return props.isMoved === false && props.isTop === true
       ? 0
       : props.isMoved === true && props.isBottom === true
-      ? 0
-      : 1
+        ? 0
+        : 1
   }};
+
+  @media only screen and (max-width: 768px) {
+    margin: ${props => (props.footer ? '60px 0' : null)};
+  }
 
   a {
     font-family: Neue Machina;

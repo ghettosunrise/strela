@@ -11,8 +11,20 @@ export const HeaderWrap = styled.header`
 
   img {
     margin-right: 5.1%;
+
+   
   }
-`
+
+   
+
+  @media only screen and (max-width: 1050px) {
+    padding: 40px 30px;
+  }
+
+  @media only screen and (max-width: 768px) {
+      padding: 40px 20px;
+    }
+`;
 
 export const Title = styled.h1`
   font-family: Neue Machina;
@@ -22,8 +34,22 @@ export const Title = styled.h1`
   line-height: 96px;
   /* or 100% */
   margin-left: 5.1%;
-
+  order: 1;
   letter-spacing: -0.07em;
   margin-bottom: 74px;
   color: #000000;
-`
+
+  @media only screen and (max-width: 1150px) {
+    font-size: 76px;
+    line-height: 76px;
+    margin-bottom: 34px;
+  };
+
+  @media only screen and (max-width: 768px) {
+    font-size: 56px;
+    line-height: 48px;
+    margin-bottom: 34px;
+    order: 1;
+    margin-left: 0;
+  };
+`;
