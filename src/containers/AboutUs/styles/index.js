@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import decor from "../../../images/blockpic.png"
-import Flex from "../../../styled/flex"
+import styled from 'styled-components';
+import decor from '../../../images/blockpic.png';
+import Flex from '../../../styled/flex';
 
 export const Title = styled.h1`
   font-family: Neue Machina;
@@ -29,7 +29,7 @@ export const Title = styled.h1`
     order: 2;
     width: 96%;
   }
-`
+`;
 
 export const Descritpion = styled.p`
   font-family: Neue Machina;
@@ -48,7 +48,7 @@ export const Descritpion = styled.p`
     width: 90%;
     margin-bottom: 50px;
   }
-`
+`;
 
 export const DecorItem = styled.div`
   width: 321px;
@@ -69,7 +69,7 @@ export const DecorItem = styled.div`
     align-self: center;
     margin-bottom: 60px;
   }
-`
+`;
 export const Hero = styled(Flex)`
   max-width: 944px;
   width: 100%;
@@ -87,7 +87,7 @@ export const Hero = styled(Flex)`
 
   @media only screen and (max-width: 1150px) {
     margin-right: 0;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
   }
 
   @media only screen and (max-width: 768px) {
@@ -99,7 +99,7 @@ export const Hero = styled(Flex)`
       margin: 0 0px 40px 0;
     }
   }
-`
+`;
 export const HeroTitle = styled.h2`
   font-family: Neue Machina;
   font-style: normal;
@@ -109,7 +109,7 @@ export const HeroTitle = styled.h2`
   letter-spacing: -0.07em;
   color: #000000;
   margin-bottom: 16px;
-`
+`;
 export const HeroSubtitle = styled.p`
   font-family: Neue Machina;
   font-style: normal;
@@ -119,7 +119,7 @@ export const HeroSubtitle = styled.p`
   letter-spacing: -0.07em;
   color: #000000;
   margin-bottom: 30px;
-`
+`;
 
 export const HeroDescription = styled.p`
   font-family: Formular;
@@ -130,7 +130,7 @@ export const HeroDescription = styled.p`
   letter-spacing: -0.03em;
   color: #000000;
   opacity: 0.7;
-`
+`;
 export const LinkWrap = styled.div`
   margin-right: 56px;
 
@@ -203,7 +203,7 @@ export const LinkWrap = styled.div`
       margin-right: 0;
     }
   }
-`
+`;
 export const BottomTxt1 = styled.h2`
   font-family: Neue Machina;
   font-style: normal;
@@ -215,7 +215,7 @@ export const BottomTxt1 = styled.h2`
   letter-spacing: -0.07em;
   color: #000000;
   margin-bottom: 60px;
-`
+`;
 export const BottomTxt2 = styled.p`
   font-family: Neue Machina;
   font-style: normal;
@@ -227,4 +227,4 @@ export const BottomTxt2 = styled.p`
   max-width: 488px;
   width: 100%;
   opacity: 0.7;
-`
+`;

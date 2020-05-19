@@ -1,12 +1,12 @@
 // import PropTypes from "prop-types"
-import React from "react"
-import Flex from "../../styled/flex"
-import * as F from "../../styled/header"
-import Arrow from "../../components/Icons"
-import Social from "../../components/Social"
-import Nav from "../Nav"
-import { Link } from "gatsby"
-import * as S from "./styles"
+import React from 'react'
+import { Link } from 'gatsby'
+import Flex from '../../styled/flex'
+import * as F from '../../styled/header'
+import Arrow from '../../components/Icons'
+import Social from '../../components/Social'
+import Nav from '../Nav'
+import * as S from './styles'
 
 const Footer = ({ agency, booking }) => {
   const window = document.documentElement.clientWidth
@@ -21,14 +21,13 @@ const Footer = ({ agency, booking }) => {
         marginBottom="97px"
         mobileDirection="column"
         mobileAlign="flex-start"
-
       >
         <F.HeaderLogoWrap maxWidth="94px">
-          <Link to="/"></Link>
+          <Link to="/" />
         </F.HeaderLogoWrap>
         {window > 1150 ? (
           <>
-            <Nav agency={agency} booking={booking} row></Nav>
+            <Nav agency={agency} booking={booking} row />
           </>
         ) : null}
 
@@ -46,18 +45,9 @@ const Footer = ({ agency, booking }) => {
           Copyright © 2019 Strela.
           <br /> All rights reserved
         </S.BottomTxt>
-        <Arrow direction="R"></Arrow>
+        <Arrow direction="R" />
       </Flex>
     </S.Footer>
   )
 }
-
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
-
 export default Footer

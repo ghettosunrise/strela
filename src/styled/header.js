@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import arrR from "../images/arrowr.svg"
-import logo from "../images/logo.png"
-import Flex from "./flex"
+import styled from 'styled-components';
+import arrR from '../images/arrowr.svg';
+import logo from '../images/logo.png';
+import Flex from './flex';
 // import Flex from "./flex"
 
 export const StyledHeader = styled.header`
@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
   width: 100%;
   display: flex;
   margin-bottom: 65px;
-`
+`;
 
 export const HeaderLogoWrap = styled(Flex)`
   /* align-items: center;
@@ -35,4 +35,4 @@ export const HeaderLogoWrap = styled(Flex)`
   @media (max-width: 1200px) {
     max-width: 170px;
   }
-`
+`;

@@ -1,68 +1,162 @@
-import React from "react"
-import * as S from "./styles"
-import Flex from "../../styled/flex"
-import { Formik, Field, ErrorMessage } from "formik"
-import * as Yup from "yup"
-import Button from "../../components/Buttons/ButtonTransparent"
+import React, { useState, useEffect } from 'react'
+import * as S from './styles'
+import Flex from '../../styled/flex'
+import { Formik, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
+import Button from '../../components/Buttons/ButtonTransparent'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "Too Short!")
-    .max(70, "Too Long!")
-    .required("Required"),
+    .min(2, 'Too Short!')
+    .max(70, 'Too Long!')
+    .required('Required'),
   city: Yup.string()
-    .min(2, "Too Short!")
-    .max(25, "Too Long!")
-    .required("Required"),
+    .min(2, 'Too Short!')
+    .max(25, 'Too Long!')
+    .required('Required'),
   contactLink: Yup.string()
     .url()
-    .min(8, "Too Short!")
-    .max(70, "Too Long!")
-    .required("Required"),
+    .min(8, 'Too Short!')
+    .max(70, 'Too Long!')
+    .required('Required'),
   socialLink: Yup.string()
     .url()
-    .min(2, "Too Short!")
-    .max(70, "Too Long!")
-    .required("Required"),
+    .min(2, 'Too Short!')
+    .max(70, 'Too Long!')
+    .required('Required'),
   date: Yup.string()
-    .min(2, "Too Short!")
-    .max(70, "Too Long!")
-    .required("Required"),
+    .min(2, 'Too Short!')
+    .max(70, 'Too Long!')
+    .required('Required'),
 })
 
 const MyForm = ({ isClosed, setIsClosed }) => {
+  const [artistPickerOpen, setArtistPickerOpen] = useState(false)
+  const [artistChosen, setArtistChosen] = useState(false)
+  const [addedArtist, setAddedArtist] = useState([])
+  const [filteredArtist, setFilteredArtist] = useState([])
+  console.log('MyForm -> filteredArtist', filteredArtist)
+
+  // useEffect(() => {
+  //   console.log('MyForm -> addedArtist', addedArtist)
+  //   const filteredArr = new Set(addedArtist)
+
+  //   setFilteredArtist([...filteredArr])
+  //   console.log('MyForm -> filteredArr0000)))0', filteredArr[0] === undefined)
+  //   console.log('MyForm -> filteredArr', filteredArr)
+
+  //   // return () => {
+  //   //   cleanup
+  //   // };
+  // }, [addedArtist])
+
+  const artistData = useStaticQuery(graphql`
+    query ArtistId {
+      allContentfulArtist(sort: { fields: artistName, order: ASC }) {
+        nodes {
+          id
+          artistName
+        }
+      }
+    }
+  `)
+
+  const artistPickerData = artistData?.allContentfulArtist?.nodes
+  console.log('artistPickerData', artistPickerData)
+
   return (
     <S.ContactWrap isClosed={isClosed}>
-      <S.Shadow isClosed={isClosed}></S.Shadow>
+      <S.Shadow
+        onClick={() => setIsClosed(true)}
+        isClosed={isClosed}
+      ></S.Shadow>
       <S.BookingWrap>
         <Flex width="100%" align="flex-end" marginBottom="3vh">
           <S.Close onClick={() => setIsClosed(true)}></S.Close>
         </Flex>
         <S.Title>Book an artist</S.Title>
+        <S.ChooseArtist
+          artistPickerOpen={artistPickerOpen}
+          onClick={() =>
+            artistPickerOpen
+              ? setArtistPickerOpen(false)
+              : setArtistPickerOpen(true)
+          }
+        >
+          {' '}
+          Choose an artist <span>^</span>
+        </S.ChooseArtist>
+        {artistPickerOpen ? (
+          <>
+            <S.ArtistPicker artistPickerOpen={artistPickerOpen}>
+              {artistPickerData.map(({ artistName, id }) => (
+                <li
+                  key={id}
+                  onClick={() => {
+                    if (
+                      filteredArtist.length === 0 ||
+                      !filteredArtist.find(e => e === artistName)
+                    ) {
+                      setFilteredArtist(prev => [...prev, artistName])
+                    }
+                  }}
+                >
+                  {artistName}
+                </li>
+              ))}
+            </S.ArtistPicker>
+
+            <>
+              <S.P>You choosed</S.P>
+              <S.YourChoice width="100%" row>
+                <ul>
+                  {filteredArtist.flatMap((item, index) => (
+                    <li
+                      key={index}
+                      onClick={() =>
+                        setFilteredArtist(
+                          [filteredArtist.flat().filter((_, e) => e !== index)],
+                          '_____'
+                        )
+                      }
+                    >
+                      <>
+                        {item}
+                        <S.Close length={filteredArtist.length} />
+                      </>
+                    </li>
+                  ))}
+                </ul>
+              </S.YourChoice>
+            </>
+          </>
+        ) : null}
         <Formik
           validationSchema={SignupSchema}
           initialValues={{
-            name: "",
-            contactLink: "",
-            socialLink: "",
-            city: "",
-            date: "",
-            club: "",
-            comment: "",
-            lineup: "",
+            name: '',
+            artist: '',
+            contactLink: '',
+            socialLink: '',
+            city: '',
+            date: '',
+            club: '',
+            comment: '',
+            lineup: '',
           }}
           validate={values => {
             const errors = {}
             if (!values.socialLink) {
-              errors.socialLink = "Required"
+              errors.socialLink = 'Required'
             } else if (!values.contactLink) {
-              errors.contactLink = "Required"
+              errors.contactLink = 'Required'
             } else if (!values.name) {
-              errors.name = "Required"
+              errors.name = 'Required'
             } else if (!values.city) {
-              errors.city = "Required"
+              errors.city = 'Required'
             } else if (!values.date) {
-              errors.date = "Required"
+              errors.date = 'Required'
             }
             return errors
           }}
@@ -76,6 +170,9 @@ const MyForm = ({ isClosed, setIsClosed }) => {
           {({ isSubmitting }) => (
             <S.CustomForm>
               <Flex maxWidth="320px" width="100%">
+                <Flex display="none">
+                  <Field value={filteredArtist} type="text" name="artist" />
+                </Flex>
                 <p>Your name</p>
                 <Field type="text" name="name" />
                 <ErrorMessage name="name" component="span" />

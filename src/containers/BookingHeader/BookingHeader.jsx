@@ -1,25 +1,28 @@
-import React from "react"
-import Flex from "../../styled/flex"
-import * as H from "../../styled/header"
-import Nav from "../Nav"
-import * as S from "./styles"
-import Arrow from "../../components/Icons"
-import { Link } from "gatsby"
-import Button from "../../components/Buttons/ButtonTransparent"
-import Ticker from "../../components/Ticker"
+import React from 'react';
+import Flex from '../../styled/flex';
+import * as H from '../../styled/header';
+import Social from '../../components/Social';
+import * as S from './styles';
+import Arrow from '../../components/Icons';
+import { Link } from 'gatsby';
+import Button from '../../components/Buttons/ButtonTransparent';
+import Ticker from '../../components/Ticker';
 
-import logo from "../../images/bookinglogo.svg"
+import logo from '../../images/bookinglogo.svg';
 
 const BookingHeader = ({ isClosed, setIsClosed, main }) => {
+  const window = document.documentElement.clientWidth;
+
   return (
     <Flex width="100%" z="2">
       <S.HeaderWrap>
         <Flex
           row
-          maxWidth="656px"
           width="100%"
           justify="space-between"
           align="center"
+          maxWidth="550px"
+          tabletMaxWidth="350px"
         >
           <H.HeaderLogoWrap
             row
@@ -30,9 +33,10 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
             <Link to="/"></Link>
             <Arrow direction="R" />
           </H.HeaderLogoWrap>
-          <Nav row />
+          {window > 1150 ? (<Social />) : null}
         </Flex>
-        <Button txt="Booking Form" onClick={() => setIsClosed(false)} />
+        {window > 1150 ? (<Button txt="Booking Form" onClick={() => setIsClosed(false)} />) : (<Button txt="Booking" size="mobile" onClick={() => setIsClosed(false)} />)}
+
       </S.HeaderWrap>
       <Ticker />
       {main ? (
@@ -52,7 +56,7 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
         </Flex>
       ) : null}
     </Flex>
-  )
-}
+  );
+};
 
-export default BookingHeader
+export default BookingHeader;

@@ -1,8 +1,8 @@
-import styled, { css, keyframes } from "styled-components"
-import React, { useEffect, useState, useRef } from "react"
-import Flex from "../../styled/flex"
-import arrw from "../../images/arrw.svg"
-import { useStaticQuery, graphql } from "gatsby"
+import styled, {css, keyframes} from 'styled-components';
+import React, {useEffect, useState, useRef} from 'react';
+import Flex from '../../styled/flex';
+import arrw from '../../images/arrw.svg';
+import {useStaticQuery, graphql} from 'gatsby';
 
 const TickerText = styled.a`
   font-family: Neue Machina;
@@ -26,7 +26,7 @@ const TickerText = styled.a`
     background-size: 100%;
     top: 7px;
   }
-`
+`;
 
 const moveXAnimation = keyframes`
   0% {
@@ -36,17 +36,17 @@ const moveXAnimation = keyframes`
   100% {
     transform: translateX(0%);
   }
-`
+`;
 
 const moveX = css`
   animation: ${moveXAnimation} 17s infinite linear;
-`
+`;
 
 const MovingContainer = styled(Flex).attrs({
   row: true,
 })`
   ${moveX}
-`
+`;
 
 const Ticker = () => {
   const tickerData = useStaticQuery(graphql`
@@ -56,33 +56,29 @@ const Ticker = () => {
         text
       }
     }
-  `)
+  `);
 
-  console.log(tickerData)
 
-  const text = useRef()
-  const container = useRef()
-  const [textWidth, setTextWidth] = useState(0)
-  const [containerWidth, setContainerWidth] = useState(0)
+  const text = useRef();
+  const container = useRef();
+  const [textWidth, setTextWidth] = useState(0);
+  const [containerWidth, setContainerWidth] = useState(0);
 
   useEffect(() => {
     if (text.current) {
-      setTextWidth(text.current.clientWidth)
+      setTextWidth(text.current.clientWidth);
     }
 
     if (container.current) {
-      setContainerWidth(container.current.clientWidth)
+      setContainerWidth(container.current.clientWidth);
     }
-  }, [text.current, container.current])
+  }, [text.current, container.current]);
 
-  console.log("textWidth", textWidth)
-  console.log("container width", containerWidth)
+  const textsInContainer = Math.ceil(containerWidth / textWidth);
 
-  const textsInContainer = Math.ceil(containerWidth / textWidth)
+  const copiesLength = !!textsInContainer ? textsInContainer * 2 - 1 : 0;
 
-  const copiesLength = !!textsInContainer ? textsInContainer * 2 - 1 : 0
-
-  console.log(textsInContainer)
+  console.log(textsInContainer);
 
   return (
     <Flex
@@ -103,19 +99,19 @@ const Ticker = () => {
           {tickerData.contentfulRunningLine.text} – <span>Play now</span>
         </TickerText>
         {Array(copiesLength)
-          .fill(0)
-          .map((_, idx) => (
-            <TickerText
-              target="blank"
-              href={tickerData.contentfulRunningLine.link}
-              key={idx}
-            >
-              {tickerData.contentfulRunningLine.text} – <span>Play now</span>
-            </TickerText>
-          ))}
+            .fill(0)
+            .map((_, idx) => (
+              <TickerText
+                target="blank"
+                href={tickerData.contentfulRunningLine.link}
+                key={idx}
+              >
+                {tickerData.contentfulRunningLine.text} – <span>Play now</span>
+              </TickerText>
+            ))}
       </MovingContainer>
     </Flex>
-  )
-}
+  );
+};
 
-export default Ticker
+export default Ticker;

@@ -1,7 +1,7 @@
-import styled, { css, keyframes } from "styled-components"
-import Flex from "../../../styled/flex"
-import close from "../../../images/close.svg"
-import { Form } from "formik"
+import styled, { css, keyframes } from 'styled-components'
+import { Form } from 'formik'
+import Flex from '../../../styled/flex'
+import close from '../../../images/close.svg'
 
 export const CustomForm = styled(Form)`
   width: 100%;
@@ -61,7 +61,7 @@ export const CustomForm = styled(Form)`
 
 export const ContactWrap = styled(Flex)`
   position: fixed;
-  right: ${({ isClosed }) => (isClosed ? "-100%" : 0)};
+  right: ${({ isClosed }) => (isClosed ? '-100%' : 0)};
   top: 0;
   z-index: 5;
   height: 100vh;
@@ -104,6 +104,11 @@ export const Shadow = styled.div`
   background: transparent;
   ${({ isClosed }) => (isClosed ? fadeOutAnim : fadeInAnim)};
   transition: all 0.4s ease;
+  cursor: pointer;
+
+  @media only screen and (max-width: 1150px) {
+    width: 0;
+  }
 `
 
 export const BookingWrap = styled(Flex)`
@@ -111,6 +116,17 @@ export const BookingWrap = styled(Flex)`
   padding: 5vh 4.8% 7.6vh 10.3%;
   background-color: #fff;
   height: 100vh;
+  overflow-y: auto;
+
+  @media only screen and (max-width: 1150px) {
+    width: 100%;
+    padding: 5vh 4.8% 7.6vh 16.6%;
+  }
+
+  @media only screen and (max-width: 918px) {
+    width: 100%;
+    padding: 5vh 4.8% 7.6vh;
+  }
 `
 export const Title = styled.p`
   font-family: Neue Machina;
@@ -133,6 +149,111 @@ export const ArtistChoose = styled.div`
   margin-bottom: 6vh;
   color: #000000;
 `
+
+export const ChooseArtist = styled.p`
+  font-family: Formular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
+  letter-spacing: -0.03em;
+  display: flex;
+  color: #000000;
+
+  span {
+    font-size: 10px;
+    margin-left: 5px;
+    transform: ${props =>
+      props.artistPickerOpen === true ? 'rotate(180deg)' : null};
+  }
+`
+
+export const ArtistPicker = styled.ul`
+  flex-wrap: wrap;
+  max-width: 90%;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 50px;
+  margin-left: 0;
+  display: flex;
+
+  li {
+    cursor: pointer;
+    font-family: Neue Machina;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 10px;
+    letter-spacing: -0.07em;
+    list-style-type: none;
+    margin-right: 20px;
+    opacity: ${props => (props.artistPickerOpen === true ? 1 : 0)};
+    transition: all 0.8s ease-in-out;
+  }
+`
+
+export const Close = styled.span`
+  width: 17px;
+  height: 17px;
+  background-image: url(${close});
+  /* background: ${props => (props.length <= 1 ? 'red' : 'green')} */
+  cursor: pointer;
+`
+
+export const YourChoice = styled(Flex)`
+  width: 100%;
+  margin-bottom: 4vh;
+
+  ul {
+    margin-left: 0;
+    display: flex; 
+
+  }
+
+  li {
+    font-style: normal; 
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: Neue Machina;
+    margin-bottom: 0px;
+    letter-spacing: -0.07em;
+    display: flex;
+    align-items: center;
+    margin-right: 20px; 
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    
+    
+    
+
+    /* span {
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: 10px;
+      color: #2403a6;
+      display: ${props => (props.artistPickerOpen === true ? 'block' : 'none')};
+    } */
+  }
+  
+`
+
+export const P = styled.p`
+  font-family: Formular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+`
+
 export const FormInfo = styled.p`
   font-family: Formular;
   font-style: normal;
@@ -144,11 +265,4 @@ export const FormInfo = styled.p`
   text-transform: uppercase;
 
   color: #000000;
-`
-
-export const Close = styled.div`
-  width: 17px;
-  height: 17px;
-  background-image: url(${close});
-  cursor: pointer;
 `

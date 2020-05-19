@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-exports.createPages = async function({ actions, graphql }) {
+exports.createPages = async function ({ actions, graphql }) {
   const {
     data: {
       allContentfulHashtag: { edges: hashtag },
@@ -23,17 +23,17 @@ exports.createPages = async function({ actions, graphql }) {
         }
       }
     }
-  `)
+  `);
 
   hashtag.forEach(({ node: { value } }) => {
-    const regex = `/${value}/gi`
+    const regex = `/${value}/gi`;
     actions.createPage({
       path: `/agency/news/${value}`,
-      component: require.resolve(`./src/templates/news.js`),
+      component: require.resolve('./src/templates/news.js'),
       context: { hashtag: regex },
       key: { hashtag: regex },
-    })
-  })
+    });
+  });
 
   const {
     data: {
@@ -49,16 +49,16 @@ exports.createPages = async function({ actions, graphql }) {
         }
       }
     }
-  `)
+  `);
 
   cases.forEach(({ node: { customId } }) => {
     actions.createPage({
       path: `/agency/case/${customId}`,
-      component: require.resolve(`./src/templates/case.js`),
+      component: require.resolve('./src/templates/case.js'),
       context: { customId },
       key: { customId },
-    })
-  })
+    });
+  });
 
   const {
     data: {
@@ -76,18 +76,18 @@ exports.createPages = async function({ actions, graphql }) {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
   artist.forEach(({ node: { linkId } }) => {
     actions.createPage({
       path: `/booking/${linkId}`,
-      component: require.resolve(`./src/templates/artist.js`),
+      component: require.resolve('./src/templates/artist.js'),
       context: { linkId },
       key: { linkId },
-    })
-  })
-}
+    });
+  });
+};
 
 //   news.forEach(({ node: { id, hashtags } }) => {
 //     actions.createPage({

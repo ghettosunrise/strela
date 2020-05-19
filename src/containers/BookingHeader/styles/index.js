@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from 'styled-components';
+import Nav from '../../Nav';
 
 export const HeaderWrap = styled.header`
   background: #fff;
@@ -9,14 +10,14 @@ export const HeaderWrap = styled.header`
   align-items: center;
   display: flex;
 
+  ${Nav} &{
+    background: red;
+  };
+
   img {
     margin-right: 5.1%;
-
-   
   }
-
    
-
   @media only screen and (max-width: 1050px) {
     padding: 40px 30px;
   }
@@ -32,7 +33,6 @@ export const Title = styled.h1`
   font-weight: normal;
   font-size: 96px;
   line-height: 96px;
-  /* or 100% */
   margin-left: 5.1%;
   order: 1;
   letter-spacing: -0.07em;
