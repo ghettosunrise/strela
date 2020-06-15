@@ -1,3 +1,3 @@
-export Flex from "./flex"
-export * from "./typography"
+export Flex from './flex';
+
 // export TextInput from "./textInput";

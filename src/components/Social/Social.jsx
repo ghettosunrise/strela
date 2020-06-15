@@ -1,21 +1,25 @@
-import React from "react"
-import { Link } from "gatsby"
-import * as S from "./styles"
+import React from 'react';
+import { Link } from 'gatsby';
+import * as S from './styles';
 
-const Social = ({ isMoved, isTop, isBottom, footer }) => {
-  return (
-    <S.SocialTop
-      marginRight="21px"
-      isMoved={isMoved}
-      isTop={isTop}
-      isBottom={isBottom}
-      footer={footer}
-    >
-      <Link to="tg.com">FB</Link>
-      <Link to="tg.com">IG</Link>
-      <Link to="tg.com">TG</Link>
-    </S.SocialTop>
-  )
-}
+const Social = ({ isMoved, isTop, isBottom, footer }) => (
+  <S.SocialTop
+    marginRight="21px"
+    isMoved={isMoved}
+    isTop={isTop}
+    isBottom={isBottom}
+    footer={footer}
+  >
+    <a href="tg.com" target="_blank">
+      FB
+    </a>
+    <a href="tg.com" target="_blank">
+      IG
+    </a>
+    <a href="tg.com" target="_blank">
+      TG
+    </a>
+  </S.SocialTop>
+);
 
-export default Social
+export default Social;

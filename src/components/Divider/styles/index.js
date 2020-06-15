@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import arrowDiv from ".././../../images/arrowdiv.svg"
+import styled from 'styled-components';
+import arrowDiv from '../../../images/arrowdiv.svg';
 
 export const DividerText = styled.h2`
   font-family: Neue Machina;
@@ -19,13 +19,12 @@ export const DividerText = styled.h2`
   @media only screen and (max-width: 768px) {
     max-width: 66%;
   }
-`
+`;
 
 export const DividerArrow = styled.div`
   height: 2px;
-  background: url(${arrowDiv});
+  background: #000;
   flex-grow: 1;
-  height: 19px;
   background-position-x: 100%;
   margin-left: 34px;
   position: relative;
@@ -34,4 +33,4 @@ export const DividerArrow = styled.div`
   @media only screen and (max-width: 1150px) {
     bottom: 5px;
   }
-`
+`;

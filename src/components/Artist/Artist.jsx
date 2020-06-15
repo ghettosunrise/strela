@@ -1,34 +1,52 @@
-import React from "react"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import Flex from "../../styled/flex"
-import { Link } from "gatsby"
-import * as S from "./styles"
+import React from 'react';
+import Fade from 'react-reveal/Fade';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Link } from 'gatsby';
 
+import Flex from '../../styled/flex';
+import * as S from './styles';
 
 const Artist = ({
   artist: {
-    artistNameL: title,
+    artistName,
     artistLogo,
     linkId,
     artistText1: { artistText1: desc1 },
     artistText1Ru: { artistText1Ru: desc1Ru },
   },
 }) => {
-  const parsed1 = JSON.parse(desc1)
-  const parsed1Ru = JSON.parse(desc1Ru)
+  const parsed1 = JSON.parse(desc1);
+  const parsed1Ru = JSON.parse(desc1Ru);
+  // console.log('title', artist?.linkID);
+
+  // console.log(artist, 'TITL');
   // console.log(pressKit)
 
   return (
-    <S.ArtistWrapper row width="100%" justify="space-between" marginTop="60px" mobileMargin="10px 0 0">
+    <S.ArtistWrapper
+      row
+      width="100%"
+      justify="space-between"
+      marginTop="60px"
+      mobileMargin="10px 0 0"
+    >
       <Flex marginRight="2.6%">
-        <img src={artistLogo?.fluid?.src}></img>
+        <Fade>
+          <img src={artistLogo?.fluid?.src}></img>
+        </Fade>
       </Flex>
       <S.ArtistContent>
         <Flex width="100%">
-          <S.ArtistTitle>{title || "Artist name"}</S.ArtistTitle>
-          <S.DecriptionFirts>
-            {documentToReactComponents(parsed1)}
-          </S.DecriptionFirts>
+          <Fade>
+            <S.ArtistTitle>
+              <Link to={`/booking/${linkId}`}>
+                {artistName || 'Artist name'}
+              </Link>
+            </S.ArtistTitle>
+            <S.DecriptionFirts>
+              {documentToReactComponents(parsed1)}
+            </S.DecriptionFirts>
+          </Fade>
         </Flex>
         {/* <Flex width="100%" >
           {isHidden === 0 ? (
@@ -68,13 +86,15 @@ const Artist = ({
           <S.Arrow />
 
           <S.CloseTxt>
-            <Link to={`/booking/${linkId}`}>Read more</Link>
+            <Fade>
+              <Link to={`/booking/${linkId}`}>Read more</Link>
+            </Fade>
           </S.CloseTxt>
         </S.ArrowWrap>
       </S.ArtistContent>
     </S.ArtistWrapper>
-  )
-}
+  );
+};
 
 // export const Event = ({ date, club, city, name, isHidden }) => {
 //   return (
@@ -91,4 +111,4 @@ const Artist = ({
 //   )
 // }
 
-export default Artist
+export default Artist;

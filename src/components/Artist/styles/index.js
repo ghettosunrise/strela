@@ -10,14 +10,8 @@ export const ArtistWrapper = styled(Flex)`
     width: 100%;
   }
 
-  ${(props) => (props.isHidden === 1 ? hoverStyle : null)}
+  ${props => (props.isHidden === 1 ? hoverStyle : null)}
 `;
-
-export const ArrowWrap = styled(Flex)`
-  transition: 0.3s ease all;
-  opacity: 1;
-`;
-
 const hoverStyle = css`
   img {
     opacity: 0;
@@ -61,21 +55,17 @@ export const ArtistName = styled.h1`
   width: 100%;
   margin: 0 0 60px;
   font-size: 76px;
-    line-height: 76px;
-    margin-bottom: 40px;
+  line-height: 76px;
+  margin-bottom: 40px;
 
   @media only screen and (max-width: 1150px) {
     font-size: 76px;
     line-height: 76px;
     margin-bottom: 40px;
   }
-
- 
-
-  
 `;
 
-export const ArtistTitle = styled.p`
+export const ArtistTitle = styled.div`
   font-family: Neue Machina;
   font-size: 24px;
   line-height: 28px;
@@ -84,7 +74,7 @@ export const ArtistTitle = styled.p`
   margin-bottom: 30px;
 `;
 
-export const DecriptionFirts = styled.p`
+export const DecriptionFirts = styled.div`
   font-family: Formular;
   font-style: normal;
   font-weight: normal;
@@ -99,11 +89,10 @@ export const DecriptionFirts = styled.p`
   opacity: 0.7;
 
   @media only screen and (max-width: 1150px) {
-    
-  };
+  }
 `;
 
-export const DescriptionSecond = styled.p`
+export const DescriptionSecond = styled.div`
   font-family: Formular;
   font-size: 24px;
   line-height: 30px;
@@ -112,7 +101,7 @@ export const DescriptionSecond = styled.p`
   color: #000000;
 `;
 
-export const DescriptionThird = styled.p`
+export const DescriptionThird = styled.div`
   font-family: Formular;
   font-size: 18px;
   line-height: 24px;
@@ -173,6 +162,7 @@ export const Arrow = styled.div`
 
 export const CloseTxt = styled.p`
   margin-bottom: 0;
+  transition: 0.3s ease all;
 
   a {
     font-family: Neue Machina;
@@ -186,12 +176,23 @@ export const CloseTxt = styled.p`
   }
 `;
 
+export const ArrowWrap = styled(Flex)`
+  transition: 0.3s ease all;
+  opacity: 1;
+
+  &:hover {
+    ${CloseTxt} {
+      margin-left: 10px;
+    }
+  }
+`;
+
 export const Sidebar = styled(Flex)`
   width: 23.5%;
 
   @media only screen and (max-width: 810px) {
     width: 26.5%;
-  };
+  }
 
   p {
     font-family: Formular;

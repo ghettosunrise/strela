@@ -1,8 +1,8 @@
-import styled from "styled-components"
-import arrow from "../../../images/bigstrela.svg"
+import styled from 'styled-components';
+import arrow from '../../../images/mainpagearrow.svg';
 
 export const Arrow = styled.div`
-  width: 100%;
+  width: 643px;
   height: 100%;
   position: absolute;
   background-image: url(${arrow});
@@ -17,4 +17,4 @@ export const Arrow = styled.div`
   @media only screen and (min-width: 1441px) {
     width: 100%;
   }
-`
+`;

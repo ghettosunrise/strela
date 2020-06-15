@@ -1,20 +1,26 @@
-import React from "react"
-import Flex from "../../styled/flex"
-import ButtonBlack from "../../components/Buttons/ButtonBlack"
-import * as S from "./styles"
+import React from 'react';
+import Fade from 'react-reveal/Fade';
 
-const WWBlock = ({ number, title, sub }) => {
-  return (
-    <S.WWFlex>
+import Flex from '../../styled/flex';
+import ButtonBlack from '../../components/Buttons/ButtonBlack';
+import * as S from './styles';
+
+const WWBlock = ({ number, title, sub }) => (
+  <S.WWFlex>
+    <Fade>
       <S.Number>{number}</S.Number>
+    </Fade>
+    <Fade>
       <S.BlockTitle>{title}</S.BlockTitle>
+    </Fade>
+    <Fade>
       <S.BlockSubtitle>{sub}</S.BlockSubtitle>
-    </S.WWFlex>
-  )
-}
+    </Fade>
+  </S.WWFlex>
+);
 
 const WhatWeDo = () => {
-  const window = document.documentElement.clientWidth
+  const window = document.documentElement.clientWidth;
 
   return (
     <Flex
@@ -30,13 +36,18 @@ const WhatWeDo = () => {
       background="#FFF"
     >
       <Flex shrink="1" tabletWidth="100%">
-        <S.Title>Что мы делаем</S.Title>
-        <S.SubTitle>
-          Агентство предоставляет услуги от консультации до полной реализации
-          стратегии продвижения того или иного электронного проекта
-        </S.SubTitle>
+        <Fade>
+          <S.Title>Что мы делаем</S.Title>
+        </Fade>
+        {/* <Fade>
+          <S.SubTitle>
+            Агентство предоставляет услуги от консультации до полной реализации
+            стратегии продвижения того или иного электронного проекта
+          </S.SubTitle>
+        </Fade> */}
+
         {window >= 1150 ? (
-          <ButtonBlack link="/agency/whatwedo" txt="Детальнее"></ButtonBlack>
+          <ButtonBlack link="/agency/whatwedo" txt="Детальнее" />
         ) : null}
       </Flex>
       <Flex
@@ -49,40 +60,40 @@ const WhatWeDo = () => {
       >
         <WWBlock
           number="01"
-          title="PR-им фестивали"
-          sub="Пояснение основных моментов в пиаре собственного имени и проектов... "
-        ></WWBlock>
+          title="Консультируем"
+          sub="Самый быстрый способ получить ответы на вопросы, связанные с вашим проектом или событием."
+        />
         <WWBlock
           number="02"
-          title="Консультируем"
-          sub="Первую очередь, обсуждение проекта, его позиционирования и концепции."
-        ></WWBlock>
+          title="Ведем"
+          sub="Берем на себя промо электронных проектов, релизов или вечеринок."
+        />
         <WWBlock
           number="03"
-          title="Повышаем узнаваемость"
-          sub="Предварительное обсуждение позиционирования, концепции."
-        ></WWBlock>
+          title="Запускаем"
+          sub="Продумываем и реализовываем грамотный старт и промо вашего проекта."
+        />
         <WWBlock
           number="04"
-          title="Промоутим релизы, проекты, мероприятия"
-          sub="Пояснение основных моментов в пиаре собственного имени и проектов..."
-        ></WWBlock>
+          title="Делаем Публикации"
+          sub="Организовываем эксклюзивные материалы в локальные и иностранные тематические СМИ"
+        />
         <WWBlock
           number="05"
-          title="Работаем с имиджем"
-          sub="Пояснение основных моментов в пиаре собственного имени и проектов... "
-        ></WWBlock>
+          title="HR"
+          sub="Находим и обучаем PR-менеджера для проектов, либо полностью курируем его работу со своей стороны. "
+        />
         <WWBlock
           number="06"
-          title="Консультируем"
-          sub="Первую очередь, обсуждение проекта, его позиционирования и концепции."
-        ></WWBlock>
+          title="Бренды и Спонсоры"
+          sub="Разрабатываем для брендов годные коммуникационные кампании на аудиторию электронной сцены."
+        />
         {window < 1150 ? (
-          <ButtonBlack link="/agency/whatwedo" txt="Детальнее"></ButtonBlack>
+          <ButtonBlack link="/agency/whatwedo" txt="Детальнее" />
         ) : null}
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default WhatWeDo
+export default WhatWeDo;

@@ -1,44 +1,45 @@
-import React, { useState, useRef, useEffect } from "react"
-import Flex from "../../styled/flex"
-import * as H from "../../styled/header"
-import Nav from "../Nav"
-import { Link } from "gatsby"
-import Social from "../../components/Social"
-import * as S from "./styles"
-import Arrow from "../../components/Icons"
-import ButtonBlack from "../../components/Buttons/ButtonBlack"
-import Burger from "../../components/Buttons/Burger"
+import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'gatsby';
+import Fade from 'react-reveal/Fade';
+
+import Flex from '../../styled/flex';
+import * as H from '../../styled/header';
+import Nav from '../Nav';
+import Social from '../../components/Social';
+import * as S from './styles';
+import Arrow from '../../components/Icons';
+import ButtonBlack from '../../components/Buttons/ButtonBlack';
+import Burger from '../../components/Buttons/Burger';
 
 const MainTitle = ({ txt }) => {
-  return <S.MyMainTitle>{txt}</S.MyMainTitle>
-}
+  return <S.MyMainTitle>{txt}</S.MyMainTitle>;
+};
 
 const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
-  const window = document.documentElement.clientWidth
-  const scrollContainer = useRef()
+  const window = document.documentElement.clientWidth;
+  const scrollContainer = useRef();
 
-  const [isMoved, setIsMoved] = useState(false)
+  const [isMoved, setIsMoved] = useState(false);
 
   useEffect(() => {
-    function handleScroll(e) {
+    const handleScroll = e => {
       document?.scrollingElement?.scrollTop > 0
         ? setIsMoved(true)
         : document?.scrollingElement?.scrollTop === 0
-          ? setIsMoved(false)
-          : console.log("something wrong")
-    }
+        ? setIsMoved(false)
+        : null;
+    };
 
-    document.addEventListener("scroll", handleScroll)
+    document.addEventListener('scroll', handleScroll);
 
     return () => {
-      document.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
-  console.log(isClosedMobile)
   return (
     <>
-      {" "}
+      {' '}
       <Flex
         width="100%"
         paddingAll="46px 49px 0"
@@ -47,7 +48,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
         z="12"
         ref={scrollContainer}
       >
-        <S.Header>
+        <S.Header isMoved={isMoved}>
           <H.HeaderLogoWrap
             maxWidth="219px"
             row
@@ -61,7 +62,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
 
           {window > 1150 ? (
             <>
-              <Nav isMoved={isMoved} isTop={true} agency row></Nav>
+              <Nav isMoved={isMoved} isTop={true} agency row />
               <Flex row align="center" maxWidth="323px" width="100%">
                 <Social isMoved={isMoved} isTop={true} />
                 <ButtonBlack
@@ -71,20 +72,19 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
               </Flex>
             </>
           ) : (
-              <Burger
-                onClick={() => {
-                  isClosedMobile === true
-                    ? setIsClosedMobile(false)
-                    : setIsClosedMobile(true)
-                }}
-                isClosedMobile={isClosedMobile}
-                setIsClosedMobile={setIsClosedMobile}
-              />
-            )}
+            <Burger
+              onClick={() => {
+                isClosedMobile === true
+                  ? setIsClosedMobile(false)
+                  : setIsClosedMobile(true);
+              }}
+              isClosedMobile={isClosedMobile}
+              setIsClosedMobile={setIsClosedMobile}
+            />
+          )}
         </S.Header>
       </Flex>
       <Flex
-        maxWidth="1058px"
         width="100%"
         justify="space-between"
         row
@@ -93,7 +93,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
         mobilePadding="65px 20px 0"
       >
         {window > 1150 ? (
-          <Flex >
+          <Flex>
             <Nav
               isMoved={isMoved}
               isBottom={true}
@@ -105,13 +105,15 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
           </Flex>
         ) : null}
 
-        <MainTitle
-          isClosedMobile={isClosedMobile}
-          txt="Мы PR агенство, которое поможет узнать тебя во всем мире!"
-        />
+        <Fade>
+          <MainTitle
+            isClosedMobile={isClosedMobile}
+            txt="Грамотный PR для проектов, связанных с электронной сценой."
+          />
+        </Fade>
       </Flex>
     </>
-  )
-}
+  );
+};
 
-export default AgencyHeader
+export default AgencyHeader;

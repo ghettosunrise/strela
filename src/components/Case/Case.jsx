@@ -1,7 +1,9 @@
-import React from "react"
-import Flex from "../../styled/flex"
-import * as S from "./styles"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
+import Fade from 'react-reveal/Fade';
+
+import Flex from '../../styled/flex';
+import * as S from './styles';
 
 const Case = ({
   customId,
@@ -12,27 +14,31 @@ const Case = ({
   sublabel,
   description,
   img,
-}) => {
-  const window = document.documentElement.clientWidth
-
-  return (
-    <S.StyledCase justify={justify} size={size}>
-      <Flex row>
+}) => (
+  <S.StyledCase justify={justify} size={size}>
+    <Flex row>
+      <Fade>
         <Flex>
           <Link to={`/agency/case/${customId}`}>
-            <S.CaseLabel>{label}</S.CaseLabel>
-            <S.CaseSublabel>{sublabel}</S.CaseSublabel>
+            <Fade>
+              <S.CaseLabel>{label}</S.CaseLabel>
+              <S.CaseSublabel>{sublabel}</S.CaseSublabel>
+            </Fade>
           </Link>
         </Flex>
-        {description ? (
-          <S.CaseDescription>{description}</S.CaseDescription>
-        ) : null}
-      </Flex>
-      <Link className="case__link" to={`/agency/case/${customId}`}>
-        <img src={img}></img>
-      </Link>
-    </S.StyledCase>
-  )
-}
+      </Fade>
+      {description ? (
+        <S.CaseDescription>{description}</S.CaseDescription>
+      ) : null}
+    </Flex>
+    <Flex width="100%">
+      <Fade>
+        <Link className="case__link" to={`/agency/case/${customId}`}>
+          <img src={img} />
+        </Link>
+      </Fade>
+    </Flex>
+  </S.StyledCase>
+);
 
-export default Case
+export default Case;

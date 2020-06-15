@@ -1,15 +1,15 @@
 // import PropTypes from "prop-types"
-import React from 'react'
-import { Link } from 'gatsby'
-import Flex from '../../styled/flex'
-import * as F from '../../styled/header'
-import Arrow from '../../components/Icons'
-import Social from '../../components/Social'
-import Nav from '../Nav'
-import * as S from './styles'
+import React from 'react';
+import { Link } from 'gatsby';
+import Flex from '../../styled/flex';
+import * as F from '../../styled/header';
+import Arrow from '../../components/Icons';
+import Social from '../../components/Social';
+import Nav from '../Nav';
+import * as S from './styles';
 
 const Footer = ({ agency, booking }) => {
-  const window = document.documentElement.clientWidth
+  const window = document.documentElement.clientWidth;
 
   return (
     <S.Footer>
@@ -33,7 +33,7 @@ const Footer = ({ agency, booking }) => {
 
         <Social footer />
         <Flex top="7px">
-          <S.FooLink href="tel:+32323232323">+46 8 791 40 10</S.FooLink>
+          <S.FooLink href="tel:+380669045724">+380669045724</S.FooLink>
           <S.FooLink href="mailto:info@strela.com">info@strela.com</S.FooLink>
         </Flex>
         <S.FooTxt>
@@ -48,6 +48,6 @@ const Footer = ({ agency, booking }) => {
         <Arrow direction="R" />
       </Flex>
     </S.Footer>
-  )
-}
-export default Footer
+  );
+};
+export default Footer;

@@ -1,15 +1,10 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import { getProp, fromProp } from './utils'
-
-import mainBg from '../images/mainbg1440.png'
-import arrL from '../images/arrowl.svg'
-import arrR from '../images/arrowr.svg'
+import { getProp, fromProp } from './utils';
 
 const flex = css`
   display: flex;
   position: relative;
-  /* z-index: 1; */
   background: ${getProp('background', 'transparent')};
   flex-direction: ${props => (props.row ? 'row' : 'column')};
   align-items: ${getProp('align', 'flex-start')};
@@ -64,7 +59,7 @@ const flex = css`
     margin: ${getProp('mobileMargin', '')};
     ${fromProp('mobileMaxWidth', { make: 'max-width' })};
   }
-`
+`;
 
 const Flex = styled.div`
   ${flex}
@@ -72,57 +67,64 @@ const Flex = styled.div`
   .ticker {
     width: 100%;
   }
-`
+`;
 
-export const MainPageWrap = styled(Flex)`
-  background-image: url(${mainBg});
-  background-position: 50% 50%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  font-family: Neue Machina;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 48px;
-  line-height: 48px;
+// export const MainPageWrap = styled(Flex)`
+//   background-image: url(${mainBg});
+//   background-position: 50% 50%;
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   font-family: Neue Machina;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 48px;
+//   line-height: 48px;
 
-  @media only screen and (max-width: 1268px) {
-    background-size: cover;
-  }
+//   @media only screen and (max-width: 1268px) {
+//     background-size: cover;
+//   }
 
-  img {
-    max-width: 940px;
-    margin-bottom: 124px;
+//   button {
+//     background: transparent;
+//     border: none;
+//     cursor: pointer;
+//     outline: none;
+//   }
 
-    @media only screen and (max-width: 1150px) {
-      max-width: 620px;
-    }
+//   img {
+//     max-width: 940px;
+//     margin-bottom: 124px;
 
-    @media only screen and (max-width: 768px) {
-      max-width: 290px;
-    }
-  }
+//     @media only screen and (max-width: 1150px) {
+//       max-width: 620px;
+//     }
 
-  @media only screen and (max-width: 768px) {
-    a {
-      font-size: 24px;
-      line-height: 28px;
-    }
-  }
+//     @media only screen and (max-width: 768px) {
+//       max-width: 290px;
+//     }
+//   }
 
-  .arrow_left {
-    width: 48px;
-    height: 23px;
-    margin-right: 24px;
-    background-image: url(${arrL});
-  }
+//   @media only screen and (max-width: 768px) {
+//     a {
+//       font-size: 24px;
+//       line-height: 28px;
+//     }
+//   }
 
-  .arrow_right {
-    width: 48px;
-    height: 23px;
-    margin-left: 24px;
-    background-image: url(${arrR});
-  }
-`
+//   .arrow_left {
+//     width: 48px;
+//     height: 23px;
+//     margin-right: 24px;
+//     background-image: url(${arrL});
+//   }
+
+//   .arrow_right {
+//     width: 48px;
+//     height: 23px;
+//     margin-left: 24px;
+//     background-image: url(${arrR});
+//   }
+// `;
 
 Flex.Absolute = styled(Flex)`
   position: absolute;
@@ -130,6 +132,6 @@ Flex.Absolute = styled(Flex)`
   ${fromProp('left', { make: 'left' })};
   ${fromProp('bottom', { make: 'bottom' })};
   ${fromProp('right', { make: 'right' })};
-`
+`;
 
-export default Flex
+export default Flex;

@@ -1,13 +1,15 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
-import Flex from "../styled/flex"
-import News from "../components/News"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React, { useState } from 'react';
+import { graphql } from 'gatsby';
+import Flex from '../styled/flex';
+import News from '../components/News';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const NewsTemplate = ({ data }) => {
-  const [isClosed, setIsClosed] = useState(true)
-  const [isClosedMobile, setIsClosedMobile] = useState(true)
+  const [isClosed, setIsClosed] = useState(true);
+  const [isClosedMobile, setIsClosedMobile] = useState(true);
+
+  console.log(data, 'DATA');
 
   return (
     <Layout
@@ -55,8 +57,8 @@ const NewsTemplate = ({ data }) => {
         </Flex>
       </Flex>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query FilteredNews($hashtag: String) {
@@ -86,6 +88,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default NewsTemplate
+export default NewsTemplate;

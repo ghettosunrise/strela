@@ -1,9 +1,9 @@
-import React from "react"
-import Artist from "../../components/Artist"
-import Flex from "../../styled/flex"
-import * as S from "./styles"
-import { useStaticQuery, graphql } from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Artist from '../../components/Artist';
+import Flex from '../../styled/flex';
+import * as S from './styles';
 
 const Artists = () => {
   const artistData = useStaticQuery(graphql`
@@ -32,22 +32,33 @@ const Artists = () => {
         }
       }
     }
-  `)
-
-  console.log("data", artistData)
-
-  const data = artistData.allContentfulArtist.nodes
+  `);
+  const data = artistData.allContentfulArtist.nodes;
+  console.log('data', data);
+  console.log('data3333', data[0].artistName);
+  // const { artistName } = data;
+  // console.log('artistName', artistName);
 
   return (
-    <Flex width="100%" paddingAll=" 0 49px" tabletPadding="0 30px" mobilePadding="0 20px">
+    <Flex
+      width="100%"
+      paddingAll=" 0 49px"
+      tabletPadding="0 30px"
+      mobilePadding="0 20px"
+    >
       <Flex width="100%" paddingBottom="140px" z="2">
         <S.Title id="artists">Artists</S.Title>
-        {artistData.allContentfulArtist.nodes.map(artist => (
-          <Artist key={artist.id} artist={artist} data={data} />
+        {data.map(artist => (
+          <Artist
+            artistName={artist.artistName}
+            key={artist.id}
+            artist={artist}
+            data={data}
+          />
         ))}
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default Artists
+export default Artists;

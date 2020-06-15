@@ -1,8 +1,8 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Case from "../../components/Case"
-import Flex from "../../styled/flex"
-import ButtonBig from "../../components/Buttons/ButtonBig"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Case from '../../components/Case';
+import Flex from '../../styled/flex';
+import ButtonBig from '../../components/Buttons/ButtonBig';
 
 const Cases = () => {
   const caseData = useStaticQuery(graphql`
@@ -22,7 +22,7 @@ const Cases = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Flex width="100%" paddingAll="0px 49px" tabletPadding="0 30px">
@@ -46,6 +46,7 @@ const Cases = () => {
           }) => (
             <Case
               id={id}
+              key={id}
               img={url}
               size={size}
               label={title}
@@ -57,7 +58,7 @@ const Cases = () => {
         )}
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default Cases
+export default Cases;

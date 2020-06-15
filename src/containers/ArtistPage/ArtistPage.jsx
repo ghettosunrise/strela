@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import Fade from 'react-reveal/Fade';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Flex from '../../styled/flex';
+
 import * as S from '../../components/Artist/styles';
-import cpbig from '../../images/cpbig.png';
+// import cpbig from '../../images/cpbig.png';
 import Sidebar from '../../components/Sidebar';
 import Iframe from '../../components/Iframe';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const ArtistPage = (data) => {
+const ArtistPage = data => {
   const [isEnglish, setIsEnglish] = useState(1);
 
   const myData = data.data.contentfulArtist;
-  console.log('TCL: myData', myData);
   const parsedText1 = JSON.parse(myData.artistText1.artistText1);
   const parsedText1Ru = JSON.parse(myData.artistText1Ru.artistText1Ru);
   const parsedText2 = JSON.parse(myData.artistText2.artistText2);
@@ -18,47 +19,53 @@ const ArtistPage = (data) => {
   const parsedText3 = JSON.parse(myData.artistText3.artistText3);
   const parsedText3Ru = JSON.parse(myData.artistText3Ru.artistText3Ru);
   const parsedSoundCloud = JSON.parse(
-    myData.soundCloudTrackLinks.soundCloudTrackLinks,
+    myData.soundCloudTrackLinks.soundCloudTrackLinks
   );
-  console.log('TCL: parsedSoundCloud', parsedSoundCloud);
   const soundCloud = documentToReactComponents(parsedSoundCloud);
-  // const xx = documentToReactComponents(soundCloud)
 
-  console.log('TCL: soundCloud', soundCloud);
-  const scLink = myData.scLink;
-  const fbLink = myData.facebookLink;
-  const igLink = myData.igLink;
-  const raLink = myData.raLink;
+  const { igLink, fbLink, scLink, raLink } = myData;
   const pressKit = myData.pressKit.file.url;
-  console.log('TCL: fbLink', fbLink);
-
-  // console.log("TCL: parsed1", parsed1)
 
   return (
     <S.ArtistWrapper>
-      <Flex paddingAll=" 60px 49px 0" tabletPadding="0px 30px" mobilePadding="0px 20px" z="2">
+      <Flex
+        paddingAll=" 60px 49px 0"
+        tabletPadding="0px 30px"
+        mobilePadding="0px 20px"
+        z="2"
+      >
         <S.ArtistName>{myData.artistName}</S.ArtistName>
-        <img src={myData.artistPicture.fluid.src}></img>
+        <Fade>
+          <img src={myData.artistPicture.fluid.src} />
+        </Fade>
         <S.ArtistContent>
-          <Flex width="100%" row justify="flex-end" paddingTop="60px" mobileDirection="column">
+          <Flex
+            width="100%"
+            row
+            justify="flex-end"
+            paddingTop="60px"
+            mobileDirection="column"
+          >
             <Flex width="53%" mobileWidth="100%">
-              <S.DecriptionFirts>
-                {isEnglish ?
-                  documentToReactComponents(parsedText1) :
-                  documentToReactComponents(parsedText1Ru)}
-              </S.DecriptionFirts>
-              <S.DescriptionSecond>
-                {isEnglish ?
-                  documentToReactComponents(parsedText2) :
-                  documentToReactComponents(parsedText2Ru)}
-              </S.DescriptionSecond>
-              <S.DescriptionThird>
-                {isEnglish ?
-                  documentToReactComponents(parsedText3) :
-                  documentToReactComponents(parsedText3Ru)}
-              </S.DescriptionThird>
+              <Fade cascade>
+                <S.DecriptionFirts>
+                  {isEnglish
+                    ? documentToReactComponents(parsedText1)
+                    : documentToReactComponents(parsedText1Ru)}
+                </S.DecriptionFirts>
+                <S.DescriptionSecond>
+                  {isEnglish
+                    ? documentToReactComponents(parsedText2)
+                    : documentToReactComponents(parsedText2Ru)}
+                </S.DescriptionSecond>
+                <S.DescriptionThird>
+                  {isEnglish
+                    ? documentToReactComponents(parsedText3)
+                    : documentToReactComponents(parsedText3Ru)}
+                </S.DescriptionThird>
+              </Fade>
               <Flex width="100%">
-                {/* <Iframe src={parsedSoundCloud} /> */}
+                <Iframe src={parsedSoundCloud} />
               </Flex>
             </Flex>
             <Sidebar
@@ -68,7 +75,7 @@ const ArtistPage = (data) => {
               scLink={scLink}
               pressKit={pressKit}
               setIsEnglish={setIsEnglish}
-            ></Sidebar>
+            />
           </Flex>
         </S.ArtistContent>
       </Flex>

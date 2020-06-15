@@ -1,18 +1,19 @@
-import React from "react"
-import Flex from "../../styled/flex"
-import News from "../../components/News"
-import ButtonBig from "../../components/Buttons/ButtonBig"
-import Banner from "../../components/Banner"
-import Hashtags from "../../components/Hashtag"
-import Divider from "../../components/Divider"
-import * as S from "./styles"
+import React from 'react';
+
+import Flex from '../../styled/flex';
+import News from '../../components/News';
+import ButtonBig from '../../components/Buttons/ButtonBig';
+import Banner from '../../components/Banner';
+import Hashtags from '../../components/Hashtag';
+import Divider from '../../components/Divider';
+import * as S from './styles';
 
 const NewsContainer = ({ data, hashtags }) => {
-  const filtered = data.filter(item => item.extralarge)
+  const filtered = data.filter(item => item.extralarge);
 
   const filtered2 = data.filter(item =>
-    item.hashtags.filter(item => item.name === "gideon")
-  )
+    item.hashtags.filter(item => item.name === 'gideon')
+  );
 
   return (
     <Flex width="100%">
@@ -23,6 +24,7 @@ const NewsContainer = ({ data, hashtags }) => {
         title="Статьи, как часть нашей экспертизы"
         description="Написание и актуализация текстов, связанных с артистом и его проектами, создание или изменение контента в соответствии с актуальным позиционированием"
       />
+
       <Divider text="Мы написали:" />
       <Flex
         row
@@ -68,6 +70,7 @@ const NewsContainer = ({ data, hashtags }) => {
             },
           }) => (
             <News
+              key={title}
               size={size}
               title={title}
               link={link}
@@ -79,10 +82,10 @@ const NewsContainer = ({ data, hashtags }) => {
             />
           )
         )}
-        <ButtonBig txt="Все новости"></ButtonBig>
+        <ButtonBig txt="Все новости" />
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default NewsContainer
+export default NewsContainer;

@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import Fade from 'react-reveal/Fade';
+
 import Flex from '../../styled/flex';
 import * as H from '../../styled/header';
 import Social from '../../components/Social';
 import * as S from './styles';
 import Arrow from '../../components/Icons';
-import { Link } from 'gatsby';
 import Button from '../../components/Buttons/ButtonTransparent';
 import Ticker from '../../components/Ticker';
 
@@ -30,16 +32,23 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
             justify="space-between"
             width="274px"
           >
-            <Link to="/"></Link>
+            <Link to="/" />
             <Arrow direction="R" />
           </H.HeaderLogoWrap>
-          {window > 1150 ? (<Social />) : null}
+          {window > 1150 ? <Social /> : null}
         </Flex>
-        {window > 1150 ? (<Button txt="Booking Form" onClick={() => setIsClosed(false)} />) : (<Button txt="Booking" size="mobile" onClick={() => setIsClosed(false)} />)}
-
+        {window > 1150 ? (
+          <Button txt="Booking Form" onClick={() => setIsClosed(false)} />
+        ) : (
+          <Button
+            txt="Booking"
+            size="mobile"
+            onClick={() => setIsClosed(false)}
+          />
+        )}
       </S.HeaderWrap>
       <Ticker />
-      {main ? (
+      {main && (
         <Flex
           width="100%"
           paddingAll="90px 49px 0"
@@ -49,12 +58,14 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
           mobileAlign="center"
           row
         >
-          <img className="myImg" src={logo}></img>
-          <S.Title>
-            We represent a wide range of artists that produce electronic music
-          </S.Title>
+          <Fade>
+            <img alt="logo" className="myImg" src={logo} />
+            <S.Title>
+              We represent a wide range of artists that produce electronic music
+            </S.Title>
+          </Fade>
         </Flex>
-      ) : null}
+      )}
     </Flex>
   );
 };

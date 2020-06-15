@@ -1,8 +1,8 @@
-import styled, {css, keyframes} from 'styled-components';
-import React, {useEffect, useState, useRef} from 'react';
+import styled, { css, keyframes } from 'styled-components';
+import React, { useEffect, useState, useRef } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import Flex from '../../styled/flex';
 import arrw from '../../images/arrw.svg';
-import {useStaticQuery, graphql} from 'gatsby';
 
 const TickerText = styled.a`
   font-family: Neue Machina;
@@ -19,7 +19,7 @@ const TickerText = styled.a`
   &::after {
     width: 26px;
     height: 13px;
-    content: "";
+    content: '';
     background-image: url(${arrw});
     position: absolute;
     right: -13px;
@@ -40,12 +40,16 @@ const moveXAnimation = keyframes`
 
 const moveX = css`
   animation: ${moveXAnimation} 17s infinite linear;
+  animation-play-state: running;
 `;
 
 const MovingContainer = styled(Flex).attrs({
   row: true,
 })`
-  ${moveX}
+  ${moveX};
+  &:hover {
+    animation-play-state: paused;
+  }
 `;
 
 const Ticker = () => {
@@ -57,7 +61,6 @@ const Ticker = () => {
       }
     }
   `);
-
 
   const text = useRef();
   const container = useRef();
@@ -76,7 +79,7 @@ const Ticker = () => {
 
   const textsInContainer = Math.ceil(containerWidth / textWidth);
 
-  const copiesLength = !!textsInContainer ? textsInContainer * 2 - 1 : 0;
+  const copiesLength = textsInContainer ? textsInContainer * 2 - 1 : 0;
 
   console.log(textsInContainer);
 
@@ -96,19 +99,19 @@ const Ticker = () => {
           href={tickerData.contentfulRunningLine.link}
           ref={text}
         >
-          {tickerData.contentfulRunningLine.text} – <span>Play now</span>
+          {tickerData.contentfulRunningLine.text} –<span>Play now</span>
         </TickerText>
         {Array(copiesLength)
-            .fill(0)
-            .map((_, idx) => (
-              <TickerText
-                target="blank"
-                href={tickerData.contentfulRunningLine.link}
-                key={idx}
-              >
-                {tickerData.contentfulRunningLine.text} – <span>Play now</span>
-              </TickerText>
-            ))}
+          .fill(0)
+          .map((_, idx) => (
+            <TickerText
+              target="blank"
+              href={tickerData.contentfulRunningLine.link}
+              key={idx}
+            >
+              {tickerData.contentfulRunningLine.text} –<span>Play now</span>
+            </TickerText>
+          ))}
       </MovingContainer>
     </Flex>
   );

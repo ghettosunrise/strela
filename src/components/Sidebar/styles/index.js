@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import Flex from "../../../styled/flex"
-import copy from "../../../images/copylink.svg"
-import fb from "../../../images/exportfb.svg"
+import styled from 'styled-components';
+import Flex from '../../../styled/flex';
+import copy from '../../../images/copylink.svg';
+import fb from '../../../images/exportfb.svg';
 
 export const Sidebar = styled(Flex)`
   width: 23.5%;
@@ -11,7 +11,7 @@ export const Sidebar = styled(Flex)`
     width: 100%;
     margin-left: 0;
     padding-bottom: 50px;
-  };
+  }
 
   p {
     font-family: Formular;
@@ -23,8 +23,6 @@ export const Sidebar = styled(Flex)`
     opacity: 0.5;
     margin-bottom: 15px;
   }
-
-  
 `;
 
 export const Translate = styled.div`
@@ -36,6 +34,11 @@ export const Translate = styled.div`
   color: #000000;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #2403a6;
+  }
 `;
 
 export const Link = styled.a`
@@ -47,6 +50,11 @@ export const Link = styled.a`
   text-transform: uppercase;
   color: #000000;
   font-weight: bold;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #2403a6;
+  }
 `;
 
 export const Copy = styled.div`

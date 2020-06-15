@@ -1,7 +1,8 @@
-import styled, { css, keyframes } from 'styled-components'
-import { Form } from 'formik'
-import Flex from '../../../styled/flex'
-import close from '../../../images/close.svg'
+import styled, { css, keyframes } from 'styled-components';
+import { Form } from 'formik';
+import Flex from '../../../styled/flex';
+import close from '../../../images/close.svg';
+import deleteArtist from '../../../images/x.svg';
 
 export const CustomForm = styled(Form)`
   width: 100%;
@@ -57,7 +58,7 @@ export const CustomForm = styled(Form)`
     bottom: 4vh;
     color: #ff3939;
   }
-`
+`;
 
 export const ContactWrap = styled(Flex)`
   position: fixed;
@@ -68,7 +69,7 @@ export const ContactWrap = styled(Flex)`
   width: 100%;
   transition: right 0.4s ease;
   flex-direction: row;
-`
+`;
 
 const fadeIn = keyframes`
   0% {
@@ -77,7 +78,7 @@ const fadeIn = keyframes`
   100% {
     background: black;
   }
-`
+`;
 
 const fadeOut = keyframes`
   0% {
@@ -87,15 +88,15 @@ const fadeOut = keyframes`
   100% {
     background: transparent;
   }
-`
+`;
 
 const fadeInAnim = css`
   animation: ${fadeIn} 0.4s 0.3s forwards;
-`
+`;
 
 const fadeOutAnim = css`
   animation: ${fadeOut} 0s 0.3s forwards;
-`
+`;
 
 export const Shadow = styled.div`
   width: 48%;
@@ -109,7 +110,7 @@ export const Shadow = styled.div`
   @media only screen and (max-width: 1150px) {
     width: 0;
   }
-`
+`;
 
 export const BookingWrap = styled(Flex)`
   width: 73%;
@@ -127,7 +128,7 @@ export const BookingWrap = styled(Flex)`
     width: 100%;
     padding: 5vh 4.8% 7.6vh;
   }
-`
+`;
 export const Title = styled.p`
   font-family: Neue Machina;
   font-style: normal;
@@ -137,7 +138,7 @@ export const Title = styled.p`
   letter-spacing: -0.07em;
   margin-bottom: 3.5vh;
   color: #000000;
-`
+`;
 export const ArtistChoose = styled.div`
   font-family: Formular;
   font-style: normal;
@@ -148,7 +149,7 @@ export const ArtistChoose = styled.div`
   text-transform: uppercase;
   margin-bottom: 6vh;
   color: #000000;
-`
+`;
 
 export const ChooseArtist = styled.p`
   font-family: Formular;
@@ -167,16 +168,17 @@ export const ChooseArtist = styled.p`
     transform: ${props =>
       props.artistPickerOpen === true ? 'rotate(180deg)' : null};
   }
-`
+`;
 
 export const ArtistPicker = styled.ul`
   flex-wrap: wrap;
   max-width: 90%;
   justify-content: flex-start;
   width: 100%;
-  margin-bottom: 50px;
+
   margin-left: 0;
   display: flex;
+  flex-direction: column;
 
   li {
     cursor: pointer;
@@ -190,17 +192,29 @@ export const ArtistPicker = styled.ul`
     list-style-type: none;
     margin-right: 20px;
     opacity: ${props => (props.artistPickerOpen === true ? 1 : 0)};
-    transition: all 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #2403a6;
+    }
   }
-`
+`;
 
 export const Close = styled.span`
   width: 17px;
   height: 17px;
   background-image: url(${close});
-  /* background: ${props => (props.length <= 1 ? 'red' : 'green')} */
   cursor: pointer;
-`
+`;
+
+export const DeleteArtist = styled.span`
+  width: 12px;
+  height: 12px;
+  background-image: url(${deleteArtist});
+  margin-left: 10px;
+  cursor: pointer;
+`;
 
 export const YourChoice = styled(Flex)`
   width: 100%;
@@ -240,7 +254,7 @@ export const YourChoice = styled(Flex)`
     } */
   }
   
-`
+`;
 
 export const P = styled.p`
   font-family: Formular;
@@ -252,7 +266,7 @@ export const P = styled.p`
 
   letter-spacing: 0.06em;
   text-transform: uppercase;
-`
+`;
 
 export const FormInfo = styled.p`
   font-family: Formular;
@@ -265,4 +279,4 @@ export const FormInfo = styled.p`
   text-transform: uppercase;
 
   color: #000000;
-`
+`;

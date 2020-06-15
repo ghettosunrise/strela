@@ -1,18 +1,18 @@
-import React from "react"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import React from 'react';
 
 const Iframe = ({ src }) => {
-  // const txt = documentToReactComponents(src)
+  const { value } = src?.content[0]?.content[0];
+
   return (
     <iframe
       width="100%"
       height="166"
       scrolling="no"
-      frameborder="no"
+      frameBorder="no"
       allow="autoplay"
-      src={src}
-    ></iframe>
-  )
-}
+      src={value}
+    />
+  );
+};
 
-export default Iframe
+export default Iframe;
