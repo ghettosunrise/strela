@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 
 import Flex from '../../styled/flex';
@@ -20,7 +20,16 @@ const WWBlock = ({ number, title, sub }) => (
 );
 
 const WhatWeDo = () => {
-  const window = document.documentElement.clientWidth;
+  const [documentLoaded, setDocumentLoaded] = useState(null);
+  let window;
+
+  useEffect(() => {
+    setDocumentLoaded(true);
+  }, []);
+
+  documentLoaded === true
+    ? (window = document.documentElement.clientWidth)
+    : null;
 
   return (
     <Flex

@@ -1,14 +1,14 @@
-import React from "react"
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import Nav from "../Nav"
-import Flex from "../../styled/flex"
-import Social from "../../components/Social"
-import * as H from "../../styled/header"
-import * as S from "./styles"
-import Arrow from "../../components/Icons"
-import ButtonBlack from "../../components/Buttons/ButtonBlack"
-import Burger from "../../components/Buttons/Burger"
+import React, { useEffect, useState } from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import Nav from '../Nav';
+import Flex from '../../styled/flex';
+import Social from '../../components/Social';
+import * as H from '../../styled/header';
+import * as S from './styles';
+import Arrow from '../../components/Icons';
+import ButtonBlack from '../../components/Buttons/ButtonBlack';
+import Burger from '../../components/Buttons/Burger';
 
 const Header = ({
   siteTitle,
@@ -16,7 +16,16 @@ const Header = ({
   setIsClosedMobile,
   isClosedMobile,
 }) => {
-  const window = document.documentElement.clientWidth
+  const [documentLoaded, setDocumentLoaded] = useState(null);
+  let window;
+
+  useEffect(() => {
+    setDocumentLoaded(true);
+  }, []);
+
+  documentLoaded === true
+    ? (window = document.documentElement.clientWidth)
+    : null;
 
   return (
     <S.Header>
@@ -28,7 +37,7 @@ const Header = ({
           justify="space-between"
           width="100%"
         >
-          <Link to="/"></Link>
+          <Link to="/" />
           <Arrow direction="R" />
         </H.HeaderLogoWrap>
         {/* <Nav agency row></Nav>
@@ -38,7 +47,7 @@ const Header = ({
         </Flex> */}
         {window > 1150 ? (
           <>
-            <Nav agency row></Nav>
+            <Nav agency row />
             <Flex row align="center" maxWidth="323px" width="100%">
               <Social />
               <ButtonBlack txt="Связаться" onClick={() => setIsClosed(false)} />
@@ -49,7 +58,7 @@ const Header = ({
             onClick={() => {
               isClosedMobile === true
                 ? setIsClosedMobile(false)
-                : setIsClosedMobile(true)
+                : setIsClosedMobile(true);
             }}
             isClosedMobile={isClosedMobile}
             setIsClosedMobile={setIsClosedMobile}
@@ -57,15 +66,15 @@ const Header = ({
         )}
       </Flex>
     </S.Header>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: '',
+};
 
-export default Header
+export default Header;

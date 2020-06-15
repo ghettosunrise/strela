@@ -6,7 +6,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { useAnimationStatus } from '../hooks/useAnimationStatus';
@@ -21,7 +21,7 @@ import MobileMenu from '../containers/MobileMenu';
 import BookingHeader from '../containers/BookingHeader';
 import { AnimatedBlock } from './Animations';
 
-const window = document.documentElement.clientWidth;
+// const window = document.documentElement.clientWidth;
 
 const Layout = ({
   children,
@@ -41,9 +41,16 @@ const Layout = ({
     }
   `);
 
-  useEffect(() => {}, []);
+  const [documentLoaded, setDocumentLoaded] = useState(null);
+  let window;
 
-  console.log(useAnimationStatus.context);
+  useEffect(() => {
+    setDocumentLoaded(true);
+  }, []);
+
+  documentLoaded === true
+    ? (window = document.documentElement.clientWidth)
+    : null;
 
   return (
     <useAnimationStatus.Consumer>

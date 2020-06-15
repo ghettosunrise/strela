@@ -1,5 +1,5 @@
 // import PropTypes from "prop-types"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Flex from '../../styled/flex';
 import * as F from '../../styled/header';
@@ -9,7 +9,16 @@ import Nav from '../Nav';
 import * as S from './styles';
 
 const Footer = ({ agency, booking }) => {
-  const window = document.documentElement.clientWidth;
+  const [documentLoaded, setDocumentLoaded] = useState(null);
+  let window;
+
+  useEffect(() => {
+    setDocumentLoaded(true);
+  }, []);
+
+  documentLoaded === true
+    ? (window = document.documentElement.clientWidth)
+    : null;
 
   return (
     <S.Footer>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Fade from 'react-reveal/Fade';
 
@@ -13,7 +13,16 @@ import Ticker from '../../components/Ticker';
 import logo from '../../images/bookinglogo.svg';
 
 const BookingHeader = ({ isClosed, setIsClosed, main }) => {
-  const window = document.documentElement.clientWidth;
+  const [documentLoaded, setDocumentLoaded] = useState(null);
+  let window;
+
+  useEffect(() => {
+    setDocumentLoaded(true);
+  }, []);
+
+  documentLoaded === true
+    ? (window = document.documentElement.clientWidth)
+    : null;
 
   return (
     <Flex width="100%" z="2">

@@ -16,7 +16,16 @@ const MainTitle = ({ txt }) => {
 };
 
 const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
-  const window = document.documentElement.clientWidth;
+  const [documentLoaded, setDocumentLoaded] = useState(null);
+  let window;
+
+  useEffect(() => {
+    setDocumentLoaded(true);
+  }, []);
+
+  documentLoaded === true
+    ? (window = document.documentElement.clientWidth)
+    : null;
   const scrollContainer = useRef();
 
   const [isMoved, setIsMoved] = useState(false);
