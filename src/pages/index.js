@@ -79,8 +79,10 @@ const animateIn = keyframes`
 // const animateOut;
 
 const Txt = styled.p`
-  font-family: Neue Machina;
+  font-family: 'Formular';
   text-align: center;
+  font-style: normal;
+  font-weight: normal;
 `;
 
 const Desc = styled.p`
