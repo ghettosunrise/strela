@@ -78,6 +78,11 @@ const animateIn = keyframes`
 
 // const animateOut;
 
+const Txt = styled.p`
+  font-family: Neue Machina;
+  text-align: center;
+`;
+
 const Desc = styled.p`
   font-family: Formular;
   font-style: normal;
@@ -141,7 +146,7 @@ const IndexPage = () => {
           <Arrow margin="24px" direction="R" />
         </Flex> */}
         <Flex align="center" justify="center" width="100%">
-          <p>Promo and Booking agency</p>
+          <Txt>Promo and Booking agency</Txt>
           <Desc>Вебсайт в разработке и появится совсем скоро</Desc>
         </Flex>
       </Flex>
