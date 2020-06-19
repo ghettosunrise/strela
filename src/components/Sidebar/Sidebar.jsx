@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { FacebookProvider, Share } from 'react-facebook';
 import * as S from './styles';
 import Flex from '../../styled/flex';
@@ -16,13 +16,22 @@ export const Sidebar = ({
 }) => {
   const textarea = useRef();
 
+  const [documentLoaded, setDocumentLoaded] = useState(null);
+  let location;
+
+  useEffect(() => {
+    setDocumentLoaded(true);
+  }, []);
+
+  documentLoaded === true ? (location = window.location.href) : null;
+
   return (
     <S.Sidebar>
       {/* // isHidden={isHidden}> */}
       <textarea
         ref={textarea}
         style={{ position: 'absolute', left: -9999 }}
-        value={window.location.href}
+        value={location}
         readOnly
       />
       <p>Translate to</p>

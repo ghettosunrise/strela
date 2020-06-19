@@ -37,15 +37,17 @@ const NewsContainer = ({ data, hashtags }) => {
       >
         <Flex width="100%" row tabletDirection="column-reverse">
           <Flex width="66%" tabletWidth="100%">
-            <News
-              extraLarge
-              size={filtered[0].size}
-              title={filtered[0].title}
-              date={filtered[0].date}
-              link={filtered[0].link}
-              hashtags={filtered[0].hashtags}
-              src={filtered[0].image.file.url}
-            />
+            {filtered.length >= 1 ? (
+              <News
+                extraLarge
+                size={filtered[0].size}
+                title={filtered[0].title}
+                date={filtered[0].date}
+                link={filtered[0].link}
+                hashtags={filtered[0].hashtags}
+                src={filtered[0].image.file.url}
+              />
+            ) : null}
           </Flex>
           <Flex shrink="1" marginLeft="20px" tabletMargin="0 0 60px">
             <S.Title>Теги: </S.Title>

@@ -174,7 +174,6 @@ export const ArtistPicker = styled.ul`
   flex-wrap: wrap;
   max-width: 90%;
   justify-content: flex-start;
-  width: 100%;
 
   margin-left: 0;
   display: flex;

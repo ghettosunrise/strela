@@ -128,7 +128,7 @@ const IndexPage = () => {
         tabletMaxWidth="620px"
         mobileMaxWidth="290px"
       >
-        {/* <Flex row align="center">
+        <Flex row align="center">
           <Arrow margin="24px" direction="L" />
           <button type="button" onClick={() => handleClick(agency)}>
             Agency
@@ -139,7 +139,7 @@ const IndexPage = () => {
             Booking
           </button>
           <Arrow margin="24px" direction="R" />
-        </Flex> */}
+        </Flex>
         <Flex align="center" justify="center" width="100%">
           <p>Promo and Booking agency</p>
           <Desc>Вебсайт в разработке и появится совсем скоро</Desc>

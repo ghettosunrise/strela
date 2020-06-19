@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link } from 'gatsby';
@@ -15,12 +15,17 @@ const Artist = ({
     artistText1Ru: { artistText1Ru: desc1Ru },
   },
 }) => {
+  const [initialised, setInitialised] = useState(false);
+  console.log('desc111', desc1);
   const parsed1 = JSON.parse(desc1);
+  console.log('desc222', desc1);
   const parsed1Ru = JSON.parse(desc1Ru);
-  // console.log('title', artist?.linkID);
 
-  // console.log(artist, 'TITL');
-  // console.log(pressKit)
+  useEffect(() => {
+    setInitialised(true);
+  }, []);
+
+  // console.log('title', artist?.linkID);
 
   return (
     <S.ArtistWrapper
@@ -31,9 +36,7 @@ const Artist = ({
       mobileMargin="10px 0 0"
     >
       <Flex marginRight="2.6%">
-        <Fade>
-          <img src={artistLogo?.fluid?.src}></img>
-        </Fade>
+        <Fade>{initialised && <img src={artistLogo?.fluid?.src}></img>}</Fade>
       </Flex>
       <S.ArtistContent>
         <Flex width="100%">
@@ -44,7 +47,7 @@ const Artist = ({
               </Link>
             </S.ArtistTitle>
             <S.DecriptionFirts>
-              {documentToReactComponents(parsed1)}
+              {initialised && documentToReactComponents(parsed1)}
             </S.DecriptionFirts>
           </Fade>
         </Flex>

@@ -20,9 +20,7 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
     setDocumentLoaded(true);
   }, []);
 
-  documentLoaded === true
-    ? (window = document.documentElement.clientWidth)
-    : null;
+  documentLoaded === true && (window = document?.documentElement?.clientWidth);
 
   return (
     <Flex width="100%" z="2">

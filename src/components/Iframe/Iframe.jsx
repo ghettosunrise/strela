@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Iframe = ({ src }) => {
-  const { value } = src?.content[0]?.content[0];
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+const Iframe = src => {
+  const [value, setValue] = useEffect(null);
+  console.log(src, 'SOURCE');
+
+  useEffect(() => {
+    setValue(documentToReactComponents(src));
+  }, []);
+
+  console.log('Iframe -> value', value);
 
   return (
     <iframe
@@ -10,7 +19,7 @@ const Iframe = ({ src }) => {
       scrolling="no"
       frameBorder="no"
       allow="autoplay"
-      src={value}
+      // src={value}
     />
   );
 };

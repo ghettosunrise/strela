@@ -11,7 +11,7 @@ import { AnimatedBlock } from '../../components/Animations';
 
 const BookingHome = ({ location }) => {
   const [isClosed, setIsClosed] = useState(true);
-  const { fromFirstPage } = location?.state;
+  const { fromFirstPage } = location?.state || false;
 
   return (
     <Flex width="100%" background="#FFF">

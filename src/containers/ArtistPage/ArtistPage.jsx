@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Flex from '../../styled/flex';
@@ -10,21 +10,57 @@ import Iframe from '../../components/Iframe';
 
 const ArtistPage = data => {
   const [isEnglish, setIsEnglish] = useState(1);
+  const [parsedText1, setParsedText1] = useState(null);
+  const [parsedText1Ru, setParsedText1Ru] = useState(null);
+  const [parsedText2, setParsedText2] = useState(null);
+  const [parsedText2Ru, setParsedText2Ru] = useState(null);
+  const [parsedText3, setParsedText3] = useState(null);
+  const [parsedText3Ru, setParsedText3Ru] = useState(null);
+  const [parsedSoundCloud, setParsedSoundCloud] = useState('');
 
-  const myData = data.data.contentfulArtist;
-  const parsedText1 = JSON.parse(myData.artistText1.artistText1);
-  const parsedText1Ru = JSON.parse(myData.artistText1Ru.artistText1Ru);
-  const parsedText2 = JSON.parse(myData.artistText2.artistText2);
-  const parsedText2Ru = JSON.parse(myData.artistText2Ru.artistText2Ru);
-  const parsedText3 = JSON.parse(myData.artistText3.artistText3);
-  const parsedText3Ru = JSON.parse(myData.artistText3Ru.artistText3Ru);
-  const parsedSoundCloud = JSON.parse(
-    myData.soundCloudTrackLinks.soundCloudTrackLinks
-  );
-  const soundCloud = documentToReactComponents(parsedSoundCloud);
+  // const [myData, setMyData] = useState(null);
 
+  // useEffect(() => {
+  //   setMyData();
+  // }, []);
+
+  const { contentfulArtist: myData } = data?.data;
+  console.log('myData', myData);
+
+  useEffect(() => {
+    setParsedText1(JSON.parse(myData?.artistText1?.artistText1));
+    setParsedText2(JSON.parse(myData?.artistText2?.artistText2));
+    setParsedText3(JSON.parse(myData?.artistText3?.artistText3));
+    setParsedText1Ru(JSON.parse(myData?.artistText1Ru?.artistText1Ru));
+    setParsedText2Ru(JSON.parse(myData?.artistText2Ru?.artistText2Ru));
+    setParsedText3Ru(JSON.parse(myData?.artistText3Ru?.artistText3Ru));
+    setParsedSoundCloud(
+      JSON.parse(myData?.soundCloudTrackLinks?.soundCloudTrackLinks)
+    );
+  }, []);
+
+  console.log('parsedSoundCloud', documentToReactComponents(parsedText1));
+  const iframeSrc = documentToReactComponents(parsedSoundCloud);
+  console.log('iframeSrc', iframeSrc);
+
+  // console.log(JSON.parse(myData?.artistText1?.artistText2, 'sasasas'));
+
+  // console.log('myData ', myData);
+  // const parsedText1 = JSON.parse(myData?.artistText1?.artistText1);
+  // const parsedText1Ru = JSON.parse(myData?.artistText1Ru?.artistText1Ru);
+  // const parsedText2 = JSON.parse(myData?.artistText2?.artistText2);
+  // const parsedText2Ru = JSON.parse(myData?.artistText2Ru?.artistText2Ru);
+  // const parsedText3 = JSON.parse(myData?.artistText3?.artistText3);
+  // const parsedText3Ru = JSON.parse(myData?.artistText3Ru.artistText3Ru);
+  // const parsedSoundCloud = JSON.parse(
+  //   myData?.soundCloudTrackLinks?.soundCloudTrackLinks
+  // );
+  console.log('myData', myData);
   const { igLink, fbLink, scLink, raLink } = myData;
-  const pressKit = myData.pressKit.file.url;
+
+  const pressKit = myData?.pressKit?.file?.url || '';
+  const { src } = myData?.artistPicture?.fluid || '';
+  console.log('src', src);
 
   return (
     <S.ArtistWrapper>
@@ -34,9 +70,9 @@ const ArtistPage = data => {
         mobilePadding="0px 20px"
         z="2"
       >
-        <S.ArtistName>{myData.artistName}</S.ArtistName>
+        <S.ArtistName>{myData?.artistName}</S.ArtistName>
         <Fade>
-          <img src={myData.artistPicture.fluid.src} />
+          <img src={src} />
         </Fade>
         <S.ArtistContent>
           <Flex
@@ -65,7 +101,7 @@ const ArtistPage = data => {
                 </S.DescriptionThird>
               </Fade>
               <Flex width="100%">
-                <Iframe src={parsedSoundCloud} />
+                {/* <Iframe src={parsedSoundCloud} /> */}
               </Flex>
             </Flex>
             <Sidebar

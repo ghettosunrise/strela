@@ -1,14 +1,14 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
-import Mobile from "../containers/MobileMenu"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import ArtistPage from "../containers/ArtistPage"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import React, { useState } from 'react';
+import { graphql } from 'gatsby';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Mobile from '../containers/MobileMenu';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import ArtistPage from '../containers/ArtistPage';
 
 const Artist = ({ data }) => {
-  const [isClosed, setIsClosed] = useState(true)
-  const [isClosedMobile, setIsClosedMobile] = useState(true)
+  const [isClosed, setIsClosed] = useState(true);
+  const [isClosedMobile, setIsClosedMobile] = useState(true);
 
   // return null
 
@@ -24,8 +24,8 @@ const Artist = ({ data }) => {
       <ArtistPage data={data} />
       {/* <Mobile /> */}
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query MyArtist($linkId: String) {
@@ -74,6 +74,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Artist
+export default Artist;
