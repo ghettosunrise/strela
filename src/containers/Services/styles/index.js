@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import Button from "../../../components/Buttons/ButtonBig"
-import Flex from "../../../styled/flex"
-import { LinkDecor } from "../../../components/Banner/styles"
+import styled, { css } from 'styled-components';
+import Button from '../../../components/Buttons/ButtonBig';
+import Flex from '../../../styled/flex';
+import { LinkDecor } from '../../../components/Banner/styles';
 
 export const NewButton = styled(Button)`
   a {
@@ -9,7 +9,7 @@ export const NewButton = styled(Button)`
     line-height: 28px;
     height: 55px;
   }
-`
+`;
 
 export const InvisButton = styled.button`
   font-size: 24px;
@@ -25,6 +25,7 @@ export const InvisButton = styled.button`
   background: transparent;
   cursor: pointer;
   letter-spacing: -0.07em;
+  position: relative;
 
   @media only screen and (max-width: 768px) {
     font-size: 18px;
@@ -32,7 +33,23 @@ export const InvisButton = styled.button`
     height: 54px;
     width: 100%;
   }
-`
+`;
+
+const myLine = css`
+  padding-left: 50px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: black;
+    left: 0;
+    top: 10px;
+  }
+`;
+
 export const Txt = styled.p`
   font-family: Neue Machina;
   font-style: normal;
@@ -44,11 +61,29 @@ export const Txt = styled.p`
   color: #000000;
   margin-bottom: 40px;
   cursor: pointer;
+  padding-left: 0px;
+  position: relative;
+  transition: all 0.4s ease-out;
+
+  &::before {
+    width: 0;
+    content: '';
+    transition: all 0.4s ease-out;
+  }
+
+  &:first-child {
+    ${props => (props.switchService === 0 ? myLine : null)};
+  }
+
+  &:nth-child(2) {
+    ${props => (props.switchService === 1 ? myLine : null)}
+  }
 
   &:last-child {
+    ${props => (props.switchService === 2 ? myLine : null)}
     margin-bottom: 0;
   }
-`
+`;
 
 export const ServiceContent = styled(Flex)`
   width: 79%;
@@ -66,7 +101,7 @@ export const ServiceContent = styled(Flex)`
   @media only screen and (max-width: 460px) {
     padding: 50px 16px 41px 16px;
   }
-`
+`;
 
 export const Title = styled.h2`
   font-family: Neue Machina;
@@ -82,7 +117,7 @@ export const Title = styled.h2`
     font-size: 35px;
     line-height: 35px;
   }
-`
+`;
 export const List = styled.ul`
   font-family: Formular;
   font-style: normal;
@@ -100,4 +135,4 @@ export const List = styled.ul`
   li {
     margin-bottom: 20px;
   }
-`
+`;

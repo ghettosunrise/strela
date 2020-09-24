@@ -9,17 +9,17 @@ const Case = ({
   customId,
   id,
   justify,
-  size,
+  position,
   label,
   sublabel,
   description,
   img,
 }) => (
-  <S.StyledCase justify={justify} size={size}>
+  <S.StyledCase justify={justify} position={position}>
     <Flex row>
       <Fade>
         <Flex>
-          <Link to={`/agency/case/${customId}`}>
+          <Link to={`/promo/case/${customId}`}>
             <Fade>
               <S.CaseLabel>{label}</S.CaseLabel>
               <S.CaseSublabel>{sublabel}</S.CaseSublabel>
@@ -33,7 +33,7 @@ const Case = ({
     </Flex>
     <Flex width="100%">
       <Fade>
-        <Link className="case__link" to={`/agency/case/${customId}`}>
+        <Link className="case__link" to={`/promo/case/${customId}`}>
           <img src={img} />
         </Link>
       </Fade>

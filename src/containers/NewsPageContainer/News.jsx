@@ -8,12 +8,12 @@ import Hashtags from '../../components/Hashtag';
 import Divider from '../../components/Divider';
 import * as S from './styles';
 
-const NewsContainer = ({ data, hashtags }) => {
+const NewsContainer = ({ data, hashtags, page }) => {
   const filtered = data.filter(item => item.extralarge);
-
-  const filtered2 = data.filter(item =>
-    item.hashtags.filter(item => item.name === 'gideon')
-  );
+  const filtered2 = data.filter(item => !item.extralarge);
+  // const filtered2 = data.filter(item =>
+  //   item.hashtags.filter(item => item.name === 'gideon')
+  // );
 
   return (
     <Flex width="100%">
@@ -23,10 +23,11 @@ const NewsContainer = ({ data, hashtags }) => {
         tabletMargin=""
         title="Статьи, как часть нашей экспертизы"
         description="Написание и актуализация текстов, связанных с артистом и его проектами, создание или изменение контента в соответствии с актуальным позиционированием"
+        page={page}
       />
-
+      <Flex marginBottom="100px" />
       <Divider text="Мы написали:" />
-      <Flex
+      <S.Container
         row
         width="100%"
         justify="space-between"
@@ -37,7 +38,7 @@ const NewsContainer = ({ data, hashtags }) => {
       >
         <Flex width="100%" row tabletDirection="column-reverse">
           <Flex width="66%" tabletWidth="100%">
-            {filtered.length >= 1 ? (
+            {/* {filtered.length >= 1 ? (
               <News
                 extraLarge
                 size={filtered[0].size}
@@ -46,8 +47,33 @@ const NewsContainer = ({ data, hashtags }) => {
                 link={filtered[0].link}
                 hashtags={filtered[0].hashtags}
                 src={filtered[0].image.file.url}
+                page={page}
               />
-            ) : null}
+            ) : null} */}
+            {filtered.map(
+              ({
+                size,
+                title,
+                date,
+                link,
+                hashtags: hashtag,
+                image: {
+                  file: { url },
+                },
+                page: page1,
+              }) => (
+                <News
+                  extraLarge
+                  size={size}
+                  title={title}
+                  date={date}
+                  link={link}
+                  hashtags={hashtag}
+                  src={url}
+                  page={page1}
+                />
+              )
+            )}
           </Flex>
           <Flex shrink="1" marginLeft="20px" tabletMargin="0 0 60px">
             <S.Title>Теги: </S.Title>
@@ -58,7 +84,7 @@ const NewsContainer = ({ data, hashtags }) => {
             </Flex>
           </Flex>
         </Flex>
-        {data.map(
+        {filtered2.map(
           ({
             size,
             title,
@@ -84,8 +110,8 @@ const NewsContainer = ({ data, hashtags }) => {
             />
           )
         )}
-        <ButtonBig txt="Все новости" />
-      </Flex>
+        {/* <ButtonBig txt="Все новости" /> */}
+      </S.Container>
     </Flex>
   );
 };

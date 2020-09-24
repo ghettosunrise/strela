@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import decor from '../../../images/blockpic.png';
+import decor from '../../../images/Element_2.png';
 import Flex from '../../../styled/flex';
 
 export const Title = styled.h1`
   font-family: Neue Machina;
   font-style: normal;
   font-weight: normal;
-  font-size: 96px;
-  line-height: 96px;
+  font-size: 80px;
+  line-height: 80px;
   letter-spacing: -0.07em;
   color: #000000;
   margin-bottom: 60px;
@@ -119,6 +119,7 @@ export const HeroSubtitle = styled.p`
   letter-spacing: -0.07em;
   color: #000000;
   margin-bottom: 30px;
+  max-width: 604px;
 `;
 
 export const HeroDescription = styled.p`
@@ -166,7 +167,7 @@ export const LinkWrap = styled.div`
     transition: all 0.4s ease;
 
     &::before {
-      content: "";
+      content: '';
       width: 100%;
       position: absolute;
       right: 0;
@@ -178,7 +179,7 @@ export const LinkWrap = styled.div`
     }
 
     &::after {
-      content: "";
+      content: '';
       width: 0%;
       position: absolute;
       bottom: 0px;

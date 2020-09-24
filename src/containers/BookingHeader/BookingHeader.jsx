@@ -26,26 +26,22 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
     <Flex width="100%" z="2">
       <S.HeaderWrap>
         <Flex
-          row
           width="100%"
+          row
+          width="93px"
           justify="space-between"
           align="center"
-          maxWidth="550px"
-          tabletMaxWidth="350px"
         >
-          <H.HeaderLogoWrap
-            row
-            align="center"
-            justify="space-between"
-            width="274px"
-          >
+          <H.HeaderLogoWrap row align="center" justify="space-between">
             <Link to="/" />
-            <Arrow direction="R" />
           </H.HeaderLogoWrap>
-          {window > 1150 ? <Social /> : null}
+          {/* {window > 1150 ? : null} */}
         </Flex>
         {window > 1150 ? (
-          <Button txt="Booking Form" onClick={() => setIsClosed(false)} />
+          <Flex row align="center" width="100%" maxWidth="317px">
+            <Social />
+            <Button txt="Booking Form" onClick={() => setIsClosed(false)} />
+          </Flex>
         ) : (
           <Button
             txt="Booking"
@@ -54,7 +50,7 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
           />
         )}
       </S.HeaderWrap>
-      <Ticker />
+      <Ticker booking />
       {main && (
         <Flex
           width="100%"

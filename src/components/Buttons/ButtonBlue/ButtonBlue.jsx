@@ -1,8 +1,13 @@
-import React from "react"
-import * as S from "./styles"
+import React from 'react';
+import * as S from './styles';
+import Flex from '../../../styled/flex';
 
-const ButtonBlue = ({ pressKit }) => {
-  return <S.Button href={pressKit}>Presskit</S.Button>
-}
+const ButtonBlue = ({ pressKit }) => (
+  <Flex overflow="hidden">
+    <S.Button href={pressKit}>Presskit</S.Button>
+    <S.StyloOne small="small" />
+    <S.StyloFour small="small" />
+  </Flex>
+);
 
-export default ButtonBlue
+export default ButtonBlue;

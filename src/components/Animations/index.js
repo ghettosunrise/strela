@@ -18,7 +18,7 @@ export const AnimatedBlock = styled.div`
   position: absolute;
   left: 100%;
   background: ${props =>
-    props.navigateTo === 'agency' || props.agency ? 'black' : '#2403a6'};
+    props.navigateTo === 'promo' || props.agency ? 'black' : '#2403a6'};
   animation-name: ${props => (props.firstPage ? animateBack : animate)};
   animation-duration: 0.7s;
   animation-play-state: ${props =>

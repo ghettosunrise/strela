@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const Header = styled.header`
   padding: 46px 49px;
@@ -7,10 +7,11 @@ export const Header = styled.header`
   left: 0;
   top: 0;
   z-index: 100;
+
   background: #f3f2f1;
 
   @media only screen and (max-width: 1150px) {
     padding: 23px 30px;
   }
   /* border-bottom: 1px solid grey; */
-`
+`;

@@ -10,8 +10,8 @@ const Cases = () => {
       allContentfulCase {
         nodes {
           id
-          size
           title
+          position
           customId
           subtitle
           image {
@@ -35,21 +35,22 @@ const Cases = () => {
       >
         {caseData.allContentfulCase.nodes.map(
           ({
-            id,
-            size,
+            id, // size,
             title,
             subtitle,
             customId,
             image: {
               file: { url },
             },
+            position,
           }) => (
             <Case
               id={id}
               key={id}
               img={url}
-              size={size}
+              // size={size}
               label={title}
+              position={position}
               sublabel={subtitle}
               content="stretch"
               customId={customId}

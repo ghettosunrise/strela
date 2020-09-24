@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Fade from 'react-reveal/Fade';
+import Dropdown from '../../components/LangDropdown';
 
 import Flex from '../../styled/flex';
 import * as H from '../../styled/header';
@@ -10,6 +11,7 @@ import * as S from './styles';
 import Arrow from '../../components/Icons';
 import ButtonBlack from '../../components/Buttons/ButtonBlack';
 import Burger from '../../components/Buttons/Burger';
+import useLanguage from '../../hooks/useLanguage';
 
 const MainTitle = ({ txt }) => {
   return <S.MyMainTitle>{txt}</S.MyMainTitle>;
@@ -27,6 +29,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
     ? (window = document.documentElement.clientWidth)
     : null;
   const scrollContainer = useRef();
+  const [[language, setLanguage]] = useLanguage();
 
   const [isMoved, setIsMoved] = useState(false);
 
@@ -66,12 +69,20 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
             width="100%"
           >
             <Link to="/"></Link>
-            <Arrow direction="R" />
+            {/* <Arrow direction="R" />
+             */}
+            <Dropdown language={language} setLanguage={setLanguage} />
           </H.HeaderLogoWrap>
 
           {window > 1150 ? (
             <>
-              <Nav isMoved={isMoved} isTop={true} agency row />
+              <Nav
+                language={language}
+                isMoved={isMoved}
+                isTop={true}
+                agency
+                row
+              />
               <Flex row align="center" maxWidth="323px" width="100%">
                 <Social isMoved={isMoved} isTop={true} />
                 <ButtonBlack
@@ -107,6 +118,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
               isMoved={isMoved}
               isBottom={true}
               agency
+              language={language}
               column
               space="20px"
             ></Nav>
@@ -117,7 +129,11 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
         <Fade>
           <MainTitle
             isClosedMobile={isClosedMobile}
-            txt="Грамотный PR для проектов, связанных с электронной сценой."
+            txt={
+              language === 'RUS'
+                ? 'Грамотный PR для проектов, связанных с электронной сценой.'
+                : 'Smart PR for projects connected to electronic music scene'
+            }
           />
         </Fade>
       </Flex>

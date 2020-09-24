@@ -4,14 +4,33 @@ import arrow from '../../../images/arrowblue.svg';
 import copy from '../../../images/copylink.svg';
 import fb from '../../../images/exportfb.svg';
 
-export const ArtistWrapper = styled(Flex)`
+export const CloseTxt = styled.p`
+  margin-bottom: 0;
   transition: 0.3s ease all;
-  img {
-    width: 100%;
-  }
 
-  ${props => (props.isHidden === 1 ? hoverStyle : null)}
+  a {
+    font-family: Neue Machina;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.07em;
+    cursor: pointer;
+    color: #2403a6;
+    margin-bottom: 0;
+  }
 `;
+
+export const ArrowWrap = styled(Flex)`
+  transition: 0.3s ease all;
+  opacity: 1;
+
+  &:hover {
+    ${CloseTxt} {
+      margin-left: 10px;
+    }
+  }
+`;
+
 const hoverStyle = css`
   img {
     opacity: 0;
@@ -32,6 +51,23 @@ const hoverStyle = css`
       opacity: 1;
     }
   }
+`;
+
+export const ArtistWrapper = styled(Flex)`
+  transition: 0.3s ease all;
+
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+
+  img {
+    width: 100%;
+    opacity: 0;
+  }
+
+  ${props => (props.isHidden === 1 ? hoverStyle : null)}
 `;
 
 export const ArtistContent = styled(Flex)`
@@ -158,33 +194,6 @@ export const Arrow = styled.div`
   margin-right: 12px;
 
   transform: rotate(90deg);
-`;
-
-export const CloseTxt = styled.p`
-  margin-bottom: 0;
-  transition: 0.3s ease all;
-
-  a {
-    font-family: Neue Machina;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.07em;
-    cursor: pointer;
-    color: #2403a6;
-    margin-bottom: 0;
-  }
-`;
-
-export const ArrowWrap = styled(Flex)`
-  transition: 0.3s ease all;
-  opacity: 1;
-
-  &:hover {
-    ${CloseTxt} {
-      margin-left: 10px;
-    }
-  }
 `;
 
 export const Sidebar = styled(Flex)`

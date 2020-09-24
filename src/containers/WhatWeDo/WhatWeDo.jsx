@@ -56,7 +56,7 @@ const WhatWeDo = () => {
         </Fade> */}
 
         {window >= 1150 ? (
-          <ButtonBlack link="/agency/whatwedo" txt="Детальнее" />
+          <ButtonBlack link="/promo/whatwedo" txt="Детальнее" />
         ) : null}
       </Flex>
       <Flex
@@ -98,7 +98,7 @@ const WhatWeDo = () => {
           sub="Разрабатываем для брендов годные коммуникационные кампании на аудиторию электронной сцены."
         />
         {window < 1150 ? (
-          <ButtonBlack link="/agency/whatwedo" txt="Детальнее" />
+          <ButtonBlack link="/promo/whatwedo" txt="Детальнее" />
         ) : null}
       </Flex>
     </Flex>

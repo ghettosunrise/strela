@@ -11,26 +11,34 @@ import Banner from '../../components/Banner';
 import News from '../../containers/NewsContainer';
 import Footer from '../../containers/Footer';
 import Contact from '../../containers/ContactUs';
+import Dropdown from '../../components/LangDropdown';
+
 import MobileMenu from '../../containers/MobileMenu';
 import Arrow from '../../components/Arrow';
 import SEO from '../../components/seo';
 import { AnimatedBlock } from '../../components/Animations';
 
-const AgencyHome = ({ location }) => {
+import { ProvideLanguage } from '../../hooks';
+import useLanguage from '../../hooks/useLanguage';
+
+const AgencyHome = () => {
   const [isClosed, setIsClosed] = useState(true);
   const [isClosedMobile, setIsClosedMobile] = useState(true);
 
-  const { fromFirstPage } = location.state || false;
+  // const { fromFirstPage } = location.state ?? false;
+
+  const [[language, setLanguage]] = useLanguage();
 
   const data = useStaticQuery(graphql`
     query News {
-      allContentfulNews {
+      allContentfulNews(limit: 7) {
         nodes {
           id
           size
           date
           title
           link
+          position
           special
           extralarge
           hashtags {
@@ -65,7 +73,7 @@ const AgencyHome = ({ location }) => {
   return (
     <Flex width="100%">
       <SEO title="Home" />
-      <AnimatedBlock agency firstPage={fromFirstPage} />
+      {/* <AnimatedBlock agency firstPage={fromFirstPage} /> */}
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
       <AgencyHeader
         isClosed={isClosed}
@@ -78,8 +86,10 @@ const AgencyHome = ({ location }) => {
         isClosedMobile={isClosedMobile}
         setIsClosedMobile={setIsClosedMobile}
       />
-      <Divider text="С кем мы работаем • кейсы" />
-      <Cases />
+      <Divider
+        text={language === 'RUS' ? 'С кем мы работаем • кейсы' : 'Our Cases'}
+      />
+      <Cases language={language} />
       <WhatWeDo />
       <Banner
         title={bannerData.title}
@@ -88,11 +98,19 @@ const AgencyHome = ({ location }) => {
         link={bannerData.link}
         image={bannerData.image.file.url}
       />
-      <Divider text="Написано нами" />
-      <News data={data.allContentfulNews.nodes} />
+      <Divider text={language === 'RUS' ? 'Написано нами' : 'Our News'} />
+      <News mainPage data={data.allContentfulNews.nodes} />
       <Footer agency="true" />
     </Flex>
   );
 };
 
-export default AgencyHome;
+const Provided = () => (
+  <ProvideLanguage>
+    <AgencyHome />
+  </ProvideLanguage>
+);
+
+// location={location}
+
+export default Provided;

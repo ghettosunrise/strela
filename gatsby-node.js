@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-exports.createPages = async function ({ actions, graphql }) {
+exports.createPages = async function({ actions, graphql }) {
   const {
     data: {
       allContentfulHashtag: { edges: hashtag },
@@ -28,7 +28,7 @@ exports.createPages = async function ({ actions, graphql }) {
   hashtag.forEach(({ node: { value } }) => {
     const regex = `/${value}/gi`;
     actions.createPage({
-      path: `/agency/news/${value}`,
+      path: `/promo/news/${value}`,
       component: require.resolve('./src/templates/news.js'),
       context: { hashtag: regex },
       key: { hashtag: regex },
@@ -45,17 +45,23 @@ exports.createPages = async function ({ actions, graphql }) {
         edges {
           node {
             customId
+            hashtags {
+              value
+            }
           }
         }
       }
     }
   `);
 
-  cases.forEach(({ node: { customId } }) => {
+  cases.forEach(({ node: { customId, hashtags } }) => {
     actions.createPage({
-      path: `/agency/case/${customId}`,
+      path: `/promo/case/${customId}`,
       component: require.resolve('./src/templates/case.js'),
-      context: { customId },
+      context: {
+        customId,
+        hashtagRegex: `/(${hashtags.map(({ value }) => value).join('|')})/g`,
+      },
       key: { customId },
     });
   });
@@ -76,7 +82,7 @@ exports.createPages = async function ({ actions, graphql }) {
           }
         }
       }
-    `,
+    `
   );
 
   artist.forEach(({ node: { linkId } }) => {

@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import pic from "../../../images/blockpic.png"
+import styled from 'styled-components';
+import pic from '../../../images/Element_2.png';
 
 export const Title = styled.p`
   font-family: Neue Machina;
@@ -19,7 +19,7 @@ export const Title = styled.p`
       order: 1;
     }
   }
-`
+`;
 
 export const Txt = styled.p`
   font-family: Neue Machina;
@@ -35,7 +35,7 @@ export const Txt = styled.p`
     max-width: 100%;
     order: 3;
   }
-`
+`;
 export const Block = styled.div`
   width: 203px;
   height: 235px;
@@ -49,4 +49,4 @@ export const Block = styled.div`
     align-self: center;
     margin-bottom: 60px;
   }
-`
+`;

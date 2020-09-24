@@ -16,9 +16,6 @@ const Social = ({ isMoved, isTop, isBottom, footer }) => (
     <a href="tg.com" target="_blank">
       IG
     </a>
-    <a href="tg.com" target="_blank">
-      TG
-    </a>
   </S.SocialTop>
 );
 

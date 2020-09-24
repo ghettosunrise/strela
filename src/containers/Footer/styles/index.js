@@ -1,13 +1,13 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const Footer = styled.footer`
   padding: 55px 49px 40px;
   background: #fff;
   z-index: 1;
 
-@media only screen and (max-width: 1150px){
-  padding: 55px 30px 40px;
-}
+  @media only screen and (max-width: 1150px) {
+    padding: 55px 30px 40px;
+  }
 `;
 
 export const FooLink = styled.a`
@@ -28,10 +28,10 @@ export const FooTxt = styled.p`
   color: #000000;
   text-align: right;
   max-width: 150px;
-  top: 38px;
+  top: 7px;
   position: relative;
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 768px) {
     text-align: left;
     max-width: 218px;
   }

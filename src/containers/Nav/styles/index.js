@@ -3,17 +3,17 @@ import Flex from '../../../styled/flex';
 
 export const TopNav = styled(Flex)`
   transition: opacity 0.3s ease;
-  opacity: ${(props) => {
-    return props.isMoved === false && props.isTop === true ?
-      0 :
-      props.isMoved === true && props.isBottom === true ?
-        0 :
-        1;
-  }};
+  opacity: ${props =>
+    // prettier-ignore
+    props.isMoved === false && props.isTop === true
+      ? 0
+      : props.isMoved === true && props.isBottom === true
+        ? 0
+        : 1};
 
   @media only screen and (max-width: 768px) {
-    align-items: ${(props) =>
-    props.mobileAlign ? props.mobileAlign : 'inherit'};
+    align-items: ${props =>
+      props.mobileAlign ? props.mobileAlign : 'inherit'};
   }
 
   a,
@@ -26,14 +26,15 @@ export const TopNav = styled(Flex)`
     letter-spacing: 0.06em;
     text-transform: uppercase;
     cursor: pointer;
-    color: #000000;
-    margin-bottom: ${(props) => props.space};
+    opacity: ${props =>
+      props.page === 'news' || props.page === 'cases' ? 0.6 : 1};
+    margin-bottom: ${props => props.space};
     position: relative;
 
     &.active {
       &::after {
         width: 100%;
-        content: "";
+        content: '';
         height: 2px;
         background-color: #000;
         position: absolute;
@@ -43,13 +44,13 @@ export const TopNav = styled(Flex)`
     }
 
     :last-child {
-      margin-bottom: ${(props) => (props.column ? +props.space + 30 + 'px' : 0)};
+      margin-bottom: ${props => (props.column ? `${+props.space + 30}px` : 0)};
     }
   }
 `;
 export const NavWrap = styled(Flex)`
-  max-width: ${(props) => (props.agency ? '507px' : '270px')};
+  max-width: ${props => (props.agency ? '507px' : '270px')};
   width: 100%;
-  
-  display: ${(props) => ((!props.agency || props.window < 1151) ? 'none' : 'flex')};
+
+  display: ${props => (!props.agency || props.window < 1151 ? 'none' : 'flex')};
 `;

@@ -34,10 +34,6 @@ const Artists = () => {
     }
   `);
   const data = artistData.allContentfulArtist.nodes;
-  console.log('data', data);
-  console.log('data3333', data[0].artistName);
-  // const { artistName } = data;
-  // console.log('artistName', artistName);
 
   return (
     <Flex

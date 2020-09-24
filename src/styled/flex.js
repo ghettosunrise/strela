@@ -29,6 +29,7 @@ const flex = css`
   ${fromProp('vPadding', { make: 'padding-vertical' })};
   ${fromProp('border', { make: 'border' })};
   ${fromProp('order', { make: 'order' })};
+  ${fromProp('filter', { make: 'filter' })};
   ${fromProp('borderTop', { make: 'border-top' })};
   ${fromProp('radius', { make: 'border-radius' })};
   ${fromProp('overflow', { make: 'overflow' })};
@@ -41,6 +42,7 @@ const flex = css`
   ${fromProp('content', { make: 'align-content' })};
   ${fromProp('alignSelf', { make: 'align-self' })};
   ${fromProp('display', { make: 'display' })};
+  ${fromProp('opacity', { make: 'opacity' })};
 
   @media (max-width: 1150px) {
     padding: ${getProp('tabletPadding', '')};

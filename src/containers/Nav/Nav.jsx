@@ -15,6 +15,7 @@ const Nav = ({
   isMoved,
   window,
   booking,
+  language,
 }) => (
   <S.NavWrap agency={agency} window={window}>
     {agency ? (
@@ -29,17 +30,18 @@ const Nav = ({
         isTop={isTop}
         isMoved={isMoved}
       >
-        <Link to="/agency/whatwedo" activeClassName="active">
-          Что мы делаем
+        <Link to="/promo/whatwedo" activeClassName="active">
+          {language === 'RUS' ? 'Что мы делаем' : 'What We Do'}
         </Link>
-        <Link to="/agency/cases" activeClassName="active">
-          С кем работаем
+        <Link to="/promo/cases" activeClassName="active">
+          {language === 'RUS' ? 'С кем работаем' : 'Cases'}
         </Link>
-        <Link to="/agency/aboutus" activeClassName="active">
-          О нас
+        <Link to="/promo/aboutus" activeClassName="active">
+          {language === 'RUS' ? 'О нас' : 'About Us'}
         </Link>
-        <Link to="/agency/news" activeClassName="active">
-          Материалы
+        <Link to="/promo/news" activeClassName="active">
+          {/* Материалы */}
+          {language === 'RUS' ? 'Материалы' : 'News'}
         </Link>
       </S.TopNav>
     ) : (

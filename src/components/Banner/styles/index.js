@@ -1,11 +1,11 @@
-import styled, { css } from "styled-components"
-import Flex from "../../../styled/flex"
-import arrowdown from "../../../images/arrowdown.svg"
-import ukazateli from "../../../images/ukazateli.svg"
+import styled, { css } from 'styled-components';
+import Flex from '../../../styled/flex';
+import arrowdown from '../../../images/arrowdown.svg';
+import ukazateli from '../../../images/ukazateli.svg';
 
 export const LinkDecor = css`
   &::before {
-    content: "";
+    content: '';
     width: 170px;
     height: 110px;
     background: #f3f2f1;
@@ -16,7 +16,7 @@ export const LinkDecor = css`
   }
 
   &::after {
-    content: "";
+    content: '';
     width: 170px;
     height: 110px;
     background: #f3f2f1;
@@ -25,11 +25,11 @@ export const LinkDecor = css`
     top: -60px;
     transform: rotate(45deg);
   }
-`
+`;
 
 const OtherDecor = css`
   &::after {
-    content: "";
+    content: '';
     width: 170px;
     height: 110px;
     background: #f3f2f1;
@@ -38,13 +38,13 @@ const OtherDecor = css`
     top: -60px;
     transform: rotate(45deg);
   }
-`
+`;
 
 export const Banner = styled(Flex)`
   width: 100%;
   padding: 25px 25px 25px 35px;
   /* background: ${props =>
-    props.link ? "#fff" : props.cases || props.news ? "#000" : null}; */
+    props.link ? '#fff' : props.cases || props.news ? '#000' : null}; */
   background: #FFF;
   box-sizing: border-box;
   flex-direction: row;
@@ -82,15 +82,16 @@ export const Banner = styled(Flex)`
     margin-bottom: 0;
   }
 
-`
+`;
 
 export const NewsBanner = styled(Flex)`
   width: 100%;
-  padding: 70px 56px 50px;
+  /* padding: 70px 56px 50px; */
+  padding-top: 94px;
   background: #000;
   flex-direction: column;
-  margin-bottom: 100px;
-  ${OtherDecor}
+  margin-bottom: 140px;
+  /* ${OtherDecor} */
   overflow: hidden;
   position: relative;
 
@@ -101,13 +102,13 @@ export const NewsBanner = styled(Flex)`
   @media only screen and (max-width: 900px) {
     padding: 40px 25px 25px;
   }
-`
+`;
 
 export const CaseBanner = styled(Flex)`
   width: 100%;
-  padding: 25px 25px 25px 52px;
+  /* padding: 25px 25px 25px 52px; */
   background: #000;
-  ${OtherDecor};
+  /* ${OtherDecor}; */
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 87px;
@@ -130,7 +131,7 @@ export const CaseBanner = styled(Flex)`
       width: 45.7%;
     }
   }
-`
+`;
 
 export const Title = styled.h3`
   font-family: Neue Machina;
@@ -146,7 +147,7 @@ export const Title = styled.h3`
     font-size: 24px;
     line-height: 24px;
   }
-`
+`;
 
 export const SubTitle = styled.p`
   font-family: Neue Machina;
@@ -163,7 +164,7 @@ export const SubTitle = styled.p`
     font-size: 21px;
     line-height: 24px;
   }
-`
+`;
 export const Description = styled.p`
   font-family: Formular;
   font-style: normal;
@@ -179,7 +180,7 @@ export const Description = styled.p`
     line-height: 21px;
     font-size: 16px;
   }
-`
+`;
 export const Arrow = styled.span`
   height: 201px;
   width: 32px;
@@ -192,7 +193,7 @@ export const Arrow = styled.span`
   @media only screen and (max-width: 1150px) {
     margin-right: 20px;
   }
-`
+`;
 
 export const NewsTitle = styled.h1`
   font-family: Neue Machina;
@@ -203,8 +204,8 @@ export const NewsTitle = styled.h1`
   letter-spacing: -0.07em;
   color: #ffffff;
   /* max-width: 62%; */
-  max-width: 1067px;
-  margin-bottom: 104px;
+  max-width: 70%;
+  margin-bottom: 124px;
   width: 100%;
 
   @media only screen and (max-width: 1150px) {
@@ -212,7 +213,7 @@ export const NewsTitle = styled.h1`
     line-height: 48px;
     margin-bottom: 44px;
   }
-`
+`;
 
 export const NewsDescription = styled.p`
   font-family: Neue Machina;
@@ -229,7 +230,7 @@ export const NewsDescription = styled.p`
   @media only screen and (max-width: 1150px) {
     font-size: 22px;
   }
-`
+`;
 export const CaseTitle = styled.h1`
   font-family: Neue Machina;
   font-style: normal;
@@ -239,7 +240,7 @@ export const CaseTitle = styled.h1`
   letter-spacing: -0.07em;
   margin-bottom: 40px;
   color: #ffffff;
-  padding-top: 35px;
+  padding-top: 76px;
 
   @media only screen and (max-width: 1150px) {
     font-size: 78px;
@@ -252,7 +253,7 @@ export const CaseTitle = styled.h1`
     line-height: 48px;
     margin-bottom: 24px;
   }
-`
+`;
 export const CaseDescription = styled.p`
   font-family: Formular;
   font-style: normal;
@@ -273,7 +274,7 @@ export const CaseDescription = styled.p`
     max-width: 100%;
     margin-bottom: 63px;
   }
-`
+`;
 
 export const Ukazateli = styled.div`
   width: 439px;
@@ -287,14 +288,15 @@ export const Ukazateli = styled.div`
   @media only screen and (max-width: 1150px) {
     display: none;
   }
-`
+`;
 
 export const Line = styled.div`
   width: 100%;
   border-top: 1px solid #ffffff;
   margin-bottom: 23px;
+  opacity: 0.6;
 
   @media only screen and (max-width: 768px) {
     display: none;
   }
-`
+`;

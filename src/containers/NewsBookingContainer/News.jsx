@@ -1,29 +1,37 @@
 import React from 'react';
+
 import Flex from '../../styled/flex';
 import News from '../../components/News';
 import ButtonBig from '../../components/Buttons/ButtonBig';
-import useLanguage from '../../hooks/useLanguage';
+import Banner from '../../components/Banner';
+import Hashtags from '../../components/Hashtag';
+import Divider from '../../components/Divider';
+import * as S from './styles';
 
-const NewsContainer = ({ data, caseNews, bookingPage, mainPage }) => {
-  const [[language]] = useLanguage();
+const NewsContainer = ({ data, hashtags, page }) => {
+  // const filtered = data.filter(item => item.extralarge);
+  const filtered2 = data.filter(item => !item.extralarge);
+  // const filtered2 = data.filter(item =>
+  //   item.hashtags.filter(item => item.name === 'gideon')
+  // );
 
   return (
-    <Flex width="100%" paddingAll="46px 49px" tabletPadding="46px 30px">
-      <Flex
+    <Flex width="100%">
+      <S.Container
         row
         width="100%"
         justify="space-between"
         align="stretch"
         wrap="wrap"
+        paddingAll="46px 49px"
+        tabletPadding="0px 30px 49px"
       >
-        {data.map(
+        {filtered2.map(
           ({
-            id,
             size,
             title,
             date,
             link,
-            position,
             special,
             extralarge,
             hashtags,
@@ -32,7 +40,7 @@ const NewsContainer = ({ data, caseNews, bookingPage, mainPage }) => {
             },
           }) => (
             <News
-              key={id}
+              key={title}
               size={size}
               title={title}
               link={link}
@@ -41,19 +49,11 @@ const NewsContainer = ({ data, caseNews, bookingPage, mainPage }) => {
               special={special}
               extraLarge={extralarge}
               hashtags={hashtags}
-              caseNews={caseNews}
-              position={position}
-              mainPage={mainPage}
             />
           )
         )}
-      </Flex>
-      {!bookingPage && (
-        <ButtonBig
-          link="/promo/news"
-          txt={language === 'RUS' ? 'Все новости' : 'All News'}
-        />
-      )}
+        {/* <ButtonBig txt="Все новости" /> */}
+      </S.Container>
     </Flex>
   );
 };

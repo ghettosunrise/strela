@@ -16,16 +16,14 @@ const Artist = ({
   },
 }) => {
   const [initialised, setInitialised] = useState(false);
-  console.log('desc111', desc1);
+
   const parsed1 = JSON.parse(desc1);
-  console.log('desc222', desc1);
+
   const parsed1Ru = JSON.parse(desc1Ru);
 
   useEffect(() => {
     setInitialised(true);
   }, []);
-
-  // console.log('title', artist?.linkID);
 
   return (
     <S.ArtistWrapper
@@ -35,7 +33,7 @@ const Artist = ({
       marginTop="60px"
       mobileMargin="10px 0 0"
     >
-      <Flex marginRight="2.6%">
+      <Flex marginRight="2.6%" maxWidth="207px">
         <Fade>{initialised && <img src={artistLogo?.fluid?.src}></img>}</Fade>
       </Flex>
       <S.ArtistContent>

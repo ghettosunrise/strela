@@ -17,13 +17,15 @@ export const Sidebar = ({
   const textarea = useRef();
 
   const [documentLoaded, setDocumentLoaded] = useState(null);
-  let location;
+  const [location, setLocation] = useState(null);
 
   useEffect(() => {
     setDocumentLoaded(true);
   }, []);
 
-  documentLoaded === true ? (location = window.location.href) : null;
+  if (documentLoaded) {
+    setLocation(window.location.href);
+  }
 
   return (
     <S.Sidebar>

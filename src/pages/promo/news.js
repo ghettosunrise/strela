@@ -1,14 +1,14 @@
-import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Contact from "../../containers/ContactUs"
-import Layout from "../../components/layout"
-import NewsPage from "../../containers/NewsPageContainer"
-import SEO from "../../components/seo"
-import Arrow from "../../components/Arrow"
+import React, { useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Contact from '../../containers/ContactUs';
+import Layout from '../../components/layout';
+import NewsPage from '../../containers/NewsPageContainer';
+import SEO from '../../components/seo';
+import Arrow from '../../components/Arrow';
 
 const News = () => {
-  const [isClosed, setIsClosed] = useState(true)
-  const [isClosedMobile, setIsClosedMobile] = useState(true)
+  const [isClosed, setIsClosed] = useState(true);
+  const [isClosedMobile, setIsClosedMobile] = useState(true);
 
   const _data = useStaticQuery(graphql`
     query MyNews {
@@ -42,7 +42,7 @@ const News = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout
@@ -50,6 +50,7 @@ const News = () => {
       setIsClosed={setIsClosed}
       isClosedMobile={isClosedMobile}
       setIsClosedMobile={setIsClosedMobile}
+      page="news"
     >
       <SEO title="News" />
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
@@ -57,9 +58,10 @@ const News = () => {
       <NewsPage
         hashtags={_data.allContentfulHashtag.nodes}
         data={_data.allContentfulNews.nodes}
-      ></NewsPage>
+        page="news"
+      />
     </Layout>
-  )
-}
+  );
+};
 
-export default News
+export default News;

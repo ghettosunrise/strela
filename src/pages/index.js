@@ -8,7 +8,6 @@ import mainBg from '../images/mainbg1440.png';
 import arrL from '../images/arrowl.svg';
 import arrR from '../images/arrowr.svg';
 import logo from '../images/logo.png';
-
 import '../assets/layout.css';
 import Arrow from '../components/Icons';
 import SEO from '../components/seo';
@@ -100,7 +99,7 @@ const AnimatedBlock = styled.div`
   height: 100%;
   position: absolute;
   left: -100%;
-  background: ${props => (props.navigateTo === 'agency' ? 'black' : '#2403a6')};
+  background: ${props => (props.navigateTo === 'promo' ? 'black' : '#2403a6')};
   animation-name: ${animateIn};
   animation-duration: 1s;
   animation-play-state: ${props =>
@@ -110,7 +109,7 @@ const AnimatedBlock = styled.div`
 
 const IndexPage = () => {
   const [navigateTo, setNavigateTo] = useState(null);
-  const agency = 'agency';
+  const agency = 'promo';
   const booking = 'booking';
 
   const handleClick = direction => {
@@ -138,7 +137,7 @@ const IndexPage = () => {
         {/* <Flex row align="center">
           <Arrow margin="24px" direction="L" />
           <button type="button" onClick={() => handleClick(agency)}>
-            Agency
+            Promo
           </button>
         </Flex>
         <Flex row align="center">

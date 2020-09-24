@@ -13,7 +13,7 @@ const TickerText = styled.a`
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  color: #fff;
+  color: ${props => props.color};
   padding: 0px 38px;
   position: relative;
   &::after {
@@ -26,6 +26,10 @@ const TickerText = styled.a`
     background-size: 100%;
     top: 7px;
   }
+`;
+
+const TickerWhiteTxt = styled(TickerText)`
+  padding: 0px 5px;
 `;
 
 const moveXAnimation = keyframes`
@@ -50,9 +54,11 @@ const MovingContainer = styled(Flex).attrs({
   &:hover {
     animation-play-state: paused;
   }
+
+  border: ${props => (props.border ? '2px solid black' : 'none')};
 `;
 
-const Ticker = () => {
+const Ticker = ({ booking, tickerText }) => {
   const tickerData = useStaticQuery(graphql`
     query MyQuery {
       contentfulRunningLine {
@@ -80,39 +86,64 @@ const Ticker = () => {
   const textsInContainer = Math.ceil(containerWidth / textWidth);
 
   const copiesLength = textsInContainer ? textsInContainer * 2 - 1 : 0;
-
-  console.log(textsInContainer);
-
   return (
     <Flex
       width="100%"
       align="center"
       height="58px"
-      background="#2403a6"
+      background={booking ? '#2403a6' : 'transparent'}
       row
       ref={container}
       overflow="hidden"
+      border={!booking ? '2px solid black' : 'none'}
     >
-      <MovingContainer>
-        <TickerText
-          target="blank"
-          href={tickerData.contentfulRunningLine.link}
-          ref={text}
-        >
-          {tickerData.contentfulRunningLine.text} –<span>Play now</span>
-        </TickerText>
-        {Array(copiesLength)
-          .fill(0)
-          .map((_, idx) => (
-            <TickerText
-              target="blank"
-              href={tickerData.contentfulRunningLine.link}
-              key={idx}
-            >
-              {tickerData.contentfulRunningLine.text} –<span>Play now</span>
-            </TickerText>
-          ))}
-      </MovingContainer>
+      {booking && (
+        <MovingContainer>
+          <TickerText
+            color="#fff"
+            target="blank"
+            href={tickerData.contentfulRunningLine.link}
+            ref={text}
+          >
+            {tickerData.contentfulRunningLine.text} — &nbsp;
+            <span>Play now</span>
+          </TickerText>
+          {Array(copiesLength)
+            .fill(0)
+            .map((_, idx) => (
+              <TickerText
+                color="#fff"
+                target="blank"
+                href={tickerData.contentfulRunningLine.link}
+                ref={text}
+              >
+                {tickerData.contentfulRunningLine.text} — &nbsp;
+                <span>Play now</span>
+              </TickerText>
+            ))}
+        </MovingContainer>
+      )}
+      {!booking && (
+        <MovingContainer>
+          <TickerWhiteTxt color="black" href="/promo" ref={text}>
+            Go to Strela promo agency
+          </TickerWhiteTxt>
+          {Array(copiesLength)
+            .fill(0)
+            .map((_, idx) => (
+              <TickerWhiteTxt
+                color={booking ? '#fff' : 'black'}
+                target="blank"
+                href={
+                  booking ? tickerData.contentfulRunningLine.link : '/promo'
+                }
+                ref={text}
+              >
+                Go to Strela promo agency &nbsp; <span>— </span>
+              </TickerWhiteTxt>
+            ))}
+        </MovingContainer>
+      )}
     </Flex>
   );
 };

@@ -6,14 +6,14 @@ import Case from '../../components/Case';
 import Flex from '../../styled/flex';
 import ButtonBig from '../../components/Buttons/ButtonBig';
 
-const Cases = () => {
+const Cases = ({ language }) => {
   const caseData = useStaticQuery(graphql`
     query Case {
       allContentfulCase {
         nodes {
           id
-          size
           title
+          position
           customId
           subtitle
           image {
@@ -25,6 +25,7 @@ const Cases = () => {
       }
     }
   `);
+
   return (
     <Flex
       width="100%"
@@ -41,9 +42,9 @@ const Cases = () => {
       >
         {caseData.allContentfulCase.nodes.map(
           ({
-            id,
-            size,
+            id, // size,
             title,
+            position,
             subtitle,
             customId,
             image: {
@@ -53,8 +54,9 @@ const Cases = () => {
             <Case
               id={id}
               key={id}
-              img={url}
-              size={size}
+              img={url || ''}
+              // size={size}
+              position={position}
               label={title}
               sublabel={subtitle}
               content="stretch"
@@ -63,7 +65,11 @@ const Cases = () => {
           )
         )}
       </Flex>
-      <ButtonBig width="100%" link="/agency/cases" txt="Все кейсы" />
+      <ButtonBig
+        width="100%"
+        link="/promo/cases"
+        txt={language === 'RUS' ? 'Все кейсы' : 'All Cases'}
+      />
     </Flex>
   );
 };

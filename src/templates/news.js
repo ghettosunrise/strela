@@ -5,11 +5,9 @@ import News from '../components/News';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const NewsTemplate = ({ data }) => {
+const NewsTemplate = ({ data, page }) => {
   const [isClosed, setIsClosed] = useState(true);
   const [isClosedMobile, setIsClosedMobile] = useState(true);
-
-  console.log(data, 'DATA');
 
   return (
     <Layout
@@ -17,6 +15,7 @@ const NewsTemplate = ({ data }) => {
       setIsClosed={setIsClosed}
       isClosedMobile={isClosedMobile}
       setIsClosedMobile={setIsClosedMobile}
+      page={page}
     >
       <SEO title="Case" />
       <Flex width="100%" paddingAll="46px 49px">

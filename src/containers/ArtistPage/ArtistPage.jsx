@@ -25,7 +25,6 @@ const ArtistPage = data => {
   // }, []);
 
   const { contentfulArtist: myData } = data?.data;
-  console.log('myData', myData);
 
   useEffect(() => {
     setParsedText1(JSON.parse(myData?.artistText1?.artistText1));
@@ -39,13 +38,8 @@ const ArtistPage = data => {
     );
   }, []);
 
-  console.log('parsedSoundCloud', documentToReactComponents(parsedText1));
-  const iframeSrc = documentToReactComponents(parsedSoundCloud);
-  console.log('iframeSrc', iframeSrc);
+  // const iframeSrc = documentToReactComponents(parsedSoundCloud);
 
-  // console.log(JSON.parse(myData?.artistText1?.artistText2, 'sasasas'));
-
-  // console.log('myData ', myData);
   // const parsedText1 = JSON.parse(myData?.artistText1?.artistText1);
   // const parsedText1Ru = JSON.parse(myData?.artistText1Ru?.artistText1Ru);
   // const parsedText2 = JSON.parse(myData?.artistText2?.artistText2);
@@ -55,12 +49,11 @@ const ArtistPage = data => {
   // const parsedSoundCloud = JSON.parse(
   //   myData?.soundCloudTrackLinks?.soundCloudTrackLinks
   // );
-  console.log('myData', myData);
+
   const { igLink, fbLink, scLink, raLink } = myData;
 
   const pressKit = myData?.pressKit?.file?.url || '';
   const { src } = myData?.artistPicture?.fluid || '';
-  console.log('src', src);
 
   return (
     <S.ArtistWrapper>
@@ -101,7 +94,7 @@ const ArtistPage = data => {
                 </S.DescriptionThird>
               </Fade>
               <Flex width="100%">
-                {/* <Iframe src={parsedSoundCloud} /> */}
+                <Iframe src={parsedSoundCloud} />
               </Flex>
             </Flex>
             <Sidebar
