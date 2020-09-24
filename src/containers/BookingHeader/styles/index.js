@@ -10,21 +10,21 @@ export const HeaderWrap = styled.header`
   align-items: center;
   display: flex;
 
-  ${Nav} &{
-    background: red;
-  };
+  ${Nav} & {
+    /* background: red; */
+  }
 
   img {
     margin-right: 5.1%;
   }
-   
+
   @media only screen and (max-width: 1050px) {
     padding: 40px 30px;
   }
 
   @media only screen and (max-width: 768px) {
-      padding: 40px 20px;
-    }
+    padding: 40px 20px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -43,7 +43,7 @@ export const Title = styled.h1`
     font-size: 76px;
     line-height: 76px;
     margin-bottom: 34px;
-  };
+  }
 
   @media only screen and (max-width: 768px) {
     font-size: 56px;
@@ -51,5 +51,5 @@ export const Title = styled.h1`
     margin-bottom: 34px;
     order: 1;
     margin-left: 0;
-  };
+  }
 `;
