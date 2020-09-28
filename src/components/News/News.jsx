@@ -79,7 +79,7 @@ const News = ({
         <S.MyNews mainPage={mainPage} position={position} size="medium">
           <Fade>
             <a target="_blank" href={link}>
-              <img src={src} />
+              <img style={{ maxWidth: '100%' }} src={src} />
             </a>
             <a target="_blank" href={link}>
               <S.TitleBig>{title}</S.TitleBig>
@@ -100,7 +100,7 @@ const News = ({
     >
       <Fade>
         <a target="_blank" href={link}>
-          <img src={src} />
+          <img style={{ maxWidth: '100%' }} src={src} />
         </a>
         <a target="_blank" href={link}>
           <S.Title>{title}</S.Title>

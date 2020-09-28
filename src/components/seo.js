@@ -32,6 +32,7 @@ function SEO({ description, lang, meta, title }) {
       htmlAttributes={{
         lang,
       }}
+      // link={[{ rel: 'stylesheet', href: './src/assets/layout.css' }]}
       title="Strela.Agency"
       titleTemplate={`%s  ${site.siteMetadata.title}`}
       meta={[

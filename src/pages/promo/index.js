@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import '../../assets/layout.css';
 
 import AgencyHeader from '../../containers/AgencyHeader';
 import Flex from '../../styled/flex';

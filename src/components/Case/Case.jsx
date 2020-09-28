@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Fade from 'react-reveal/Fade';
+import styled from 'styled-components';
 
 import Flex from '../../styled/flex';
 import * as S from './styles';
+
+const LinkWrap = styled(Link)`
+  img {
+    max-width: 100%;
+  }
+`;
 
 const Case = ({
   customId,
@@ -33,9 +40,9 @@ const Case = ({
     </Flex>
     <Flex width="100%">
       <Fade>
-        <Link className="case__link" to={`/promo/case/${customId}`}>
+        <LinkWrap className="case__link" to={`/promo/case/${customId}`}>
           <img src={img} />
-        </Link>
+        </LinkWrap>
       </Fade>
     </Flex>
   </S.StyledCase>

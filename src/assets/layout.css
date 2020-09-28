@@ -1,46 +1,43 @@
 @font-face {
   font-family: 'NeueMachina';
   font-weight: 400;
-  src: url('../../static/fonts/NeueMachina/NeueMachina-Regular.woff')
-    format('woff');
+  src: url('../../static/fonts/NeueMachina-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'NeueMachina';
   font-weight: 300;
-  src: url('../../static/fonts/NeueMachina/NeueMachina-Light.woff')
-    format('woff');
+  src: url('../../static/fonts/NeueMachina-Light.woff') format('woff');
 }
 
 @font-face {
   font-family: 'NeueMachina';
   font-weight: 900;
-  src: url('../../static/fonts/NeueMachina/NeueMachina-Ultrabold.woff')
-    format('woff');
+  src: url('../../static/fonts/NeueMachina-Ultrabold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 400;
-  src: url('../../static/fonts/Formular/Formular-Regular.woff') format('woff');
+  src: url('../../static/fonts/Formular-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 500;
-  src: url('../../static/fonts/Formular/Formular-Medium.woff') format('woff');
+  src: url('../../static/fonts/Formular-Medium.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 700;
-  src: url('../../static/fonts/Formular/Formular-Bold.woff') format('woff');
+  src: url('../../static/fonts/Formular-Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 300;
-  src: url('../../static/fonts/Formular/Formular-Light.woff') format('woff');
+  src: url('../../static/fonts/Formular-Light.woff') format('woff');
 }
 
 html {
@@ -79,6 +76,10 @@ main {
   main {
     padding-top: 108px;
   }
+}
+
+div {
+  box-sizing: border-box;
 }
 
 article,
@@ -265,7 +266,7 @@ html {
   overflow-y: scroll;
 }
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 *:before {
   box-sizing: inherit;
