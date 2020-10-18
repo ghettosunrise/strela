@@ -130,6 +130,21 @@ const MyForm = ({ str }) => (
       promoName: '',
       fee: '',
     }}
+    onSubmit={(values, actions) => {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact-demo', ...values }),
+      })
+        .then(() => {
+          alert('Success');
+          actions.resetForm();
+        })
+        .catch(() => {
+          alert('Error');
+        })
+        .finally(() => actions.setSubmitting(false));
+    }}
     validate={values => {
       const errors = {};
       if (!values.email) {
@@ -155,13 +170,13 @@ const MyForm = ({ str }) => (
   >
     {({ isSubmitting }) => (
       <CustomForm
+        data-netlify
         name="contact"
-        method="POST"
-        data-netlify="true"
+        method="post"
         action="/"
         // onSubmit={handleSubmit}
       >
-        <input type="hidden" name="form-name" value="contact" />
+        {/* <input type="hidden" name="form-name" value="contact" /> */}
         <Flex maxWidth="320px" width="100%">
           <Flex>
             <p>Your name</p>
