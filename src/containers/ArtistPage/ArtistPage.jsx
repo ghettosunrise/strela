@@ -26,17 +26,17 @@ const ArtistPage = data => {
 
   const { contentfulArtist: myData } = data?.data;
 
-  useEffect(() => {
-    setParsedText1(JSON.parse(myData?.artistText1?.artistText1));
-    setParsedText2(JSON.parse(myData?.artistText2?.artistText2));
-    setParsedText3(JSON.parse(myData?.artistText3?.artistText3));
-    setParsedText1Ru(JSON.parse(myData?.artistText1Ru?.artistText1Ru));
-    setParsedText2Ru(JSON.parse(myData?.artistText2Ru?.artistText2Ru));
-    setParsedText3Ru(JSON.parse(myData?.artistText3Ru?.artistText3Ru));
-    setParsedSoundCloud(
-      JSON.parse(myData?.soundCloudTrackLinks?.soundCloudTrackLinks)
-    );
-  }, []);
+  // useEffect(() => {
+  //   setParsedText1(JSON.parse(myData?.artistText1?.artistText1));
+  //   setParsedText2(JSON.parse(myData?.artistText2?.artistText2));
+  //   setParsedText3(JSON.parse(myData?.artistText3?.artistText3));
+  //   setParsedText1Ru(JSON.parse(myData?.artistText1Ru?.artistText1Ru));
+  //   setParsedText2Ru(JSON.parse(myData?.artistText2Ru?.artistText2Ru));
+  //   setParsedText3Ru(JSON.parse(myData?.artistText3Ru?.artistText3Ru));
+  //   setParsedSoundCloud(
+  //     JSON.parse(myData?.soundCloudTrackLinks?.soundCloudTrackLinks)
+  //   );
+  // }, []);
 
   // const iframeSrc = documentToReactComponents(parsedSoundCloud);
 
@@ -62,6 +62,8 @@ const ArtistPage = data => {
         tabletPadding="0px 30px"
         mobilePadding="0px 20px"
         z="2"
+        width="100%"
+        justify="center"
       >
         <S.ArtistName>{myData?.artistName}</S.ArtistName>
         <Fade>
@@ -94,17 +96,17 @@ const ArtistPage = data => {
                 </S.DescriptionThird>
               </Fade>
               <Flex width="100%">
-                <Iframe src={parsedSoundCloud} />
+                {/* <Iframe src={parsedSoundCloud} /> */}
               </Flex>
             </Flex>
-            <Sidebar
+            {/* <Sidebar
               fbLink={fbLink}
               igLink={igLink}
               raLink={raLink}
               scLink={scLink}
               pressKit={pressKit}
               setIsEnglish={setIsEnglish}
-            />
+            /> */}
           </Flex>
         </S.ArtistContent>
       </Flex>

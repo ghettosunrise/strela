@@ -1,14 +1,15 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
 
-import Layout from "../../components/layout"
-import Contact from "../../containers/ContactUs"
-import SEO from "../../components/seo"
-import About from "../../containers/AboutUs"
-import Arrow from "../../components/Arrow"
+import Layout from '../../components/layout';
+import Contact from '../../containers/ContactUs';
+import SEO from '../../components/seo';
+import About from '../../containers/AboutUs';
+import Arrow from '../../components/Arrow';
+import { ProvideLanguage } from '../../hooks/useLanguage';
 
 const AboutUs = () => {
-  const [isClosed, setIsClosed] = useState(true)
-  const [isClosedMobile, setIsClosedMobile] = useState(true)
+  const [isClosed, setIsClosed] = useState(true);
+  const [isClosedMobile, setIsClosedMobile] = useState(true);
   return (
     <Layout
       isClosed={isClosed}
@@ -21,7 +22,7 @@ const AboutUs = () => {
       <Arrow bottom="-2200px" left="-3%" />
       <About />
     </Layout>
-  )
-}
+  );
+};
 
-export default AboutUs
+export default AboutUs;

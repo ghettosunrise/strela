@@ -42,7 +42,7 @@ export const CustomForm = styled(Form)`
     /* identical to box height, or 171% */
     outline: none;
     letter-spacing: -0.03em;
-    margin-bottom: 3.7vh;
+    margin-bottom: 1.75rem;
     color: #000000;
   }
 

@@ -1,3 +1,5 @@
-import useAnimationStatus from './src/hooks/useAnimationStatus';
+import { ProvideLanguage } from './src/hooks/useLanguage';
 
-export const wrapRootElement = useAnimationStatus;
+export const wrapRootElement = ({ element }) => (
+  <ProvideLanguage>{element}</ProvideLanguage>
+);

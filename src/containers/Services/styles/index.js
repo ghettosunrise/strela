@@ -79,15 +79,27 @@ export const Txt = styled.p`
     ${props => (props.switchService === 1 ? myLine : null)}
   }
 
-  &:last-child {
+  &:nth-child(3) {
     ${props => (props.switchService === 2 ? myLine : null)}
+  }
+
+  &:nth-child(4) {
+    ${props => (props.switchService === 3 ? myLine : null)}
+  }
+
+  &:nth-child(5) {
+    ${props => (props.switchService === 4 ? myLine : null)}
+  }
+
+  &:last-child {
+    ${props => (props.switchService === 5 ? myLine : null)}
     margin-bottom: 0;
   }
 `;
 
 export const ServiceContent = styled(Flex)`
   width: 79%;
-  padding: 56px 199px 195px 56px;
+  padding: 56px 199px 56px 56px;
   position: relative;
   background: #fff;
   ${LinkDecor};
@@ -104,18 +116,18 @@ export const ServiceContent = styled(Flex)`
 `;
 
 export const Title = styled.h2`
-  font-family: Neue Machina;
+  font-family: Formular;
   font-style: normal;
   font-weight: normal;
-  font-size: 48px;
-  line-height: 48px;
+  font-size: 34px;
+  line-height: 43px;
+  /* or 117% */
+
   letter-spacing: -0.07em;
-  margin-bottom: 61px;
+
   color: #000000;
 
   @media only screen and (max-width: 380px) {
-    font-size: 35px;
-    line-height: 35px;
   }
 `;
 export const List = styled.ul`

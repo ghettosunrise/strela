@@ -7,10 +7,13 @@ import Banner from '../../components/Banner';
 import Hashtags from '../../components/Hashtag';
 import Divider from '../../components/Divider';
 import * as S from './styles';
+import { useLanguage } from '../../hooks';
 
 const NewsContainer = ({ data, hashtags, page }) => {
   const filtered = data.filter(item => item.extralarge);
   const filtered2 = data.filter(item => !item.extralarge);
+
+  const [[language, setLanguage]] = useLanguage();
   // const filtered2 = data.filter(item =>
   //   item.hashtags.filter(item => item.name === 'gideon')
   // );
@@ -21,12 +24,21 @@ const NewsContainer = ({ data, hashtags, page }) => {
         column
         news
         tabletMargin=""
-        title="Статьи, как часть нашей экспертизы"
-        description="Написание и актуализация текстов, связанных с артистом и его проектами, создание или изменение контента в соответствии с актуальным позиционированием"
+        title={
+          language === 'RUS'
+            ? 'Статьи, как часть нашей экспертизы'
+            : 'Articles as part of our expertise'
+        }
+        description={
+          language === 'RUS'
+            ? 'Написание и актуализация текстов, связанных с артистом и его проектами, создание или изменение контента в соответствии с актуальным позиционированием'
+            : 'Exclusive publications created with local and renowned international media outlets.          '
+        }
         page={page}
+        language={language}
       />
       <Flex marginBottom="100px" />
-      <Divider text="Мы написали:" />
+      <Divider text={language === 'RUS' ? 'Мы написали:' : 'Our Articles'} />
       <S.Container
         row
         width="100%"

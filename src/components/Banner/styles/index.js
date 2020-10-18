@@ -204,7 +204,7 @@ export const NewsTitle = styled.h1`
   letter-spacing: -0.07em;
   color: #ffffff;
   /* max-width: 62%; */
-  max-width: 70%;
+  max-width: ${props => (props.language === 'RUS' ? '70%' : '80%')};
   margin-bottom: 124px;
   width: 100%;
 

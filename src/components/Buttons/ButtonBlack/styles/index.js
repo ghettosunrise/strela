@@ -58,15 +58,6 @@ const BlackBtn = css`
   }
 
 
-  span {
-    width: 38px;
-    height: 19px;
-    background-image: url(${arrR});
-    background-size: 100%;
-    margin-left: 11px;
-    position: relative;
-    bottom: 2px;
-  }
 
   &:hover {
     background-image: url(${Button1});

@@ -5,6 +5,19 @@ import * as Yup from 'yup';
 import { Flex } from '../../styled';
 import Button from '../Buttons/ButtonTransparent';
 
+const ErrorFlex = styled(ErrorMessage)`
+  position: absolute;
+  left: 0;
+  font-family: Formular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 24px;
+  letter-spacing: -0.03em;
+  bottom: 0vh;
+  color: #ff3939;
+`;
+
 const CustomForm = styled(Form)`
   width: 100%;
   max-width: 718px;
@@ -40,20 +53,10 @@ const CustomForm = styled(Form)`
     line-height: 24px;
     outline: none;
     letter-spacing: -0.03em;
-    margin-bottom: 3.7vh;
-    color: #000000;
-  }
+    /* margin-bottom: ; */
+    margin-bottom: 1.25rem;
 
-  span {
-    font-family: Formular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 24px;
-    letter-spacing: -0.03em;
-    position: relative;
-    bottom: 4vh;
-    color: #ff3939;
+    color: #000000;
   }
 `;
 
@@ -62,74 +65,129 @@ const SignupSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(70, 'Too Long!')
     .required('Required'),
+  promoName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(70, 'Too Long!')
+    .required('Required'),
   city: Yup.string()
     .min(2, 'Too Short!')
     .max(25, 'Too Long!')
     .required('Required'),
-  contactLink: Yup.string()
-    .url()
-    .min(8, 'Too Short!')
+  email: Yup.string()
+    .min(5, 'Too Short!')
     .max(70, 'Too Long!')
     .required('Required'),
-  socialLink: Yup.string()
-    .url()
-    .min(2, 'Too Short!')
+  venue: Yup.string()
+    .min(1, 'Too Short!')
     .max(70, 'Too Long!')
     .required('Required'),
   date: Yup.string()
     .min(2, 'Too Short!')
     .max(70, 'Too Long!')
     .required('Required'),
+  lineup: Yup.string()
+    .min(2, 'Too Short!')
+    .max(100, 'Too Long!')
+    .required('Required'),
+  fee: Yup.string()
+    .min(2, 'Too Short!')
+    .max(15, 'Too Long!')
+    .required('Required'),
 });
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&');
+}
+
+const handleSubmit = e => {
+  e.preventDefault();
+  const form = e.target;
+  console.log(form, 'form');
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: encode({
+      'form-name': form.getAttribute('name'),
+    }),
+  })
+    .then(() => alert('sent'))
+    .catch(error => alert(error));
+};
 
 const MyForm = ({ str }) => (
   <Formik
     validationSchema={SignupSchema}
     initialValues={{
       name: '',
-      contactLink: '',
-      socialLink: '',
+      email: '',
       city: '',
       date: '',
-      club: '',
+      venue: '',
       comment: '',
       lineup: '',
-    }}
-    onSubmit={(values, { setSubmitting }) => {
-      setTimeout(() => {
-        alert(JSON.stringify({ artist: str, ...values }, null, 2));
-        setSubmitting(false);
-      }, 400);
+      promoName: '',
+      fee: '',
     }}
     validate={values => {
       const errors = {};
-      if (!values.socialLink) {
-        errors.socialLink = 'Required';
-      } else if (!values.contactLink) {
-        errors.contactLink = 'Required';
+      if (!values.email) {
+        errors.email = 'Required';
       } else if (!values.name) {
         errors.name = 'Required';
       } else if (!values.city) {
         errors.city = 'Required';
       } else if (!values.date) {
         errors.date = 'Required';
+      } else if (!values.lineup) {
+        errors.lineup = 'Required';
+      } else if (!values.promoName) {
+        errors.promoName = 'Required';
+      } else if (!values.fee) {
+        errors.fee = 'Required';
+      } else if (!values.venue) {
+        errors.venue = 'Required';
       }
 
       return errors;
     }}
   >
     {({ isSubmitting }) => (
-      <CustomForm>
+      <CustomForm
+        name="contact"
+        method="post"
+        action="/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        <input type="hidden" name="form-name" value="contact" />
         <Flex maxWidth="320px" width="100%">
-          <p>Your name</p>
-          <Field type="text" name="name" />
-          <ErrorMessage name="name" component="span" />
-          <p>Link for contact</p>
-          <Field type="text" name="contactLink" />
-          <ErrorMessage name="contactLink" component="span" />
-          <p>Link to social media</p>
-          <Field type="text" name="socialLink" />
-          <ErrorMessage name="socialLink" component="span" />
+          <Flex>
+            <p>Your name</p>
+            <Field type="text" name="name" />
+            <ErrorFlex name="name" component="span" />
+          </Flex>
+          <Flex>
+            <p>E-Mail Address </p>
+            <Field type="email" name="email" />
+            <ErrorFlex name="name" component="span" />
+          </Flex>
+          <Flex>
+            <p>Event Date </p>
+            <Field
+              type="text"
+              name="date"
+              placeholder="9 Dec 2020 or 9 - 10 Dec 2020"
+            />
+            <ErrorFlex name="date" component="span" />
+          </Flex>
+          <Flex>
+            <p>Proposed Line Up </p>
+            <Field type="text" name="lineup" />
+            <ErrorFlex name="lineup" component="span" />
+          </Flex>
           <p>additional info</p>
           <Field
             placeholder="Text your comments "
@@ -142,16 +200,26 @@ const MyForm = ({ str }) => (
           </Button>
         </Flex>
         <Flex maxWidth="320px" width="100%">
-          <p>Your City</p>
-          <Field type="text" name="city" />
-          <ErrorMessage name="city" component="span" />
-          <p>Choose the party date</p>
-          <Field type="text" name="date" />
-          <ErrorMessage name="date" component="span" />
-          <p>Club</p>
-          <Field type="text" name="club" />
-          <p>line-up</p>
-          <Field type="text" name="lineup" />
+          <Flex>
+            <p>Promoter Name</p>
+            <Field type="text" name="promoName" />
+            <ErrorFlex name="promoName" component="span" />
+          </Flex>
+          <Flex>
+            <p>Your City</p>
+            <Field type="text" name="city" />
+            <ErrorFlex name="city" component="span" />
+          </Flex>
+          <Flex>
+            <p>Artist Fee Offer</p>
+            <Field type="text" name="fee" />
+            <ErrorFlex name="fee" component="span" />
+          </Flex>
+          <Flex>
+            <p>Venue Name and capacity</p>
+            <Field type="text" name="venue" />
+            <ErrorFlex name="venue" component="span" />
+          </Flex>
         </Flex>
       </CustomForm>
     )}

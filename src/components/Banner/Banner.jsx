@@ -53,7 +53,7 @@ const Banner = ({
       {news && (
         <S.NewsBanner>
           <Fade>
-            <S.NewsTitle>{title}</S.NewsTitle>
+            <S.NewsTitle language={language}>{title}</S.NewsTitle>
           </Fade>
           <Fade>
             <S.NewsDescription>{description}</S.NewsDescription>

@@ -20,8 +20,8 @@ const Nav = ({
   <S.NavWrap agency={agency} window={window}>
     {agency ? (
       <S.TopNav
-        row={row && true}
-        column={column && true}
+        row={row}
+        column={column}
         width="100%"
         justify="space-between"
         space={space}
@@ -33,8 +33,8 @@ const Nav = ({
         <Link to="/promo/whatwedo" activeClassName="active">
           {language === 'RUS' ? 'Что мы делаем' : 'What We Do'}
         </Link>
-        <Link to="/promo/cases" activeClassName="active">
-          {language === 'RUS' ? 'С кем работаем' : 'Cases'}
+        <Link to="/promo/clients" activeClassName="active">
+          {language === 'RUS' ? 'С кем работаем' : 'Clients'}
         </Link>
         <Link to="/promo/aboutus" activeClassName="active">
           {language === 'RUS' ? 'О нас' : 'About Us'}

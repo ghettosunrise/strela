@@ -14,4 +14,8 @@ export const ProvideLanguage = ({ children }) => {
   );
 };
 
+// export const ProvideLanguage = ({ element }) => (
+//   <GatsbyProvider>{element}</GatsbyProvider>
+// );
+
 export default useLanguage;

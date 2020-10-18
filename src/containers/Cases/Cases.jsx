@@ -47,14 +47,14 @@ const Cases = ({ language }) => {
             position,
             subtitle,
             customId,
-            image: {
-              file: { url },
-            },
+            // image: {
+            //   file: { url },
+            // },
           }) => (
             <Case
               id={id}
               key={id}
-              img={url || ''}
+              // img={url || ''}
               // size={size}
               position={position}
               label={title}

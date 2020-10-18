@@ -55,6 +55,7 @@ const hoverStyle = css`
 
 export const ArtistWrapper = styled(Flex)`
   transition: 0.3s ease all;
+  width: 100%;
 
   &:hover {
     img {

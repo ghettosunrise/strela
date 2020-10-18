@@ -22,6 +22,7 @@ const MainPageWrap = styled(Flex)`
   font-weight: normal;
   font-size: 48px;
   line-height: 48px;
+  height: 100vh;
 
   @media only screen and (max-width: 1268px) {
     background-size: cover;
@@ -123,7 +124,12 @@ const IndexPage = () => {
   };
 
   return (
-    <MainPageWrap justify="center" align="center" width="100%" height="100vh">
+    <MainPageWrap
+      justify="center"
+      align="center"
+      width="100%"
+      height="100vh !important"
+    >
       <SEO title="Home" />
       <img src={logo} alt="strela_logo" />
       <Flex

@@ -1,14 +1,18 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
+import { useLanguage } from '../../hooks';
 
-import Layout from "../../components/layout"
-import Services from "../../containers/Services"
-import Contact from "../../containers/ContactUs"
-import SEO from "../../components/seo"
-import Arrow from "../../components/Arrow"
+import Layout from '../../components/layout';
+import Services from '../../containers/Services';
+import Contact from '../../containers/ContactUs';
+import SEO from '../../components/seo';
+import Arrow from '../../components/Arrow';
 
-const WhatWeDo = () => {
-  const [isClosed, setIsClosed] = useState(true)
-  const [isClosedMobile, setIsClosedMobile] = useState(true)
+const WhatWeDo = ({ props }) => {
+  const [isClosed, setIsClosed] = useState(true);
+  const [isClosedMobile, setIsClosedMobile] = useState(true);
+
+  const [[language, setLanguage]] = useLanguage();
+  console.log('WhatWeDo -> language', props);
 
   return (
     <Layout
@@ -20,9 +24,9 @@ const WhatWeDo = () => {
       <SEO title="WhatWeDo" />
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
       <Arrow top="105px" left="-3%" />
-      <Services></Services>
+      <Services />
     </Layout>
-  )
-}
+  );
+};
 
-export default WhatWeDo
+export default WhatWeDo;

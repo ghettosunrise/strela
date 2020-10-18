@@ -32,6 +32,7 @@ const flex = css`
   ${fromProp('order', { make: 'order' })};
   ${fromProp('filter', { make: 'filter' })};
   ${fromProp('borderTop', { make: 'border-top' })};
+  ${fromProp('borderBottom', { make: 'border-bottom' })};
   ${fromProp('radius', { make: 'border-radius' })};
   ${fromProp('overflow', { make: 'overflow' })};
   ${fromProp('overflowX', { make: 'overflow-X' })};

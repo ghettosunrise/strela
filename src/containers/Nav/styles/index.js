@@ -11,6 +11,8 @@ export const TopNav = styled(Flex)`
         ? 0
         : 1};
 
+  min-width: ${props => (props.column ? '132px' : 'auto')};
+
   @media only screen and (max-width: 768px) {
     align-items: ${props =>
       props.mobileAlign ? props.mobileAlign : 'inherit'};

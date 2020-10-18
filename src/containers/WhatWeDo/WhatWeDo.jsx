@@ -19,7 +19,7 @@ const WWBlock = ({ number, title, sub }) => (
   </S.WWFlex>
 );
 
-const WhatWeDo = () => {
+const WhatWeDo = ({ language }) => {
   const [documentLoaded, setDocumentLoaded] = useState(null);
   let window;
 
@@ -46,7 +46,9 @@ const WhatWeDo = () => {
     >
       <Flex shrink="1" tabletWidth="100%">
         <Fade>
-          <S.Title>Что мы делаем</S.Title>
+          <S.Title>
+            {language === 'RUS' ? 'Что мы делаем' : 'What we do'}
+          </S.Title>
         </Fade>
         {/* <Fade>
           <S.SubTitle>
@@ -56,7 +58,10 @@ const WhatWeDo = () => {
         </Fade> */}
 
         {window >= 1150 ? (
-          <ButtonBlack link="/promo/whatwedo" txt="Детальнее" />
+          <ButtonBlack
+            link="/promo/whatwedo"
+            txt={language === 'RUS' ? 'Детальнее' : 'More'}
+          />
         ) : null}
       </Flex>
       <Flex
@@ -69,36 +74,65 @@ const WhatWeDo = () => {
       >
         <WWBlock
           number="01"
-          title="Консультируем"
-          sub="Самый быстрый способ получить ответы на вопросы, связанные с вашим проектом или событием."
+          title={language === 'RUS' ? 'Консультируем' : 'Consulting'}
+          sub={
+            language === 'RUS'
+              ? 'Самый быстрый способ получить ответы на вопросы, связанные с вашим проектом или событием.'
+              : 'The fastest way to get answers to questions related to promoting your project or event.'
+          }
         />
         <WWBlock
           number="02"
-          title="Ведем"
-          sub="Берем на себя промо электронных проектов, релизов или вечеринок."
+          title={language === 'RUS' ? 'Ведем' : 'PR Support'}
+          sub={
+            language === 'RUS'
+              ? 'Берем на себя промо электронных проектов, релизов или вечеринок.'
+              : 'We carry out the promotion of electronic music projects, releases, or events.'
+          }
         />
         <WWBlock
           number="03"
-          title="Запускаем"
-          sub="Продумываем и реализовываем грамотный старт и промо вашего проекта."
+          title={language === 'RUS' ? 'Запускаем' : 'Launch'}
+          sub={
+            language === 'RUS'
+              ? 'Продумываем и реализовываем грамотный старт и промо вашего проекта.'
+              : 'We devise and implement a thought-through launch and promotion of your project or location.'
+          }
         />
         <WWBlock
           number="04"
-          title="Делаем Публикации"
-          sub="Организовываем эксклюзивные материалы в локальные и иностранные тематические СМИ"
+          title={language === 'RUS' ? 'Делаем Публикации' : 'Work With Media'}
+          sub={
+            language === 'RUS'
+              ? 'Организовываем эксклюзивные материалы в локальные и иностранные тематические СМИ'
+              : 'We ensure publicity and exclusive material published in both local and foreign media.'
+          }
         />
         <WWBlock
           number="05"
           title="HR"
-          sub="Находим и обучаем PR-менеджера для проектов, либо полностью курируем его работу со своей стороны. "
+          sub={
+            language === 'RUS'
+              ? 'Находим и обучаем PR-менеджера для проектов, либо полностью курируем его работу со своей стороны. '
+              : 'We recruit and train a PR manager to manage your projects, or supervise his or her work directly.'
+          }
         />
         <WWBlock
           number="06"
-          title="Бренды и Спонсоры"
-          sub="Разрабатываем для брендов годные коммуникационные кампании на аудиторию электронной сцены."
+          title={
+            language === 'RUS' ? 'Бренды и Спонсоры' : 'Brands and Sponsorship'
+          }
+          sub={
+            language === 'RUS'
+              ? 'Разрабатываем для брендов годные коммуникационные кампании на аудиторию электронной сцены.'
+              : 'We develop suitable communication campaigns that target the electronic music audience.'
+          }
         />
         {window < 1150 ? (
-          <ButtonBlack link="/promo/whatwedo" txt="Детальнее" />
+          <ButtonBlack
+            link="/promo/whatwedo"
+            txt={language === 'RUS' ? 'Детальнее' : 'More'}
+          />
         ) : null}
       </Flex>
     </Flex>

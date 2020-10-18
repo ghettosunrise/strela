@@ -11,7 +11,7 @@ import * as S from './styles';
 import Arrow from '../../components/Icons';
 import ButtonBlack from '../../components/Buttons/ButtonBlack';
 import Burger from '../../components/Buttons/Burger';
-import useLanguage from '../../hooks/useLanguage';
+import { useLanguage } from '../../hooks/';
 
 const MainTitle = ({ txt }) => {
   return <S.MyMainTitle>{txt}</S.MyMainTitle>;
@@ -54,7 +54,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
       {' '}
       <Flex
         width="100%"
-        paddingAll="46px 49px 0"
+        paddingAll="30px 49px 0"
         tabletPadding="46px 30px 0"
         mobilePadding="46px 20px 0"
         z="12"
@@ -62,7 +62,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
       >
         <S.Header isMoved={isMoved}>
           <H.HeaderLogoWrap
-            maxWidth="219px"
+            maxWidth="236px"
             row
             align="center"
             justify="space-between"
@@ -83,10 +83,17 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
                 agency
                 row
               />
-              <Flex row align="center" maxWidth="323px" width="100%">
+              <Flex
+                row
+                justify="flex-end"
+                align="center"
+                maxWidth="323px"
+                width="100%"
+              >
+                {/* <Dropdown language={language} setLanguage={setLanguage} /> */}
                 <Social isMoved={isMoved} isTop={true} />
                 <ButtonBlack
-                  txt="Связаться"
+                  txt={language === 'RUS' ? 'Связаться' : 'Contact'}
                   onClick={() => setIsClosed(false)}
                 />
               </Flex>
@@ -132,7 +139,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
             txt={
               language === 'RUS'
                 ? 'Грамотный PR для проектов, связанных с электронной сценой.'
-                : 'Smart PR for projects connected to electronic music scene'
+                : 'Qualified PR for projects in the electronic music scene.'
             }
           />
         </Fade>

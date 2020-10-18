@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  padding: 46px 49px;
+  padding: 30px 49px;
   width: 100%;
   position: fixed;
   left: 0;

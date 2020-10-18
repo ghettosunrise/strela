@@ -8,10 +8,11 @@ export const MyMainTitle = styled.h1`
   line-height: 96px;
   /* max-width: 836px; */
   letter-spacing: -0.07em;
-  margin-bottom: 163px;
+  margin-bottom: 0;
   color: #000000;
   transition: all 0.5s ease;
   margin-left: 6%;
+  width: 77%;
 
   @media only screen and (max-width: 1150px) {
     font-size: 80px;
@@ -28,7 +29,7 @@ export const MyMainTitle = styled.h1`
 `;
 
 export const Header = styled.header`
-  padding: 46px 49px;
+  padding: 30px 49px;
   width: 100%;
   position: fixed;
   left: 0;

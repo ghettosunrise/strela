@@ -44,7 +44,7 @@ const Header = ({
         // filter={page === 'news' || page === 'cases' ? 'invert(1)' : 'none'}
       >
         <H.HeaderLogoWrap
-          maxWidth="219px"
+          maxWidth="236px"
           row
           align="center"
           justify="space-between"
@@ -63,7 +63,13 @@ const Header = ({
         {window > 1150 ? (
           <>
             <Nav language={language} agency row page={page} />
-            <Flex row align="center" maxWidth="323px" width="100%">
+            <Flex
+              row
+              align="center"
+              justify="flex-end"
+              maxWidth="323px"
+              width="100%"
+            >
               <Social />
               <ButtonBlack
                 txt={language === 'RUS' ? 'Связаться' : 'Contact'}

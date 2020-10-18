@@ -91,11 +91,13 @@ const Ticker = ({ booking, tickerText }) => {
       width="100%"
       align="center"
       height="58px"
+      paddingAll="17px 0 15px"
       background={booking ? '#2403a6' : 'transparent'}
       row
       ref={container}
       overflow="hidden"
-      border={!booking ? '2px solid black' : 'none'}
+      borderTop={!booking ? '2px solid black' : 'none'}
+      borderBottom={!booking ? '2px solid black' : 'none'}
     >
       {booking && (
         <MovingContainer>
