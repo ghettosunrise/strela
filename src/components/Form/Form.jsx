@@ -101,20 +101,20 @@ function encode(data) {
     .join('&');
 }
 
-const handleSubmit = e => {
-  e.preventDefault();
-  const form = e.target;
-  console.log(form, 'form');
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({
-      'form-name': form.getAttribute('name'),
-    }),
-  })
-    .then(() => alert('sent'))
-    .catch(error => alert(error));
-};
+// const handleSubmit = e => {
+//   e.preventDefault();
+//   const form = e.target;
+//   console.log(form, 'form');
+//   fetch('/', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+//     body: encode({
+//       'form-name': form.getAttribute('name'),
+//     }),
+//   })
+//     .then(() => alert('sent'))
+//     .catch(error => alert(error));
+// };
 
 const MyForm = ({ str }) => (
   <Formik
@@ -156,11 +156,10 @@ const MyForm = ({ str }) => (
     {({ isSubmitting }) => (
       <CustomForm
         name="contact"
-        method="post"
-        action="/"
+        method="POST"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
+        action="/"
+        // onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <Flex maxWidth="320px" width="100%">
