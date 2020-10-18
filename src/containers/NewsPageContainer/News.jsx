@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Flex from '../../styled/flex';
 import News from '../../components/News';
 import ButtonBig from '../../components/Buttons/ButtonBig';
