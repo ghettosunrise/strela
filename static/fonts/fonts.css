@@ -1,41 +1,71 @@
-@font-face {
+/* @font-face {
   font-family: 'NeueMachina';
   font-weight: 400;
-  src: url('/NeueMachina-Regular.woff') format('woff');
+  src: url('./NeueMachina-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'NeueMachina';
   font-weight: 300;
-  src: url('/NeueMachina-Light.woff') format('woff');
+  src: url('./NeueMachina-Light.woff') format('woff');
 }
 
 @font-face {
   font-family: 'NeueMachina';
   font-weight: 900;
-  src: url('/NeueMachina-Ultrabold.woff') format('woff');
+  src: url('./NeueMachina-Ultrabold.woff') format('woff');
+} */
+
+@font-face {
+  font-family: 'NeueMachina';
+  src: font-url('./NeueMachina-Light.woff') format('woff'),
+    font-url('./NeueMachina-Light.woff2') format('woff2'),
+    font-url('./NeueMachina-Light.ttf') format('truetype'),
+    font-url('./NeueMachina-Light.svg#NeueMachina-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueMachina';
+  src: font-url('./NeueMachina-Regular.woff') format('woff'),
+    font-url('./NeueMachina-Regular.woff2') format('woff2'),
+    font-url('./NeueMachina-Regular.ttf') format('truetype'),
+    font-url('./NeueMachina-Regular.svg#NeueMachina-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueMachina';
+  src: font-url('./NeueMachina-Ultrabold.woff') format('woff'),
+    font-url('./NeueMachina-Ultrabold.woff2') format('woff2'),
+    font-url('./NeueMachina-Ultrabold.ttf') format('truetype'),
+    font-url('./NeueMachina-Ultrabold.svg#NeueMachina-Ultrabold') format('svg');
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 400;
-  src: url('/Formular-Regular.woff') format('woff');
+  src: url('./Formular-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 500;
-  src: url('/Formular-Medium.woff') format('woff');
+  src: url('./Formular-Medium.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 700;
-  src: url('/Formular-Bold.woff') format('woff');
+  src: url('./Formular-Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 300;
-  src: url('/Formular-Light.woff') format('woff');
+  src: url('./Formular-Light.woff') format('woff');
 }

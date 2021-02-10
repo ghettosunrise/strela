@@ -23,7 +23,7 @@ const WhatWeDo = ({ props }) => {
     >
       <SEO title="WhatWeDo" />
       <Contact isClosed={isClosed} setIsClosed={setIsClosed} />
-      <Arrow top="105px" left="-3%" />
+      <Arrow top="105px" right="0" />
       <Services />
     </Layout>
   );

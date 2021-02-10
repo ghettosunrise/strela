@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const MyMainTitle = styled.h1`
   font-family: Neue Machina;
@@ -48,4 +48,20 @@ export const Header = styled.header`
   @media only screen and (max-width: 768px) {
     padding: 23px 20px;
   }
+`;
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Img = styled.img`
+  opacity: ${props => (!props.isMoved ? 1 : 0)};
+  margin-top: 55px;
+  transition: opacity 0.4s ease;
+  animation: ${rotate} 7s linear infinite;
 `;

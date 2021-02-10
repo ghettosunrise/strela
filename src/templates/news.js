@@ -18,13 +18,14 @@ const NewsTemplate = ({ data, page }) => {
       page={page}
     >
       <SEO title="Case" />
-      <Flex width="100%" paddingAll="46px 49px">
+      <Flex width="100%" paddingAll="0 49px 46px">
         <Flex
           row
           width="100%"
           justify="space-between"
           align="stretch"
           wrap="wrap"
+          // top="-32px"
         >
           {data?.allContentfulNews?.edges?.map(
             ({

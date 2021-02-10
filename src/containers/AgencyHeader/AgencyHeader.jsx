@@ -12,6 +12,7 @@ import Arrow from '../../components/Icons';
 import ButtonBlack from '../../components/Buttons/ButtonBlack';
 import Burger from '../../components/Buttons/Burger';
 import { useLanguage } from '../../hooks/';
+import logo from '../../images/bookinglogo.svg';
 
 const MainTitle = ({ txt }) => {
   return <S.MyMainTitle>{txt}</S.MyMainTitle>;
@@ -130,6 +131,14 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
               space="20px"
             ></Nav>
             <Social isMoved={isMoved} isBottom={true}></Social>
+            <Link to="/booking">
+              <S.Img
+                isMoved={isMoved}
+                alt="logo"
+                className="myImg"
+                src={logo}
+              />
+            </Link>
           </Flex>
         ) : null}
 

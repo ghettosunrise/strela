@@ -9,6 +9,7 @@ import Sidebar from '../../components/Sidebar';
 import Iframe from '../../components/Iframe';
 
 const ArtistPage = data => {
+  console.log('🚀 ~ file: ArtistPage.jsx ~ line 12 ~ data', data);
   const [isEnglish, setIsEnglish] = useState(1);
   const [parsedText1, setParsedText1] = useState(null);
   const [parsedText1Ru, setParsedText1Ru] = useState(null);
@@ -26,19 +27,19 @@ const ArtistPage = data => {
 
   const { contentfulArtist: myData } = data?.data;
 
-  // useEffect(() => {
-  //   setParsedText1(JSON.parse(myData?.artistText1?.artistText1));
-  //   setParsedText2(JSON.parse(myData?.artistText2?.artistText2));
-  //   setParsedText3(JSON.parse(myData?.artistText3?.artistText3));
-  //   setParsedText1Ru(JSON.parse(myData?.artistText1Ru?.artistText1Ru));
-  //   setParsedText2Ru(JSON.parse(myData?.artistText2Ru?.artistText2Ru));
-  //   setParsedText3Ru(JSON.parse(myData?.artistText3Ru?.artistText3Ru));
-  //   setParsedSoundCloud(
-  //     JSON.parse(myData?.soundCloudTrackLinks?.soundCloudTrackLinks)
-  //   );
-  // }, []);
+  useEffect(() => {
+    setParsedText1(JSON.parse(myData?.artistText1?.artistText1));
+    setParsedText2(JSON.parse(myData?.artistText2?.artistText2));
+    setParsedText3(JSON.parse(myData?.artistText3?.artistText3));
+    setParsedText1Ru(JSON.parse(myData?.artistText1Ru?.artistText1Ru));
+    setParsedText2Ru(JSON.parse(myData?.artistText2Ru?.artistText2Ru));
+    setParsedText3Ru(JSON.parse(myData?.artistText3Ru?.artistText3Ru));
+    setParsedSoundCloud(
+      JSON.parse(myData?.soundCloudTrackLinks?.soundCloudTrackLinks)
+    );
+  }, []);
 
-  // const iframeSrc = documentToReactComponents(parsedSoundCloud);
+  const iframeSrc = documentToReactComponents(parsedSoundCloud);
 
   // const parsedText1 = JSON.parse(myData?.artistText1?.artistText1);
   // const parsedText1Ru = JSON.parse(myData?.artistText1Ru?.artistText1Ru);
@@ -51,6 +52,7 @@ const ArtistPage = data => {
   // );
 
   const { igLink, fbLink, scLink, raLink } = myData;
+  console.log('🚀 ~ file: ArtistPage.jsx ~ line 55 ~ myData', myData);
 
   const pressKit = myData?.pressKit?.file?.url || '';
   const { src } = myData?.artistPicture?.fluid || '';
@@ -99,14 +101,14 @@ const ArtistPage = data => {
                 {/* <Iframe src={parsedSoundCloud} /> */}
               </Flex>
             </Flex>
-            {/* <Sidebar
+            <Sidebar
               fbLink={fbLink}
               igLink={igLink}
               raLink={raLink}
               scLink={scLink}
               pressKit={pressKit}
               setIsEnglish={setIsEnglish}
-            /> */}
+            />
           </Flex>
         </S.ArtistContent>
       </Flex>

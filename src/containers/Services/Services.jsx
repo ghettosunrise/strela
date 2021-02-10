@@ -34,7 +34,7 @@ const Services = props => {
   return (
     <Flex
       width="100%"
-      paddingAll="0 49px 150px"
+      paddingAll="30px 49px 150px"
       tabletPadding="0 30px 80px"
       mobilePadding="0 20px 80px"
     >

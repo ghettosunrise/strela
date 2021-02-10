@@ -8,6 +8,7 @@ module.exports = {
     author: 'Vladyslav Kovalyov',
   },
   plugins: [
+    'gatsby-plugin-minify',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
@@ -43,7 +44,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'fonts',
-        path: `${__dirname}/src/fonts/`,
+        path: `${__dirname}/static/fonts/`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -4,7 +4,7 @@ import Nav from '../../Nav';
 export const HeaderWrap = styled.header`
   background: #fff;
   width: 100%;
-  padding: 40px 49px;
+  padding: 30px 49px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

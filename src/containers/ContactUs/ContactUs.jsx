@@ -101,6 +101,12 @@ const MyForm = ({ str }) => {
 
   const isRus = language === 'RUS';
 
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join('&');
+  }
+
   return (
     <Formik
       validationSchema={SignupSchema}
@@ -115,11 +121,20 @@ const MyForm = ({ str }) => {
         comment: '',
         lineup: '',
       }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify({ artist: str, ...values }, null, 2));
-          setSubmitting(false);
-        }, 400);
+      onSubmit={(values, actions) => {
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encode({ 'form-name': 'contact1', ...values }),
+        })
+          .then(() => {
+            alert('Success');
+            actions.resetForm();
+          })
+          .catch(() => {
+            alert('Error');
+          })
+          .finally(() => actions.setSubmitting(false));
       }}
       validate={values => {
         const errors = {};
@@ -140,7 +155,7 @@ const MyForm = ({ str }) => {
     >
       {({ isSubmitting }) => (
         <>
-          <CustomForm>
+          <CustomForm data-netlify name="contact1" method="post" action="/">
             <Flex maxWidth="320px" width="100%">
               <Flex marginBottom="3.7vh">
                 <p>{isRus ? 'Имя' : 'Name'}</p>

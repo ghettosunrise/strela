@@ -96,7 +96,7 @@ const Footer = ({ agency, booking }) => {
         ) : null}
 
         <Social footer />
-        <Flex top="7px">
+        <Flex>
           <S.FooLink href="tel:+380669045724">+380669045724</S.FooLink>
           <S.FooLink href="mailto:info@strela.com">info@strela.com</S.FooLink>
         </Flex>

@@ -60,6 +60,7 @@ const WhatWeDo = ({ language }) => {
         {window >= 1150 ? (
           <ButtonBlack
             link="/promo/whatwedo"
+            bgColor="white"
             txt={language === 'RUS' ? 'Детальнее' : 'More'}
           />
         ) : null}

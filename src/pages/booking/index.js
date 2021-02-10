@@ -62,7 +62,7 @@ const BookingHome = () => {
       <Header isClosed={isClosed} setIsClosed={setIsClosed} main="main" />
       <Form isClosed={isClosed} setIsClosed={setIsClosed} />
       <Artists />
-      <Arrow top="105px" left="-3%" />
+      <Arrow top="155px" left="-3%" />
       <Ticker />
       <Flex width="100%" background="#E5E5E5">
         <H2>News</H2>

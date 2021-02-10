@@ -24,7 +24,7 @@ const BlackBtn = css`
   position: relative;
 
   &::after {
-    background: #f3f2f1;
+    background: ${props => (props.bgColor === 'white' ? '#fff' : '#f3f2f1')};
     transform: rotate(45deg);
     width: 40px;
     height: 40px;
@@ -41,7 +41,7 @@ const BlackBtn = css`
   }
 
   &::before {
-    background: #f3f2f1;
+  background: ${props => (props.bgColor === 'white' ? '#fff' : '#f3f2f1')};
   transform: rotate(45deg);
   width: 40px;
   height: 40px;

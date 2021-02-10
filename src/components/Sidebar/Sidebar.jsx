@@ -19,13 +19,13 @@ export const Sidebar = ({
   const [documentLoaded, setDocumentLoaded] = useState(null);
   const [location, setLocation] = useState(null);
 
-  useEffect(() => {
-    setDocumentLoaded(true);
-  }, []);
+  // useEffect(() => {
+  //   setDocumentLoaded(true);
+  // }, []);
 
-  if (documentLoaded) {
-    setLocation(window.location.href);
-  }
+  // if (documentLoaded) {
+  //   setLocation(window.location.href);
+  // }
 
   return (
     <S.Sidebar>
@@ -61,18 +61,26 @@ export const Sidebar = ({
         row
         justify="space-between"
       >
-        <S.Link target="_blank" href={fbLink}>
-          FB
-        </S.Link>
-        <S.Link target="_blank" href={igLink}>
-          IG
-        </S.Link>
-        <S.Link target="_blank" href={raLink}>
-          RA
-        </S.Link>
-        <S.Link target="_blank" href={scLink}>
-          SOUNDCLOUD
-        </S.Link>
+        {fbLink && (
+          <S.Link target="_blank" href={fbLink}>
+            FB
+          </S.Link>
+        )}
+        {igLink && (
+          <S.Link target="_blank" href={igLink}>
+            IG
+          </S.Link>
+        )}
+        {raLink && (
+          <S.Link target="_blank" href={raLink}>
+            RA
+          </S.Link>
+        )}
+        {scLink && (
+          <S.Link target="_blank" href={scLink}>
+            SOUNDCLOUD
+          </S.Link>
+        )}
       </Flex>
       <p>share with</p>
       <Flex width="93px" marginBottom="30px" row justify="space-between">
@@ -83,13 +91,13 @@ export const Sidebar = ({
             alert('Done ;)');
           }}
         />
-        <FacebookProvider appId="437396483831952">
+        {/* <FacebookProvider appId="437396483831952">
           <Share href="http://www.facebook.com">
             {({ handleClick, loading }) => (
               <S.Fb disabled={loading} onClick={handleClick} />
             )}
           </Share>
-        </FacebookProvider>
+        </FacebookProvider> */}
       </Flex>
       <p>download</p>
       <Btn download pressKit={pressKit} />

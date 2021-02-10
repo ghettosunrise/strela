@@ -1,15 +1,15 @@
 import React from 'react';
 import { BlackButton, BlackButtonLink } from './styles';
 
-export const ButtonBlack = ({ txt, onClick, link }) => (
+export const ButtonBlack = ({ txt, onClick, link, bgColor }) => (
   <>
     {link ? (
-      <BlackButtonLink role="link" to={link}>
+      <BlackButtonLink bgColor={bgColor} role="link" to={link}>
         {txt}
         <span />
       </BlackButtonLink>
     ) : (
-      <BlackButton role="button" onClick={onClick}>
+      <BlackButton bgColor={bgColor} role="button" onClick={onClick}>
         {txt}
         <span />
       </BlackButton>
