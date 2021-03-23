@@ -101,21 +101,6 @@ function encode(data) {
     .join('&');
 }
 
-// const handleSubmit = e => {
-//   e.preventDefault();
-//   const form = e.target;
-//   console.log(form, 'form');
-//   fetch('/', {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-//     body: encode({
-//       'form-name': form.getAttribute('name'),
-//     }),
-//   })
-//     .then(() => alert('sent'))
-//     .catch(error => alert(error));
-// };
-
 const MyForm = ({ str }) => (
   <Formik
     validationSchema={SignupSchema}
@@ -169,13 +154,7 @@ const MyForm = ({ str }) => (
     }}
   >
     {({ isSubmitting }) => (
-      <CustomForm
-        data-netlify
-        name="contact"
-        method="post"
-        action="/"
-        // onSubmit={handleSubmit}
-      >
+      <CustomForm data-netlify name="contact" method="post" action="/">
         {/* <input type="hidden" name="form-name" value="contact" /> */}
         <Flex maxWidth="320px" width="100%">
           <Flex>

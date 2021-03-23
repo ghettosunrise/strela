@@ -2,7 +2,7 @@ import React from 'react';
 import Flex from '../../styled/flex';
 import { DividerText, DividerArrow } from './styles';
 
-const Divider = (props) => (
+const Divider = ({ text }) => (
   <Flex
     width="100%"
     align="flex-end"
@@ -11,7 +11,7 @@ const Divider = (props) => (
     marginBottom="50px"
     tabletPadding="0 30px"
   >
-    <DividerText>{props.text}</DividerText>
+    <DividerText>{text}</DividerText>
     <DividerArrow />
   </Flex>
 );

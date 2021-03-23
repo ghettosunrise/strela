@@ -11,6 +11,7 @@ import Button from '../../components/Buttons/ButtonTransparent';
 import Ticker from '../../components/Ticker';
 
 import logo from '../../images/bookinglogo.svg';
+import {Img} from '../AgencyHeader/styles'
 
 const BookingHeader = ({ isClosed, setIsClosed, main }) => {
   const [documentLoaded, setDocumentLoaded] = useState(null);
@@ -62,7 +63,9 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
           row
         >
           <Fade>
-            <img alt="logo" className="myImg" src={logo} />
+            <Link to="/promo">
+            <Img style={{margin: 0, width: '250px'}} alt="logo" className="myImg" src={logo} />
+            </Link>
             <S.Title>
               We represent a wide range of artists that produce electronic music
             </S.Title>

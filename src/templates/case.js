@@ -24,12 +24,18 @@ const Case = ({ data, pageContext, ...rest }) => {
     bannerImage,
     hashtags,
     selectedText,
+    SelectedTextEng,
     caseDescription,
     firstImageDescription,
     secondImageDescription,
     caseAdditionalImages,
     caseDescriptionEng,
+    childContentfulCaseCaseDescriptionEngTextNode,
   } = data.contentfulCase;
+  console.log(
+    '🚀 ~ file: case.js ~ line 33 ~ Case ~ contentfulCase',
+    data.contentfulCase,
+  );
 
   const { allContentfulNews } = data;
   const isRussian = language === 'RUS';
@@ -58,8 +64,12 @@ const Case = ({ data, pageContext, ...rest }) => {
         page="cases"
       />
       <CaseInfo
-        titleFirst={selectedText}
-        textFirst={caseDescription.caseDescription}
+        titleFirst={isRussian ? selectedText : SelectedTextEng}
+        textFirst={
+          isRussian
+            ? caseDescription.caseDescription
+            : childContentfulCaseCaseDescriptionEngTextNode.caseDescriptionEng
+        }
         // textSecond={whatWeDoText.whatWeDoText}
         titleSecond="Что мы сделали"
         imgDesc1={firstImageDescription}
@@ -89,6 +99,7 @@ export const query = graphql`
       customId
       subtitle
       selectedText
+      SelectedTextEng
       dividerText
       secondImageDescription
       firstImageDescription

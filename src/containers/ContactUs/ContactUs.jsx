@@ -96,11 +96,7 @@ const SignupSchema = Yup.object().shape({
     .required('Required'),
 });
 
-const MyForm = ({ str }) => {
-  const [language, setLanguage] = useLanguage();
-
-  const isRus = language === 'RUS';
-
+const MyForm = ({ str, isRus }) => {
   function encode(data) {
     return Object.keys(data)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
@@ -179,16 +175,6 @@ const MyForm = ({ str }) => {
               </Flex>
             </Flex>
             <Flex maxWidth="320px" width="100%">
-              {/* <Flex marginBottom="3.7vh">
-            <p>название ресурса</p>
-            <Field type="text" name="city" placeholder="Soundcloud, " />
-            <ErrorFlex name="city" component="span" />
-          </Flex> */}
-              {/* <Flex>
-            <p>Choose the party date</p>
-            <Field type="text" name="date" />
-            <ErrorFlex name="date" component="span" />
-          </Flex> */}
               <Flex marginBottom="3.7vh">
                 <p>{isRus ? 'Контакт' : 'Contact'}</p>
                 <Field
@@ -234,6 +220,8 @@ const MyForm = ({ str }) => {
 
 const ContactUs = ({ isClosed, setIsClosed }) => {
   const mailRef = useRef();
+  const [[language, setLanguage]] = useLanguage();
+  const isRus = language === 'RUS';
 
   return (
     // const [isClosed, setIsClosed] = useState(false)
@@ -244,11 +232,13 @@ const ContactUs = ({ isClosed, setIsClosed }) => {
         <Flex width="100%" align="flex-end" marginBottom="5.5vh">
           <S.Close onClick={() => setIsClosed(true)} />
         </Flex>
-        <S.Title>Связаться</S.Title>
-        <MyForm />
+        <S.Title>{isRus ? 'Связаться' : 'Contact'}</S.Title>
+        <MyForm isRus={isRus} />
         <S.Line />
         <S.BottomTxt>
-          Связаться с нами для обсуждения сотрудничества можно по имейлу:
+          {isRus
+            ? 'Связаться с нами для обсуждения сотрудничества можно по имейлу:'
+            : 'You can contact us to discuss cooperation by email:'}
         </S.BottomTxt>
         <Flex row align="center">
           <S.Mail />
@@ -256,7 +246,6 @@ const ContactUs = ({ isClosed, setIsClosed }) => {
             onClick={() => {
               mailRef.current.select();
               document.execCommand('copy');
-              console.log(mailRef.current, 'wtd');
             }}
             ref={mailRef}
           >

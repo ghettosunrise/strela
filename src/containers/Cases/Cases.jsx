@@ -23,8 +23,20 @@ const Cases = ({ language }) => {
           }
         }
       }
+      allContentfulCaseCaseDescriptionEngTextNode {
+        nodes {
+          caseDescriptionEng
+        }
+      }
+      allContentfulCase {
+        nodes {
+          id
+        }
+      }
     }
   `);
+
+  console.log(caseData, 'caseData');
 
   return (
     <Flex
@@ -67,7 +79,7 @@ const Cases = ({ language }) => {
       </Flex>
       <ButtonBig
         width="100%"
-        link="/promo/cases"
+        link="/promo/clients"
         txt={language === 'RUS' ? 'Все кейсы' : 'All Cases'}
       />
     </Flex>

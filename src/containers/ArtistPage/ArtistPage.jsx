@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import Fade from 'react-reveal/Fade';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Flex from '../../styled/flex';
@@ -21,22 +21,26 @@ const ArtistPage = data => {
 
   // const [myData, setMyData] = useState(null);
 
-  // useEffect(() => {
+  // useMemo(() => {
   //   setMyData();
   // }, []);
 
   const { contentfulArtist: myData } = data?.data;
 
-  useEffect(() => {
+  useMemo(() => {
     setParsedText1(JSON.parse(myData?.artistText1?.artistText1));
     setParsedText2(JSON.parse(myData?.artistText2?.artistText2));
     setParsedText3(JSON.parse(myData?.artistText3?.artistText3));
     setParsedText1Ru(JSON.parse(myData?.artistText1Ru?.artistText1Ru));
     setParsedText2Ru(JSON.parse(myData?.artistText2Ru?.artistText2Ru));
     setParsedText3Ru(JSON.parse(myData?.artistText3Ru?.artistText3Ru));
-    setParsedSoundCloud(
-      JSON.parse(myData?.soundCloudTrackLinks?.soundCloudTrackLinks)
-    );
+
+    if (myData.soundCloudTrackLinks) {
+      setParsedSoundCloud(
+        JSON.parse(myData.soundCloudTrackLinks?.soundCloudTrackLinks)
+      );
+    }
+    
   }, []);
 
   const iframeSrc = documentToReactComponents(parsedSoundCloud);
@@ -67,9 +71,13 @@ const ArtistPage = data => {
         width="100%"
         justify="center"
       >
-        <S.ArtistName>{myData?.artistName}</S.ArtistName>
+       {myData.artistName  && (<S.ArtistName>{myData?.artistName}</S.ArtistName>)}
         <Fade>
-          <img src={src} />
+         {
+           src && (
+<img src={src ?? ''} />
+           )
+         } 
         </Fade>
         <S.ArtistContent>
           <Flex
@@ -81,32 +89,33 @@ const ArtistPage = data => {
           >
             <Flex width="53%" mobileWidth="100%">
               <Fade cascade>
-                <S.DecriptionFirts>
+                {parsedText1 && parsedText1Ru && (<S.DecriptionFirts>
                   {isEnglish
                     ? documentToReactComponents(parsedText1)
                     : documentToReactComponents(parsedText1Ru)}
-                </S.DecriptionFirts>
-                <S.DescriptionSecond>
+                </S.DecriptionFirts>)}
+                {parsedText2 && parsedText2Ru && (<S.DescriptionSecond>
                   {isEnglish
                     ? documentToReactComponents(parsedText2)
                     : documentToReactComponents(parsedText2Ru)}
-                </S.DescriptionSecond>
-                <S.DescriptionThird>
+                </S.DescriptionSecond>)}
+                {parsedText3 && parsedText3Ru && (<S.DescriptionThird>
                   {isEnglish
                     ? documentToReactComponents(parsedText3)
                     : documentToReactComponents(parsedText3Ru)}
-                </S.DescriptionThird>
+                </S.DescriptionThird>)}
+                
               </Fade>
               <Flex width="100%">
                 {/* <Iframe src={parsedSoundCloud} /> */}
               </Flex>
             </Flex>
             <Sidebar
-              fbLink={fbLink}
-              igLink={igLink}
-              raLink={raLink}
-              scLink={scLink}
-              pressKit={pressKit}
+              fbLink={fbLink ?? ''}
+              igLink={igLink ?? ''}
+              raLink={raLink ?? ''}
+              scLink={scLink ?? ''}
+              pressKit={pressKit ?? ''}
               setIsEnglish={setIsEnglish}
             />
           </Flex>

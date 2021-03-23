@@ -19,10 +19,30 @@ const Cases = () => {
               url
             }
           }
+          childContentfulCaseBannerDescriptionEngTextNode {
+            bannerDescriptionEng
+          }
+          childContentfulCaseBannerDescriptionTextNode {
+            bannerDescription
+          }
+          childContentfulCaseCaseDescriptionEngTextNode {
+            caseDescriptionEng
+          }
+          childContentfulCaseCaseDescriptionTextNode {
+            caseDescription
+          }
+          childContentfulCaseWhatWeDoEngTextNode {
+            whatWeDoENG
+          }
+          childContentfulCaseWhatWeDoTextTextNode {
+            whatWeDoText
+          }
         }
       }
     }
   `);
+
+  console.log(caseData, 'REALCASEDATA');
 
   return (
     <Flex width="100%" paddingAll="30px 49px 0" tabletPadding="0 30px">
@@ -43,6 +63,16 @@ const Cases = () => {
               file: { url },
             },
             position,
+            // childContentfulCaseBannerDescriptionEngTextNode: {
+            //   bannerDescriptionEng,
+            // },
+            // childContentfulCaseBannerDescriptionTextNode: { bannerDescription },
+            // childContentfulCaseCaseDescriptionEngTextNode: {
+            //   caseDescriptionEng,
+            // },
+            // childContentfulCaseCaseDescriptionTextNode: { caseDescription },
+            // childContentfulCaseWhatWeDoEngTextNode: { whatWeDoENG },
+            // childContentfulCaseWhatWeDoTextTextNode: { whatWeDoText },
           }) => (
             <Case
               id={id}
@@ -50,6 +80,12 @@ const Cases = () => {
               img={url}
               // size={size}
               label={title}
+              // bannerDescriptionEng={bannerDescriptionEng}
+              // bannerDescription={bannerDescription}
+              // caseDescriptionEng={caseDescriptionEng}
+              // caseDescription={caseDescription}
+              // whatWeDoENG={whatWeDoENG}
+              // whatWeDoText={whatWeDoText}
               position={position}
               sublabel={subtitle}
               content="stretch"
