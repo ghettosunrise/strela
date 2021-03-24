@@ -29,15 +29,23 @@ const Case = ({ data, pageContext, ...rest }) => {
     firstImageDescription,
     secondImageDescription,
     caseAdditionalImages,
+    whatWeDoText,
     caseDescriptionEng,
     childContentfulCaseCaseDescriptionEngTextNode,
   } = data.contentfulCase;
   console.log(
     '🚀 ~ file: case.js ~ line 33 ~ Case ~ contentfulCase',
-    data.contentfulCase,
+    data.contentfulCase
   );
 
   const { allContentfulNews } = data;
+  console.log(
+    '🚀 ~ file: case.js ~ line 41 ~ Case ~ allContentfulNews',
+    allContentfulNews
+  );
+
+  // const caseNews = allContentfulNews.map(i => )
+
   const isRussian = language === 'RUS';
 
   return (
@@ -70,7 +78,7 @@ const Case = ({ data, pageContext, ...rest }) => {
             ? caseDescription.caseDescription
             : childContentfulCaseCaseDescriptionEngTextNode.caseDescriptionEng
         }
-        // textSecond={whatWeDoText.whatWeDoText}
+        textSecond={whatWeDoText?.whatWeDoText}
         titleSecond="Что мы сделали"
         imgDesc1={firstImageDescription}
         imgDesc2={secondImageDescription}
@@ -86,7 +94,7 @@ const Case = ({ data, pageContext, ...rest }) => {
         }
       />
       <Divider text={dividerText} />
-      <News caseNews data={allContentfulNews.nodes} />
+      <News caseNews data={allContentfulNews?.nodes} />
     </Layout>
   );
 };

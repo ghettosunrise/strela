@@ -5,6 +5,11 @@ import ButtonBig from '../../components/Buttons/ButtonBig';
 import useLanguage from '../../hooks/useLanguage';
 
 const NewsContainer = ({ data, caseNews, bookingPage, mainPage }) => {
+  console.log(
+    '🚀 ~ file: News.jsx ~ line 8 ~ NewsContainer ~ caseNews',
+    caseNews
+  );
+  console.log('🚀 ~ file: News.jsx ~ line 8 ~ NewsContainer ~ data', data);
   const [[language]] = useLanguage();
 
   return (

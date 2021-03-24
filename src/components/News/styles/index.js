@@ -112,10 +112,13 @@ export const MyNews = styled(Flex)`
         return [order7, small];
       }
     }
+
+    if (props.size === 'small' && !props.position) {
+      return small;
+    }
   }}
 `;
 
-/*
 // props.size === 'small'
 //   ? small
 //   : props.size === 'medium'
@@ -124,7 +127,7 @@ export const MyNews = styled(Flex)`
 //   ? mediumSmall
 //   : props.size === 'big'
 //   ? big
-//   : null; */
+//   : null;
 
 export const Special = styled(Flex)`
   width: 100%;

@@ -28,6 +28,7 @@ const News = ({
   caseNews,
   position,
 }) => {
+  console.log('🚀 ~ file: News.jsx ~ line 31 ~ caseNews', caseNews);
   if (extraLarge) {
     return (
       <ExtraLargeWrap width={mainPage ? '50%' : '100%'} align="flex-end">

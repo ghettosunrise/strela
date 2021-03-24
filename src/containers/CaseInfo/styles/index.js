@@ -1,9 +1,10 @@
-import styled from "styled-components"
-import Flex from "../../../styled/flex"
+import styled from 'styled-components';
+import Flex from '../../../styled/flex';
 
 export const TxtContainer = styled(Flex)`
   width: 57.7%;
   padding-left: 16.6%;
+  margin-top: 35px;
 
   @media only screen and (max-width: 1150px) {
     width: 79.7%;
@@ -13,7 +14,7 @@ export const TxtContainer = styled(Flex)`
     width: 100%;
     padding: 0;
   }
-`
+`;
 
 export const Text = styled.p`
   font-family: Formular;
@@ -29,7 +30,7 @@ export const Text = styled.p`
     margin-bottom: 40px;
     font-size: 22px;
   }
-`
+`;
 export const Title = styled.h2`
   font-family: Neue Machina;
   font-style: normal;
@@ -45,7 +46,7 @@ export const Title = styled.h2`
     font-size: 36px;
     line-height: 38px;
   }
-`
+`;
 
 export const ImgDesc = styled.p`
   font-family: Formular;
@@ -58,9 +59,9 @@ export const ImgDesc = styled.p`
   letter-spacing: -0.03em;
   color: #000000;
   opacity: 0.5;
-`
+`;
 export const ImgWrap = styled(Flex)`
   img {
     margin-bottom: 10px;
   }
-`
+`;
