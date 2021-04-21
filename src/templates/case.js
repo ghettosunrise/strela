@@ -11,6 +11,7 @@ import Divider from '../components/Divider';
 import useLanguage from '../hooks/useLanguage';
 
 const Case = ({ data, pageContext, ...rest }) => {
+  console.log('🚀 ~ file: case.js ~ line 14 ~ Case ~ data', data);
   const [isClosed, setIsClosed] = useState(true);
   const [isClosedMobile, setIsClosedMobile] = useState(true);
 
@@ -63,10 +64,10 @@ const Case = ({ data, pageContext, ...rest }) => {
         title={title}
         description={
           isRussian
-            ? bannerDescription.bannerDescription
-            : bannerDescriptionEng.bannerDescriptionEng
+            ? bannerDescription?.bannerDescription
+            : bannerDescriptionEng?.bannerDescriptionEng
         }
-        image={bannerImage ? bannerImage.file.url : null}
+        image={bannerImage ? bannerImage?.file?.url : null}
         hashtags={hashtags}
         language={language}
         page="cases"
@@ -75,21 +76,21 @@ const Case = ({ data, pageContext, ...rest }) => {
         titleFirst={isRussian ? selectedText : SelectedTextEng}
         textFirst={
           isRussian
-            ? caseDescription.caseDescription
-            : childContentfulCaseCaseDescriptionEngTextNode.caseDescriptionEng
+            ? caseDescription?.caseDescription
+            : childContentfulCaseCaseDescriptionEngTextNode?.caseDescriptionEng
         }
         textSecond={whatWeDoText?.whatWeDoText}
-        titleSecond="Что мы сделали"
+        titleSecond={`Strela + ${title}`}
         imgDesc1={firstImageDescription}
         imgDesc2={secondImageDescription}
         imgSrc1={
           caseAdditionalImages && caseAdditionalImages[0]
-            ? caseAdditionalImages[0].fluid.src
+            ? caseAdditionalImages[0]?.fluid.src
             : null
         }
         imgSrc2={
           caseAdditionalImages && caseAdditionalImages[1]
-            ? caseAdditionalImages[1].fluid.src
+            ? caseAdditionalImages[1]?.fluid.src
             : null
         }
       />

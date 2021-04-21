@@ -52,7 +52,7 @@ const FooterBottom = styled.div`
 const CopyrightBlock = styled.div`
   /* row maxWidth="820px" justify="space-between" width="100% */
   display: flex;
-  max-width: 820px;
+  max-width: 610px;
   justify-content: space-between;
   width: 100%;
 
@@ -100,20 +100,17 @@ const Footer = ({ agency, booking }) => {
           <S.FooLink href="tel:+380669045724">+380669045724</S.FooLink>
           <S.FooLink href="mailto:info@strela.com">info@strela.com</S.FooLink>
         </Flex>
-        <S.FooTxt>Borichev Tok 35B, Киев, Украина</S.FooTxt>
+        <S.FooTxt>52/17 Volodymyrska str. Kyiv, Ukraine</S.FooTxt>
       </Flex>
       <FooterBottom>
         <S.BottomTxt>
-          Copyright © 2019 Strela.
+          Copyright © 2021 Strela.
           <br /> All rights reserved
         </S.BottomTxt>
         {/* <Arrow direction="R" /> */}
         <CopyrightBlock>
           <FooterTxt>
-            Russian words by <span>Dmitry Ignatyev</span>
-          </FooterTxt>
-          <FooterTxt>
-            Adapted and translation by <span>Max Konstantinovsky</span>
+            Adapted and translation by <span>Max Konstantinovsky, ÂUGHT</span>
           </FooterTxt>
           <FooterTxt>
             Design by <span>Anastasiia Tretiak</span>

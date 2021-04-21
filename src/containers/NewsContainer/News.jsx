@@ -56,7 +56,7 @@ const NewsContainer = ({ data, caseNews, bookingPage, mainPage }) => {
       {!bookingPage && (
         <ButtonBig
           link="/promo/news"
-          txt={language === 'RUS' ? 'Все новости' : 'All News'}
+          txt={language === 'RUS' ? 'Все материалы' : 'All News'}
         />
       )}
     </Flex>

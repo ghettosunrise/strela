@@ -9,7 +9,7 @@ const flex = css`
   flex-direction: ${props => (props.row ? 'row' : 'column')};
   align-items: ${getProp('align', 'flex-start')};
   height: ${getProp('height', 'auto')};
-  height: ${getProp('box-sizing', 'auto')};
+  /* box-sizing: ${getProp('box-sizing', 'auto')}; */
   width: ${getProp('width', 'auto')};
   justify-content: ${getProp('justify', 'flex-start')};
   flex-grow: ${getProp('grow', 0)};
