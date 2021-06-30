@@ -63,10 +63,10 @@ const BookingHome = () => {
       <Form isClosed={isClosed} setIsClosed={setIsClosed} />
       <Artists />
       <Arrow top="155px" left="-3%" />
-      <Ticker />
+      {/* <Ticker /> */}
       <Flex width="100%" background="#E5E5E5">
-        <H2>News</H2>
-        <News bookingPage data={data.allContentfulNews.nodes} />
+        {/* <H2>News</H2> */}
+        {/* <News bookingPage data={data.allContentfulNews.nodes} /> */}
       </Flex>
       <About />
       <Footer booking />

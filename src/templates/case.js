@@ -94,8 +94,12 @@ const Case = ({ data, pageContext, ...rest }) => {
             : null
         }
       />
-      <Divider text={dividerText} />
-      <News caseNews data={allContentfulNews?.nodes} />
+      {allContentfulNews.nodes.length >= 1 && (
+        <>
+          <Divider text={dividerText} />
+          <News caseNews data={allContentfulNews?.nodes} />
+        </>
+      )}
     </Layout>
   );
 };

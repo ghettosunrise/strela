@@ -87,7 +87,7 @@ const Footer = ({ agency, booking }) => {
         mobileAlign="flex-start"
       >
         <F.HeaderLogoWrap maxWidth="94px">
-          <Link to="/" />
+          <Link to="/booking" />
         </F.HeaderLogoWrap>
         {window > 1150 ? (
           <>
@@ -98,7 +98,9 @@ const Footer = ({ agency, booking }) => {
         <Social footer />
         <Flex>
           <S.FooLink href="tel:+380669045724">+380669045724</S.FooLink>
-          <S.FooLink href="mailto:info@strela.com">info@strela.com</S.FooLink>
+          <S.FooLink href="mailto:strela.booking@gmail.com">
+            strela.booking@gmail.com
+          </S.FooLink>
         </Flex>
         <S.FooTxt>52/17 Volodymyrska str. Kyiv, Ukraine</S.FooTxt>
       </Flex>
@@ -110,10 +112,14 @@ const Footer = ({ agency, booking }) => {
         {/* <Arrow direction="R" /> */}
         <CopyrightBlock>
           <FooterTxt>
-            Adapted and translation by <span>Max Konstantinovsky, ÂUGHT</span>
+            Adapted and translation by 
+{' '}
+<span>Max Konstantinovsky, ÂUGHT</span>
           </FooterTxt>
           <FooterTxt>
-            Design by <span>Anastasiia Tretiak</span>
+            Design by 
+{' '}
+<span>Anastasiia Tretiak</span>
           </FooterTxt>
         </CopyrightBlock>
       </FooterBottom>

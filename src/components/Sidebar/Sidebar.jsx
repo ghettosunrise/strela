@@ -55,8 +55,8 @@ export const Sidebar = ({
       </Flex>
       <p>In social media</p>
       <Flex
-        width="100%"
-        maxWidth="400px"
+        width="70%"
+        maxWidth="9.5rem"
         marginBottom="30px"
         row
         justify="space-between"
@@ -82,7 +82,7 @@ export const Sidebar = ({
           </S.Link>
         )}
       </Flex>
-      <p>share with</p>
+      {/* <p>share with</p>
       <Flex width="93px" marginBottom="30px" row justify="space-between">
         <S.Copy
           onClick={() => {
@@ -90,15 +90,15 @@ export const Sidebar = ({
             document.execCommand('copy');
             alert('Done ;)');
           }}
-        />
-        {/* <FacebookProvider appId="437396483831952">
+        /> */}
+      {/* <FacebookProvider appId="437396483831952">
           <Share href="http://www.facebook.com">
             {({ handleClick, loading }) => (
               <S.Fb disabled={loading} onClick={handleClick} />
             )}
           </Share>
         </FacebookProvider> */}
-      </Flex>
+      {/* </Flex> */}
       <p>download</p>
       <Btn download pressKit={pressKit} />
     </S.Sidebar>

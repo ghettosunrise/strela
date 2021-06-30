@@ -26,13 +26,15 @@ const AboutUs = () => {
         order="2"
       >
         <S.Title>
-          Команда агентства Strela уникальна тем, что каждый из основателей
-          проекта дополняет другого.
+          Strela is a Kyiv-based artist booking and management agency
+          representing a roster of independent DJs and producers who are driven
+          by a flaming passion for electronic music.
         </S.Title>
         <S.Txt>
-          При этом, мы являемся профессионалами в индустрии электронной музыки,
-          годами работая на передовой клубного движения, и досконально
-          разбираемся в тонкостях этого мира, взаимоотношений и процессов в нем.
+          We aim to support and provide professional guidance to the artists
+          while always staying true to our core values — mutual respect, trust,
+          and friendship. Strela offers a global management and booking service
+          that welcomes free expression and sets no creative limitations.
         </S.Txt>
         <S.Block />
       </Flex>

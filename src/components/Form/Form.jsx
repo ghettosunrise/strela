@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Form, Formik, Field, ErrorMessage } from 'formik';
+import {
+ Form, Formik, Field, ErrorMessage 
+} from 'formik';
 import * as Yup from 'yup';
 import { Flex } from '../../styled';
 import Button from '../Buttons/ButtonTransparent';
@@ -97,11 +99,11 @@ const SignupSchema = Yup.object().shape({
 
 function encode(data) {
   return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&');
 }
 
-const MyForm = ({ str }) => (
+const MyForm = ({ formSent, setFormSent }) => (
   <Formik
     validationSchema={SignupSchema}
     initialValues={{
@@ -122,11 +124,11 @@ const MyForm = ({ str }) => (
         body: encode({ 'form-name': 'contact', ...values }),
       })
         .then(() => {
-          alert('Success');
           actions.resetForm();
+          setFormSent(true);
         })
-        .catch(() => {
-          alert('Error');
+        .catch((e) => {
+          console.error(e);
         })
         .finally(() => actions.setSubmitting(false));
     }}

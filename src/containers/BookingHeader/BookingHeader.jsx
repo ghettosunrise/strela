@@ -34,7 +34,7 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
           align="center"
         >
           <H.HeaderLogoWrap row align="center" justify="space-between">
-            <Link to="/" />
+            <Link to="/booking" />
           </H.HeaderLogoWrap>
           {/* {window > 1150 ? : null} */}
         </Flex>
@@ -63,11 +63,11 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
           row
         >
           <Fade>
-            <Link to="/promo">
+            {/* <Link to="/promo"> */}
             <Img style={{margin: 0, width: '250px'}} alt="logo" className="myImg" src={logo} />
-            </Link>
+            {/* </Link> */}
             <S.Title>
-              We represent a wide range of artists that produce electronic music
+            We represent independent electronic music artists
             </S.Title>
           </Fade>
         </Flex>

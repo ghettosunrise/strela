@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as S from './styles';
 import Flex from '../../styled/flex';
 import { Formik, Field, ErrorMessage } from 'formik';
@@ -11,6 +11,14 @@ const BookingForm = ({ isClosed, setIsClosed }) => {
   const [artistPickerOpen, setArtistPickerOpen] = useState(false);
   const [filteredArtist, setFilteredArtist] = useState([]);
   const [artistChosen, setArtistChosen] = useState(null);
+  const [formSent, setFormSent] = useState(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFormSent(false);
+      setIsClosed(true)
+    }, 1500);
+  }, [formSent]);
 
   const str = filteredArtist.join(' ,');
 
@@ -34,6 +42,7 @@ const BookingForm = ({ isClosed, setIsClosed }) => {
         isClosed={isClosed}
       ></S.Shadow>
       <S.BookingWrap>
+       {!formSent && ( <>
         <Flex width="100%" align="flex-end" marginBottom="3vh">
           <S.Close onClick={() => setIsClosed(true)}></S.Close>
         </Flex>
@@ -70,7 +79,10 @@ const BookingForm = ({ isClosed, setIsClosed }) => {
               ))}
             </S.ArtistPicker>
 
-            <>
+            
+          </>
+        )}
+        <>
               {artistChosen && <S.P>You choosed</S.P>}
               <S.YourChoice width="100%" row>
                 <ul>
@@ -94,9 +106,13 @@ const BookingForm = ({ isClosed, setIsClosed }) => {
                 </ul>
               </S.YourChoice>
             </>
-          </>
-        )}
-        <Form str={str} />
+        <Form formSent={formSent} setFormSent={setFormSent} str={str} />
+        </>)}
+        {formSent && (
+        <div style={{height: '100%', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <p style={{fontFamily: 'Neue Machina', fontSize: '2rem'}}>Thanks for your request!</p>
+        </div>)
+        }
       </S.BookingWrap>
     </S.ContactWrap>
   );
