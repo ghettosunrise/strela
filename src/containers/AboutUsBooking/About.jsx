@@ -10,12 +10,12 @@ const AboutUs = () => {
   return (
     <Flex
       width="100%"
-      paddingAll="140px 49px 120px"
+      paddingAll="0px 49px 120px"
       tabletPadding="80px 30px 20px"
       mobilePadding="80px 30px 0px"
       background="#FFF"
     >
-      <S.Title id="about">About us</S.Title>
+      {/* <S.Title id="about">About us</S.Title> */}
       <Flex
         marginTop="50px"
         width="100%"

@@ -58,7 +58,7 @@ const ArtistPage = data => {
   const { igLink, fbLink, scLink, raLink } = myData;
   console.log('🚀 ~ file: ArtistPage.jsx ~ line 55 ~ myData', myData);
 
-  const pressKit = myData?.pressKit?.file?.url || '';
+  const {pressKit} = myData || '';
   const { src } = myData?.artistPicture?.fluid || '';
 
   return (

@@ -99,8 +99,15 @@ export const Sidebar = ({
           </Share>
         </FacebookProvider> */}
       {/* </Flex> */}
-      <p>download</p>
-      <Btn download pressKit={pressKit} />
+      {pressKit && (
+        <>
+          {' '}
+          <p>download</p>
+          <a target="_blank" href={pressKit} rel="noreferrer">
+            <Btn download pressKit={pressKit} />
+          </a>
+        </>
+      )}
     </S.Sidebar>
   );
 };
