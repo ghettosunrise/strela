@@ -64,4 +64,9 @@ export const Img = styled.img`
   margin-top: 55px;
   transition: opacity 0.4s ease;
   animation: ${rotate} 7s linear infinite;
+  width: 250px;
+  @media only screen and (max-width: 768px) {
+    margin-top: 0px;
+    margin-bottom: 60px;
+  }
 `;

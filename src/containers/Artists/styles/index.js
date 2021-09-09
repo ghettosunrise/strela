@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const Title = styled.h2`
   font-family: Neue Machina;
@@ -7,10 +7,10 @@ export const Title = styled.h2`
   /* identical to box height, or 100% */
   font-weight: normal;
   letter-spacing: -0.07em;
-
   color: #000000;
+  margin-bottom: 0;
 
-  
-
-  
-`
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`;

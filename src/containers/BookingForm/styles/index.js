@@ -126,7 +126,7 @@ export const BookingWrap = styled(Flex)`
 
   @media only screen and (max-width: 918px) {
     width: 100%;
-    padding: 5vh 4.8% 7.6vh;
+    padding: 5vh 4.8% 180px;
   }
 `;
 export const Title = styled.p`
@@ -219,9 +219,15 @@ export const YourChoice = styled(Flex)`
   width: 100%;
   margin-bottom: 4vh;
 
+
+
+
   ul {
     margin-left: 0;
     display: flex; 
+      @media only screen and (max-width: 768px) {
+        flex-wrap: wrap;
+      }
 
   }
 
@@ -240,9 +246,10 @@ export const YourChoice = styled(Flex)`
     justify-content: space-between;
     position: relative;
 
-    
-    
-    
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 10px;
+      }
+
 
     /* span {
       font-size: 14px;

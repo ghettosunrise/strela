@@ -57,6 +57,11 @@ export const ArtistWrapper = styled(Flex)`
   transition: 0.3s ease all;
   width: 100%;
 
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
   &:hover {
     img {
       opacity: 1;
@@ -74,6 +79,7 @@ export const ArtistWrapper = styled(Flex)`
 export const ArtistContent = styled(Flex)`
   width: 100%;
   flex-shrink: 1;
+  justify-content: space-between;
 `;
 
 export const ArtistWrap = styled(Flex)`
@@ -100,6 +106,12 @@ export const ArtistName = styled.h1`
     line-height: 76px;
     margin-bottom: 40px;
   }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 52px;
+    line-height: 52px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const ArtistTitle = styled.div`
@@ -109,6 +121,12 @@ export const ArtistTitle = styled.div`
   letter-spacing: -0.07em;
   color: #000000;
   margin-bottom: 30px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 36px;
+    line-height: 36px;
+    margin: 20px 0;
+  }
 `;
 
 export const DecriptionFirts = styled.div`
@@ -118,12 +136,14 @@ export const DecriptionFirts = styled.div`
   font-size: 18px;
   line-height: 24px;
   /* or 133% */
-
   letter-spacing: -0.03em;
-
   color: #000000;
-  margin-bottom: 30px;
   opacity: 0.7;
+  margin: 0 0 20px 0;
+
+  p {
+    margin: 0;
+  }
 
   @media only screen and (max-width: 1150px) {
   }
@@ -259,4 +279,10 @@ export const Title = styled.h2`
   letter-spacing: -0.07em;
   font-weight: normal;
   color: #000000;
+`;
+
+export const ImgWrap = styled(Flex)`
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+  }
 `;

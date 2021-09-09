@@ -40,7 +40,6 @@ const ArtistPage = data => {
         JSON.parse(myData.soundCloudTrackLinks?.soundCloudTrackLinks)
       );
     }
-    
   }, []);
 
   const iframeSrc = documentToReactComponents(parsedSoundCloud);
@@ -58,53 +57,53 @@ const ArtistPage = data => {
   const { igLink, fbLink, scLink, raLink } = myData;
   console.log('🚀 ~ file: ArtistPage.jsx ~ line 55 ~ myData', myData);
 
-  const {pressKit} = myData || '';
+  const { pressKit } = myData || '';
   const { src } = myData?.artistPicture?.fluid || '';
 
   return (
     <S.ArtistWrapper>
       <Flex
         paddingAll=" 60px 49px 0"
-        tabletPadding="0px 30px"
-        mobilePadding="0px 20px"
+        tabletPadding="60px 30px 0"
+        mobilePadding="30px 20px 0"
         z="2"
         width="100%"
         justify="center"
       >
-       {myData.artistName  && (<S.ArtistName>{myData?.artistName}</S.ArtistName>)}
-        <Fade>
-         {
-           src && (
-<img src={src ?? ''} />
-           )
-         } 
-        </Fade>
+        {myData.artistName && <S.ArtistName>{myData?.artistName}</S.ArtistName>}
+        <Fade>{src && <img src={src ?? ''} />}</Fade>
         <S.ArtistContent>
           <Flex
             width="100%"
             row
             justify="flex-end"
             paddingTop="60px"
+            mobilePadding="30px 0 0"
             mobileDirection="column"
           >
             <Flex width="53%" mobileWidth="100%">
               <Fade cascade>
-                {parsedText1 && parsedText1Ru && (<S.DecriptionFirts>
-                  {isEnglish
-                    ? documentToReactComponents(parsedText1)
-                    : documentToReactComponents(parsedText1Ru)}
-                </S.DecriptionFirts>)}
-                {parsedText2 && parsedText2Ru && (<S.DescriptionSecond>
-                  {isEnglish
-                    ? documentToReactComponents(parsedText2)
-                    : documentToReactComponents(parsedText2Ru)}
-                </S.DescriptionSecond>)}
-                {parsedText3 && parsedText3Ru && (<S.DescriptionThird>
-                  {isEnglish
-                    ? documentToReactComponents(parsedText3)
-                    : documentToReactComponents(parsedText3Ru)}
-                </S.DescriptionThird>)}
-                
+                {parsedText1 && parsedText1Ru && (
+                  <S.DecriptionFirts>
+                    {isEnglish
+                      ? documentToReactComponents(parsedText1)
+                      : documentToReactComponents(parsedText1Ru)}
+                  </S.DecriptionFirts>
+                )}
+                {parsedText2 && parsedText2Ru && (
+                  <S.DescriptionSecond>
+                    {isEnglish
+                      ? documentToReactComponents(parsedText2)
+                      : documentToReactComponents(parsedText2Ru)}
+                  </S.DescriptionSecond>
+                )}
+                {parsedText3 && parsedText3Ru && (
+                  <S.DescriptionThird>
+                    {isEnglish
+                      ? documentToReactComponents(parsedText3)
+                      : documentToReactComponents(parsedText3Ru)}
+                  </S.DescriptionThird>
+                )}
               </Fade>
               <Flex width="100%">
                 {/* <Iframe src={parsedSoundCloud} /> */}

@@ -16,7 +16,7 @@ const BookingForm = ({ isClosed, setIsClosed }) => {
   useEffect(() => {
     setTimeout(() => {
       setFormSent(false);
-      setIsClosed(true)
+      setIsClosed(true);
     }, 1500);
   }, [formSent]);
 
@@ -42,47 +42,46 @@ const BookingForm = ({ isClosed, setIsClosed }) => {
         isClosed={isClosed}
       ></S.Shadow>
       <S.BookingWrap>
-       {!formSent && ( <>
-        <Flex width="100%" align="flex-end" marginBottom="3vh">
-          <S.Close onClick={() => setIsClosed(true)}></S.Close>
-        </Flex>
-        <S.Title>Book an artist</S.Title>
-        <S.ChooseArtist
-          artistPickerOpen={artistPickerOpen}
-          onClick={() =>
-            artistPickerOpen
-              ? setArtistPickerOpen(false)
-              : setArtistPickerOpen(true)
-          }
-        >
-          {' '}
-          Choose an artist <span>^</span>
-        </S.ChooseArtist>
-        {artistPickerOpen && (
+        {!formSent && (
           <>
-            <S.ArtistPicker column artistPickerOpen={artistPickerOpen}>
-              {artistPickerData.map(({ artistName, id }) => (
-                <li
-                  key={id}
-                  onClick={() => {
-                    if (
-                      filteredArtist.length === 0 ||
-                      !filteredArtist.find(e => e === artistName)
-                    ) {
-                      setFilteredArtist(prev => [...prev, artistName]);
-                      setArtistChosen(true);
-                    }
-                  }}
-                >
-                  {artistName}
-                </li>
-              ))}
-            </S.ArtistPicker>
-
-            
-          </>
-        )}
-        <>
+            <Flex width="100%" align="flex-end" marginBottom="3vh">
+              <S.Close onClick={() => setIsClosed(true)}></S.Close>
+            </Flex>
+            <S.Title>Book an artist</S.Title>
+            <S.ChooseArtist
+              artistPickerOpen={artistPickerOpen}
+              onClick={() =>
+                artistPickerOpen
+                  ? setArtistPickerOpen(false)
+                  : setArtistPickerOpen(true)
+              }
+            >
+              {' '}
+              Choose an artist <span>^</span>
+            </S.ChooseArtist>
+            {artistPickerOpen && (
+              <>
+                <S.ArtistPicker column artistPickerOpen={artistPickerOpen}>
+                  {artistPickerData.map(({ artistName, id }) => (
+                    <li
+                      key={id}
+                      onClick={() => {
+                        if (
+                          filteredArtist.length === 0 ||
+                          !filteredArtist.find(e => e === artistName)
+                        ) {
+                          setFilteredArtist(prev => [...prev, artistName]);
+                          setArtistChosen(true);
+                        }
+                      }}
+                    >
+                      {artistName}
+                    </li>
+                  ))}
+                </S.ArtistPicker>
+              </>
+            )}
+            <>
               {artistChosen && <S.P>You choosed</S.P>}
               <S.YourChoice width="100%" row>
                 <ul>
@@ -106,13 +105,24 @@ const BookingForm = ({ isClosed, setIsClosed }) => {
                 </ul>
               </S.YourChoice>
             </>
-        <Form formSent={formSent} setFormSent={setFormSent} str={str} />
-        </>)}
+            <Form formSent={formSent} setFormSent={setFormSent} str={str} />
+          </>
+        )}
         {formSent && (
-        <div style={{height: '100%', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        <p style={{fontFamily: 'Neue Machina', fontSize: '2rem'}}>Thanks for your request!</p>
-        </div>)
-        }
+          <div
+            style={{
+              height: '100%',
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <p style={{ fontFamily: 'Neue Machina', fontSize: '2rem' }}>
+              Thanks for your request!
+            </p>
+          </div>
+        )}
       </S.BookingWrap>
     </S.ContactWrap>
   );

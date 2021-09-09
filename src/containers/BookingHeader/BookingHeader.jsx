@@ -11,7 +11,7 @@ import Button from '../../components/Buttons/ButtonTransparent';
 import Ticker from '../../components/Ticker';
 
 import logo from '../../images/bookinglogo.svg';
-import {Img} from '../AgencyHeader/styles'
+import { Img } from '../AgencyHeader/styles';
 
 const BookingHeader = ({ isClosed, setIsClosed, main }) => {
   const [documentLoaded, setDocumentLoaded] = useState(null);
@@ -25,7 +25,7 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
 
   return (
     <Flex width="100%" z="2">
-      <S.HeaderWrap>
+      <S.HeaderWrap justify="flex-end">
         <Flex
           width="100%"
           row
@@ -57,18 +57,21 @@ const BookingHeader = ({ isClosed, setIsClosed, main }) => {
           width="100%"
           paddingAll="90px 49px 0"
           tabletPadding="90px 30px 0"
-          mobilePadding="70px 20px 0"
+          mobilePadding="70px 20px 0px"
           mobileDirection="column"
           mobileAlign="center"
           row
         >
           <Fade>
             {/* <Link to="/promo"> */}
-            <Img style={{margin: 0, width: '250px'}} alt="logo" className="myImg" src={logo} />
+            <Img
+              // style={{ margin: 0, width: '250px' }}
+              alt="logo"
+              className="myImg"
+              src={logo}
+            />
             {/* </Link> */}
-            <S.Title>
-            We represent independent electronic music artists
-            </S.Title>
+            <S.Title>We represent independent electronic music artists</S.Title>
           </Fade>
         </Flex>
       )}

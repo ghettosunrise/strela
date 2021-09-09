@@ -30,12 +30,13 @@ const Artist = ({
       row
       width="100%"
       justify="space-between"
-      marginTop="60px"
-      mobileMargin="10px 0 0"
+      marginTop="50px"
+      mobileMargin="20px 0 0"
+      align="stretch"
     >
-      <Flex marginRight="2.6%" maxWidth="207px">
+      <S.ImgWrap marginRight="2.6%" maxWidth="207px">
         <Fade>{initialised && <img src={artistLogo?.fluid?.src}></img>}</Fade>
-      </Flex>
+      </S.ImgWrap>
       <S.ArtistContent>
         <Flex width="100%">
           <Fade>

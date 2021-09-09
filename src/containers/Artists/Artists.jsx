@@ -42,7 +42,7 @@ const Artists = () => {
       tabletPadding="0 30px"
       mobilePadding="0 20px"
     >
-      <Flex width="100%" paddingBottom="140px" z="2">
+      <Flex width="100%" z="2">
         <S.Title id="artists">Artists</S.Title>
         {data.map(artist => (
           <Artist

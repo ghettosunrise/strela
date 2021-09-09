@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import {
- Form, Formik, Field, ErrorMessage 
-} from 'formik';
+import { Form, Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Flex } from '../../styled';
 import Button from '../Buttons/ButtonTransparent';
@@ -25,6 +23,10 @@ const CustomForm = styled(Form)`
   max-width: 718px;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 
   p {
     font-family: Formular;
@@ -99,7 +101,7 @@ const SignupSchema = Yup.object().shape({
 
 function encode(data) {
   return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&');
 }
 
@@ -127,7 +129,7 @@ const MyForm = ({ formSent, setFormSent }) => (
           actions.resetForm();
           setFormSent(true);
         })
-        .catch((e) => {
+        .catch(e => {
           console.error(e);
         })
         .finally(() => actions.setSubmitting(false));
@@ -174,7 +176,7 @@ const MyForm = ({ formSent, setFormSent }) => (
             <Field
               type="text"
               name="date"
-              placeholder="9 Dec 2020 or 9 - 10 Dec 2020"
+              placeholder="9 Dec 2021 or 9 - 10 Dec 2021"
             />
             <ErrorFlex name="date" component="span" />
           </Flex>
@@ -190,9 +192,16 @@ const MyForm = ({ formSent, setFormSent }) => (
             type="text"
             name="comment"
           />
-          <Button size="small" txt="Book" type="submit" disabled={isSubmitting}>
-            Submit
-          </Button>
+          <Flex.Absolute bottom="-80px" left="0px">
+            <Button
+              size="small"
+              txt="Book"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              Submit
+            </Button>
+          </Flex.Absolute>
         </Flex>
         <Flex maxWidth="320px" width="100%">
           <Flex>
