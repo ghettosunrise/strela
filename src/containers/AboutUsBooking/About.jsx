@@ -10,7 +10,7 @@ const AboutUs = () => {
   return (
     <Flex
       width="100%"
-      paddingAll="0px 49px 120px"
+      paddingAll="80px 49px 120px"
       tabletPadding="80px 30px 20px"
       mobilePadding="80px 30px 0px"
       background="#FFF"

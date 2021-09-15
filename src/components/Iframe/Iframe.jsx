@@ -2,16 +2,27 @@ import React, { useEffect, useState } from 'react';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const Iframe = src => (
-  <iframe
-    width="100%"
-    height="166"
-    scrolling="no"
-    frameBorder="no"
-    allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/886996498&color=%232403a6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
-  />
-);
+const Iframe = ({ src }) => {
+  const x = documentToReactComponents(src);
+
+  const source = x[0].props.children.join();
+  console.log('🚀 ~ file: Iframe.jsx ~ line 9 ~ Iframe ~ source', source);
+
+  return (
+    <>
+      {source && (
+        <iframe
+          width="100%"
+          height="166"
+          scrolling="no"
+          frameBorder="no"
+          allow="autoplay"
+          src={source}
+        />
+      )}
+    </>
+  );
+};
 
 export default Iframe;
 

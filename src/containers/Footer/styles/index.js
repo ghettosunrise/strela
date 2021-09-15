@@ -27,7 +27,7 @@ export const FooTxt = styled.p`
   text-decoration-line: underline;
   color: #000000;
   text-align: right;
-  max-width: 150px;
+  max-width: 160px;
   top: 7px;
   position: relative;
 

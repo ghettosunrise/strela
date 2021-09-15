@@ -106,7 +106,7 @@ const ArtistPage = data => {
                 )}
               </Fade>
               <Flex width="100%">
-                {/* <Iframe src={parsedSoundCloud} /> */}
+                <Iframe src={parsedSoundCloud} />
               </Flex>
             </Flex>
             <Sidebar

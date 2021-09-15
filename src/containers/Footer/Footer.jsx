@@ -97,7 +97,9 @@ const Footer = ({ agency, booking }) => {
 
         <Social footer />
         <Flex>
-          <S.FooLink href="tel:+380669045724">+380669045724</S.FooLink>
+          <S.FooLink href="https://t.me/Alisa_Mullen">
+            t.me/Alisa_Mullen
+          </S.FooLink>
           <S.FooLink href="mailto:strela.booking@gmail.com">
             strela.booking@gmail.com
           </S.FooLink>
@@ -112,14 +114,10 @@ const Footer = ({ agency, booking }) => {
         {/* <Arrow direction="R" /> */}
         <CopyrightBlock>
           <FooterTxt>
-            Adapted and translation by 
-{' '}
-<span>Max Konstantinovsky, ÂUGHT</span>
+            Adapted and translation by <span>Max Konstantinovsky, ÂUGHT</span>
           </FooterTxt>
           <FooterTxt>
-            Design by 
-{' '}
-<span>Anastasiia Tretiak</span>
+            Design by <span>Anastasiia Tretiak</span>
           </FooterTxt>
         </CopyrightBlock>
       </FooterBottom>

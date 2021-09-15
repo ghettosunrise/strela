@@ -61,10 +61,11 @@ const rotate = keyframes`
 
 export const Img = styled.img`
   opacity: ${props => (!props.isMoved ? 1 : 0)};
-  margin-top: 55px;
+  /* margin-top: 55px; */
   transition: opacity 0.4s ease;
   animation: ${rotate} 7s linear infinite;
   width: 250px;
+
   @media only screen and (max-width: 768px) {
     margin-top: 0px;
     margin-bottom: 60px;
