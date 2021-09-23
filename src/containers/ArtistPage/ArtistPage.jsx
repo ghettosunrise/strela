@@ -57,7 +57,7 @@ const ArtistPage = data => {
   const { igLink, fbLink, scLink, raLink } = myData;
   console.log('🚀 ~ file: ArtistPage.jsx ~ line 55 ~ myData', myData);
 
-  const { pressKit } = myData || '';
+  // const { pressKit } = myData || '';
   const { src } = myData?.artistPicture?.fluid || '';
 
   return (
@@ -114,7 +114,7 @@ const ArtistPage = data => {
               igLink={igLink ?? ''}
               raLink={raLink ?? ''}
               scLink={scLink ?? ''}
-              pressKit={pressKit ?? ''}
+              // pressKit={pressKit ?? ''}
               setIsEnglish={setIsEnglish}
             />
           </Flex>

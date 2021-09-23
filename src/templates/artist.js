@@ -37,11 +37,7 @@ export const query = graphql`
           src
         }
       }
-      pressKit {
-        file {
-          url
-        }
-      }
+
       artistText1 {
         artistText1
       }

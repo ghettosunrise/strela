@@ -103,8 +103,8 @@ export const Sidebar = ({
         <>
           {' '}
           <p>download</p>
-          <a target="_blank" href={pressKit} rel="noreferrer">
-            <Btn download pressKit={pressKit} />
+          <a target="_blank" rel="noreferrer">
+            <Btn download />
           </a>
         </>
       )}
