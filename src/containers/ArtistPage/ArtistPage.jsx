@@ -54,11 +54,16 @@ const ArtistPage = data => {
   //   myData?.soundCloudTrackLinks?.soundCloudTrackLinks
   // );
 
-  const { igLink, fbLink, scLink, raLink } = myData;
+  const { igLink, fbLink, scLink, raLink, googleDriveLink } = myData;
   console.log('🚀 ~ file: ArtistPage.jsx ~ line 55 ~ myData', myData);
 
   // const { pressKit } = myData || '';
   const { src } = myData?.artistPicture?.fluid || '';
+  console.log('🚀 ~ file: ArtistPage.jsx ~ line 62 ~ src', src);
+
+  // const qualityImg = src.slice(0, src.length - 9) + '=2340&q=100';
+  // console.log(typeof qualityImg);
+  // console.log('🚀 ~ file: ArtistPage.jsx ~ line 64 ~ qualityImg', qualityImg);
 
   return (
     <S.ArtistWrapper>
@@ -114,7 +119,7 @@ const ArtistPage = data => {
               igLink={igLink ?? ''}
               raLink={raLink ?? ''}
               scLink={scLink ?? ''}
-              // pressKit={pressKit ?? ''}
+              googleDriveLink={googleDriveLink ?? ''}
               setIsEnglish={setIsEnglish}
             />
           </Flex>

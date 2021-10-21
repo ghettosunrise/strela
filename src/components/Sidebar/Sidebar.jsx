@@ -13,6 +13,7 @@ export const Sidebar = ({
   raLink,
   scLink,
   pressKit,
+  googleDriveLink,
 }) => {
   const textarea = useRef();
 
@@ -99,11 +100,11 @@ export const Sidebar = ({
           </Share>
         </FacebookProvider> */}
       {/* </Flex> */}
-      {pressKit && (
+      {googleDriveLink && (
         <>
           {' '}
           <p>download</p>
-          <a target="_blank" rel="noreferrer">
+          <a target="_blank" rel="noreferrer" href={googleDriveLink}>
             <Btn download />
           </a>
         </>

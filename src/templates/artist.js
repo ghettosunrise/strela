@@ -57,6 +57,7 @@ export const query = graphql`
         artistText3Ru
       }
       facebookLink
+      googleDriveLink
       igLink
       soundCloudTrackLinks {
         soundCloudTrackLinks
