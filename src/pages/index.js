@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-filename-extension */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { navigate } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
 import { Flex } from '../styled';
@@ -110,8 +110,10 @@ const AnimatedBlock = styled.div`
 
 const IndexPage = () => {
   const [navigateTo, setNavigateTo] = useState(null);
-  const agency = 'promo';
-  const booking = 'booking';
+
+  useEffect(() => {
+    navigate('/booking');
+  }, []);
 
   const handleClick = direction => {
     setNavigateTo(direction);
@@ -154,7 +156,7 @@ const IndexPage = () => {
         </Flex> */}
         <Flex align="center" justify="center" width="100%">
           <Txt>Promo and Booking agency</Txt>
-          <Desc>Вебсайт в разработке и появится совсем скоро</Desc>
+          {/* <Desc>Вебсайт в разработке и появится совсем скоро</Desc> */}
         </Flex>
       </Flex>
       <AnimatedBlock navigateTo={navigateTo} />

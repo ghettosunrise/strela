@@ -31,10 +31,9 @@ const AboutUs = () => {
           by a flaming passion for electronic music.
         </S.Title>
         <S.Txt>
-          We aim to support and provide professional guidance to the artists
-          while always staying true to our core values — mutual respect, trust,
-          and friendship. Strela offers a global management and booking service
-          that welcomes free expression and sets no creative limitations.
+          The aim of our agency is to improve the quality of the organization of
+          the booking process and communication between the artist and the
+          promoter.
         </S.Txt>
         <S.Block />
       </Flex>
