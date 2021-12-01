@@ -42,8 +42,6 @@ const Cases = () => {
     }
   `);
 
-  console.log(caseData, 'REALCASEDATA');
-
   return (
     <Flex width="100%" paddingAll="30px 49px 0" tabletPadding="0 30px">
       <Flex

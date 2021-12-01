@@ -11,7 +11,6 @@ import Divider from '../components/Divider';
 import useLanguage from '../hooks/useLanguage';
 
 const Case = ({ data, pageContext, ...rest }) => {
-  console.log('🚀 ~ file: case.js ~ line 14 ~ Case ~ data', data);
   const [isClosed, setIsClosed] = useState(true);
   const [isClosedMobile, setIsClosedMobile] = useState(true);
 
@@ -34,18 +33,8 @@ const Case = ({ data, pageContext, ...rest }) => {
     caseDescriptionEng,
     childContentfulCaseCaseDescriptionEngTextNode,
   } = data.contentfulCase;
-  console.log(
-    '🚀 ~ file: case.js ~ line 33 ~ Case ~ contentfulCase',
-    data.contentfulCase
-  );
 
   const { allContentfulNews } = data;
-  console.log(
-    '🚀 ~ file: case.js ~ line 41 ~ Case ~ allContentfulNews',
-    allContentfulNews
-  );
-
-  // const caseNews = allContentfulNews.map(i => )
 
   const isRussian = language === 'RUS';
 

@@ -18,7 +18,7 @@ const ErrorFlex = styled(ErrorMessage)`
   color: #ff3939;
 `;
 
-const CustomForm = styled(Form)`
+const CustomForm = styled.div`
   width: 100%;
   max-width: 718px;
   display: flex;
@@ -158,74 +158,76 @@ const MyForm = ({ formSent, setFormSent }) => (
     }}
   >
     {({ isSubmitting }) => (
-      <CustomForm data-netlify name="contact" method="post" action="/">
+      <Form
+        style={{ width: '100%' }}
+        data-netlify
+        name="contact"
+        method="post"
+        action="/"
+      >
         {/* <input type="hidden" name="form-name" value="contact" /> */}
-        <Flex maxWidth="320px" width="100%">
-          <Flex>
-            <p>Your name</p>
-            <Field type="text" name="name" />
-            <ErrorFlex name="name" component="span" />
-          </Flex>
-          <Flex>
-            <p>E-Mail Address </p>
-            <Field type="email" name="email" />
-            <ErrorFlex name="name" component="span" />
-          </Flex>
-          <Flex>
-            <p>Event Date </p>
+        <CustomForm>
+          <Flex maxWidth="320px" width="100%">
+            <Flex>
+              <p>Your name</p>
+              <Field type="text" name="name" />
+              <ErrorFlex name="name" component="span" />
+            </Flex>
+            <Flex>
+              <p>E-Mail Address </p>
+              <Field type="email" name="email" />
+              <ErrorFlex name="name" component="span" />
+            </Flex>
+            <Flex>
+              <p>Event Date </p>
+              <Field
+                type="text"
+                name="date"
+                placeholder="9 Dec 2021 or 9 - 10 Dec 2021"
+              />
+              <ErrorFlex name="date" component="span" />
+            </Flex>
+            <Flex>
+              <p>Proposed Line Up </p>
+              <Field type="text" name="lineup" />
+              <ErrorFlex name="lineup" component="span" />
+            </Flex>
+            <p>additional info</p>
             <Field
+              placeholder="Text your comments "
+              as="textarea"
               type="text"
-              name="date"
-              placeholder="9 Dec 2021 or 9 - 10 Dec 2021"
+              name="comment"
             />
-            <ErrorFlex name="date" component="span" />
+            <Flex.Absolute bottom="-80px" left="0px" />
           </Flex>
-          <Flex>
-            <p>Proposed Line Up </p>
-            <Field type="text" name="lineup" />
-            <ErrorFlex name="lineup" component="span" />
+          <Flex maxWidth="320px" width="100%">
+            <Flex>
+              <p>Promoter Name</p>
+              <Field type="text" name="promoName" />
+              <ErrorFlex name="promoName" component="span" />
+            </Flex>
+            <Flex>
+              <p>Your City</p>
+              <Field type="text" name="city" />
+              <ErrorFlex name="city" component="span" />
+            </Flex>
+            <Flex>
+              <p>Artist Fee Offer</p>
+              <Field type="text" name="fee" />
+              <ErrorFlex name="fee" component="span" />
+            </Flex>
+            <Flex>
+              <p>Venue Name and capacity</p>
+              <Field type="text" name="venue" />
+              <ErrorFlex name="venue" component="span" />
+            </Flex>
           </Flex>
-          <p>additional info</p>
-          <Field
-            placeholder="Text your comments "
-            as="textarea"
-            type="text"
-            name="comment"
-          />
-          <Flex.Absolute bottom="-80px" left="0px">
-            <Button
-              size="small"
-              txt="Book"
-              type="submit"
-              disabled={isSubmitting}
-            >
-              Submit
-            </Button>
-          </Flex.Absolute>
-        </Flex>
-        <Flex maxWidth="320px" width="100%">
-          <Flex>
-            <p>Promoter Name</p>
-            <Field type="text" name="promoName" />
-            <ErrorFlex name="promoName" component="span" />
-          </Flex>
-          <Flex>
-            <p>Your City</p>
-            <Field type="text" name="city" />
-            <ErrorFlex name="city" component="span" />
-          </Flex>
-          <Flex>
-            <p>Artist Fee Offer</p>
-            <Field type="text" name="fee" />
-            <ErrorFlex name="fee" component="span" />
-          </Flex>
-          <Flex>
-            <p>Venue Name and capacity</p>
-            <Field type="text" name="venue" />
-            <ErrorFlex name="venue" component="span" />
-          </Flex>
-        </Flex>
-      </CustomForm>
+        </CustomForm>
+        <Button size="small" txt="Book" type="submit" disabled={isSubmitting}>
+          Submit
+        </Button>
+      </Form>
     )}
   </Formik>
 );

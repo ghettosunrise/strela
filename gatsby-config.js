@@ -20,6 +20,7 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-image',
     // 'gatsby-plugin-page-transitions',
     {
       resolve: 'gatsby-plugin-manifest',

@@ -40,6 +40,7 @@ export const Header = styled.header`
   align-items: center;
   transition: background 0.2s ease;
   justify-content: space-between;
+  max-width: 1440px;
 
   @media only screen and (max-width: 1150px) {
     padding: 23px 30px;

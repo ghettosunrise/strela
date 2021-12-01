@@ -4,12 +4,11 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Flex from '../../styled/flex';
 
 import * as S from '../../components/Artist/styles';
-// import cpbig from '../../images/cpbig.png';
+
 import Sidebar from '../../components/Sidebar';
 import Iframe from '../../components/Iframe';
 
 const ArtistPage = data => {
-  console.log('🚀 ~ file: ArtistPage.jsx ~ line 12 ~ data', data);
   const [isEnglish, setIsEnglish] = useState(1);
   const [parsedText1, setParsedText1] = useState(null);
   const [parsedText1Ru, setParsedText1Ru] = useState(null);
@@ -18,12 +17,6 @@ const ArtistPage = data => {
   const [parsedText3, setParsedText3] = useState(null);
   const [parsedText3Ru, setParsedText3Ru] = useState(null);
   const [parsedSoundCloud, setParsedSoundCloud] = useState('');
-
-  // const [myData, setMyData] = useState(null);
-
-  // useMemo(() => {
-  //   setMyData();
-  // }, []);
 
   const { contentfulArtist: myData } = data?.data;
 
@@ -44,26 +37,12 @@ const ArtistPage = data => {
 
   const iframeSrc = documentToReactComponents(parsedSoundCloud);
 
-  // const parsedText1 = JSON.parse(myData?.artistText1?.artistText1);
-  // const parsedText1Ru = JSON.parse(myData?.artistText1Ru?.artistText1Ru);
-  // const parsedText2 = JSON.parse(myData?.artistText2?.artistText2);
-  // const parsedText2Ru = JSON.parse(myData?.artistText2Ru?.artistText2Ru);
-  // const parsedText3 = JSON.parse(myData?.artistText3?.artistText3);
-  // const parsedText3Ru = JSON.parse(myData?.artistText3Ru.artistText3Ru);
-  // const parsedSoundCloud = JSON.parse(
-  //   myData?.soundCloudTrackLinks?.soundCloudTrackLinks
-  // );
-
   const { igLink, fbLink, scLink, raLink, googleDriveLink } = myData;
-  console.log('🚀 ~ file: ArtistPage.jsx ~ line 55 ~ myData', myData);
 
   // const { pressKit } = myData || '';
   const { src } = myData?.artistPicture?.fluid || '';
-  console.log('🚀 ~ file: ArtistPage.jsx ~ line 62 ~ src', src);
 
-  // const qualityImg = src.slice(0, src.length - 9) + '=2340&q=100';
-  // console.log(typeof qualityImg);
-  // console.log('🚀 ~ file: ArtistPage.jsx ~ line 64 ~ qualityImg', qualityImg);
+  const qualityImg = src.slice(0, src.length - 9) + '=2340&q=100';
 
   return (
     <S.ArtistWrapper>
@@ -76,7 +55,7 @@ const ArtistPage = data => {
         justify="center"
       >
         {myData.artistName && <S.ArtistName>{myData?.artistName}</S.ArtistName>}
-        <Fade>{src && <img src={src ?? ''} />}</Fade>
+        <Fade>{qualityImg && <img src={qualityImg ?? ''} />}</Fade>
         <S.ArtistContent>
           <Flex
             width="100%"

@@ -3,7 +3,7 @@ import * as S from './styles';
 import Flex from '../../../styled/flex';
 
 const ButtonTransparent = ({ type, size, disabled, onClick, txt }) => (
-  <Flex role="button" overflow="hidden">
+  <Flex width="fit-content" role="button" overflow="hidden">
     <S.Button type={type} size={size} disabled={disabled} onClick={onClick}>
       {txt}
     </S.Button>

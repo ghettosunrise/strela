@@ -8,8 +8,6 @@ const AboutUs = () => {
   const [[language, setLanguage]] = useLanguage();
 
   const isRussian = language === 'RUS';
-  console.log('AboutUs -> language', language);
-
   return (
     <Flex width="100%" paddingAll="30px 49px 150px" tabletPadding="0 35px 60px">
       <Flex width="100%">

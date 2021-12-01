@@ -5,8 +5,6 @@ import { useLanguage } from '../../hooks';
 
 const AboutUs = () => {
   const [[language, setLanguage]] = useLanguage();
-  console.log('AboutUs -> language', language);
-
   return (
     <Flex
       width="100%"

@@ -36,8 +36,6 @@ const Cases = ({ language }) => {
     }
   `);
 
-  console.log(caseData, 'caseData');
-
   return (
     <Flex
       width="100%"

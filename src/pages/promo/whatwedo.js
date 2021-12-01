@@ -12,8 +12,6 @@ const WhatWeDo = ({ props }) => {
   const [isClosedMobile, setIsClosedMobile] = useState(true);
 
   const [[language, setLanguage]] = useLanguage();
-  console.log('WhatWeDo -> language', props);
-
   return (
     <Layout
       isClosed={isClosed}

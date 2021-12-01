@@ -28,16 +28,15 @@ const News = ({
   caseNews,
   position,
 }) => {
-  console.log('🚀 ~ file: News.jsx ~ line 31 ~ caseNews', caseNews);
   if (extraLarge) {
     return (
       <ExtraLargeWrap width={mainPage ? '50%' : '100%'} align="flex-end">
         <S.MyNews mainPage={mainPage} size={size}>
           <Fade>
-            <a target="_blank" href={link}>
+            <a target="_blank" href={link} rel="noreferrer">
               <img src={src} />
             </a>
-            <a target="_blank" href={link}>
+            <a target="_blank" href={link} rel="noreferrer">
               <S.Title extraLarge={extraLarge}>{title}</S.Title>
             </a>
           </Fade>
@@ -63,7 +62,7 @@ const News = ({
       <S.MyNews mainPage={mainPage} position={position} size={size}>
         <S.Special>
           <Fade>
-            <a target="_blank" href={link}>
+            <a target="_blank" href={link} rel="noreferrer">
               <img src={src} />
               <S.SpecialTitle>{title}</S.SpecialTitle>
               <S.SpecialDate>{date}</S.SpecialDate>
@@ -79,10 +78,10 @@ const News = ({
       <Flex width="100%" align="flex-end" order={position}>
         <S.MyNews mainPage={mainPage} position={position} size="medium">
           <Fade>
-            <a target="_blank" href={link}>
+            <a target="_blank" href={link} rel="noreferrer">
               <img style={{ maxWidth: '100%' }} src={src} />
             </a>
-            <a target="_blank" href={link}>
+            <a target="_blank" href={link} rel="noreferrer">
               <S.TitleBig>{title}</S.TitleBig>
             </a>
           </Fade>
@@ -100,10 +99,10 @@ const News = ({
       size={caseNews ? 'small' : size}
     >
       <Fade>
-        <a target="_blank" href={link}>
+        <a target="_blank" href={link} rel="noreferrer">
           <img style={{ maxWidth: '100%' }} src={src} />
         </a>
-        <a target="_blank" href={link}>
+        <a target="_blank" href={link} rel="noreferrer">
           <S.Title>{title}</S.Title>
         </a>
       </Fade>
