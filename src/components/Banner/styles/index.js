@@ -43,7 +43,8 @@ const OtherDecor = css`
 export const Banner = styled(Flex)`
   width: 100%;
   padding: 25px 25px 25px 35px;
-  /* background: ${(props) => props.link ? '#fff' : props.cases || props.news ? '#000' : null}; */
+  /* background: ${props =>
+    props.link ? '#fff' : props.cases || props.news ? '#000' : null}; */
   background: #FFF;
   box-sizing: border-box;
   flex-direction: row;
@@ -51,7 +52,8 @@ export const Banner = styled(Flex)`
   position: relative;
   overflow: hidden;
   margin-bottom: 114px;
-  /* ${(props) => props.link ? LinkDecor : props.cases || props.news ? OtherDecor : null} */
+  /* ${props =>
+    props.link ? LinkDecor : props.cases || props.news ? OtherDecor : null} */
 
     &::before {
     content: "";
@@ -203,7 +205,7 @@ export const NewsTitle = styled.h1`
   letter-spacing: -0.07em;
   color: #ffffff;
   /* max-width: 62%; */
-  max-width: ${(props) => (props.language === 'RUS' ? '70%' : '80%')};
+  max-width: ${props => (props.language === 'UA' ? '70%' : '80%')};
   margin-bottom: 124px;
   width: 100%;
 

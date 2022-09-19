@@ -49,7 +49,6 @@ const Stp = styled.p`
 `;
 
 const LangDropdown = ({ language, setLanguage }) => {
-  // const [language, setLanguage] = useState('RUS');
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
 
   return (
@@ -64,15 +63,15 @@ const LangDropdown = ({ language, setLanguage }) => {
       >
         <Flex
           onClick={() => {
-            setLanguage('RUS');
+            setLanguage('UA');
             setDropdownIsOpen(false);
           }}
-          order={language === 'RUS' ? 1 : 2}
-          opacity={dropdownIsOpen || language === 'RUS' ? 1 : 0}
+          order={language === 'UA' ? 1 : 2}
+          opacity={dropdownIsOpen || language === 'UA' ? 1 : 0}
         >
           <Stp
-            height={dropdownIsOpen || language === 'RUS' ? 'auto' : 0}
-            opacity={dropdownIsOpen || language === 'RUS' ? 1 : 0}
+            height={dropdownIsOpen || language === 'UA' ? 'auto' : 0}
+            opacity={dropdownIsOpen || language === 'UA' ? 1 : 0}
           >
             Рус
           </Stp>

@@ -51,7 +51,7 @@ export const Sidebar = ({
             setIsEnglish(0);
           }}
         >
-          ru
+          ua
         </S.Translate>
       </Flex>
       <p>In social media</p>

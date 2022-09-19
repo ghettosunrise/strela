@@ -19,7 +19,7 @@ const Banner = ({
   page,
   language,
 }) => {
-  const isRus = language === 'RUS';
+  const isUA = language === 'UA';
 
   return (
     <Flex
@@ -37,7 +37,7 @@ const Banner = ({
                 <S.Title>{title}</S.Title>
                 <S.SubTitle>{subtitle}</S.SubTitle>
                 <S.Description>
-                  {isRus ? description : descriptionEng}
+                  {isUA ? description : descriptionEng}
                 </S.Description>
               </Fade>
             </Flex>

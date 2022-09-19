@@ -94,7 +94,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
                 {/* <Dropdown language={language} setLanguage={setLanguage} /> */}
                 <Social isMoved={isMoved} isTop={true} />
                 <ButtonBlack
-                  txt={language === 'RUS' ? 'Связаться' : 'Contact'}
+                  txt={language === 'UA' ? 'Связаться' : 'Contact'}
                   onClick={() => setIsClosed(false)}
                 />
               </Flex>
@@ -146,7 +146,7 @@ const AgencyHeader = ({ setIsClosed, setIsClosedMobile, isClosedMobile }) => {
           <MainTitle
             isClosedMobile={isClosedMobile}
             txt={
-              language === 'RUS'
+              language === 'UA'
                 ? 'Грамотный PR для проектов, связанных с электронной сценой.'
                 : 'Qualified PR for projects in the electronic music scene.'
             }
