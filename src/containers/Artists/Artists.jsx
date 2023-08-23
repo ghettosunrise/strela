@@ -8,9 +8,12 @@ import * as S from './styles';
 const Artists = () => {
   const artistData = useStaticQuery(graphql`
     query Artist {
-      allContentfulArtist(sort: { fields: artistName, order: ASC }) {
+      allContentfulArtist(
+        sort: { fields: [isExResident, artistName], order: [DESC, ASC] }
+      ) {
         nodes {
           id
+          isExResident
           artistName
           artistPicture {
             fluid {
