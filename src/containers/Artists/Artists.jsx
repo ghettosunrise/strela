@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Artist from '../../components/Artist';
 import Flex from '../../styled/flex';
 import * as S from './styles';
@@ -8,12 +7,10 @@ import * as S from './styles';
 const Artists = () => {
   const artistData = useStaticQuery(graphql`
     query Artist {
-      allContentfulArtist(
-        sort: { fields: [isExResident, artistName], order: [DESC, ASC] }
-      ) {
+      allContentfulArtist(sort: { fields: [artistName], order: [DESC, ASC] }) {
         nodes {
           id
-          isExResident
+
           artistName
           artistPicture {
             fluid {
