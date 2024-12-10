@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import arrR from '../images/arrowr.svg';
-import logo from '../images/logo.png';
 import Flex from './flex';
+import newLogo from '../images/strila_logo.svg';
 // import Flex from "./flex"
 
 export const StyledHeader = styled.header`
@@ -14,14 +14,10 @@ export const StyledHeader = styled.header`
 `;
 
 export const HeaderLogoWrap = styled(Flex)`
-  /* align-items: center;
-  justify-content: space-between;
-  flex-direction: row; */
-
   a {
     width: 93px;
     height: 39px;
-    background-image: url(${logo});
+    background-image: url(${newLogo});
     background-size: 100%;
   }
 

@@ -71,6 +71,20 @@ const AgencyHome = () => {
   const bannerData = data.contentfulBanner;
 
   return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        width: '100%',
+      }}
+    >
+      Unavailable
+    </div>
+  );
+
+  return (
     // <ProvideLanguage language={language}>
     //   <Flex width="100%">
     //     <SEO title="Home" />
@@ -89,9 +103,18 @@ const AgencyHome = () => {
       setIsClosedMobile={setIsClosedMobile}
       main
     >
-      <SEO title="Promo" />
+      {/* <SEO title="Promo" /> */}
       <Arrow top={0} right={0} z="-1" />
-      <MobileMenu
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        Unavailable
+      </div>
+      {/* <MobileMenu
         isClosedMobile={isClosedMobile}
         setIsClosedMobile={setIsClosedMobile}
       />
@@ -108,7 +131,7 @@ const AgencyHome = () => {
         image={bannerData.image.file.url}
       />
       <Divider text={language === 'RUS' ? 'Написано нами' : 'Our News'} />
-      <News mainPage data={data.allContentfulNews.nodes} />
+      <News mainPage data={data.allContentfulNews.nodes} /> */}
       {/* <Footer agency="true" /> */}
     </Layout>
     //   </Flex>
