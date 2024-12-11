@@ -24,7 +24,7 @@ const AboutUs = () => {
         order="2"
       >
         <S.Title>
-          Strela is a Kyiv-based artist booking and management agency
+          Strila is a Kyiv-based artist booking and management agency
           representing a roster of independent DJs and producers who are driven
           by a flaming passion for electronic music.
         </S.Title>
