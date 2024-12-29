@@ -111,9 +111,7 @@ const AnimatedBlock = styled.div`
 const IndexPage = () => {
   const [navigateTo, setNavigateTo] = useState(null);
 
-  useEffect(() => {
-    navigate('/booking');
-  }, []);
+
 
   const handleClick = direction => {
     setNavigateTo(direction);
