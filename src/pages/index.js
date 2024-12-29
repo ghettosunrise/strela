@@ -152,10 +152,13 @@ const IndexPage = () => {
           </button>
           <Arrow margin="24px" direction="R" />
         </Flex> */}
-        <Flex align="center" justify="center" width="100%">
-          <Txt>Promo and Booking agency</Txt>
-          {/* <Desc>Вебсайт в разработке и появится совсем скоро</Desc> */}
-        </Flex>
+      <Flex align="center" justify="center" width="100%">
+  <Txt>
+    Welcome! Previously a promo and booking agency, this is now an educational initiative focused on fostering awareness of effective communication and self-PR among artists. 
+          We are currently seeking sponsors to develop a platform. In the meantime, we invite you to visit Alisa’s <a href="https://www.alisanedashkovska.com/research" target="_blank" rel="noopener noreferrer">page</a> to explore her research and insights.
+  </Txt>
+  {/* <Desc>Вебсайт в разработке и появится совсем скоро</Desc> */}
+</Flex>
       </Flex>
       <AnimatedBlock navigateTo={navigateTo} />
     </MainPageWrap>
