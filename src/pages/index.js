@@ -155,7 +155,7 @@ const IndexPage = () => {
       <Flex align="center" justify="center" width="100%">
   <Txt>
     Welcome! Previously a promo and booking agency, this is now an educational initiative focused on fostering awareness of effective communication and self-PR among artists. 
-          We are currently seeking sponsors to develop a platform. In the meantime, we invite you to visit Alisa’s <a href="https://www.alisanedashkovska.com/research" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'blue', fontWeight: 'bold' }}>page</a> to explore her research and insights.
+          We are currently seeking sponsors to develop a platform. In the meantime, we invite you to visit Alisa’s <a href="https://www.alisanedashkovska.com/research" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'blue', }}>page</a> to explore her research and insights.
   </Txt>
   {/* <Desc>Вебсайт в разработке и появится совсем скоро</Desc> */}
 </Flex>
