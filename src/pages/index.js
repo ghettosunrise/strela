@@ -20,7 +20,7 @@ const MainPageWrap = styled(Flex)`
   font-family: Neue Machina;
   font-style: normal;
   font-weight: normal;
-  font-size: 28px;
+  font-size: 18px;
   line-height: 48px;
   height: 100vh;
 
