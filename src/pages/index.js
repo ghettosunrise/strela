@@ -7,7 +7,7 @@ import { Flex } from '../styled';
 import mainBg from '../images/mainbg1440.png';
 import arrL from '../images/arrowl.svg';
 import arrR from '../images/arrowr.svg';
-import logo from '../images/logo.png';
+import logo from '../images/strila_logo.svg';
 import '../assets/layout.css';
 import Arrow from '../components/Icons';
 import SEO from '../components/seo';
